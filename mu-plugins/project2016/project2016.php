@@ -14,7 +14,6 @@ Author URI: http://jasonpomerleau.com
 
 defined('ABSPATH') or die('Script access not permitted.');
 
-
 /* Change the default post type to News */
 function change_default_post_label() {
     global $menu;
