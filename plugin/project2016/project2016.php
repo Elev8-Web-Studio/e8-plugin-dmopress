@@ -22,7 +22,7 @@ function change_default_post_label() {
     $menu[5][0] = 'News';
     $submenu['edit.php'][5][0] = 'News';
     $submenu['edit.php'][10][0] = 'Add News';
-    $submenu['edit.php'][16][0] = 'News Tags';
+    $submenu['edit.php'][16][0] = 'Tags';
     echo '';
 }
 function change_default_post_object() {
@@ -79,7 +79,7 @@ function register_events_post_type() {
 		'labels'              => $labels,
 		'hierarchical'        => false,
 		'description'         => 'description',
-		'taxonomies'          => array(),
+		'taxonomies'          => array('category','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
@@ -101,8 +101,6 @@ function register_events_post_type() {
 }
 
 add_action( 'init', 'register_events_post_type' );
-
-
 
 /**
 * Registers a new post type
@@ -133,7 +131,7 @@ function register_attractions_post_type() {
 		'labels'              => $labels,
 		'hierarchical'        => false,
 		'description'         => 'description',
-		'taxonomies'          => array(),
+		'taxonomies'          => array('category','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
@@ -185,7 +183,7 @@ function register_accommodations_post_type() {
 		'labels'              => $labels,
 		'hierarchical'        => false,
 		'description'         => 'description',
-		'taxonomies'          => array(),
+		'taxonomies'          => array('category','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
@@ -237,7 +235,7 @@ function register_restaurants_post_type() {
 		'labels'              => $labels,
 		'hierarchical'        => false,
 		'description'         => 'description',
-		'taxonomies'          => array(),
+		'taxonomies'          => array('category','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
@@ -289,7 +287,7 @@ function register_packages_post_type() {
 		'labels'              => $labels,
 		'hierarchical'        => false,
 		'description'         => 'description',
-		'taxonomies'          => array(),
+		'taxonomies'          => array('category','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
@@ -317,6 +315,14 @@ add_action( 'admin_menu', 'my_remove_menu_pages' );
 function my_remove_menu_pages() {
 	remove_menu_page('upload.php');	
 }
+
+
+// Flush rewrite rules after switching theme.
+function my_rewrite_flush() {
+    my_cpt_init();
+    flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'my_rewrite_flush' );
 
 
 ?>
