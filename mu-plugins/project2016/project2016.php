@@ -309,12 +309,17 @@ function register_packages_post_type() {
 
 add_action( 'init', 'register_packages_post_type' );
 
+//Customize Admin Menu
+function customize_admin_menu() {
+	// Remove Media link
+	remove_menu_page('upload.php');
 
-add_action( 'admin_menu', 'my_remove_menu_pages' );
-function my_remove_menu_pages() {
-	remove_menu_page('upload.php');	
+	// Remove Updates link
+	global $submenu;  
+	unset($submenu['index.php'][10]);
+	return $submenu;
 }
-
+add_action('admin_menu', 'customize_admin_menu');
 
 // Flush rewrite rules after switching theme.
 function my_rewrite_flush() {
@@ -323,5 +328,13 @@ function my_rewrite_flush() {
 }
 add_action( 'after_switch_theme', 'my_rewrite_flush' );
 
+// Dashboard Widget: Latest News
+function custom_dashboard_widget() {
+	echo "<p>Contents</p>";
+}
+function add_custom_dashboard_widget() {
+	wp_add_dashboard_widget('custom_dashboard_widget', 'Project 2016 News', 'custom_dashboard_widget');
+}
+add_action('wp_dashboard_setup', 'add_custom_dashboard_widget');
 
 ?>
