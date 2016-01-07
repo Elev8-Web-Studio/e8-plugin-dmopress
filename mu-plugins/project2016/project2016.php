@@ -12,6 +12,7 @@ Version: 0.1
 Author URI: http://jasonpomerleau.com
 */
 
+// Prevent external script access
 defined('ABSPATH') or die('Script access not permitted.');
 
 /* Change the default post type to News */
@@ -48,15 +49,7 @@ function change_default_post_object() {
 add_action( 'admin_menu', 'change_default_post_label' );
 add_action( 'init', 'change_default_post_object' );
 
-
-/**
-* Registers a new post type
-* @uses $wp_post_types Inserts new post type object into the list
-*
-* @param string  Post type key, must not exceed 20 characters
-* @param array|string  See optional args description above.
-* @return object|WP_Error the registered post type object, or an error object
-*/
+// Events Post Type
 function register_events_post_type() {
 
 	$labels = array(
@@ -101,14 +94,7 @@ function register_events_post_type() {
 
 add_action( 'init', 'register_events_post_type' );
 
-/**
-* Registers a new post type
-* @uses $wp_post_types Inserts new post type object into the list
-*
-* @param string  Post type key, must not exceed 20 characters
-* @param array|string  See optional args description above.
-* @return object|WP_Error the registered post type object, or an error object
-*/
+// Attractions Post Type
 function register_attractions_post_type() {
 
 	$labels = array(
@@ -143,7 +129,9 @@ function register_attractions_post_type() {
 		'has_archive'         => true,
 		'query_var'           => true,
 		'can_export'          => true,
-		'rewrite'             => true,
+		'rewrite'             => array(
+			'slug' => 'do'
+			),
 		'capability_type'     => 'post',
 		'supports'            => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions', 'page-attributes', 'post-formats')
 	);
@@ -153,14 +141,7 @@ function register_attractions_post_type() {
 
 add_action( 'init', 'register_attractions_post_type' );
 
-/**
-* Registers a new post type
-* @uses $wp_post_types Inserts new post type object into the list
-*
-* @param string  Post type key, must not exceed 20 characters
-* @param array|string  See optional args description above.
-* @return object|WP_Error the registered post type object, or an error object
-*/
+// Accommodations Post Type
 function register_accommodations_post_type() {
 
 	$labels = array(
@@ -195,7 +176,9 @@ function register_accommodations_post_type() {
 		'has_archive'         => true,
 		'query_var'           => true,
 		'can_export'          => true,
-		'rewrite'             => true,
+		'rewrite'             => array(
+			'slug' => 'stay'
+			),
 		'capability_type'     => 'post',
 		'supports'            => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','revisions', 'page-attributes', 'post-formats')
 	);
@@ -205,14 +188,46 @@ function register_accommodations_post_type() {
 
 add_action( 'init', 'register_accommodations_post_type' );
 
-/**
-* Registers a new post type
-* @uses $wp_post_types Inserts new post type object into the list
-*
-* @param string  Post type key, must not exceed 20 characters
-* @param array|string  See optional args description above.
-* @return object|WP_Error the registered post type object, or an error object
-*/
+// Restaurant Categories
+function restaurant_categories() {
+
+	$labels = array(
+		'name'					=> _x( 'Restaurant Categories', 'Restaurant categories', 'text-domain' ),
+		'singular_name'			=> _x( 'Restaurant Category', 'Restaurant category', 'text-domain' ),
+		'search_items'			=> __( 'Search Restaurant Categories', 'text-domain' ),
+		'popular_items'			=> __( 'Popular Restaurant Categories', 'text-domain' ),
+		'all_items'				=> __( 'All Restaurant Categories', 'text-domain' ),
+		'parent_item'			=> __( 'Parent Restaurant Category', 'text-domain' ),
+		'parent_item_colon'		=> __( 'Parent Restaurant Category', 'text-domain' ),
+		'edit_item'				=> __( 'Edit Restaurant Category', 'text-domain' ),
+		'update_item'			=> __( 'Update Restaurant Category', 'text-domain' ),
+		'add_new_item'			=> __( 'Add New Restaurant Category', 'text-domain' ),
+		'new_item_name'			=> __( 'New Restaurant Category Name', 'text-domain' ),
+		'add_or_remove_items'	=> __( 'Add or remove Restaurant Categories', 'text-domain' ),
+		'choose_from_most_used'	=> __( 'Choose from most used text-domain', 'text-domain' ),
+		'menu_name'				=> __( 'Restaurant Categories', 'text-domain' ),
+	);
+
+	$args = array(
+		'labels'            => $labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => false,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+
+	register_taxonomy( 'restaurant-category', array( 'restaurant' ), $args );
+}
+
+add_action( 'init', 'restaurant_categories' );
+
+// Restaurants Post Type
 function register_restaurants_post_type() {
 
 	$labels = array(
@@ -234,7 +249,7 @@ function register_restaurants_post_type() {
 		'labels'              => $labels,
 		'hierarchical'        => false,
 		'description'         => 'description',
-		'taxonomies'          => array('category','post_tag'),
+		'taxonomies'          => array('restaurant-category','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
@@ -247,7 +262,9 @@ function register_restaurants_post_type() {
 		'has_archive'         => true,
 		'query_var'           => true,
 		'can_export'          => true,
-		'rewrite'             => true,
+		'rewrite'             => array(
+			'slug' => 'eat'
+			),
 		'capability_type'     => 'post',
 		'supports'            => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions', 'page-attributes', 'post-formats')
 	);
@@ -257,14 +274,7 @@ function register_restaurants_post_type() {
 
 add_action( 'init', 'register_restaurants_post_type' );
 
-/**
-* Registers a new post type
-* @uses $wp_post_types Inserts new post type object into the list
-*
-* @param string  Post type key, must not exceed 20 characters
-* @param array|string  See optional args description above.
-* @return object|WP_Error the registered post type object, or an error object
-*/
+//Packages Post Type
 function register_packages_post_type() {
 
 	$labels = array(
@@ -349,5 +359,16 @@ function customize_admin_bar( $wp_admin_bar ) {
 	$wp_admin_bar->remove_node('wp-logo');
 	$wp_admin_bar->remove_node('comments');
 }
+
+function custom_meta_box_markup() {
+    echo "<p>Contents</p>";
+}
+
+function add_custom_meta_box() {
+    add_meta_box("demo-meta-box", "Custom Meta Box", "custom_meta_box_markup", "attractions", "side", "default", null);
+}
+
+add_action("add_meta_boxes", "add_custom_meta_box");
+
 
 ?>
