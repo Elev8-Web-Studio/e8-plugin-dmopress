@@ -191,6 +191,10 @@ class MySettingsPage {
     }
 }
 
+if(is_admin()){
+    $tourismhub_settings_page = new MySettingsPage();
+}
+
 
 function pu_display_setting($args)
 {
@@ -212,8 +216,4 @@ function pu_display_setting($args)
 
 function isAnalytics($str){
     return preg_match('/^ua-\d{4,9}-\d{1,4}$/i', strval($str)) ? true : false;
-}
-
-if(is_admin()){
-    $tourismhub_settings_page = new MySettingsPage();
 }

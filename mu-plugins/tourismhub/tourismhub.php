@@ -21,6 +21,9 @@ define('TOURISMHUB_PLUGIN_NAME', trim(dirname(TOURISMHUB_PLUGIN_BASENAME), '/' )
 define('TOURISMHUB_PLUGIN_DIR', untrailingslashit(dirname( TOURISMHUB_PLUGIN )));
 define('TOURISMHUB_PLUGIN_MODULES_DIR', TOURISMHUB_PLUGIN_DIR . '/modules');
 
+// Settings
+require_once TOURISMHUB_PLUGIN_DIR . '/settings.php';
+
 // Custom Post Types
 require_once TOURISMHUB_PLUGIN_DIR . '/post-type-news.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/post-type-events.php';
@@ -34,6 +37,6 @@ require_once TOURISMHUB_PLUGIN_DIR . '/admin-dashboard.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-menu.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-bar.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-footer.php';
-require_once TOURISMHUB_PLUGIN_DIR . '/options-page.php';
+
 
 ?>

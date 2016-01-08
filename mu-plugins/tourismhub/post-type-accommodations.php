@@ -39,7 +39,7 @@ function register_accommodations_post_type() {
 			'slug' => 'stay'
 			),
 		'capability_type'     => 'post',
-		'supports'            => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments','revisions', 'page-attributes', 'post-formats')
+		'supports'            => array('title', 'editor', 'thumbnail'),
 	);
 
 	register_post_type( 'accommodations', $args );

@@ -78,7 +78,7 @@ function register_restaurants_post_type() {
 			'slug' => 'eat'
 			),
 		'capability_type'     => 'post',
-		'supports'            => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments', 'revisions', 'page-attributes', 'post-formats')
+		'supports'            => array('title', 'editor', 'thumbnail'),
 	);
 
 	register_post_type( 'restaurants', $args );
