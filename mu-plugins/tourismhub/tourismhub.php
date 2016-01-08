@@ -21,8 +21,14 @@ define('TOURISMHUB_PLUGIN_NAME', trim(dirname(TOURISMHUB_PLUGIN_BASENAME), '/' )
 define('TOURISMHUB_PLUGIN_DIR', untrailingslashit(dirname( TOURISMHUB_PLUGIN )));
 define('TOURISMHUB_PLUGIN_MODULES_DIR', TOURISMHUB_PLUGIN_DIR . '/modules');
 
+// Functions Library
+require_once TOURISMHUB_PLUGIN_DIR . '/functions-global.php';
+
 // Settings
 require_once TOURISMHUB_PLUGIN_DIR . '/settings.php';
+
+// Actions
+require_once TOURISMHUB_PLUGIN_DIR . '/actions-global.php';
 
 // Custom Post Types
 require_once TOURISMHUB_PLUGIN_DIR . '/post-type-news.php';
@@ -38,5 +44,8 @@ require_once TOURISMHUB_PLUGIN_DIR . '/admin-menu.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-bar.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-footer.php';
 
+
+// Integration Modules
+require_once TOURISMHUB_PLUGIN_DIR . '/integration-google-analytics.php';
 
 ?>

@@ -9,8 +9,7 @@ class MySettingsPage {
     /**
      * Start up
      */
-    public function __construct()
-    {
+    public function __construct() {
         add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
         add_action( 'admin_init', array( $this, 'page_init' ) );
     }
@@ -18,8 +17,7 @@ class MySettingsPage {
     /**
      * Add options page
      */
-    public function add_plugin_page()
-    {
+    public function add_plugin_page() {
         // This page will be under "Settings"
         add_options_page(
             'TourismHub Settings', 
@@ -33,10 +31,9 @@ class MySettingsPage {
     /**
      * Options page callback
      */
-    public function create_admin_page()
-    {
+    public function create_admin_page() {
         // Set class property
-        $this->options = get_option( 'tourismhub_option_name' );
+        $this->options = get_option( 'tourismhub_option' );
         ?>
         <div class="wrap">
             <h2>TourismHub Settings</h2>           
@@ -44,7 +41,7 @@ class MySettingsPage {
             <?php
                 // This prints out all hidden setting fields
                 settings_fields( 'tourismhub_option_group' );   
-                do_settings_sections( 'my-setting-admin' );
+                do_settings_sections( 'tourismhub-setting-admin' );
                 submit_button(); 
             ?>
             </form>
@@ -58,7 +55,7 @@ class MySettingsPage {
     public function page_init() {        
         register_setting(
             'tourismhub_option_group', // Option group
-            'tourismhub_option_name', // Option name
+            'tourismhub_option', // Option name
             array( $this, 'sanitize' ) // Sanitize
         );
 
@@ -66,14 +63,14 @@ class MySettingsPage {
             'setting_section_id', // ID
             'My Custom Settings', // Title
             array( $this, 'print_section_info' ), // Callback
-            'my-setting-admin' // Page
+            'tourismhub-setting-admin' // Page
         );
 
         add_settings_field(
             'id_number', // ID
             'ID Number', // Title 
             array( $this, 'id_number_callback' ), // Callback
-            'my-setting-admin', // Page
+            'tourismhub-setting-admin', // Page
             'setting_section_id' // Section           
         );      
 
@@ -81,7 +78,7 @@ class MySettingsPage {
             'title', 
             'Title', 
             array( $this, 'title_callback' ), 
-            'my-setting-admin', 
+            'tourismhub-setting-admin', 
             'setting_section_id'
         );
 
@@ -89,44 +86,22 @@ class MySettingsPage {
             'tourismhub_settings_section_thirdparty', // ID
             'Third-Party Integration Settings', // Title
             array( $this, 'print_section_info' ), // Callback
-            'my-setting-admin' // Page
+            'tourismhub-setting-admin' // Page
         );
 
         add_settings_field(
             'google_analytics_id', 
             'Google Analytics Tracking ID', 
-            array( $this, 'pu_display_setting' ), 
-            'my-setting-admin', 
+            array( $this, 'google_analytics_callback' ), 
+            'tourismhub-setting-admin', 
             'tourismhub_settings_section_thirdparty',
             array(
-              'type'      => 'text',
-              'id'        => 'pu_textbox',
-              'name'      => 'pu_textbox',
-              'desc'      => 'Tracking code should be in format UA-######-##',
-              'std'       => '',
-              'label_for' => 'pu_textbox',
-              'class'     => 'css_class'
+              'desc'      => 'Tracking code should be in format UA-000000-0',
             )
         );
     }
 
-    public function pu_display_setting($args)
-{
-    extract( $args );
 
-    $option_name = 'pu_theme_options';
-
-    $options = get_option( $option_name );
-
-    switch ( $type ) {  
-          case 'text':  
-              $options[$id] = stripslashes($options[$id]);  
-              $options[$id] = esc_attr( $options[$id]);  
-              echo "<input class='regular-text$class' type='text' id='$id' name='" . $option_name . "[$id]' value='$options[$id]' />";  
-              echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";  
-          break;  
-    }
-}
 
     /**
      * Sanitize each setting field as needed
@@ -145,8 +120,8 @@ class MySettingsPage {
 
         if(isset($input['google_analytics'])) {
             $new_input['google_analytics'] = strtoupper(sanitize_text_field($input['google_analytics']));
-            if(!isAnalytics($new_input['google_analytics'])){
-                add_settings_error('google_analytics','google-analytics','This is not a valid Google Analytics Code. Code should be in the format UA-######-##');
+            if(!isValidGoogleAnalyticsID($new_input['google_analytics'])){
+                add_settings_error('google_analytics','google-analytics','<strong>Configuration Error:</strong> This is not a valid Google Analytics Code. Code should be in the format UA-000000-0');
             } 
         }
 
@@ -157,7 +132,7 @@ class MySettingsPage {
      * Print the Section text
      */
     public function print_section_info() {
-        print 'Section text';
+        //print 'TourismHub integrates with ';
     }
 
     /** 
@@ -165,7 +140,7 @@ class MySettingsPage {
      */
     public function id_number_callback() {
         printf(
-            '<input type="text" id="id_number" name="tourismhub_option_name[id_number]" value="%s" />',
+            '<input type="text" id="id_number" name="tourismhub_option[id_number]" value="%s" />',
             isset( $this->options['id_number'] ) ? esc_attr( $this->options['id_number']) : ''
         );
     }
@@ -175,7 +150,7 @@ class MySettingsPage {
      */
     public function title_callback() {
         printf(
-            '<input type="text" id="title" name="tourismhub_option_name[title]" value="%s" />',
+            '<input type="text" id="title" name="tourismhub_option[title]" value="%s" />',
             isset( $this->options['title'] ) ? esc_attr( $this->options['title']) : ''
         );
     }
@@ -183,37 +158,29 @@ class MySettingsPage {
     /** 
      * Get the settings option array and print one of its values
      */
-    public function google_analytics_callback() {
+    public function google_analytics_callback($args) {
+        extract($args);
+
         printf(
-            '<input type="text" id="google-analytics" name="tourismhub_option_name[google_analytics]" value="%s" />',
+            '<input type="text" id="google-analytics" name="tourismhub_option[google_analytics]" value="%s" placeholder="UA-000000-0" />',
             isset( $this->options['google_analytics'] ) ? esc_attr( $this->options['google_analytics']) : ''
+        );
+
+        if(isset( $this->options['google_analytics'])) {
+          if(!isValidGoogleAnalyticsID(esc_attr($this->options['google_analytics']))){
+            printf('&nbsp;&nbsp;<div style="display: inline; font-size: 13px; color: White; background-color: #cc0000; padding: 4px 10px 4px 10px; border-radius: 2px; font-weight: bold;">Missing or invalid Google Analytics ID</div>');
+          } else {
+            printf('&nbsp;&nbsp;<div style="display: inline; font-size: 13px; color: White; background-color: Green; padding: 4px 10px 4px 10px; border-radius: 2px; font-weight: bold;">&#10004; OK</div>');
+          }
+          
+        }
+
+        printf(
+          ($desc != '') ? "<br /><span class='description'>$desc</span>" : ""
         );
     }
 }
 
 if(is_admin()){
     $tourismhub_settings_page = new MySettingsPage();
-}
-
-
-function pu_display_setting($args)
-{
-    extract( $args );
-
-    $option_name = 'pu_theme_options';
-
-    $options = get_option( $option_name );
-
-    switch ( $type ) {  
-          case 'text':  
-              $options[$id] = stripslashes($options[$id]);  
-              $options[$id] = esc_attr( $options[$id]);  
-              echo "<input class='regular-text$class' type='text' id='$id' name='" . $option_name . "[$id]' value='$options[$id]' />";  
-              echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";  
-          break;  
-    }
-}
-
-function isAnalytics($str){
-    return preg_match('/^ua-\d{4,9}-\d{1,4}$/i', strval($str)) ? true : false;
 }
