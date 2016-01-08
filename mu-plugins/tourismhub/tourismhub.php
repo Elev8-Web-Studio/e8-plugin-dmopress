@@ -5,11 +5,11 @@
  */
 /*
 Plugin Name: TourismHub
-Plugin URI: http://jasonpomerleau.com
+Plugin URI: http://tourismhub.io
 Description: This plugin powers the TourismHub platform. Do not deactivate or remove it.
 Author: Jason Pomerleau
 Version: 0.1
-Author URI: http://jasonpomerleau.com
+Author URI: http://tourismhub.io
 */
 
 // Prevent external script access
@@ -34,8 +34,6 @@ require_once TOURISMHUB_PLUGIN_DIR . '/admin-dashboard.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-menu.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-bar.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-footer.php';
-
-
-
+require_once TOURISMHUB_PLUGIN_DIR . '/options-page.php';
 
 ?>
