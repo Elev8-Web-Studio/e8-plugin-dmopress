@@ -78,15 +78,6 @@ class MySettingsPage {
         );      
 
         add_settings_field(
-            'google_analytics_id', 
-            'Google Analytics ID', 
-            array( $this, 'title_callback' ), 
-            'my-setting-admin', 
-            'setting_section_id',
-            array( 'label_for' => 'google_analytics_id' )
-        );
-
-        add_settings_field(
             'title', 
             'Title', 
             array( $this, 'title_callback' ), 
@@ -99,7 +90,16 @@ class MySettingsPage {
             'Third-Party Integration Settings', // Title
             array( $this, 'print_section_info' ), // Callback
             'my-setting-admin' // Page
-        );  
+        );
+
+        add_settings_field(
+            'google_analytics_id', 
+            'Google Analytics ID', 
+            array( $this, 'google_analytics_callback' ), 
+            'my-setting-admin', 
+            'tourismhub_settings_section_thirdparty',
+            array( 'label_for' => 'google_analytics_id' )
+        );
     }
 
     /**
@@ -109,11 +109,20 @@ class MySettingsPage {
      */
     public function sanitize( $input ) {
         $new_input = array();
-        if( isset( $input['id_number'] ) )
+        if( isset( $input['id_number'] ) ){
             $new_input['id_number'] = absint( $input['id_number'] );
+        }
 
-        if( isset( $input['title'] ) )
+        if( isset( $input['title'] ) ){
             $new_input['title'] = sanitize_text_field( $input['title'] );
+        }
+
+        if(isset($input['google_analytics'])) {
+            $new_input['google_analytics'] = strtoupper(sanitize_text_field($input['google_analytics']));
+            if(!isAnalytics($new_input['google_analytics'])){
+                add_settings_error('google_analytics','google-analytics','This is not a valid Google Analytics Code. Code should be in the format UA-######-##');
+            } 
+        }
 
         return $new_input;
     }
@@ -142,6 +151,16 @@ class MySettingsPage {
         printf(
             '<input type="text" id="title" name="tourismhub_option_name[title]" value="%s" />',
             isset( $this->options['title'] ) ? esc_attr( $this->options['title']) : ''
+        );
+    }
+
+    /** 
+     * Get the settings option array and print one of its values
+     */
+    public function google_analytics_callback() {
+        printf(
+            '<input type="text" id="google-analytics" name="tourismhub_option_name[google_analytics]" value="%s" />',
+            isset( $this->options['google_analytics'] ) ? esc_attr( $this->options['google_analytics']) : ''
         );
     }
 }
