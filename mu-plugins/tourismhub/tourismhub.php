@@ -20,12 +20,10 @@ define('TOURISMHUB_PLUGIN_BASENAME', plugin_basename(TOURISMHUB_PLUGIN));
 define('TOURISMHUB_PLUGIN_NAME', trim(dirname(TOURISMHUB_PLUGIN_BASENAME), '/' ));
 define('TOURISMHUB_PLUGIN_DIR', untrailingslashit(dirname( TOURISMHUB_PLUGIN )));
 define('TOURISMHUB_PLUGIN_MODULES_DIR', TOURISMHUB_PLUGIN_DIR . '/modules');
+define('TOURISMHUB_PLUGIN_STYLESHEETS_DIR', TOURISMHUB_PLUGIN_DIR . '/css');
 
 // Functions Library
 require_once TOURISMHUB_PLUGIN_DIR . '/functions-global.php';
-
-// Settings
-require_once TOURISMHUB_PLUGIN_DIR . '/settings.php';
 
 // Actions
 require_once TOURISMHUB_PLUGIN_DIR . '/actions-global.php';
@@ -39,6 +37,7 @@ require_once TOURISMHUB_PLUGIN_DIR . '/post-type-restaurants.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/post-type-packages.php';
 
 // Administration Customizations
+require_once TOURISMHUB_PLUGIN_DIR . '/admin-settings.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-dashboard.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-menu.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-bar.php';

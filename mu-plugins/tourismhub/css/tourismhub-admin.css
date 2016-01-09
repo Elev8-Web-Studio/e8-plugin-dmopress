@@ -1,0 +1,21 @@
+.tourismhub-admin-badge-good {
+	display: inline;
+	font-size: 13px;
+	color: White;
+	background-color: Green;
+	padding: 4px 7px 4px 7px;
+	border-radius: 2px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.tourismhub-admin-badge-bad {
+	display: inline;
+	font-size: 13px;
+	color: White;
+	background-color: #cc0000;
+	padding: 4px 7px 4px 7px;
+	border-radius: 2px;
+	font-weight: bold;
+	margin-left: 10px;
+}

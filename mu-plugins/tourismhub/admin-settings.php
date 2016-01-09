@@ -1,5 +1,6 @@
 <?php 
 
+// Main Settings Page
 class MySettingsPage {
     /**
      * Holds the values to be used in the fields callbacks
@@ -84,7 +85,7 @@ class MySettingsPage {
 
         add_settings_section(
             'tourismhub_settings_section_thirdparty', // ID
-            'Third-Party Integration Settings', // Title
+            'Google Analytics Settings', // Title
             array( $this, 'print_section_info' ), // Callback
             'tourismhub-setting-admin' // Page
         );
@@ -100,8 +101,6 @@ class MySettingsPage {
             )
         );
     }
-
-
 
     /**
      * Sanitize each setting field as needed
@@ -168,9 +167,9 @@ class MySettingsPage {
 
         if(isset( $this->options['google_analytics'])) {
           if(!isValidGoogleAnalyticsID(esc_attr($this->options['google_analytics']))){
-            printf('&nbsp;&nbsp;<div style="display: inline; font-size: 13px; color: White; background-color: #cc0000; padding: 4px 10px 4px 10px; border-radius: 2px; font-weight: bold;">Missing or invalid Google Analytics ID</div>');
+            printf('<div class="tourismhub-admin-badge-bad">&#9664; &nbsp;Missing or invalid Google Analytics Tracking ID</div>');
           } else {
-            printf('&nbsp;&nbsp;<div style="display: inline; font-size: 13px; color: White; background-color: Green; padding: 4px 10px 4px 10px; border-radius: 2px; font-weight: bold;">&#10004; OK</div>');
+            printf('<div class="tourismhub-admin-badge-good">&#10004; OK</div>');
           }
           
         }
@@ -181,6 +180,12 @@ class MySettingsPage {
     }
 }
 
+function tourismhub_admin_enqueue_style() {
+        $pluginurl = plugins_url( 'css/tourismhub-admin.css', __FILE__ );
+        wp_enqueue_style( 'tourismhub-admin', $pluginurl, false );
+    }
+
 if(is_admin()){
+    add_action( 'admin_enqueue_scripts', 'tourismhub_admin_enqueue_style' );
     $tourismhub_settings_page = new MySettingsPage();
 }

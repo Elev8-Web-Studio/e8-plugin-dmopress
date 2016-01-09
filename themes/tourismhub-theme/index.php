@@ -9,8 +9,8 @@
 </head>
 <body>
 
-	<h1>Welcome!</h1>
-	<p>This is a new app build with TourismHub.</p>
+<h1>Welcome!</h1>
+<p>This is a new app build with TourismHub.</p>
 
 <?php wp_footer(); ?>
 </body>
