@@ -92,7 +92,7 @@ class MySettingsPage {
 
         add_settings_field(
             'google_analytics_id', 
-            'Google Analytics Tracking ID', 
+            'Tracking ID', 
             array( $this, 'google_analytics_callback' ), 
             'tourismhub-setting-admin', 
             'tourismhub_settings_section_thirdparty',
