@@ -52,38 +52,52 @@ add_action( 'init', 'register_attractions_post_type' );
 /**
  * Adds a box to the main column on the Post and Page edit screens.
  */
-function myplugin_add_meta_box() {
+function tourismhub_attraction_add_meta_box() {
     add_meta_box(
         'attraction_location_section',
         __('Location', 'tourismhub_textdomain'),
-        'attraction_meta_box_callback',
+        'tourismhub_attraction_meta_box_callback',
         'attractions',
         'normal',
         'high'
     );
 }
-add_action( 'add_meta_boxes_attractions', 'myplugin_add_meta_box' );
+add_action( 'add_meta_boxes_attractions', 'tourismhub_attraction_add_meta_box' );
 
 /**
  * Prints the box content.
  * 
  * @param WP_Post $post The object for the current post/page.
  */
-function attraction_meta_box_callback($post) {
+function tourismhub_attraction_meta_box_callback($post) {
 
     // Add a nonce field so we can check for it later.
-    wp_nonce_field( 'myplugin_save_meta_box_data', 'myplugin_meta_box_nonce' );
+    wp_nonce_field( 'tourismhub_attraction_save_meta_box_data', 'tourismhub_attraction_meta_box_nonce' );
 
     /*
      * Use get_post_meta() to retrieve an existing value
      * from the database and use the value for the form.
      */
-    $value = get_post_meta( $post->ID, '_my_meta_value_key', true );
+    $value = get_post_meta( $post->ID, 'attraction_address', true );
 
     echo '<label for="attraction_address">';
     _e( 'Address: ', 'tourismhub_textdomain' );
     echo '</label> ';
     echo '<input type="text" id="attraction_address" name="attraction_address" value="' . esc_attr( $value ) . '" size="25" />';
+
+    $value = get_post_meta( $post->ID, 'attraction_city', true );
+
+    echo '<label for="attraction_city">';
+    _e( 'City: ', 'tourismhub_textdomain' );
+    echo '</label> ';
+    echo '<input type="text" id="attraction_city" name="attraction_city" value="' . esc_attr( $value ) . '" size="25" />';
+
+    $value = get_post_meta( $post->ID, 'attraction_zip', true );
+
+    echo '<label for="attraction_zip">';
+    _e( 'Postal/ZIP Code: ', 'tourismhub_textdomain' );
+    echo '</label> ';
+    echo '<input type="text" id="attraction_zip" name="attraction_zip" value="' . esc_attr( $value ) . '" size="25" />';
 }
 
 /**
@@ -91,7 +105,7 @@ function attraction_meta_box_callback($post) {
  *
  * @param int $post_id The ID of the post being saved.
  */
-function myplugin_save_meta_box_data($post_id) {
+function tourismhub_attraction_save_meta_box_data($post_id) {
 
     /*
      * We need to verify this came from our screen and with proper authorization,
@@ -99,12 +113,12 @@ function myplugin_save_meta_box_data($post_id) {
      */
 
     // Check if our nonce is set.
-    if ( ! isset( $_POST['myplugin_meta_box_nonce'] ) ) {
+    if ( ! isset( $_POST['tourismhub_attraction_meta_box_nonce'] ) ) {
         return;
     }
 
     // Verify that the nonce is valid.
-    if ( ! wp_verify_nonce( $_POST['myplugin_meta_box_nonce'], 'myplugin_save_meta_box_data' ) ) {
+    if ( ! wp_verify_nonce( $_POST['tourismhub_attraction_meta_box_nonce'], 'tourismhub_attraction_save_meta_box_data' ) ) {
         return;
     }
 
@@ -131,10 +145,22 @@ function myplugin_save_meta_box_data($post_id) {
         return;
     }
 
+    if ( ! isset( $_POST['attraction_city'] ) ) {
+        return;
+    }
+
+    if ( ! isset( $_POST['attraction_zip'] ) ) {
+        return;
+    }
+
     // Sanitize user input.
-    $my_data = sanitize_text_field($_POST['attraction_address']);
+    $attraction_address = sanitize_text_field($_POST['attraction_address']);
+    $attraction_city = sanitize_text_field($_POST['attraction_city']);
+    $attraction_zip = sanitize_text_field($_POST['attraction_zip']);
 
     // Update the meta field in the database.
-    update_post_meta($post_id, '_my_meta_value_key', $my_data);
+    update_post_meta($post_id, 'attraction_address', $attraction_address);
+    update_post_meta($post_id, 'attraction_city', $attraction_city);
+    update_post_meta($post_id, 'attraction_zip', $attraction_zip);
 }
-add_action('save_post', 'myplugin_save_meta_box_data');
+add_action('save_post', 'tourismhub_attraction_save_meta_box_data');
