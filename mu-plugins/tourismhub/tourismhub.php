@@ -44,9 +44,5 @@ require_once TOURISMHUB_PLUGIN_DIR . '/admin-menu.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-bar.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-footer.php';
 
-
-
 // Integration Modules
 require_once TOURISMHUB_PLUGIN_DIR . '/integration-google-analytics.php';
-
-?>

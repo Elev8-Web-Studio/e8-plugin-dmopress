@@ -22,5 +22,3 @@ function printGoogleAnalyticsCodeIfPresent(){
 }
 
 add_action('wp_head', 'printGoogleAnalyticsCodeIfPresent');
-
-?>

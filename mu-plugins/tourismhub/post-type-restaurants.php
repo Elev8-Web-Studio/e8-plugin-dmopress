@@ -4,20 +4,20 @@
 function restaurant_categories() {
 
 	$labels = array(
-		'name'					=> _x( 'Restaurant Categories', 'Restaurant categories', 'text-domain' ),
-		'singular_name'			=> _x( 'Restaurant Category', 'Restaurant category', 'text-domain' ),
-		'search_items'			=> __( 'Search Restaurant Categories', 'text-domain' ),
-		'popular_items'			=> __( 'Popular Restaurant Categories', 'text-domain' ),
-		'all_items'				=> __( 'All Restaurant Categories', 'text-domain' ),
-		'parent_item'			=> __( 'Parent Restaurant Category', 'text-domain' ),
-		'parent_item_colon'		=> __( 'Parent Restaurant Category', 'text-domain' ),
-		'edit_item'				=> __( 'Edit Restaurant Category', 'text-domain' ),
-		'update_item'			=> __( 'Update Restaurant Category', 'text-domain' ),
-		'add_new_item'			=> __( 'Add New Restaurant Category', 'text-domain' ),
-		'new_item_name'			=> __( 'New Restaurant Category Name', 'text-domain' ),
-		'add_or_remove_items'	=> __( 'Add or remove Restaurant Categories', 'text-domain' ),
-		'choose_from_most_used'	=> __( 'Choose from most used text-domain', 'text-domain' ),
-		'menu_name'				=> __( 'Restaurant Categories', 'text-domain' ),
+		'name'					=> _x( 'Restaurant Categories', 'Restaurant categories', 'tourismhub_textdomain' ),
+		'singular_name'			=> _x( 'Restaurant Category', 'Restaurant category', 'tourismhub_textdomain' ),
+		'search_items'			=> __( 'Search Restaurant Categories', 'tourismhub_textdomain' ),
+		'popular_items'			=> __( 'Popular Restaurant Categories', 'tourismhub_textdomain' ),
+		'all_items'				=> __( 'All Restaurant Categories', 'tourismhub_textdomain' ),
+		'parent_item'			=> __( 'Parent Restaurant Category', 'tourismhub_textdomain' ),
+		'parent_item_colon'		=> __( 'Parent Restaurant Category', 'tourismhub_textdomain' ),
+		'edit_item'				=> __( 'Edit Restaurant Category', 'tourismhub_textdomain' ),
+		'update_item'			=> __( 'Update Restaurant Category', 'tourismhub_textdomain' ),
+		'add_new_item'			=> __( 'Add New Restaurant Category', 'tourismhub_textdomain' ),
+		'new_item_name'			=> __( 'New Restaurant Category Name', 'tourismhub_textdomain' ),
+		'add_or_remove_items'	=> __( 'Add or remove Restaurant Categories', 'tourismhub_textdomain' ),
+		'choose_from_most_used'	=> __( 'Choose from most used text-domain', 'tourismhub_textdomain' ),
+		'menu_name'				=> __( 'Restaurant Categories', 'tourismhub_textdomain' ),
 	);
 
 	$args = array(
@@ -43,18 +43,18 @@ add_action( 'init', 'restaurant_categories' );
 function register_restaurants_post_type() {
 
 	$labels = array(
-		'name'                => __( 'Restaurants', 'text-domain' ),
-		'singular_name'       => __( 'Restaurant', 'text-domain' ),
-		'add_new'             => _x( 'Add New Restaurant', 'text-domain', 'text-domain' ),
-		'add_new_item'        => __( 'Add New Restaurant', 'text-domain' ),
-		'edit_item'           => __( 'Edit Restaurant', 'text-domain' ),
-		'new_item'            => __( 'New Restaurant', 'text-domain' ),
-		'view_item'           => __( 'View Restaurant', 'text-domain' ),
-		'search_items'        => __( 'Search Restaurants', 'text-domain' ),
-		'not_found'           => __( 'No Restaurants found', 'text-domain' ),
-		'not_found_in_trash'  => __( 'No Restaurants found in Trash', 'text-domain' ),
-		'parent_item_colon'   => __( 'Parent Restaurant:', 'text-domain' ),
-		'menu_name'           => __( 'Restaurants', 'text-domain' ),
+		'name'                => __( 'Restaurants', 'tourismhub_textdomain' ),
+		'singular_name'       => __( 'Restaurant', 'tourismhub_textdomain' ),
+		'add_new'             => _x( 'Add New Restaurant', 'tourismhub_textdomain', 'tourismhub_textdomain' ),
+		'add_new_item'        => __( 'Add New Restaurant', 'tourismhub_textdomain' ),
+		'edit_item'           => __( 'Edit Restaurant', 'tourismhub_textdomain' ),
+		'new_item'            => __( 'New Restaurant', 'tourismhub_textdomain' ),
+		'view_item'           => __( 'View Restaurant', 'tourismhub_textdomain' ),
+		'search_items'        => __( 'Search Restaurants', 'tourismhub_textdomain' ),
+		'not_found'           => __( 'No Restaurants found', 'tourismhub_textdomain' ),
+		'not_found_in_trash'  => __( 'No Restaurants found in Trash', 'tourismhub_textdomain' ),
+		'parent_item_colon'   => __( 'Parent Restaurant:', 'tourismhub_textdomain' ),
+		'menu_name'           => __( 'Restaurants', 'tourismhub_textdomain' ),
 	);
 
 	$args = array(

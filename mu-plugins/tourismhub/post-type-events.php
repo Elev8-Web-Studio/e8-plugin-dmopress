@@ -4,18 +4,18 @@
 function register_events_post_type() {
 
 	$labels = array(
-		'name'                => __( 'Events', 'text-domain' ),
-		'singular_name'       => __( 'Event', 'text-domain' ),
-		'add_new'             => _x( 'Add New Event', 'text-domain', 'text-domain' ),
-		'add_new_item'        => __( 'Add New Event', 'text-domain' ),
-		'edit_item'           => __( 'Edit Event', 'text-domain' ),
-		'new_item'            => __( 'New Event', 'text-domain' ),
-		'view_item'           => __( 'View Event', 'text-domain' ),
-		'search_items'        => __( 'Search Events', 'text-domain' ),
-		'not_found'           => __( 'No Events found', 'text-domain' ),
-		'not_found_in_trash'  => __( 'No Events found in Trash', 'text-domain' ),
-		'parent_item_colon'   => __( 'Parent Event:', 'text-domain' ),
-		'menu_name'           => __( 'Events', 'text-domain' ),
+		'name'                => __( 'Events', 'tourismhub_textdomain' ),
+		'singular_name'       => __( 'Event', 'tourismhub_textdomain' ),
+		'add_new'             => _x( 'Add New Event', 'tourismhub_textdomain', 'tourismhub_textdomain' ),
+		'add_new_item'        => __( 'Add New Event', 'tourismhub_textdomain' ),
+		'edit_item'           => __( 'Edit Event', 'tourismhub_textdomain' ),
+		'new_item'            => __( 'New Event', 'tourismhub_textdomain' ),
+		'view_item'           => __( 'View Event', 'tourismhub_textdomain' ),
+		'search_items'        => __( 'Search Events', 'tourismhub_textdomain' ),
+		'not_found'           => __( 'No Events found', 'tourismhub_textdomain' ),
+		'not_found_in_trash'  => __( 'No Events found in Trash', 'tourismhub_textdomain' ),
+		'parent_item_colon'   => __( 'Parent Event:', 'tourismhub_textdomain' ),
+		'menu_name'           => __( 'Events', 'tourismhub_textdomain' ),
 	);
 
 	$args = array(

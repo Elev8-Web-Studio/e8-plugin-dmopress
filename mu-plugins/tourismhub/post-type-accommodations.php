@@ -4,18 +4,18 @@
 function register_accommodations_post_type() {
 
 	$labels = array(
-		'name'                => __( 'Accommodations', 'text-domain' ),
-		'singular_name'       => __( 'Accommodation', 'text-domain' ),
-		'add_new'             => _x( 'Add New Accommodation', 'text-domain', 'text-domain' ),
-		'add_new_item'        => __( 'Add New Accommodation', 'text-domain' ),
-		'edit_item'           => __( 'Edit Accommodation', 'text-domain' ),
-		'new_item'            => __( 'New Accommodation', 'text-domain' ),
-		'view_item'           => __( 'View Accommodation', 'text-domain' ),
-		'search_items'        => __( 'Search Accommodations', 'text-domain' ),
-		'not_found'           => __( 'No Accommodations found', 'text-domain' ),
-		'not_found_in_trash'  => __( 'No Accommodations found in Trash', 'text-domain' ),
-		'parent_item_colon'   => __( 'Parent Accommodation:', 'text-domain' ),
-		'menu_name'           => __( 'Accommodations', 'text-domain' ),
+		'name'                => __( 'Accommodations', 'tourismhub_textdomain' ),
+		'singular_name'       => __( 'Accommodation', 'tourismhub_textdomain' ),
+		'add_new'             => _x( 'Add New Accommodation', 'tourismhub_textdomain', 'tourismhub_textdomain' ),
+		'add_new_item'        => __( 'Add New Accommodation', 'tourismhub_textdomain' ),
+		'edit_item'           => __( 'Edit Accommodation', 'tourismhub_textdomain' ),
+		'new_item'            => __( 'New Accommodation', 'tourismhub_textdomain' ),
+		'view_item'           => __( 'View Accommodation', 'tourismhub_textdomain' ),
+		'search_items'        => __( 'Search Accommodations', 'tourismhub_textdomain' ),
+		'not_found'           => __( 'No Accommodations found', 'tourismhub_textdomain' ),
+		'not_found_in_trash'  => __( 'No Accommodations found in Trash', 'tourismhub_textdomain' ),
+		'parent_item_colon'   => __( 'Parent Accommodation:', 'tourismhub_textdomain' ),
+		'menu_name'           => __( 'Accommodations', 'tourismhub_textdomain' ),
 	);
 
 	$args = array(

@@ -8,9 +8,5 @@ function customize_admin_menu() {
 	// Remove Comments Link
 	remove_menu_page('edit-comments.php');
 
-	// Remove Updates link
-	global $submenu;  
-	unset($submenu['index.php'][10]);
-	return $submenu;
 }
 add_action('admin_menu', 'customize_admin_menu');

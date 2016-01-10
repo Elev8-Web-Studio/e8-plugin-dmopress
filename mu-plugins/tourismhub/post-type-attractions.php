@@ -4,18 +4,18 @@
 function register_attractions_post_type() {
 
 	$labels = array(
-		'name'                => __( 'Attractions', 'text-domain' ),
-		'singular_name'       => __( 'Attraction', 'text-domain' ),
-		'add_new'             => _x( 'Add New Attraction', 'text-domain', 'text-domain' ),
-		'add_new_item'        => __( 'Add New Attraction', 'text-domain' ),
-		'edit_item'           => __( 'Edit Attraction', 'text-domain' ),
-		'new_item'            => __( 'New Attraction', 'text-domain' ),
-		'view_item'           => __( 'View Attraction', 'text-domain' ),
-		'search_items'        => __( 'Search Attractions', 'text-domain' ),
-		'not_found'           => __( 'No Attractions found', 'text-domain' ),
-		'not_found_in_trash'  => __( 'No Attractions found in Trash', 'text-domain' ),
-		'parent_item_colon'   => __( 'Parent Attraction:', 'text-domain' ),
-		'menu_name'           => __( 'Attractions', 'text-domain' ),
+		'name'                => __( 'Attractions', 'tourismhub_textdomain' ),
+		'singular_name'       => __( 'Attraction', 'tourismhub_textdomain' ),
+		'add_new'             => __( 'Add New Attraction', 'tourismhub_textdomain', 'tourismhub_textdomain' ),
+		'add_new_item'        => __( 'Add New Attraction', 'tourismhub_textdomain' ),
+		'edit_item'           => __( 'Edit Attraction', 'tourismhub_textdomain' ),
+		'new_item'            => __( 'New Attraction', 'tourismhub_textdomain' ),
+		'view_item'           => __( 'View Attraction', 'tourismhub_textdomain' ),
+		'search_items'        => __( 'Search Attractions', 'tourismhub_textdomain' ),
+		'not_found'           => __( 'No Attractions found', 'tourismhub_textdomain' ),
+		'not_found_in_trash'  => __( 'No Attractions found in Trash', 'tourismhub_textdomain' ),
+		'parent_item_colon'   => __( 'Parent Attraction:', 'tourismhub_textdomain' ),
+		'menu_name'           => __( 'Attractions', 'tourismhub_textdomain' ),
 	);
 
 	$args = array(
@@ -47,21 +47,20 @@ function register_attractions_post_type() {
 
 add_action( 'init', 'register_attractions_post_type' );
 
+
+
 /**
  * Adds a box to the main column on the Post and Page edit screens.
  */
 function myplugin_add_meta_box() {
-    $screens = array( 'attractions' );
-    foreach ( $screens as $screen ) {
-        add_meta_box(
-            'myplugin_sectionid',
-            __( 'Location', 'myplugin_textdomain' ),
-            'myplugin_meta_box_callback',
-            $screen,
-            'normal',
-            'high'
-        );
-    }
+    add_meta_box(
+        'attraction_location_section',
+        __('Location', 'tourismhub_textdomain'),
+        'attraction_meta_box_callback',
+        'attractions',
+        'normal',
+        'high'
+    );
 }
 add_action( 'add_meta_boxes_attractions', 'myplugin_add_meta_box' );
 
@@ -70,7 +69,7 @@ add_action( 'add_meta_boxes_attractions', 'myplugin_add_meta_box' );
  * 
  * @param WP_Post $post The object for the current post/page.
  */
-function myplugin_meta_box_callback($post) {
+function attraction_meta_box_callback($post) {
 
     // Add a nonce field so we can check for it later.
     wp_nonce_field( 'myplugin_save_meta_box_data', 'myplugin_meta_box_nonce' );
@@ -82,7 +81,7 @@ function myplugin_meta_box_callback($post) {
     $value = get_post_meta( $post->ID, '_my_meta_value_key', true );
 
     echo '<label for="attraction_address">';
-    _e( 'Address: ', 'myplugin_textdomain' );
+    _e( 'Address: ', 'tourismhub_textdomain' );
     echo '</label> ';
     echo '<input type="text" id="attraction_address" name="attraction_address" value="' . esc_attr( $value ) . '" size="25" />';
 }
@@ -139,5 +138,3 @@ function myplugin_save_meta_box_data($post_id) {
     update_post_meta($post_id, '_my_meta_value_key', $my_data);
 }
 add_action('save_post', 'myplugin_save_meta_box_data');
-
-

@@ -4,18 +4,18 @@
 function register_packages_post_type() {
 
 	$labels = array(
-		'name'                => __( 'Packages', 'text-domain' ),
-		'singular_name'       => __( 'Package', 'text-domain' ),
-		'add_new'             => _x( 'Add New Package', 'text-domain', 'text-domain' ),
-		'add_new_item'        => __( 'Add New Package', 'text-domain' ),
-		'edit_item'           => __( 'Edit Package', 'text-domain' ),
-		'new_item'            => __( 'New Package', 'text-domain' ),
-		'view_item'           => __( 'View Package', 'text-domain' ),
-		'search_items'        => __( 'Search Packages', 'text-domain' ),
-		'not_found'           => __( 'No Packages found', 'text-domain' ),
-		'not_found_in_trash'  => __( 'No Packages found in Trash', 'text-domain' ),
-		'parent_item_colon'   => __( 'Parent Package:', 'text-domain' ),
-		'menu_name'           => __( 'Packages', 'text-domain' ),
+		'name'                => __( 'Packages', 'tourismhub_textdomain' ),
+		'singular_name'       => __( 'Package', 'tourismhub_textdomain' ),
+		'add_new'             => _x( 'Add New Package', 'tourismhub_textdomain', 'tourismhub_textdomain' ),
+		'add_new_item'        => __( 'Add New Package', 'tourismhub_textdomain' ),
+		'edit_item'           => __( 'Edit Package', 'tourismhub_textdomain' ),
+		'new_item'            => __( 'New Package', 'tourismhub_textdomain' ),
+		'view_item'           => __( 'View Package', 'tourismhub_textdomain' ),
+		'search_items'        => __( 'Search Packages', 'tourismhub_textdomain' ),
+		'not_found'           => __( 'No Packages found', 'tourismhub_textdomain' ),
+		'not_found_in_trash'  => __( 'No Packages found in Trash', 'tourismhub_textdomain' ),
+		'parent_item_colon'   => __( 'Parent Package:', 'tourismhub_textdomain' ),
+		'menu_name'           => __( 'Packages', 'tourismhub_textdomain' ),
 	);
 
 	$args = array(
