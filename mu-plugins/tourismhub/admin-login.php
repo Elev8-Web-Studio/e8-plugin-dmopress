@@ -33,7 +33,7 @@ function my_login_logo() { ?>
         #wp-submit {
         	background-color: #ff3b30;
         	border-radius: 0px;
-        	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+        	box-shadow: none;
         }
 
         .wp-core-ui .button-primary {
@@ -46,6 +46,23 @@ function my_login_logo() { ?>
         	text-shadow: none;
         	border-color: #ff3b30;
         }
+
+        .wp-core-ui .button-primary.active, .wp-core-ui .button-primary.active:focus, .wp-core-ui .button-primary.active:hover, .wp-core-ui .button-primary:active, .wp-core-ui .button-primary:focus {
+        	border-color: #ff3b30;
+        }
+
+        #backtoblog {
+        	display: none; 
+        }
+
+        #nav {
+        	float: right;
+        }
+
+        .login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover {
+        	color: #ff3b30;
+        }
+
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
