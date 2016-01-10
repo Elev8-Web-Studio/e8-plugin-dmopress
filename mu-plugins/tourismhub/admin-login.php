@@ -18,6 +18,23 @@ function my_login_logo() { ?>
         	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
         }
 
+        #loginform .input {
+        	border-top: 0px;
+        	border-right: 0px;
+        	border-left: 0px;
+        	border-bottom: 1px solid #cccccc;
+        	background-color: White;
+        	box-shadow: none;
+        	padding: 6px 0px 12px 0px;
+        	transition: border-color .3s;
+        	margin-bottom: 20px;
+        	
+        }
+
+        #loginform .input:focus {
+			border-bottom: 2px solid #ff3b30;
+        }
+
         .login #login_error, .login .message {
         	background-color: #ff3b30;
         	box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
@@ -55,13 +72,16 @@ function my_login_logo() { ?>
         	display: none; 
         }
 
-        #nav {
+        .login #nav {
         	float: right;
+        	padding: 10px 5px 0px 0px;
         }
 
         .login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover {
         	color: #ff3b30;
         }
+
+
 
     </style>
 <?php }
