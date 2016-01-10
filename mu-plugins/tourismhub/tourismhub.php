@@ -38,6 +38,7 @@ require_once TOURISMHUB_PLUGIN_DIR . '/post-type-packages.php';
 
 // Administration Customizations
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-login.php';
+require_once TOURISMHUB_PLUGIN_DIR . '/admin-customizations.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-settings.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-dashboard.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/admin-menu.php';
