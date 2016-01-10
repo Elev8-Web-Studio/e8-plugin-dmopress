@@ -72,6 +72,19 @@ function my_login_logo() { ?>
         	display: none; 
         }
 
+        #rememberme {
+        	border: 2px solid #cccccc;
+        	box-shadow: none;
+        	background-color: White;
+        }
+
+        input[type=checkbox]:checked:before {
+    		content: "\f147";
+    		margin: -4px 0 0 -6px;
+    		color: #ff3b30;
+    		padding: 0px;
+		}
+
         .login #nav {
         	float: right;
         	padding: 10px 5px 0px 0px;
