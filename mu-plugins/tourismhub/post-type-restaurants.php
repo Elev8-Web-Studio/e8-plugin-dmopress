@@ -16,7 +16,7 @@ function restaurant_categories() {
 		'add_new_item'			=> __( 'Add New Restaurant Category', 'tourismhub_textdomain' ),
 		'new_item_name'			=> __( 'New Restaurant Category Name', 'tourismhub_textdomain' ),
 		'add_or_remove_items'	=> __( 'Add or remove Restaurant Categories', 'tourismhub_textdomain' ),
-		'choose_from_most_used'	=> __( 'Choose from most used text-domain', 'tourismhub_textdomain' ),
+		'choose_from_most_used'	=> __( 'Choose from most used categories', 'tourismhub_textdomain' ),
 		'menu_name'				=> __( 'Restaurant Categories', 'tourismhub_textdomain' ),
 	);
 

@@ -1,5 +1,44 @@
 <?php
 
+// Event Categories
+function tourismhub_register_event_categories() {
+
+	$labels = array(
+		'name'					=> _x( 'Event Categories', 'Event Categories', 'tourismhub_textdomain' ),
+		'singular_name'			=> _x( 'Event Category', 'Event Category', 'tourismhub_textdomain' ),
+		'search_items'			=> __( 'Search Event Categories', 'tourismhub_textdomain' ),
+		'popular_items'			=> __( 'Popular Event Categories', 'tourismhub_textdomain' ),
+		'all_items'				=> __( 'All Event Categories', 'tourismhub_textdomain' ),
+		'parent_item'			=> __( 'Parent Event Category', 'tourismhub_textdomain' ),
+		'parent_item_colon'		=> __( 'Parent Event Category', 'tourismhub_textdomain' ),
+		'edit_item'				=> __( 'Edit Event Category', 'tourismhub_textdomain' ),
+		'update_item'			=> __( 'Update Event Category', 'tourismhub_textdomain' ),
+		'add_new_item'			=> __( 'Add New Event Category', 'tourismhub_textdomain' ),
+		'new_item_name'			=> __( 'New Event Category Name', 'tourismhub_textdomain' ),
+		'add_or_remove_items'	=> __( 'Add or remove Event Categories', 'tourismhub_textdomain' ),
+		'choose_from_most_used'	=> __( 'Choose from most used categories', 'tourismhub_textdomain' ),
+		'menu_name'				=> __( 'Event Categories', 'tourismhub_textdomain' ),
+	);
+
+	$args = array(
+		'labels'            => $labels,
+		'public'            => true,
+		'show_in_nav_menus' => true,
+		'show_admin_column' => false,
+		'hierarchical'      => false,
+		'show_tagcloud'     => true,
+		'show_ui'           => true,
+		'query_var'         => true,
+		'rewrite'           => true,
+		'query_var'         => true,
+		'capabilities'      => array(),
+	);
+
+	register_taxonomy( 'event-category', array( 'events' ), $args );
+}
+
+add_action( 'init', 'tourismhub_register_event_categories' );
+
 // Events Post Type
 function register_events_post_type() {
 
@@ -22,7 +61,7 @@ function register_events_post_type() {
 		'labels'              => $labels,
 		'hierarchical'        => false,
 		'description'         => 'description',
-		'taxonomies'          => array('category','post_tag'),
+		'taxonomies'          => array('event-category','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,

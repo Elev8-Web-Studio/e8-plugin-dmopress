@@ -1,5 +1,44 @@
 <?php
 
+// Attraction Categories
+function tourismhub_register_attractions_categories() {
+
+    $labels = array(
+        'name'                  => _x( 'Attraction Categories', 'Attraction Categories', 'tourismhub_textdomain' ),
+        'singular_name'         => _x( 'Attraction Category', 'Attraction Category', 'tourismhub_textdomain' ),
+        'search_items'          => __( 'Search Attraction Categories', 'tourismhub_textdomain' ),
+        'popular_items'         => __( 'Popular Attraction Categories', 'tourismhub_textdomain' ),
+        'all_items'             => __( 'All Attraction Categories', 'tourismhub_textdomain' ),
+        'parent_item'           => __( 'Parent Attraction Category', 'tourismhub_textdomain' ),
+        'parent_item_colon'     => __( 'Parent Attraction Category', 'tourismhub_textdomain' ),
+        'edit_item'             => __( 'Edit Attraction Category', 'tourismhub_textdomain' ),
+        'update_item'           => __( 'Update Attraction Category', 'tourismhub_textdomain' ),
+        'add_new_item'          => __( 'Add New Attraction Category', 'tourismhub_textdomain' ),
+        'new_item_name'         => __( 'New Attraction Category Name', 'tourismhub_textdomain' ),
+        'add_or_remove_items'   => __( 'Add or remove Attraction Categories', 'tourismhub_textdomain' ),
+        'choose_from_most_used' => __( 'Choose from most used categories', 'tourismhub_textdomain' ),
+        'menu_name'             => __( 'Attraction Categories', 'tourismhub_textdomain' ),
+    );
+
+    $args = array(
+        'labels'            => $labels,
+        'public'            => true,
+        'show_in_nav_menus' => true,
+        'show_admin_column' => false,
+        'hierarchical'      => false,
+        'show_tagcloud'     => true,
+        'show_ui'           => true,
+        'query_var'         => true,
+        'rewrite'           => true,
+        'query_var'         => true,
+        'capabilities'      => array(),
+    );
+
+    register_taxonomy( 'attractions-category', array( 'attractions' ), $args );
+}
+
+add_action( 'init', 'tourismhub_register_attractions_categories' );
+
 // Attractions Post Type
 function register_attractions_post_type() {
 
@@ -22,7 +61,7 @@ function register_attractions_post_type() {
 		'labels'              => $labels,
 		'hierarchical'        => false,
 		'description'         => 'description',
-		'taxonomies'          => array('category','post_tag'),
+		'taxonomies'          => array('attractions-category','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
