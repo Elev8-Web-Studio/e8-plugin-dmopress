@@ -29,6 +29,7 @@ require_once TOURISMHUB_PLUGIN_DIR . '/functions-global.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/actions-global.php';
 
 // Custom Post Types
+require_once TOURISMHUB_PLUGIN_DIR . '/post-type-blog.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/post-type-news.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/post-type-events.php';
 require_once TOURISMHUB_PLUGIN_DIR . '/post-type-attractions.php';
