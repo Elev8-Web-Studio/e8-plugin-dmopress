@@ -34,7 +34,7 @@ class MySettingsPage {
      */
     public function create_admin_page() {
         // Set class property
-        $this->options = get_option( 'tourismhub_option' );
+        $this->options = get_option('tourismhub_option');
         ?>
         <div class="wrap">
             <h2>TourismHub Settings</h2>           
@@ -61,18 +61,18 @@ class MySettingsPage {
         );
 
         add_settings_section(
-            'setting_section_id', // ID
-            'My Custom Settings', // Title
-            array( $this, 'print_section_info' ), // Callback
-            'tourismhub-setting-admin' // Page
+            'setting_section_id',
+            'My Custom Settings',
+            array( $this, 'print_section_info' ),
+            'tourismhub-setting-admin'
         );
 
         add_settings_field(
-            'id_number', // ID
-            'ID Number', // Title 
-            array( $this, 'id_number_callback' ), // Callback
-            'tourismhub-setting-admin', // Page
-            'setting_section_id' // Section           
+            'id_number',
+            'ID Number',
+            array( $this, 'id_number_callback' ), 
+            'tourismhub-setting-admin',
+            'setting_section_id'
         );      
 
         add_settings_field(
@@ -83,11 +83,19 @@ class MySettingsPage {
             'setting_section_id'
         );
 
+        add_settings_field(
+            'tourismhub_enabled_post_types', 
+            'Enabled Post Types', 
+            array( $this, 'tourismhub_enabled_post_types_callback' ), 
+            'tourismhub-setting-admin', 
+            'setting_section_id'
+        );
+
         add_settings_section(
-            'tourismhub_settings_section_thirdparty', // ID
-            'Google Analytics Settings', // Title
-            array( $this, 'print_section_info' ), // Callback
-            'tourismhub-setting-admin' // Page
+            'tourismhub_settings_section_thirdparty',
+            'Google Analytics Settings',
+            array( $this, 'print_section_info' ),
+            'tourismhub-setting-admin'
         );
 
         add_settings_field(
@@ -154,6 +162,21 @@ class MySettingsPage {
         );
     }
 
+    public function tourismhub_enabled_post_types_callback(){
+        printf(
+            '<label for="check_accommodations"><input id="check_accommodations" type="checkbox" name="post_types_group[]" value="accommodations" />Accommodations</label><br />'
+        );
+
+        printf(
+            '<label for="check_attractions"><input id="check_attractions" type="checkbox" name="post_types_group[]" value="attractions" />Attractions</label> <br />
+            <label for="check_blog"><input id="check_blog" type="checkbox" name="post_types_group[]" value="blog" />Blog</label> <br />
+            <label for="check_events"><input id="check_events" type="checkbox" name="post_types_group[]" value="events" />Events</label> <br />
+            <label for="check_news"><input id="check_news" type="checkbox" name="post_types_group[]" value="news" />News</label> <br />
+            <label for="check_packages"><input id="check_packages" type="checkbox" name="post_types_group[]" value="packages" />Packages</label> <br />
+            <label for="check_restaurants"><input id="check_restaurants" type="checkbox" name="post_types_group[]" value="restaurants" />Restaurants</label>'
+        );
+    }
+
     /** 
      * Get the settings option array and print one of its values
      */
@@ -171,7 +194,6 @@ class MySettingsPage {
           } else {
             printf('<div class="tourismhub-admin-badge-good">&#10004; OK</div>');
           }
-          
         }
 
         printf(
@@ -181,9 +203,11 @@ class MySettingsPage {
 }
 
 function tourismhub_admin_enqueue_style() {
-        $pluginurl = plugins_url( 'css/tourismhub-admin.css', __FILE__ );
-        wp_enqueue_style( 'tourismhub-admin', $pluginurl, false );
-    }
+    $cssref = plugins_url('css/tourismhub-admin.css', __FILE__);
+    $jsref = plugins_url('js/tourismhub-admin.js', __FILE__);
+    wp_enqueue_style('tourismhub-admin-css', $cssref, false);
+    wp_enqueue_script('tourismhub-admin-js', $jsref, false );
+}
 
 if(is_admin()){
     add_action( 'admin_enqueue_scripts', 'tourismhub_admin_enqueue_style' );
