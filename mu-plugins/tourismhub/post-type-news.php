@@ -34,26 +34,26 @@ function tourismhub_register_news_categories() {
         'capabilities'      => array(),
     );
 
-    register_taxonomy( 'news-category', array( 'restaurant' ), $args );
+    register_taxonomy( 'news-category', array( 'news' ), $args );
 }
 
 add_action( 'init', 'tourismhub_register_news_categories' );
 
-// Restaurants Post Type
+// Newss Post Type
 function tourismhub_register_news_post_type() {
 
     $labels = array(
         'name'                => __( 'News', 'tourismhub_textdomain' ),
-        'singular_name'       => __( 'Restaurant', 'tourismhub_textdomain' ),
-        'add_new'             => _x( 'Add New Restaurant', 'tourismhub_textdomain', 'tourismhub_textdomain' ),
-        'add_new_item'        => __( 'Add New Restaurant', 'tourismhub_textdomain' ),
-        'edit_item'           => __( 'Edit Restaurant', 'tourismhub_textdomain' ),
-        'new_item'            => __( 'New Restaurant', 'tourismhub_textdomain' ),
-        'view_item'           => __( 'View Restaurant', 'tourismhub_textdomain' ),
+        'singular_name'       => __( 'News', 'tourismhub_textdomain' ),
+        'add_new'             => _x( 'Add New News', 'tourismhub_textdomain', 'tourismhub_textdomain' ),
+        'add_new_item'        => __( 'Add New News', 'tourismhub_textdomain' ),
+        'edit_item'           => __( 'Edit News', 'tourismhub_textdomain' ),
+        'new_item'            => __( 'New News', 'tourismhub_textdomain' ),
+        'view_item'           => __( 'View News', 'tourismhub_textdomain' ),
         'search_items'        => __( 'Search News', 'tourismhub_textdomain' ),
         'not_found'           => __( 'No News found', 'tourismhub_textdomain' ),
         'not_found_in_trash'  => __( 'No News found in Trash', 'tourismhub_textdomain' ),
-        'parent_item_colon'   => __( 'Parent Restaurant:', 'tourismhub_textdomain' ),
+        'parent_item_colon'   => __( 'Parent News:', 'tourismhub_textdomain' ),
         'menu_name'           => __( 'News', 'tourismhub_textdomain' ),
     );
 

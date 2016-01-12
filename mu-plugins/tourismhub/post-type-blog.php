@@ -1,5 +1,6 @@
 <?php
 
+
 /* Change the default post type to News */
 function change_default_post_label() {
     global $menu;
@@ -7,6 +8,7 @@ function change_default_post_label() {
     $menu[5][0] = 'Blog';
     $submenu['edit.php'][5][0] = 'Blog Posts';
     $submenu['edit.php'][10][0] = 'Add New Blog Post';
+    $submenu['edit.php'][15][0] = 'Blog Categories';
     $submenu['edit.php'][16][0] = 'Tags';
     echo '';
 }
