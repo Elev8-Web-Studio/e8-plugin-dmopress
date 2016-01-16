@@ -100,13 +100,21 @@ class MySettingsPage {
 
         add_settings_field(
             'google_analytics_id', 
-            'Tracking ID', 
+            'Google Analytics Tracking ID', 
             array( $this, 'google_analytics_callback' ), 
             'tourismhub-setting-admin', 
             'tourismpress_settings_section_thirdparty',
             array(
               'desc'      => 'Tracking code should be in format UA-000000-0',
             )
+        );
+
+        add_settings_field(
+            'google_maps_api_key', 
+            'Google Maps API Key', 
+            array( $this, 'google_maps_callback' ), 
+            'tourismhub-setting-admin', 
+            'tourismpress_settings_section_thirdparty'
         );
     }
 
@@ -130,6 +138,10 @@ class MySettingsPage {
             if(!isValidGoogleAnalyticsID($new_input['google_analytics'])){
                 add_settings_error('google_analytics','google-analytics','<strong>Configuration Error:</strong> This is not a valid Google Analytics Code. Code should be in the format UA-000000-0');
             } 
+        }
+
+        if( isset( $input['google_maps_api_key'] ) ){
+            $new_input['google_maps_api_key'] = sanitize_text_field( $input['google_maps_api_key'] );
         }
 
         return $new_input;
@@ -198,6 +210,15 @@ class MySettingsPage {
 
         printf(
           ($desc != '') ? "<br /><span class='description'>$desc</span>" : ""
+        );
+    }
+
+    public function google_maps_callback($args) {
+        extract($args);
+
+        printf(
+            '<input type="text" size="45" id="google-maps-api-key" name="tourismpress_option[google_maps_api_key]" value="%s" placeholder="" />',
+            isset( $this->options['google_maps_api_key'] ) ? esc_attr( $this->options['google_maps_api_key']) : ''
         );
     }
 }

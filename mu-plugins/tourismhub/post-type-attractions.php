@@ -231,6 +231,15 @@ function tourismpress_attraction_meta_box_callback($post) {
             echo '<input type="text" placeholder="http://" style="width: 100%" id="instagram_url" name="instagram_url" value="' . esc_attr( $instagram_url_var ) . '" size="25" /></p>';
 
             ?>
+
+            <?php 
+                $option = get_option('tourismpress_option');
+                if($option['google_maps_api_key'] != ''){
+                    $mapsapikey = $option['google_maps_api_key'];
+                } else {
+                    $mapsapikey = 'EMPTY API KEY';
+                }
+            ?>
        </div>
        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
            <label>Map:</label>
@@ -239,7 +248,7 @@ function tourismpress_attraction_meta_box_callback($post) {
                  width="100%"
                  height="200"
                  frameborder="0" style="border:0"
-                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQbxJL9aU1nw3KtNlBCU9L90h_8HMIoMk&q=<?php echo $address_var.','.$city_var.','.$stateprov_var.','.$zip_var ?>" allowfullscreen>
+                 src="https://www.google.com/maps/embed/v1/place?key=<?php echo $mapsapikey ?>&q=<?php echo $address_var.','.$city_var.','.$stateprov_var.','.$zip_var ?>" allowfullscreen>
                </iframe>
            </div>
        </div>
