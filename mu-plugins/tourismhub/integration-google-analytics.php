@@ -3,7 +3,7 @@
 function printGoogleAnalyticsCodeIfPresent(){
 	//To avoid polluting analytics, do not embed code for logged in users
 	if(!is_user_logged_in()){
-		$option = get_option('tourismhub_option');
+		$option = get_option('tourismpress_option');
 		if(isValidGoogleAnalyticsID($option['google_analytics'])){
 
 		?>

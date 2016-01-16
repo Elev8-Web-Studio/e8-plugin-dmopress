@@ -1,23 +1,23 @@
 <?php
 
 // Event Categories
-function tourismhub_register_event_categories() {
+function tourismpress_register_event_categories() {
 
 	$labels = array(
-		'name'					=> _x( 'Event Categories', 'Event Categories', 'tourismhub_textdomain' ),
-		'singular_name'			=> _x( 'Event Category', 'Event Category', 'tourismhub_textdomain' ),
-		'search_items'			=> __( 'Search Event Categories', 'tourismhub_textdomain' ),
-		'popular_items'			=> __( 'Popular Event Categories', 'tourismhub_textdomain' ),
-		'all_items'				=> __( 'All Event Categories', 'tourismhub_textdomain' ),
-		'parent_item'			=> __( 'Parent Event Category', 'tourismhub_textdomain' ),
-		'parent_item_colon'		=> __( 'Parent Event Category', 'tourismhub_textdomain' ),
-		'edit_item'				=> __( 'Edit Event Category', 'tourismhub_textdomain' ),
-		'update_item'			=> __( 'Update Event Category', 'tourismhub_textdomain' ),
-		'add_new_item'			=> __( 'Add New Event Category', 'tourismhub_textdomain' ),
-		'new_item_name'			=> __( 'New Event Category Name', 'tourismhub_textdomain' ),
-		'add_or_remove_items'	=> __( 'Add or remove Event Categories', 'tourismhub_textdomain' ),
-		'choose_from_most_used'	=> __( 'Choose from most used categories', 'tourismhub_textdomain' ),
-		'menu_name'				=> __( 'Event Categories', 'tourismhub_textdomain' ),
+		'name'					=> _x( 'Event Categories', 'Event Categories', 'tourismpress_textdomain' ),
+		'singular_name'			=> _x( 'Event Category', 'Event Category', 'tourismpress_textdomain' ),
+		'search_items'			=> __( 'Search Event Categories', 'tourismpress_textdomain' ),
+		'popular_items'			=> __( 'Popular Event Categories', 'tourismpress_textdomain' ),
+		'all_items'				=> __( 'All Event Categories', 'tourismpress_textdomain' ),
+		'parent_item'			=> __( 'Parent Event Category', 'tourismpress_textdomain' ),
+		'parent_item_colon'		=> __( 'Parent Event Category', 'tourismpress_textdomain' ),
+		'edit_item'				=> __( 'Edit Event Category', 'tourismpress_textdomain' ),
+		'update_item'			=> __( 'Update Event Category', 'tourismpress_textdomain' ),
+		'add_new_item'			=> __( 'Add New Event Category', 'tourismpress_textdomain' ),
+		'new_item_name'			=> __( 'New Event Category Name', 'tourismpress_textdomain' ),
+		'add_or_remove_items'	=> __( 'Add or remove Event Categories', 'tourismpress_textdomain' ),
+		'choose_from_most_used'	=> __( 'Choose from most used categories', 'tourismpress_textdomain' ),
+		'menu_name'				=> __( 'Event Categories', 'tourismpress_textdomain' ),
 	);
 
 	$args = array(
@@ -37,24 +37,24 @@ function tourismhub_register_event_categories() {
 	register_taxonomy( 'event-category', array( 'events' ), $args );
 }
 
-add_action( 'init', 'tourismhub_register_event_categories' );
+add_action( 'init', 'tourismpress_register_event_categories' );
 
 // Events Post Type
 function register_events_post_type() {
 
 	$labels = array(
-		'name'                => __( 'Events', 'tourismhub_textdomain' ),
-		'singular_name'       => __( 'Event', 'tourismhub_textdomain' ),
-		'add_new'             => _x( 'Add New Event', 'tourismhub_textdomain', 'tourismhub_textdomain' ),
-		'add_new_item'        => __( 'Add New Event', 'tourismhub_textdomain' ),
-		'edit_item'           => __( 'Edit Event', 'tourismhub_textdomain' ),
-		'new_item'            => __( 'New Event', 'tourismhub_textdomain' ),
-		'view_item'           => __( 'View Event', 'tourismhub_textdomain' ),
-		'search_items'        => __( 'Search Events', 'tourismhub_textdomain' ),
-		'not_found'           => __( 'No Events found', 'tourismhub_textdomain' ),
-		'not_found_in_trash'  => __( 'No Events found in Trash', 'tourismhub_textdomain' ),
-		'parent_item_colon'   => __( 'Parent Event:', 'tourismhub_textdomain' ),
-		'menu_name'           => __( 'Events', 'tourismhub_textdomain' ),
+		'name'                => __( 'Events', 'tourismpress_textdomain' ),
+		'singular_name'       => __( 'Event', 'tourismpress_textdomain' ),
+		'add_new'             => _x( 'Add New Event', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
+		'add_new_item'        => __( 'Add New Event', 'tourismpress_textdomain' ),
+		'edit_item'           => __( 'Edit Event', 'tourismpress_textdomain' ),
+		'new_item'            => __( 'New Event', 'tourismpress_textdomain' ),
+		'view_item'           => __( 'View Event', 'tourismpress_textdomain' ),
+		'search_items'        => __( 'Search Events', 'tourismpress_textdomain' ),
+		'not_found'           => __( 'No Events found', 'tourismpress_textdomain' ),
+		'not_found_in_trash'  => __( 'No Events found in Trash', 'tourismpress_textdomain' ),
+		'parent_item_colon'   => __( 'Parent Event:', 'tourismpress_textdomain' ),
+		'menu_name'           => __( 'Events', 'tourismpress_textdomain' ),
 	);
 
 	$args = array(

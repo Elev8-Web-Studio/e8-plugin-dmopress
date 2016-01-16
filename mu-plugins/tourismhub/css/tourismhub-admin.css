@@ -19,3 +19,50 @@
 	font-weight: bold;
 	margin-left: 10px;
 }
+
+#attraction_details_section {
+	margin: 20px 0px 0px 0px;
+}
+
+.collapsible-column {
+	display: inline-block;
+	width: calc(33% - 6px);
+	padding: 0px 0px 0px 0px;
+}
+
+#attraction_details_section input[type=text] {
+	border-top: 0px;
+	border-right: 0px;
+	border-left: 0px;
+	border-bottom: 1px solid #cccccc;
+	background-color: White;
+	box-shadow: none;
+	padding: 3px 0px 3px 0px;
+	transition: border-color .3s;
+	margin-bottom: 20px;
+	margin: 0px;
+}
+
+#attraction_details_section input[type=text]:focus {
+	border-bottom: 2px solid #ff3b30;
+}
+
+#attraction_details_section label {
+	color: #999999;
+	text-size: 13px;
+}
+
+@media(max-width: 767px){
+	.collapsible-column {
+		display: block;
+		width: 100%;
+		padding: 0px 0px 0px 0px;
+	}
+}
+
+.tourismpress-map {
+	border: 1px solid #cccccc;
+	height: 200px;
+	background-color: White;
+	margin-top: 5px;
+}

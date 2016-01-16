@@ -1,23 +1,23 @@
 <?php
 
 // Package Categories
-function tourismhub_register_package_categories() {
+function tourismpress_register_package_categories() {
 
 	$labels = array(
-		'name'					=> _x( 'Package Categories', 'Package Categories', 'tourismhub_textdomain' ),
-		'singular_name'			=> _x( 'Package Category', 'Package Category', 'tourismhub_textdomain' ),
-		'search_items'			=> __( 'Search Package Categories', 'tourismhub_textdomain' ),
-		'popular_items'			=> __( 'Popular Package Categories', 'tourismhub_textdomain' ),
-		'all_items'				=> __( 'All Package Categories', 'tourismhub_textdomain' ),
-		'parent_item'			=> __( 'Parent Package Category', 'tourismhub_textdomain' ),
-		'parent_item_colon'		=> __( 'Parent Package Category', 'tourismhub_textdomain' ),
-		'edit_item'				=> __( 'Edit Package Category', 'tourismhub_textdomain' ),
-		'update_item'			=> __( 'Update Package Category', 'tourismhub_textdomain' ),
-		'add_new_item'			=> __( 'Add New Package Category', 'tourismhub_textdomain' ),
-		'new_item_name'			=> __( 'New Package Category Name', 'tourismhub_textdomain' ),
-		'add_or_remove_items'	=> __( 'Add or remove Package Categories', 'tourismhub_textdomain' ),
-		'choose_from_most_used'	=> __( 'Choose from most used categories', 'tourismhub_textdomain' ),
-		'menu_name'				=> __( 'Package Categories', 'tourismhub_textdomain' ),
+		'name'					=> _x( 'Package Categories', 'Package Categories', 'tourismpress_textdomain' ),
+		'singular_name'			=> _x( 'Package Category', 'Package Category', 'tourismpress_textdomain' ),
+		'search_items'			=> __( 'Search Package Categories', 'tourismpress_textdomain' ),
+		'popular_items'			=> __( 'Popular Package Categories', 'tourismpress_textdomain' ),
+		'all_items'				=> __( 'All Package Categories', 'tourismpress_textdomain' ),
+		'parent_item'			=> __( 'Parent Package Category', 'tourismpress_textdomain' ),
+		'parent_item_colon'		=> __( 'Parent Package Category', 'tourismpress_textdomain' ),
+		'edit_item'				=> __( 'Edit Package Category', 'tourismpress_textdomain' ),
+		'update_item'			=> __( 'Update Package Category', 'tourismpress_textdomain' ),
+		'add_new_item'			=> __( 'Add New Package Category', 'tourismpress_textdomain' ),
+		'new_item_name'			=> __( 'New Package Category Name', 'tourismpress_textdomain' ),
+		'add_or_remove_items'	=> __( 'Add or remove Package Categories', 'tourismpress_textdomain' ),
+		'choose_from_most_used'	=> __( 'Choose from most used categories', 'tourismpress_textdomain' ),
+		'menu_name'				=> __( 'Package Categories', 'tourismpress_textdomain' ),
 	);
 
 	$args = array(
@@ -37,24 +37,24 @@ function tourismhub_register_package_categories() {
 	register_taxonomy( 'package-category', array( 'package' ), $args );
 }
 
-add_action( 'init', 'tourismhub_register_package_categories' );
+add_action( 'init', 'tourismpress_register_package_categories' );
 
 //Packages Post Type
-function tourismhub_register_packages_post_type() {
+function tourismpress_register_packages_post_type() {
 
 	$labels = array(
-		'name'                => __( 'Packages', 'tourismhub_textdomain' ),
-		'singular_name'       => __( 'Package', 'tourismhub_textdomain' ),
-		'add_new'             => _x( 'Add New Package', 'tourismhub_textdomain', 'tourismhub_textdomain' ),
-		'add_new_item'        => __( 'Add New Package', 'tourismhub_textdomain' ),
-		'edit_item'           => __( 'Edit Package', 'tourismhub_textdomain' ),
-		'new_item'            => __( 'New Package', 'tourismhub_textdomain' ),
-		'view_item'           => __( 'View Package', 'tourismhub_textdomain' ),
-		'search_items'        => __( 'Search Packages', 'tourismhub_textdomain' ),
-		'not_found'           => __( 'No Packages found', 'tourismhub_textdomain' ),
-		'not_found_in_trash'  => __( 'No Packages found in Trash', 'tourismhub_textdomain' ),
-		'parent_item_colon'   => __( 'Parent Package:', 'tourismhub_textdomain' ),
-		'menu_name'           => __( 'Packages', 'tourismhub_textdomain' ),
+		'name'                => __( 'Packages', 'tourismpress_textdomain' ),
+		'singular_name'       => __( 'Package', 'tourismpress_textdomain' ),
+		'add_new'             => _x( 'Add New Package', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
+		'add_new_item'        => __( 'Add New Package', 'tourismpress_textdomain' ),
+		'edit_item'           => __( 'Edit Package', 'tourismpress_textdomain' ),
+		'new_item'            => __( 'New Package', 'tourismpress_textdomain' ),
+		'view_item'           => __( 'View Package', 'tourismpress_textdomain' ),
+		'search_items'        => __( 'Search Packages', 'tourismpress_textdomain' ),
+		'not_found'           => __( 'No Packages found', 'tourismpress_textdomain' ),
+		'not_found_in_trash'  => __( 'No Packages found in Trash', 'tourismpress_textdomain' ),
+		'parent_item_colon'   => __( 'Parent Package:', 'tourismpress_textdomain' ),
+		'menu_name'           => __( 'Packages', 'tourismpress_textdomain' ),
 	);
 
 	$args = array(
@@ -82,4 +82,4 @@ function tourismhub_register_packages_post_type() {
 	register_post_type( 'packages', $args );
 }
 
-add_action( 'init', 'tourismhub_register_packages_post_type' );
+add_action( 'init', 'tourismpress_register_packages_post_type' );
