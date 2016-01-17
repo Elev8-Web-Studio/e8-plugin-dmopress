@@ -170,7 +170,16 @@ function tourismpress_accommodation_meta_box_callback($post) {
                     ?>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    <?php
 
+                    $telephone_var = get_post_meta( $post->ID, 'telephone', true );
+
+                    echo '<p><label for="telephone">';
+                    _e( 'Telephone:', 'tourismpress_textdomain' );
+                    echo '</label><br /> ';
+                    echo '<input type="text" style="width: 100%" id="telephone" name="telephone" value="' . esc_attr( $telephone_var ) . '" size="25" /></p>';
+
+                    ?>
                 </div>
             </div>
             
@@ -233,7 +242,7 @@ function tourismpress_accommodation_meta_box_callback($post) {
            <div class="tourismpress-map">
                <iframe
                  width="100%"
-                 height="200"
+                 height="220"
                  frameborder="0" style="border:0"
                  src="https://www.google.com/maps/embed/v1/place?key=<?php echo $mapsapikey ?>&q=<?php echo $address_var.','.$city_var.','.$stateprov_var.','.$zip_var ?>" allowfullscreen>
                </iframe>
@@ -299,6 +308,9 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     if (!isset( $_POST['zip'])) {
         return;
     }
+    if (!isset( $_POST['telephone'])) {
+        return;
+    }
     if (!isset( $_POST['website_url'])) {
         return;
     }
@@ -317,6 +329,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     $city = sanitize_text_field($_POST['city']);
     $stateprov = sanitize_text_field($_POST['stateprov']);
     $zip = sanitize_text_field($_POST['zip']);
+    $telephone = sanitize_text_field($_POST['telephone']);
     $website_url = sanitize_text_field($_POST['website_url']);
     $facebook_url = sanitize_text_field($_POST['facebook_url']);
     $twitter_url = sanitize_text_field($_POST['twitter_url']);
@@ -327,6 +340,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'city', $city);
     update_post_meta($post_id, 'stateprov', $stateprov);
     update_post_meta($post_id, 'zip', $zip);
+    update_post_meta($post_id, 'telephone', $telephone);
     update_post_meta($post_id, 'website_url', $website_url);
     update_post_meta($post_id, 'facebook_url', $facebook_url);
     update_post_meta($post_id, 'twitter_url', $twitter_url);

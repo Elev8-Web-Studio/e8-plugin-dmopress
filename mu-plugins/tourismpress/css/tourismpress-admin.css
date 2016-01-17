@@ -20,9 +20,7 @@
 	margin-left: 10px;
 }
 
-#attraction_details_section {
-	margin: 20px 0px 0px 0px;
-}
+
 
 .collapsible-column {
 	display: inline-block;
@@ -30,7 +28,22 @@
 	padding: 0px 0px 0px 0px;
 }
 
-#attraction_details_section input[type=text] {
+#attraction_details_section, 
+#accommodation_details_section, 
+#restaurant_details_section {
+	margin: 20px 0px 0px 0px;
+}
+
+#attraction_details_section p, 
+#accommodation_details_section p, 
+#restaurant_details_section p {
+	padding: 8px 0px 8px 0px;
+	margin: 0px;
+}
+
+#attraction_details_section input[type=text],
+#accommodation_details_section input[type=text], 
+#restaurant_details_section input[type=text] {
 	border-top: 0px;
 	border-right: 0px;
 	border-left: 0px;
@@ -43,11 +56,15 @@
 	margin: 0px;
 }
 
-#attraction_details_section input[type=text]:focus {
+#attraction_details_section input[type=text]:focus,
+#accommodation_details_section input[type=text]:focus, 
+#restaurant_details_section input[type=text]:focus {
 	border-bottom: 2px solid #ff3b30;
 }
 
-#attraction_details_section label {
+#attraction_details_section label, 
+#accommodation_details_section label, 
+#restaurant_details_section label {
 	color: #999999;
 	text-size: 13px;
 }
@@ -62,7 +79,7 @@
 
 .tourismpress-map {
 	border: 1px solid #cccccc;
-	height: 200px;
+	height: 220px;
 	background-color: White;
 	margin-top: 5px;
 }

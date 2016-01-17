@@ -68,9 +68,9 @@ class MySettingsPage {
         );
 
         add_settings_field(
-            'tourismpress_enabled_post_types', 
-            'Enabled Post Types', 
-            array( $this, 'tourismpress_enabled_post_types_callback' ), 
+            'enabled_post_types', 
+            'Enabled Content Types', 
+            array( $this, 'enabled_post_types_callback' ), 
             'tourismpress-setting-admin', 
             'setting_section_id'
         );
@@ -110,14 +110,21 @@ class MySettingsPage {
     public function sanitize( $input ) {
         $new_input = array();
 
+        if(isset($input['enabled_post_types']) && is_array($_POST['enabled_post_types'])) {
+            // let's iterate thru the array
+           foreach ($_POST['enabled_post_types'] as $enabled_post_types) {
+              error_log("We got here", 0);
+           }
+        }
+
         if(isset($input['google_analytics'])) {
             $new_input['google_analytics'] = strtoupper(sanitize_text_field($input['google_analytics']));
             if(!isValidGoogleAnalyticsID($new_input['google_analytics'])){
                 add_settings_error('google_analytics','google-analytics','<strong>Configuration Error:</strong> This is not a valid Google Analytics Code. Code should be in the format UA-000000-0');
-            } 
+            }
         }
 
-        if( isset( $input['google_maps_api_key'] ) ){
+        if(isset( $input['google_maps_api_key'])){
             $new_input['google_maps_api_key'] = sanitize_text_field( $input['google_maps_api_key'] );
         }
 
@@ -131,18 +138,18 @@ class MySettingsPage {
         //print 'TourismPress integrates with ';
     }
 
-    public function tourismpress_enabled_post_types_callback(){
+    public function enabled_post_types_callback(){
         printf(
-            '<label for="check_accommodations"><input id="check_accommodations" type="checkbox" name="post_types_group[]" value="accommodations" />Accommodations</label><br />'
+            '<label for="check_accommodations"><input id="check_accommodations" type="checkbox" name="enabled_post_types[]" value="accommodations" %s />Accommodations</label><br />', isset( $this->options['enabled_post_types'] ) ? 'checked' : ''
         );
 
         printf(
-            '<label for="check_attractions"><input id="check_attractions" type="checkbox" name="post_types_group[]" value="attractions" />Attractions</label> <br />
-            <label for="check_blog"><input id="check_blog" type="checkbox" name="post_types_group[]" value="blog" />Blog</label> <br />
-            <label for="check_events"><input id="check_events" type="checkbox" name="post_types_group[]" value="events" />Events</label> <br />
-            <label for="check_news"><input id="check_news" type="checkbox" name="post_types_group[]" value="news" />News</label> <br />
-            <label for="check_packages"><input id="check_packages" type="checkbox" name="post_types_group[]" value="packages" />Packages</label> <br />
-            <label for="check_restaurants"><input id="check_restaurants" type="checkbox" name="post_types_group[]" value="restaurants" />Restaurants</label>'
+            '<label for="check_attractions"><input id="check_attractions" type="checkbox" name="enabled_post_types[]" value="attractions" />Attractions</label> <br />
+            <label for="check_blog"><input id="check_blog" type="checkbox" name="enabled_post_types[]" value="blog" />Blog</label> <br />
+            <label for="check_events"><input id="check_events" type="checkbox" name="enabled_post_types[]" value="events" />Events</label> <br />
+            <label for="check_news"><input id="check_news" type="checkbox" name="enabled_post_types[]" value="news" />News</label> <br />
+            <label for="check_packages"><input id="check_packages" type="checkbox" name="enabled_post_types[]" value="packages" />Packages</label> <br />
+            <label for="check_restaurants"><input id="check_restaurants" type="checkbox" name="enabled_post_types[]" value="restaurants" />Restaurants</label>'
         );
     }
 
