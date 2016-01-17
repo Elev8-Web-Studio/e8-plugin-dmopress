@@ -88,5 +88,7 @@ if ( !defined('ABSPATH') )
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
 
+// TourismPress Specific Configuration
+
 /** Disallow direct file editing in Wordpress Admin */
 define('DISALLOW_FILE_EDIT', true);
