@@ -30,20 +30,23 @@
 
 #attraction_details_section, 
 #accommodation_details_section, 
-#restaurant_details_section {
+#restaurant_details_section,
+#event_details_section {
 	margin: 20px 0px 0px 0px;
 }
 
 #attraction_details_section p, 
 #accommodation_details_section p, 
-#restaurant_details_section p {
+#restaurant_details_section p,
+#event_details_section p {
 	padding: 8px 0px 8px 0px;
 	margin: 0px;
 }
 
 #attraction_details_section input[type=text],
 #accommodation_details_section input[type=text], 
-#restaurant_details_section input[type=text] {
+#restaurant_details_section input[type=text],
+#event_details_section input[type=text] {
 	border-top: 0px;
 	border-right: 0px;
 	border-left: 0px;
@@ -58,13 +61,15 @@
 
 #attraction_details_section input[type=text]:focus,
 #accommodation_details_section input[type=text]:focus, 
-#restaurant_details_section input[type=text]:focus {
+#restaurant_details_section input[type=text]:focus,
+#event_details_section input[type=text]:focus  {
 	border-bottom: 2px solid #ff3b30;
 }
 
 #attraction_details_section label, 
 #accommodation_details_section label, 
-#restaurant_details_section label {
+#restaurant_details_section label,
+#event_details_section label {
 	color: #999999;
 	text-size: 13px;
 }
