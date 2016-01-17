@@ -175,6 +175,60 @@ function tourismpress_event_meta_box_callback($post) {
        </div>
        
        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <?php
+
+                    $start_date_var = get_post_meta( $post->ID, 'start_date', true );
+
+                    echo '<p><label for="start_date">';
+                    _e( 'Start Date:', 'tourismpress_textdomain' );
+                    echo '</label><br /> ';
+                    echo '<input type="text" class="datepicker" placeholder="" style="width: 100%" id="start_date" name="start_date" value="' . esc_attr( $start_date_var ) . '" size="25" /></p>';
+
+                    ?>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <?php
+
+                    $start_time_var = get_post_meta( $post->ID, 'start_time', true );
+
+                    echo '<p><label for="start_time">';
+                    _e( 'Start Time:', 'tourismpress_textdomain' );
+                    echo '</label><br /> ';
+                    echo '<input type="text" placeholder="" style="width: 100%" id="start_time" name="start_time" value="' . esc_attr( $start_time_var ) . '" size="25" /></p>';
+
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <?php
+
+                    $end_date_var = get_post_meta( $post->ID, 'end_date', true );
+
+                    echo '<p><label for="end_date">';
+                    _e( 'End Date:', 'tourismpress_textdomain' );
+                    echo '</label><br /> ';
+                    echo '<input type="text" placeholder="" style="width: 100%" id="end_date" name="end_date" value="' . esc_attr( $end_date_var ) . '" size="25" /></p>';
+
+                    ?>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <?php
+
+                    $end_time_var = get_post_meta( $post->ID, 'end_time', true );
+
+                    echo '<p><label for="end_time">';
+                    _e( 'End Time:', 'tourismpress_textdomain' );
+                    echo '</label><br /> ';
+                    echo '<input type="text" placeholder="" style="width: 100%" id="end_time" name="end_time" value="' . esc_attr( $end_time_var ) . '" size="25" /></p>';
+
+                    ?>
+                </div>
+            </div>
+
             <?php
 
             $website_url_var = get_post_meta( $post->ID, 'website_url', true );
@@ -185,35 +239,15 @@ function tourismpress_event_meta_box_callback($post) {
             echo '<input type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
 
             ?>
-            <?php
-
-            $facebook_url_var = get_post_meta( $post->ID, 'facebook_url', true );
-
-            echo '<p><label for="facebook_url">';
-            _e( 'Facebook Page URL:', 'tourismpress_textdomain' );
-            echo '</label><br /> ';
-            echo '<input type="text" placeholder="http://" style="width: 100%" id="facebook_url" name="facebook_url" value="' . esc_attr( $facebook_url_var ) . '" size="25" /></p>';
-
-            ?>
 
             <?php
 
-            $twitter_url = get_post_meta( $post->ID, 'twitter_url', true );
+            $event_registration_url = get_post_meta( $post->ID, 'event_registration_url', true );
 
-            echo '<p><label for="twitter_url">';
-            _e( 'Twitter Profile URL:', 'tourismpress_textdomain' );
+            echo '<p><label for="event_registration_url">';
+            _e( 'Event Registration URL:', 'tourismpress_textdomain' );
             echo '</label><br /> ';
-            echo '<input type="text" placeholder="http://" style="width: 100%" id="twitter_url" name="twitter_url" value="' . esc_attr( $twitter_url ) . '" size="25" /></p>';
-
-            ?>
-            <?php
-
-            $instagram_url_var = get_post_meta( $post->ID, 'instagram_url', true );
-
-            echo '<p><label for="instagram_url">';
-            _e( 'Instagram URL:', 'tourismpress_textdomain' );
-            echo '</label><br /> ';
-            echo '<input type="text" placeholder="http://" style="width: 100%" id="instagram_url" name="instagram_url" value="' . esc_attr( $instagram_url_var ) . '" size="25" /></p>';
+            echo '<input type="text" placeholder="http://" style="width: 100%" id="event_registration_url" name="event_registration_url" value="' . esc_attr( $event_registration_url ) . '" size="25" /></p>';
 
             ?>
 
@@ -297,16 +331,22 @@ function tourismpress_event_save_meta_box_data($post_id) {
     if (!isset( $_POST['zip'])) {
         return;
     }
+    if (!isset( $_POST['start_date'])) {
+        return;
+    }
+    if (!isset( $_POST['start_time'])) {
+        return;
+    }
+    if (!isset( $_POST['end_date'])) {
+        return;
+    }
+    if (!isset( $_POST['end_time'])) {
+        return;
+    }
     if (!isset( $_POST['website_url'])) {
         return;
     }
-    if (!isset( $_POST['facebook_url'])) {
-        return;
-    }
-    if (!isset( $_POST['twitter_url'])) {
-        return;
-    }
-    if (!isset( $_POST['instagram_url'])) {
+    if (!isset( $_POST['event_registration_url'])) {
         return;
     }
 
@@ -315,20 +355,24 @@ function tourismpress_event_save_meta_box_data($post_id) {
     $city = sanitize_text_field($_POST['city']);
     $stateprov = sanitize_text_field($_POST['stateprov']);
     $zip = sanitize_text_field($_POST['zip']);
+    $start_date = sanitize_text_field($_POST['start_date']);
+    $start_time = sanitize_text_field($_POST['start_time']);
+    $end_date = sanitize_text_field($_POST['end_date']);
+    $end_time = sanitize_text_field($_POST['end_time']);
     $website_url = sanitize_text_field($_POST['website_url']);
-    $facebook_url = sanitize_text_field($_POST['facebook_url']);
-    $twitter_url = sanitize_text_field($_POST['twitter_url']);
-    $instagram_url = sanitize_text_field($_POST['instagram_url']);
+    $event_registration_url = sanitize_text_field($_POST['event_registration_url']);
 
     // Update the meta field in the database.
     update_post_meta($post_id, 'address', $address);
     update_post_meta($post_id, 'city', $city);
     update_post_meta($post_id, 'stateprov', $stateprov);
     update_post_meta($post_id, 'zip', $zip);
+    update_post_meta($post_id, 'start_date', $start_date);
+    update_post_meta($post_id, 'start_time', $start_time);
+    update_post_meta($post_id, 'end_date', $end_date);
+    update_post_meta($post_id, 'end_time', $end_time);
     update_post_meta($post_id, 'website_url', $website_url);
-    update_post_meta($post_id, 'facebook_url', $facebook_url);
-    update_post_meta($post_id, 'twitter_url', $twitter_url);
-    update_post_meta($post_id, 'instagram_url', $instagram_url);
+    update_post_meta($post_id, 'event_registration_url', $event_registration_url);
 }
 
 add_action('save_post', 'tourismpress_event_save_meta_box_data');
