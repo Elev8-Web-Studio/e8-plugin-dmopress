@@ -130,7 +130,6 @@ function tourismpress_attraction_meta_box_callback($post) {
      * from the database and use the value for the form.
      */
     
-
    ?>
 
    <div class="row">

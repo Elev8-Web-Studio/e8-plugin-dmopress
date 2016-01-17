@@ -1,15 +1,15 @@
 <?php
 /**
- * @package TourismHub
- * @version 0.1
+ * @package TourismPress
+ * @version 0.1.0
  */
 /*
-Plugin Name: TourismHub
-Plugin URI: http://tourismpress.io
-Description: This plugin powers the TourismHub platform. Do not deactivate or remove it.
+Plugin Name: TourismPress
+Plugin URI: http://tourismpress.net
+Description: This plugin powers the TourismPress platform. Do not deactivate or remove it.
 Author: Jason Pomerleau
-Version: 0.1
-Author URI: http://tourismpress.io
+Version: 0.1.0
+Author URI: http://tourismpress.net
 */
 
 // Prevent external script access

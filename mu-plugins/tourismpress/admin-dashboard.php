@@ -5,7 +5,7 @@ function tourismpress_news_dashboard_widget() {
 	echo "<p>Contents</p>";
 }
 function add_tourismpress_news_dashboard_widget() {
-	wp_add_dashboard_widget('tourismpress_news_dashboard_widget', 'TourismHub News', 'tourismpress_news_dashboard_widget');
+	wp_add_dashboard_widget('tourismpress_news_dashboard_widget', 'TourismPress News', 'tourismpress_news_dashboard_widget');
 }
 add_action('wp_dashboard_setup', 'add_tourismpress_news_dashboard_widget');
 
