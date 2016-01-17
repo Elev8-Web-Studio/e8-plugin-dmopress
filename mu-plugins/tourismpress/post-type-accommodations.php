@@ -34,7 +34,8 @@ function tourismpress_register_accommodations_categories() {
 		'capabilities'      => array(),
 	);
 
-	register_taxonomy( 'accommodations-category', array( 'accommodations' ), $args );
+	register_taxonomy( 'accommodations-category', 'accommodations', $args );
+    register_taxonomy_for_object_type( 'accommodations-category', 'accommodations' );
 }
 
 add_action( 'init', 'tourismpress_register_accommodations_categories' );

@@ -34,7 +34,8 @@ function tourismpress_register_attractions_categories() {
         'capabilities'      => array(),
     );
 
-    register_taxonomy( 'attractions-category', array( 'attractions' ), $args );
+    register_taxonomy( 'attractions-category', 'attractions', $args );
+    register_taxonomy_for_object_type( 'attractions-category', 'attractions' );
 }
 
 ////FIX

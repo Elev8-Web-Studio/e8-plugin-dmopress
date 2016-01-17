@@ -34,7 +34,8 @@ function tourismpress_register_event_categories() {
 		'capabilities'      => array(),
 	);
 
-	register_taxonomy( 'event-category', array( 'events' ), $args );
+	register_taxonomy( 'event-category', 'events', $args );
+    register_taxonomy_for_object_type( 'event-category', 'events' );
 }
 
 add_action( 'init', 'tourismpress_register_event_categories' );
