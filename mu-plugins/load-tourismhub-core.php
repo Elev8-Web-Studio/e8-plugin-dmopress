@@ -1,4 +1,4 @@
 <?php
 
 // Load mu-plugins
-require WPMU_PLUGIN_DIR.'/tourismhub/tourismhub.php';
+require WPMU_PLUGIN_DIR.'/tourismpress/tourismpress.php';

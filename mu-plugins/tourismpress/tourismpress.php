@@ -5,11 +5,11 @@
  */
 /*
 Plugin Name: TourismHub
-Plugin URI: http://tourismhub.io
+Plugin URI: http://tourismpress.io
 Description: This plugin powers the TourismHub platform. Do not deactivate or remove it.
 Author: Jason Pomerleau
 Version: 0.1
-Author URI: http://tourismhub.io
+Author URI: http://tourismpress.io
 */
 
 // Prevent external script access

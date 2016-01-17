@@ -1,23 +1,23 @@
 <?php
 
-// Restaurant Categories
-function restaurant_categories() {
+// Accommodations Categories
+function tourismpress_register_accommodations_categories() {
 
 	$labels = array(
-		'name'					=> _x( 'Restaurant Categories', 'Restaurant categories', 'tourismpress_textdomain' ),
-		'singular_name'			=> _x( 'Restaurant Category', 'Restaurant category', 'tourismpress_textdomain' ),
-		'search_items'			=> __( 'Search Restaurant Categories', 'tourismpress_textdomain' ),
-		'popular_items'			=> __( 'Popular Restaurant Categories', 'tourismpress_textdomain' ),
-		'all_items'				=> __( 'All Restaurant Categories', 'tourismpress_textdomain' ),
-		'parent_item'			=> __( 'Parent Restaurant Category', 'tourismpress_textdomain' ),
-		'parent_item_colon'		=> __( 'Parent Restaurant Category', 'tourismpress_textdomain' ),
-		'edit_item'				=> __( 'Edit Restaurant Category', 'tourismpress_textdomain' ),
-		'update_item'			=> __( 'Update Restaurant Category', 'tourismpress_textdomain' ),
-		'add_new_item'			=> __( 'Add New Restaurant Category', 'tourismpress_textdomain' ),
-		'new_item_name'			=> __( 'New Restaurant Category Name', 'tourismpress_textdomain' ),
-		'add_or_remove_items'	=> __( 'Add or remove Restaurant Categories', 'tourismpress_textdomain' ),
+		'name'					=> _x( 'Accommodations Categories', 'Accommodations Categories', 'tourismpress_textdomain' ),
+		'singular_name'			=> _x( 'Accommodations Category', 'Accommodations Category', 'tourismpress_textdomain' ),
+		'search_items'			=> __( 'Search Accommodations Categories', 'tourismpress_textdomain' ),
+		'popular_items'			=> __( 'Popular Accommodations Categories', 'tourismpress_textdomain' ),
+		'all_items'				=> __( 'All Accommodations Categories', 'tourismpress_textdomain' ),
+		'parent_item'			=> __( 'Parent Accommodations Category', 'tourismpress_textdomain' ),
+		'parent_item_colon'		=> __( 'Parent Accommodations Category', 'tourismpress_textdomain' ),
+		'edit_item'				=> __( 'Edit Accommodations Category', 'tourismpress_textdomain' ),
+		'update_item'			=> __( 'Update Accommodations Category', 'tourismpress_textdomain' ),
+		'add_new_item'			=> __( 'Add New Accommodations Category', 'tourismpress_textdomain' ),
+		'new_item_name'			=> __( 'New Accommodations Category Name', 'tourismpress_textdomain' ),
+		'add_or_remove_items'	=> __( 'Add or remove Accommodations Categories', 'tourismpress_textdomain' ),
 		'choose_from_most_used'	=> __( 'Choose from most used categories', 'tourismpress_textdomain' ),
-		'menu_name'				=> __( 'Restaurant Categories', 'tourismpress_textdomain' ),
+		'menu_name'				=> __( 'Accommodations Categories', 'tourismpress_textdomain' ),
 	);
 
 	$args = array(
@@ -34,39 +34,39 @@ function restaurant_categories() {
 		'capabilities'      => array(),
 	);
 
-	register_taxonomy( 'restaurant-category', array( 'restaurant' ), $args );
+	register_taxonomy( 'accommodations-category', array( 'accommodations' ), $args );
 }
 
-add_action( 'init', 'restaurant_categories' );
+add_action( 'init', 'tourismpress_register_accommodations_categories' );
 
-// Restaurants Post Type
-function register_restaurants_post_type() {
+// Accommodations Post Type
+function register_accommodations_post_type() {
 
 	$labels = array(
-		'name'                => __( 'Restaurants', 'tourismpress_textdomain' ),
-		'singular_name'       => __( 'Restaurant', 'tourismpress_textdomain' ),
-		'add_new'             => _x( 'Add New Restaurant', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
-		'add_new_item'        => __( 'Add New Restaurant', 'tourismpress_textdomain' ),
-		'edit_item'           => __( 'Edit Restaurant', 'tourismpress_textdomain' ),
-		'new_item'            => __( 'New Restaurant', 'tourismpress_textdomain' ),
-		'view_item'           => __( 'View Restaurant', 'tourismpress_textdomain' ),
-		'search_items'        => __( 'Search Restaurants', 'tourismpress_textdomain' ),
-		'not_found'           => __( 'No Restaurants found', 'tourismpress_textdomain' ),
-		'not_found_in_trash'  => __( 'No Restaurants found in Trash', 'tourismpress_textdomain' ),
-		'parent_item_colon'   => __( 'Parent Restaurant:', 'tourismpress_textdomain' ),
-		'menu_name'           => __( 'Restaurants', 'tourismpress_textdomain' ),
+		'name'                => __( 'Accommodations', 'tourismpress_textdomain' ),
+		'singular_name'       => __( 'Accommodations', 'tourismpress_textdomain' ),
+		'add_new'             => _x( 'Add New Accommodation', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
+		'add_new_item'        => __( 'Add New Accommodation', 'tourismpress_textdomain' ),
+		'edit_item'           => __( 'Edit Accommodations', 'tourismpress_textdomain' ),
+		'new_item'            => __( 'New Accommodations', 'tourismpress_textdomain' ),
+		'view_item'           => __( 'View Accommodations', 'tourismpress_textdomain' ),
+		'search_items'        => __( 'Search Accommodations', 'tourismpress_textdomain' ),
+		'not_found'           => __( 'No Accommodations found', 'tourismpress_textdomain' ),
+		'not_found_in_trash'  => __( 'No Accommodations found in Trash', 'tourismpress_textdomain' ),
+		'parent_item_colon'   => __( 'Parent Accommodations:', 'tourismpress_textdomain' ),
+		'menu_name'           => __( 'Accommodations', 'tourismpress_textdomain' ),
 	);
 
 	$args = array(
 		'labels'              => $labels,
 		'hierarchical'        => false,
 		'description'         => 'description',
-		'taxonomies'          => array('restaurant-category','post_tag'),
+		'taxonomies'          => array('accommodations-category','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
-		'menu_position'       => 6,
+		'menu_position'       => 5,
 		'menu_icon'           => 'dashicons-location',
 		'show_in_nav_menus'   => true,
 		'publicly_queryable'  => true,
@@ -75,41 +75,41 @@ function register_restaurants_post_type() {
 		'query_var'           => true,
 		'can_export'          => true,
 		'rewrite'             => array(
-			'slug' => 'eat'
+			'slug' => 'stay'
 			),
 		'capability_type'     => 'post',
 		'supports'            => array('title', 'editor', 'thumbnail'),
 	);
 
-	register_post_type( 'restaurants', $args );
+	register_post_type( 'accommodations', $args );
 }
 
-add_action( 'init', 'register_restaurants_post_type' );
+add_action( 'init', 'register_accommodations_post_type' );
 
 /**
  * Adds a box to the main column on the Post and Page edit screens.
  */
-function tourismpress_restaurant_add_meta_box() {
+function tourismpress_accommodation_add_meta_box() {
     add_meta_box(
-        'restaurant_details_section',
-        __('Restaurant Details', 'tourismpress_textdomain'),
-        'tourismpress_restaurant_meta_box_callback',
-        'restaurants',
+        'accommodation_details_section',
+        __('Accommodation Details', 'tourismpress_textdomain'),
+        'tourismpress_accommodation_meta_box_callback',
+        'accommodations',
         'location',
         'high'
     );
 }
-add_action( 'add_meta_boxes_restaurants', 'tourismpress_restaurant_add_meta_box' );
+add_action( 'add_meta_boxes_accommodations', 'tourismpress_accommodation_add_meta_box' );
 
 /**
  * Prints the box content.
  * 
  * @param WP_Post $post The object for the current post/page.
  */
-function tourismpress_restaurant_meta_box_callback($post) {
+function tourismpress_accommodation_meta_box_callback($post) {
 
     // Add a nonce field so we can check for it later.
-    wp_nonce_field( 'tourismpress_restaurant_save_meta_box_data', 'tourismpress_restaurant_meta_box_nonce' );
+    wp_nonce_field( 'tourismpress_accommodation_save_meta_box_data', 'tourismpress_accommodation_meta_box_nonce' );
 
     /*
      * Use get_post_meta() to retrieve an existing value
@@ -220,7 +220,7 @@ function tourismpress_restaurant_meta_box_callback($post) {
             ?>
 
             <?php 
-                $option = get_option('tourismpress_option');
+                $option = get_option('tourismpress');
                 if($option['google_maps_api_key'] != ''){
                     $mapsapikey = $option['google_maps_api_key'];
                 } else {
@@ -251,7 +251,7 @@ function tourismpress_restaurant_meta_box_callback($post) {
  *
  * @param int $post_id The ID of the post being saved.
  */
-function tourismpress_restaurant_save_meta_box_data($post_id) {
+function tourismpress_accommodation_save_meta_box_data($post_id) {
 
     /*
      * We need to verify this came from our screen and with proper authorization,
@@ -259,12 +259,12 @@ function tourismpress_restaurant_save_meta_box_data($post_id) {
      */
 
     // Check if our nonce is set.
-    if ( ! isset( $_POST['tourismpress_restaurant_meta_box_nonce'] ) ) {
+    if ( ! isset( $_POST['tourismpress_accommodation_meta_box_nonce'] ) ) {
         return;
     }
 
     // Verify that the nonce is valid.
-    if ( ! wp_verify_nonce( $_POST['tourismpress_restaurant_meta_box_nonce'], 'tourismpress_restaurant_save_meta_box_data' ) ) {
+    if ( ! wp_verify_nonce( $_POST['tourismpress_accommodation_meta_box_nonce'], 'tourismpress_accommodation_save_meta_box_data' ) ) {
         return;
     }
 
@@ -333,7 +333,7 @@ function tourismpress_restaurant_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'instagram_url', $instagram_url);
 }
 
-add_action('save_post', 'tourismpress_restaurant_save_meta_box_data');
+add_action('save_post', 'tourismpress_accommodation_save_meta_box_data');
 
 // Move all "location" metabox above the default editor
 add_action('edit_form_after_title', function() {

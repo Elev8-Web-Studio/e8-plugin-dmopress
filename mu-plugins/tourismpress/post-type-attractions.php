@@ -38,7 +38,7 @@ function tourismpress_register_attractions_categories() {
 }
 
 ////FIX
-$option = get_option('tourismpress_option');
+$option = get_option('tourismpress');
 if(isValidGoogleAnalyticsID($option['google_analytics'])){
     
 }
@@ -91,7 +91,7 @@ function register_attractions_post_type() {
 }
 
 ////FIX
-$option = get_option('tourismpress_option');
+$option = get_option('tourismpress');
 if(isValidGoogleAnalyticsID($option['google_analytics'])){
     
 }
@@ -233,7 +233,7 @@ function tourismpress_attraction_meta_box_callback($post) {
             ?>
 
             <?php 
-                $option = get_option('tourismpress_option');
+                $option = get_option('tourismpress');
                 if($option['google_maps_api_key'] != ''){
                     $mapsapikey = $option['google_maps_api_key'];
                 } else {
