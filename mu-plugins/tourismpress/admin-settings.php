@@ -21,8 +21,8 @@ class MySettingsPage {
     public function add_plugin_page() {
         // This page will be under "Settings"
         add_options_page(
-            'TourismHub Settings', 
-            'TourismHub', 
+            'TourismPress Settings', 
+            'TourismPress', 
             'manage_options', 
             'tourismpress-settings', 
             array( $this, 'create_admin_page' )
@@ -37,7 +37,7 @@ class MySettingsPage {
         $this->options = get_option('tourismpress');
         ?>
         <div class="wrap">
-            <h2>TourismHub Settings</h2>           
+            <h2>TourismPress Settings</h2>           
             <form method="post" action="options.php">
             <?php
                 // This prints out all hidden setting fields
@@ -128,7 +128,7 @@ class MySettingsPage {
      * Print the Section text
      */
     public function print_section_info() {
-        //print 'TourismHub integrates with ';
+        //print 'TourismPress integrates with ';
     }
 
     public function tourismpress_enabled_post_types_callback(){
