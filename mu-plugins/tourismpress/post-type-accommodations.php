@@ -45,11 +45,11 @@ function register_accommodations_post_type() {
 
 	$labels = array(
 		'name'                => __( 'Accommodations', 'tourismpress_textdomain' ),
-		'singular_name'       => __( 'Accommodations', 'tourismpress_textdomain' ),
+		'singular_name'       => __( 'Accommodation', 'tourismpress_textdomain' ),
 		'add_new'             => _x( 'Add New Accommodation', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
 		'add_new_item'        => __( 'Add New Accommodation', 'tourismpress_textdomain' ),
-		'edit_item'           => __( 'Edit Accommodations', 'tourismpress_textdomain' ),
-		'new_item'            => __( 'New Accommodations', 'tourismpress_textdomain' ),
+		'edit_item'           => __( 'Edit Accommodation', 'tourismpress_textdomain' ),
+		'new_item'            => __( 'New Accommodation', 'tourismpress_textdomain' ),
 		'view_item'           => __( 'View Accommodations', 'tourismpress_textdomain' ),
 		'search_items'        => __( 'Search Accommodations', 'tourismpress_textdomain' ),
 		'not_found'           => __( 'No Accommodations found', 'tourismpress_textdomain' ),
@@ -152,7 +152,7 @@ function tourismpress_accommodation_meta_box_callback($post) {
                     echo '<p><label for="stateprov">';
                     _e( 'Province / State:', 'tourismpress_textdomain' );
                     echo '</label><br /> ';
-                    echo '<input type="text" style="width: 100%" id="stateprov" name="stateprov" value="' . esc_attr( $stateprov_var ) . '" size="25" /></p>';
+                    echo '<input class="required" type="text" style="width: 100%" id="stateprov" name="stateprov" value="' . esc_attr( $stateprov_var ) . '" size="25" /></p>';
 
                     ?>
                 </div>
@@ -187,26 +187,35 @@ function tourismpress_accommodation_meta_box_callback($post) {
        </div>
        
        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-            <?php
+            
 
-            $website_url_var = get_post_meta( $post->ID, 'website_url', true );
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    <?php
 
-            echo '<p><label for="website_url">';
-            _e( 'Website URL:', 'tourismpress_textdomain' );
-            echo '</label><br /> ';
-            echo '<input type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
+                    $website_url_var = get_post_meta( $post->ID, 'website_url', true );
 
-            ?>
-            <?php
+                    echo '<p><label for="website_url">';
+                    _e( 'Website URL:', 'tourismpress_textdomain' );
+                    echo '</label><br /> ';
+                    echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
 
-            $facebook_url_var = get_post_meta( $post->ID, 'facebook_url', true );
+                    ?>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    <?php
 
-            echo '<p><label for="facebook_url">';
-            _e( 'Facebook Page URL:', 'tourismpress_textdomain' );
-            echo '</label><br /> ';
-            echo '<input type="text" placeholder="http://" style="width: 100%" id="facebook_url" name="facebook_url" value="' . esc_attr( $facebook_url_var ) . '" size="25" /></p>';
+                    $facebook_url_var = get_post_meta( $post->ID, 'facebook_url', true );
 
-            ?>
+                    echo '<p><label for="facebook_url">';
+                    _e( 'Facebook Page URL:', 'tourismpress_textdomain' );
+                    echo '</label><br /> ';
+                    echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="facebook_url" name="facebook_url" value="' . esc_attr( $facebook_url_var ) . '" size="25" /></p>';
+
+                    ?>
+                </div>
+            </div>
+
 
             <?php
 
@@ -215,7 +224,7 @@ function tourismpress_accommodation_meta_box_callback($post) {
             echo '<p><label for="twitter_url">';
             _e( 'Twitter Profile URL:', 'tourismpress_textdomain' );
             echo '</label><br /> ';
-            echo '<input type="text" placeholder="http://" style="width: 100%" id="twitter_url" name="twitter_url" value="' . esc_attr( $twitter_url ) . '" size="25" /></p>';
+            echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="twitter_url" name="twitter_url" value="' . esc_attr( $twitter_url ) . '" size="25" /></p>';
 
             ?>
             <?php
@@ -225,7 +234,7 @@ function tourismpress_accommodation_meta_box_callback($post) {
             echo '<p><label for="instagram_url">';
             _e( 'Instagram URL:', 'tourismpress_textdomain' );
             echo '</label><br /> ';
-            echo '<input type="text" placeholder="http://" style="width: 100%" id="instagram_url" name="instagram_url" value="' . esc_attr( $instagram_url_var ) . '" size="25" /></p>';
+            echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="instagram_url" name="instagram_url" value="' . esc_attr( $instagram_url_var ) . '" size="25" /></p>';
 
             ?>
 

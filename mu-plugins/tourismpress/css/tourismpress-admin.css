@@ -74,6 +74,13 @@
 	text-size: 13px;
 }
 
+#attraction_details_section label.error, 
+#accommodation_details_section label.error, 
+#restaurant_details_section label.error,
+#event_details_section label.error {
+	color: #ff3b30;
+}
+
 @media(max-width: 767px){
 	.collapsible-column {
 		display: block;

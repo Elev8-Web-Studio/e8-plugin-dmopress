@@ -206,7 +206,7 @@ function tourismpress_attraction_meta_box_callback($post) {
             echo '<p><label for="website_url">';
             _e( 'Website URL:', 'tourismpress_textdomain' );
             echo '</label><br /> ';
-            echo '<input type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
+            echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
 
             ?>
             <?php
