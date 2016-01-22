@@ -195,7 +195,7 @@ function tourismpress_accommodation_meta_box_callback($post) {
                     echo '<p><label for="stateprov">';
                     _e( 'Province / State:', 'tourismpress_textdomain' );
                     echo '</label><br /> ';
-                    echo '<input class="required" type="text" style="width: 100%" id="stateprov" name="stateprov" value="' . esc_attr( $stateprov_var ) . '" size="25" /></p>';
+                    echo '<input type="text" style="width: 100%" id="stateprov" name="stateprov" value="' . esc_attr( $stateprov_var ) . '" size="25" /></p>';
 
                     ?>
                 </div>
