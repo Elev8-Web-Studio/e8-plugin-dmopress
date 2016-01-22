@@ -206,7 +206,6 @@ function tourismpress_admin_enqueue_style() {
     //wp_enqueue_style('tourismpress-picker-time-css', plugins_url('css/picker.time.css', __FILE__), false);
 
     wp_enqueue_script('tourismpress-jquery-validate-js', plugins_url('js/jquery.validate.js', __FILE__), false);
-    wp_enqueue_script('tourismpress-jquery-validate-additional-methods-js', plugins_url('js/jquery.validate.additional-methods.js', __FILE__), false);
 }
 
 if(is_admin()){

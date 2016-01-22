@@ -1,5 +1,46 @@
 <?php
 
+// Accommodations Features
+function tourismpress_register_accommodations_features() {
+
+    $labels = array(
+        'name'                  => _x( 'Accommodations Features', 'Accommodations Features', 'tourismpress_textdomain' ),
+        'singular_name'         => _x( 'Accommodations Feature', 'Accommodations Feature', 'tourismpress_textdomain' ),
+        'search_items'          => __( 'Search Accommodations Features', 'tourismpress_textdomain' ),
+        'popular_items'         => __( 'Popular Accommodations Features', 'tourismpress_textdomain' ),
+        'all_items'             => __( 'All Features', 'tourismpress_textdomain' ),
+        'parent_item'           => __( 'Parent Accommodations Feature', 'tourismpress_textdomain' ),
+        'parent_item_colon'     => __( 'Parent Accommodations Feature', 'tourismpress_textdomain' ),
+        'edit_item'             => __( 'Edit Accommodations Feature', 'tourismpress_textdomain' ),
+        'update_item'           => __( 'Update Accommodations Feature', 'tourismpress_textdomain' ),
+        'add_new_item'          => __( 'Add New Accommodations Feature', 'tourismpress_textdomain' ),
+        'new_item_name'         => __( 'New Accommodations Feature Name', 'tourismpress_textdomain' ),
+        'add_or_remove_items'   => __( 'Add or remove Accommodations Features', 'tourismpress_textdomain' ),
+        'choose_from_most_used' => __( 'Choose from most used features', 'tourismpress_textdomain' ),
+        'menu_name'             => __( 'Accommodations Features', 'tourismpress_textdomain' ),
+    );
+
+    $args = array(
+        'labels'            => $labels,
+        'public'            => true,
+        'show_in_nav_menus' => true,
+        'show_admin_column' => false,
+        'hierarchical'      => true,
+        'show_tagcloud'     => true,
+        'show_ui'           => true,
+        'query_var'         => true,
+        'rewrite'           => true,
+        'query_var'         => true,
+        'capabilities'      => array(),
+    );
+
+    register_taxonomy( 'accommodations-features', 'accommodations', $args );
+    register_taxonomy_for_object_type( 'accommodations-features', 'accommodations' );
+}
+
+add_action( 'init', 'tourismpress_register_accommodations_features' );
+
+
 // Accommodations Categories
 function tourismpress_register_accommodations_categories() {
 
@@ -8,7 +49,7 @@ function tourismpress_register_accommodations_categories() {
 		'singular_name'			=> _x( 'Accommodations Category', 'Accommodations Category', 'tourismpress_textdomain' ),
 		'search_items'			=> __( 'Search Accommodations Categories', 'tourismpress_textdomain' ),
 		'popular_items'			=> __( 'Popular Accommodations Categories', 'tourismpress_textdomain' ),
-		'all_items'				=> __( 'All Accommodations Categories', 'tourismpress_textdomain' ),
+		'all_items'				=> __( 'All Categories', 'tourismpress_textdomain' ),
 		'parent_item'			=> __( 'Parent Accommodations Category', 'tourismpress_textdomain' ),
 		'parent_item_colon'		=> __( 'Parent Accommodations Category', 'tourismpress_textdomain' ),
 		'edit_item'				=> __( 'Edit Accommodations Category', 'tourismpress_textdomain' ),
@@ -39,6 +80,8 @@ function tourismpress_register_accommodations_categories() {
 }
 
 add_action( 'init', 'tourismpress_register_accommodations_categories' );
+
+
 
 // Accommodations Post Type
 function register_accommodations_post_type() {
@@ -191,6 +234,19 @@ function tourismpress_accommodation_meta_box_callback($post) {
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    
+                    <?php
+
+                    $rooms_var = get_post_meta( $post->ID, 'rooms', true );
+
+                    echo '<p><label for="rooms">';
+                    _e( '# of Rooms:', 'tourismpress_textdomain' );
+                    echo '</label><br /> ';
+                    echo '<input class="" type="text" placeholder="" style="width: 100%" id="rooms" name="rooms" value="' . esc_attr( $rooms_var ) . '" size="25" /></p>';
+
+                    ?>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <?php
 
                     $website_url_var = get_post_meta( $post->ID, 'website_url', true );
@@ -199,18 +255,6 @@ function tourismpress_accommodation_meta_box_callback($post) {
                     _e( 'Website URL:', 'tourismpress_textdomain' );
                     echo '</label><br /> ';
                     echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
-
-                    ?>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                    <?php
-
-                    $facebook_url_var = get_post_meta( $post->ID, 'facebook_url', true );
-
-                    echo '<p><label for="facebook_url">';
-                    _e( 'Facebook Page URL:', 'tourismpress_textdomain' );
-                    echo '</label><br /> ';
-                    echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="facebook_url" name="facebook_url" value="' . esc_attr( $facebook_url_var ) . '" size="25" /></p>';
 
                     ?>
                 </div>
@@ -324,7 +368,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     if (!isset( $_POST['website_url'])) {
         return;
     }
-    if (!isset( $_POST['facebook_url'])) {
+    if (!isset( $_POST['rooms'])) {
         return;
     }
     if (!isset( $_POST['twitter_url'])) {
@@ -341,7 +385,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     $zip = sanitize_text_field($_POST['zip']);
     $telephone = sanitize_text_field($_POST['telephone']);
     $website_url = sanitize_text_field($_POST['website_url']);
-    $facebook_url = sanitize_text_field($_POST['facebook_url']);
+    $rooms = sanitize_text_field($_POST['rooms']);
     $twitter_url = sanitize_text_field($_POST['twitter_url']);
     $instagram_url = sanitize_text_field($_POST['instagram_url']);
 
@@ -352,7 +396,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'zip', $zip);
     update_post_meta($post_id, 'telephone', $telephone);
     update_post_meta($post_id, 'website_url', $website_url);
-    update_post_meta($post_id, 'facebook_url', $facebook_url);
+    update_post_meta($post_id, 'rooms', $rooms);
     update_post_meta($post_id, 'twitter_url', $twitter_url);
     update_post_meta($post_id, 'instagram_url', $instagram_url);
 }

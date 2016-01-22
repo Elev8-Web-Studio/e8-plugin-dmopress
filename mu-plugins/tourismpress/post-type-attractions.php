@@ -8,7 +8,7 @@ function tourismpress_register_attractions_categories() {
         'singular_name'         => _x( 'Attraction Category', 'Attraction Category', 'tourismpress_textdomain' ),
         'search_items'          => __( 'Search Attraction Categories', 'tourismpress_textdomain' ),
         'popular_items'         => __( 'Popular Attraction Categories', 'tourismpress_textdomain' ),
-        'all_items'             => __( 'All Attraction Categories', 'tourismpress_textdomain' ),
+        'all_items'             => __( 'All Categories', 'tourismpress_textdomain' ),
         'parent_item'           => __( 'Parent Attraction Category', 'tourismpress_textdomain' ),
         'parent_item_colon'     => __( 'Parent Attraction Category', 'tourismpress_textdomain' ),
         'edit_item'             => __( 'Edit Attraction Category', 'tourismpress_textdomain' ),
@@ -206,7 +206,7 @@ function tourismpress_attraction_meta_box_callback($post) {
             echo '<p><label for="website_url">';
             _e( 'Website URL:', 'tourismpress_textdomain' );
             echo '</label><br /> ';
-            echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
+            echo '<input type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
 
             ?>
             <?php

@@ -8,7 +8,7 @@ function restaurant_categories() {
 		'singular_name'			=> _x( 'Restaurant Category', 'Restaurant category', 'tourismpress_textdomain' ),
 		'search_items'			=> __( 'Search Restaurant Categories', 'tourismpress_textdomain' ),
 		'popular_items'			=> __( 'Popular Restaurant Categories', 'tourismpress_textdomain' ),
-		'all_items'				=> __( 'All Restaurant Categories', 'tourismpress_textdomain' ),
+		'all_items'				=> __( 'All Categories', 'tourismpress_textdomain' ),
 		'parent_item'			=> __( 'Parent Restaurant Category', 'tourismpress_textdomain' ),
 		'parent_item_colon'		=> __( 'Parent Restaurant Category', 'tourismpress_textdomain' ),
 		'edit_item'				=> __( 'Edit Restaurant Category', 'tourismpress_textdomain' ),

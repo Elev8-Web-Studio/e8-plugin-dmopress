@@ -8,7 +8,7 @@ function tourismpress_register_package_categories() {
 		'singular_name'			=> _x( 'Package Category', 'Package Category', 'tourismpress_textdomain' ),
 		'search_items'			=> __( 'Search Package Categories', 'tourismpress_textdomain' ),
 		'popular_items'			=> __( 'Popular Package Categories', 'tourismpress_textdomain' ),
-		'all_items'				=> __( 'All Package Categories', 'tourismpress_textdomain' ),
+		'all_items'				=> __( 'All Categories', 'tourismpress_textdomain' ),
 		'parent_item'			=> __( 'Parent Package Category', 'tourismpress_textdomain' ),
 		'parent_item_colon'		=> __( 'Parent Package Category', 'tourismpress_textdomain' ),
 		'edit_item'				=> __( 'Edit Package Category', 'tourismpress_textdomain' ),
