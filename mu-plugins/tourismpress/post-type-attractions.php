@@ -1,5 +1,46 @@
 <?php
 
+// Attraction Features
+function tourismpress_register_attractions_features() {
+
+    $labels = array(
+        'name'                  => _x( 'Attraction Features', 'Attraction Features', 'tourismpress_textdomain' ),
+        'singular_name'         => _x( 'Attraction Feature', 'Attraction Feature', 'tourismpress_textdomain' ),
+        'search_items'          => __( 'Search Attraction Features', 'tourismpress_textdomain' ),
+        'popular_items'         => __( 'Popular Attraction Features', 'tourismpress_textdomain' ),
+        'all_items'             => __( 'All Features', 'tourismpress_textdomain' ),
+        'parent_item'           => __( 'Parent Attraction Feature', 'tourismpress_textdomain' ),
+        'parent_item_colon'     => __( 'Parent Attraction Feature', 'tourismpress_textdomain' ),
+        'edit_item'             => __( 'Edit Attraction Feature', 'tourismpress_textdomain' ),
+        'update_item'           => __( 'Update Attraction Feature', 'tourismpress_textdomain' ),
+        'add_new_item'          => __( 'Add New Attraction Feature', 'tourismpress_textdomain' ),
+        'new_item_name'         => __( 'New Attraction Feature Name', 'tourismpress_textdomain' ),
+        'add_or_remove_items'   => __( 'Add or remove Attraction Features', 'tourismpress_textdomain' ),
+        'choose_from_most_used' => __( 'Choose from most used features', 'tourismpress_textdomain' ),
+        'menu_name'             => __( 'Attraction Features', 'tourismpress_textdomain' ),
+    );
+
+    $args = array(
+        'labels'            => $labels,
+        'public'            => true,
+        'show_in_nav_menus' => true,
+        'show_admin_column' => false,
+        'hierarchical'      => true,
+        'show_tagcloud'     => true,
+        'show_ui'           => true,
+        'query_var'         => true,
+        'rewrite'           => true,
+        'query_var'         => true,
+        'capabilities'      => array(),
+    );
+
+    register_taxonomy( 'attractions-features', 'attractions', $args );
+    register_taxonomy_for_object_type( 'attractions-features', 'attractions' );
+}
+
+add_action( 'init', 'tourismpress_register_attractions_features' );
+
+
 // Attraction Categories
 function tourismpress_register_attractions_categories() {
 
