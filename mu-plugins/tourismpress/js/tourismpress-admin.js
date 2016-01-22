@@ -38,8 +38,35 @@ jQuery(document).ready(function($) {
 				phoneUS: true
 			},
 			rooms: {
-				number: true
+				number: true,
+				min: 1
+			},
+			star_rating: {
+				number: true,
+				min: 1,
+				max: 5
+			},
+			price_rating: {
+				number: true,
+				min: 1,
+				max: 5
 			}
+		},
+		messages: {
+		    star_rating: {
+		      number: "&#9650; Invalid number",
+		      min: "&#9650; Must be at least 1",
+		      max: "&#9650; Must be no more than 5"
+		    },
+		    price_rating: {
+		      number: "&#9650; Invalid number",
+		      min: "&#9650; Must be at least 1",
+		      max: "&#9650; Must be no more than 5"
+		    },
+		    rooms: {
+		    	number: "&#9650; Invalid number",
+		    	min: "&#9650; Must be at least 1"
+		    }
 		}
 	});
 

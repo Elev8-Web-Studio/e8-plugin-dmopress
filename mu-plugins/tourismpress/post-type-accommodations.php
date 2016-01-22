@@ -230,6 +230,17 @@ function tourismpress_accommodation_meta_box_callback($post) {
        </div>
        
        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+
+           <?php
+
+           $website_url_var = get_post_meta( $post->ID, 'website_url', true );
+
+           echo '<p><label for="website_url">';
+           _e( 'Website URL:', 'tourismpress_textdomain' );
+           echo '</label><br /> ';
+           echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
+
+           ?>
             
 
             <div class="row">
@@ -249,38 +260,16 @@ function tourismpress_accommodation_meta_box_callback($post) {
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                     <?php
 
-                    $website_url_var = get_post_meta( $post->ID, 'website_url', true );
+                    $star_rating_var = get_post_meta( $post->ID, 'star_rating', true );
 
-                    echo '<p><label for="website_url">';
-                    _e( 'Website URL:', 'tourismpress_textdomain' );
+                    echo '<p><label for="star_rating">';
+                    _e( 'Star Rating (1-5):', 'tourismpress_textdomain' );
                     echo '</label><br /> ';
-                    echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
+                    echo '<input class="" type="text" placeholder="" style="width: 100%" id="star_rating" name="star_rating" value="' . esc_attr( $star_rating_var ) . '" size="25" /></p>';
 
                     ?>
                 </div>
             </div>
-
-
-            <?php
-
-            $twitter_url = get_post_meta( $post->ID, 'twitter_url', true );
-
-            echo '<p><label for="twitter_url">';
-            _e( 'Twitter Profile URL:', 'tourismpress_textdomain' );
-            echo '</label><br /> ';
-            echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="twitter_url" name="twitter_url" value="' . esc_attr( $twitter_url ) . '" size="25" /></p>';
-
-            ?>
-            <?php
-
-            $instagram_url_var = get_post_meta( $post->ID, 'instagram_url', true );
-
-            echo '<p><label for="instagram_url">';
-            _e( 'Instagram URL:', 'tourismpress_textdomain' );
-            echo '</label><br /> ';
-            echo '<input class="validate_url" type="text" placeholder="http://" style="width: 100%" id="instagram_url" name="instagram_url" value="' . esc_attr( $instagram_url_var ) . '" size="25" /></p>';
-
-            ?>
 
             <?php 
                 $option = get_option('tourismpress');
@@ -371,10 +360,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     if (!isset( $_POST['rooms'])) {
         return;
     }
-    if (!isset( $_POST['twitter_url'])) {
-        return;
-    }
-    if (!isset( $_POST['instagram_url'])) {
+    if (!isset( $_POST['star_rating'])) {
         return;
     }
 
@@ -386,8 +372,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     $telephone = sanitize_text_field($_POST['telephone']);
     $website_url = sanitize_text_field($_POST['website_url']);
     $rooms = sanitize_text_field($_POST['rooms']);
-    $twitter_url = sanitize_text_field($_POST['twitter_url']);
-    $instagram_url = sanitize_text_field($_POST['instagram_url']);
+    $star_rating = sanitize_text_field($_POST['star_rating']);
 
     // Update the meta field in the database.
     update_post_meta($post_id, 'address', $address);
@@ -397,8 +382,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'telephone', $telephone);
     update_post_meta($post_id, 'website_url', $website_url);
     update_post_meta($post_id, 'rooms', $rooms);
-    update_post_meta($post_id, 'twitter_url', $twitter_url);
-    update_post_meta($post_id, 'instagram_url', $instagram_url);
+    update_post_meta($post_id, 'star_rating', $star_rating);
 }
 
 add_action('save_post', 'tourismpress_accommodation_save_meta_box_data');
