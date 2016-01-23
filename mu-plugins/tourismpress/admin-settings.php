@@ -113,14 +113,14 @@ class MySettingsPage {
         if(isset($input['enabled_post_types']) && is_array($_POST['enabled_post_types'])) {
             // let's iterate thru the array
            foreach ($_POST['enabled_post_types'] as $enabled_post_types) {
-              error_log("We got here", 0);
+              //error_log("We got here", 0);
            }
         }
 
-        if(isset($input['google_analytics'])) {
-            $new_input['google_analytics'] = strtoupper(sanitize_text_field($input['google_analytics']));
-            if(!isValidGoogleAnalyticsID($new_input['google_analytics'])){
-                add_settings_error('google_analytics','google-analytics','<strong>Configuration Error:</strong> This is not a valid Google Analytics Code. Code should be in the format UA-000000-0');
+        if(isset($input['google_analytics_id'])) {
+            $new_input['google_analytics_id'] = strtoupper(sanitize_text_field($input['google_analytics_id']));
+            if(!isValidGoogleAnalyticsID($new_input['google_analytics_id'])){
+                add_settings_error('google_analytics_id','google-analytics-id','<strong>Configuration Error:</strong> This is not a valid Google Analytics ID. ID should be in the format UA-000000-0');
             }
         }
 
@@ -160,12 +160,12 @@ class MySettingsPage {
         extract($args);
 
         printf(
-            '<input type="text" id="google-analytics" name="tourismpress[google_analytics]" value="%s" placeholder="UA-000000-0" />',
-            isset( $this->options['google_analytics'] ) ? esc_attr( $this->options['google_analytics']) : ''
+            '<input type="text" id="google-analytics-id" name="tourismpress[google_analytics_id]" value="%s" placeholder="UA-000000-0" />',
+            isset( $this->options['google_analytics_id'] ) ? esc_attr( $this->options['google_analytics_id']) : ''
         );
 
-        if(isset( $this->options['google_analytics'])) {
-          if(!isValidGoogleAnalyticsID(esc_attr($this->options['google_analytics']))){
+        if(isset( $this->options['google_analytics_id'])) {
+          if(!isValidGoogleAnalyticsID(esc_attr($this->options['google_analytics_id']))){
             printf('<div class="tourismpress-admin-badge-bad">&#9664; &nbsp;Missing or invalid Google Analytics Tracking ID</div>');
           } else {
             printf('<div class="tourismpress-admin-badge-good">&#10004; OK</div>');

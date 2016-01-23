@@ -280,6 +280,7 @@ function tourismpress_accommodation_meta_box_callback($post) {
                 }
             ?>
        </div>
+
        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
            <label>Map:</label>
            <div class="tourismpress-map">

@@ -79,12 +79,6 @@ function tourismpress_register_attractions_categories() {
     register_taxonomy_for_object_type( 'attractions-categories', 'attractions' );
 }
 
-////FIX
-$option = get_option('tourismpress');
-if(isValidGoogleAnalyticsID($option['google_analytics'])){
-    
-}
-
 add_action( 'init', 'tourismpress_register_attractions_categories' );
 
 // Attractions Post Type
@@ -130,12 +124,6 @@ function register_attractions_post_type() {
 	);
 
 	register_post_type( 'attractions', $args );
-}
-
-////FIX
-$option = get_option('tourismpress');
-if(isValidGoogleAnalyticsID($option['google_analytics'])){
-    
 }
 
 add_action( 'init', 'register_attractions_post_type' );

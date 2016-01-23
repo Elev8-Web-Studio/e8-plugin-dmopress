@@ -3,8 +3,8 @@
 function printGoogleAnalyticsCodeIfPresent(){
 	//To avoid polluting analytics, do not embed code for logged in users
 	if(!is_user_logged_in()){
-		$option = get_option('tourismpress_option');
-		if(isValidGoogleAnalyticsID($option['google_analytics'])){
+		$options = get_option('tourismpress');
+		if(isValidGoogleAnalyticsID($options['google_analytics_id'])){
 
 		?>
 <script>
@@ -13,7 +13,7 @@ function printGoogleAnalyticsCodeIfPresent(){
 	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	ga('create', '<?php echo $googleAnalyticsId['google_analytics']; ?>', 'auto');
+	ga('create', '<?php echo $options["google_analytics_id"]; ?>', 'auto');
 	ga('send', 'pageview');
 </script>
 		<?php
