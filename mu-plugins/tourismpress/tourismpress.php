@@ -1,14 +1,14 @@
 <?php
 /**
  * @package TourismPress
- * @version 1.0.2
+ * @version 1.0.3
  */
 /*
 Plugin Name: TourismPress
 Plugin URI: http://tourismpress.net
 Description: This plugin powers the TourismPress platform. Do not deactivate or remove it.
 Author: Jason Pomerleau
-Version: 1.0.0
+Version: 1.0.3
 Author URI: http://tourismpress.net
 */
 
