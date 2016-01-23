@@ -372,8 +372,8 @@ function tourismpress_event_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'start_time', $start_time);
     update_post_meta($post_id, 'end_date', $end_date);
     update_post_meta($post_id, 'end_time', $end_time);
-    update_post_meta($post_id, 'website_url', $website_url);
-    update_post_meta($post_id, 'event_registration_url', $event_registration_url);
+    update_post_meta($post_id, 'website_url', normalize_url($website_url));
+    update_post_meta($post_id, 'event_registration_url', normalize_url($event_registration_url));
 }
 
 add_action('save_post', 'tourismpress_event_save_meta_box_data');

@@ -1,5 +1,14 @@
 <?php 
 
+function normalize_url($url){
+	//Apply http:// prefix to URLs that don't already have http:// or https:// in the URL
+    if (strpos($url, 'http://') !== false || strpos($url, 'https://') !== false){
+        return $url;
+    } else {
+    	return 'http://'.$url;
+    }
+}
+
 // Type Validation Functions
 function isValidGoogleAnalyticsID($trackingIdString){
     return preg_match('/^ua-\d{4,9}-\d{1,4}$/i', strval($trackingIdString)) ? true : false;

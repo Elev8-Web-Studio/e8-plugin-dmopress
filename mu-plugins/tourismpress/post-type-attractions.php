@@ -376,6 +376,7 @@ function tourismpress_attraction_save_meta_box_data($post_id) {
     $facebook_url = sanitize_text_field($_POST['facebook_url']);
     $twitter_url = sanitize_text_field($_POST['twitter_url']);
     $instagram_url = sanitize_text_field($_POST['instagram_url']);
+    
 
     // Update the meta field in the database.
     update_post_meta($post_id, 'address', $address);
@@ -383,10 +384,10 @@ function tourismpress_attraction_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'stateprov', $stateprov);
     update_post_meta($post_id, 'zip', $zip);
     update_post_meta($post_id, 'telephone', $telephone);
-    update_post_meta($post_id, 'website_url', $website_url);
-    update_post_meta($post_id, 'facebook_url', $facebook_url);
-    update_post_meta($post_id, 'twitter_url', $twitter_url);
-    update_post_meta($post_id, 'instagram_url', $instagram_url);
+    update_post_meta($post_id, 'website_url', normalize_url($website_url));
+    update_post_meta($post_id, 'facebook_url', normalize_url($facebook_url));
+    update_post_meta($post_id, 'twitter_url', normalize_url($twitter_url));
+    update_post_meta($post_id, 'instagram_url', normalize_url($instagram_url));
 }
 
 add_action('save_post', 'tourismpress_attraction_save_meta_box_data');

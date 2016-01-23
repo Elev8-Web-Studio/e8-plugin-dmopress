@@ -419,10 +419,10 @@ function tourismpress_restaurant_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'telephone', $telephone);
     update_post_meta($post_id, 'star_rating', $star_rating);
     update_post_meta($post_id, 'price_rating', $price_rating);
-    update_post_meta($post_id, 'website_url', $website_url);
-    update_post_meta($post_id, 'facebook_url', $facebook_url);
-    update_post_meta($post_id, 'twitter_url', $twitter_url);
-    update_post_meta($post_id, 'instagram_url', $instagram_url);
+    update_post_meta($post_id, 'website_url', normalize_url($website_url));
+    update_post_meta($post_id, 'facebook_url', normalize_url($facebook_url));
+    update_post_meta($post_id, 'twitter_url', normalize_url($twitter_url));
+    update_post_meta($post_id, 'instagram_url', normalize_url($instagram_url));
 }
 
 add_action('save_post', 'tourismpress_restaurant_save_meta_box_data');

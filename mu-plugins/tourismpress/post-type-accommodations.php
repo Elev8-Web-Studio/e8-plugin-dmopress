@@ -381,7 +381,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'stateprov', $stateprov);
     update_post_meta($post_id, 'zip', $zip);
     update_post_meta($post_id, 'telephone', $telephone);
-    update_post_meta($post_id, 'website_url', $website_url);
+    update_post_meta($post_id, 'website_url', normalize_url($website_url));
     update_post_meta($post_id, 'rooms', $rooms);
     update_post_meta($post_id, 'star_rating', $star_rating);
 }
