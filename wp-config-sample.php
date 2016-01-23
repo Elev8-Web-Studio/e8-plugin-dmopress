@@ -92,3 +92,9 @@ require_once(ABSPATH . 'wp-settings.php');
 
 /** Disallow direct file editing in Wordpress Admin */
 define('DISALLOW_FILE_EDIT', true);
+
+/* Compression */
+define( 'COMPRESS_CSS',        true );
+define( 'COMPRESS_SCRIPTS',    true );
+define( 'CONCATENATE_SCRIPTS', true );
+define( 'ENFORCE_GZIP',        true );
