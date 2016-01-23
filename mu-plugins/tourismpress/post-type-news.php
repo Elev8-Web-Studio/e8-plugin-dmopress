@@ -34,7 +34,8 @@ function tourismpress_register_news_categories() {
         'capabilities'      => array(),
     );
 
-    register_taxonomy( 'news-category', array( 'news' ), $args );
+    register_taxonomy( 'news-categories', array( 'news' ), $args );
+    register_taxonomy_for_object_type( 'news-categories', 'news' );
 }
 
 add_action( 'init', 'tourismpress_register_news_categories' );
