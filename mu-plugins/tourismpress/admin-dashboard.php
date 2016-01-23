@@ -2,7 +2,7 @@
 
 // Dashboard Widget: Latest News
 function tourismpress_news_dashboard_widget() {
-	echo "<p>Contents</p>";
+	echo "<p>Coming Soon</p>";
 }
 function add_tourismpress_news_dashboard_widget() {
 	wp_add_dashboard_widget('tourismpress_news_dashboard_widget', 'TourismPress News', 'tourismpress_news_dashboard_widget');
@@ -10,7 +10,7 @@ function add_tourismpress_news_dashboard_widget() {
 add_action('wp_dashboard_setup', 'add_tourismpress_news_dashboard_widget');
 
 // Dashboard Widget: Twitter Feed
-function tourismpress_twitter_dashboard_widget() {
+function tourismpress_wordpress_feed_widget() {
 	$rss = new DOMDocument();
 	$rss->load('http://wordpress.org/news/feed/');
 
@@ -32,13 +32,13 @@ function tourismpress_twitter_dashboard_widget() {
 		$link = $feed[$x]['link'];
 		$description = $feed[$x]['desc'];
 		$date = date('l F d, Y', strtotime($feed[$x]['date']));
-		echo '<p><strong><a href="'.$link.'" title="'.$title.'">'.$title.'</a></strong><br />';
+		echo '<p><strong><a href="'.$link.'" title="'.$title.'" target="_blank">'.$title.'</a></strong><br />';
 		echo '<small><em>Posted on '.$date.'</em></small></p>';
 		echo '<p>'.$description.'</p>';
 	}
 }
 
-function add_tourismpress_twitter_dashboard_widget() {
-	wp_add_dashboard_widget('tourismpress_twitter_dashboard_widget', 'Twitter', 'tourismpress_twitter_dashboard_widget');
+function add_tourismpress_wordpress_feed_widget() {
+	wp_add_dashboard_widget('tourismpress_wordpress_feed_widget', 'WordPress Blog', 'tourismpress_wordpress_feed_widget');
 }
-add_action('wp_dashboard_setup', 'add_tourismpress_twitter_dashboard_widget');
+add_action('wp_dashboard_setup', 'add_tourismpress_wordpress_feed_widget');
