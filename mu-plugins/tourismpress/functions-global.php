@@ -2,11 +2,16 @@
 
 function normalize_url($url){
 	//Apply http:// prefix to URLs that don't already have http:// or https:// in the URL
-    if (strpos($url, 'http://') !== false || strpos($url, 'https://') !== false){
-        return $url;
-    } else {
-    	return 'http://'.$url;
-    }
+	if($url != ''){
+		if (strpos($url, 'http://') !== false || strpos($url, 'https://') !== false){
+		    return $url;
+		} else {
+			return 'http://'.$url;
+		}
+	} else {
+		return '';
+	}
+    
 }
 
 // Type Validation Functions
