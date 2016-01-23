@@ -34,7 +34,8 @@ function tourismpress_register_package_categories() {
 		'capabilities'      => array(),
 	);
 
-	register_taxonomy( 'package-category', array( 'package' ), $args );
+	register_taxonomy( 'package-categories', array( 'packages' ), $args );
+	register_taxonomy_for_object_type( 'package-categories', 'packages' );
 }
 
 add_action( 'init', 'tourismpress_register_package_categories' );
