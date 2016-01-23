@@ -34,6 +34,9 @@ jQuery(document).ready(function($) {
 			instagram_url: {
 			  friendlyURL: true
 			},
+			event_registration_url: {
+			  friendlyURL: true
+			},
 			telephone: {
 				phoneUS: true
 			},

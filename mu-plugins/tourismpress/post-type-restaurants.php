@@ -74,8 +74,8 @@ function restaurant_categories() {
 		'capabilities'      => array(),
 	);
 
-	register_taxonomy( 'restaurant-category', 'restaurants', $args );
-    register_taxonomy_for_object_type( 'restaurant-category', 'restaurants' );
+	register_taxonomy( 'restaurant-categories', 'restaurants', $args );
+    register_taxonomy_for_object_type( 'restaurant-categories', 'restaurants' );
 }
 
 add_action( 'init', 'restaurant_categories' );

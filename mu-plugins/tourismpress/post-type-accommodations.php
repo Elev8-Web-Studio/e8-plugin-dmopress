@@ -75,8 +75,8 @@ function tourismpress_register_accommodations_categories() {
 		'capabilities'      => array(),
 	);
 
-	register_taxonomy( 'accommodations-category', 'accommodations', $args );
-    register_taxonomy_for_object_type( 'accommodations-category', 'accommodations' );
+	register_taxonomy( 'accommodations-categories', 'accommodations', $args );
+    register_taxonomy_for_object_type( 'accommodations-categories', 'accommodations' );
 }
 
 add_action( 'init', 'tourismpress_register_accommodations_categories' );
@@ -93,7 +93,7 @@ function register_accommodations_post_type() {
 		'add_new_item'        => __( 'Add New Accommodation', 'tourismpress_textdomain' ),
 		'edit_item'           => __( 'Edit Accommodation', 'tourismpress_textdomain' ),
 		'new_item'            => __( 'New Accommodation', 'tourismpress_textdomain' ),
-		'view_item'           => __( 'View Accommodations', 'tourismpress_textdomain' ),
+		'view_item'           => __( 'View Accommodation', 'tourismpress_textdomain' ),
 		'search_items'        => __( 'Search Accommodations', 'tourismpress_textdomain' ),
 		'not_found'           => __( 'No Accommodations found', 'tourismpress_textdomain' ),
 		'not_found_in_trash'  => __( 'No Accommodations found in Trash', 'tourismpress_textdomain' ),

@@ -75,7 +75,7 @@ function tourismpress_register_news_post_type() {
         'query_var'           => true,
         'can_export'          => true,
         'rewrite'             => array(
-            'slug' => 'eat'
+            'slug' => 'news'
             ),
         'capability_type'     => 'post',
         'supports'            => array('title', 'editor', 'thumbnail'),
