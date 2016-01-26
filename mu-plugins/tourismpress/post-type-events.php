@@ -98,7 +98,7 @@ function tourismpress_event_add_meta_box() {
         'high'
     );
 }
-add_action( 'add_meta_boxes_events', 'tourismpress_event_add_meta_box' );
+add_action( 'add_meta_boxes', 'tourismpress_event_add_meta_box' );
 
 /**
  * Prints the box content.

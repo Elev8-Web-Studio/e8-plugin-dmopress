@@ -142,7 +142,7 @@ function tourismpress_attraction_add_meta_box() {
         'high'
     );
 }
-add_action( 'add_meta_boxes_attractions', 'tourismpress_attraction_add_meta_box' );
+add_action( 'add_meta_boxes', 'tourismpress_attraction_add_meta_box' );
 
 /**
  * Prints the box content.

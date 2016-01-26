@@ -108,7 +108,7 @@ function register_shop_post_type() {
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
 		'menu_position'       => 6,
-		'menu_icon'           => 'dashicons-products',
+		'menu_icon'           => 'dashicons-store',
 		'show_in_nav_menus'   => true,
 		'publicly_queryable'  => true,
 		'exclude_from_search' => false,
@@ -219,33 +219,6 @@ function tourismpress_shop_meta_box_callback($post) {
                     _e( 'Telephone:', 'tourismpress_textdomain' );
                     echo '</label><br /> ';
                     echo '<input type="text" style="width: 100%" id="telephone" name="telephone" value="' . esc_attr( $telephone_var ) . '" size="25" /></p>';
-
-                    ?>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                    <?php
-
-                    $star_rating_var = get_post_meta( $post->ID, 'star_rating', true );
-
-                    echo '<p><label for="star_rating">';
-                    _e( 'Star Rating (1-5):', 'tourismpress_textdomain' );
-                    echo '</label><br /> ';
-                    echo '<input type="text" style="width: 100%" id="star_rating" name="star_rating" value="' . esc_attr( $star_rating_var ) . '" size="25" /></p>';
-
-                    ?>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                    <?php
-
-                    $price_rating_var = get_post_meta( $post->ID, 'price_rating', true );
-
-                    echo '<p><label for="price_rating">';
-                    _e( 'Price Rating (1-5):', 'tourismpress_textdomain' );
-                    echo '</label><br /> ';
-                    echo '<input type="text" style="width: 100%" id="price_rating" name="price_rating" value="' . esc_attr( $price_rating_var ) . '" size="25" /></p>';
 
                     ?>
                 </div>
@@ -379,12 +352,6 @@ function tourismpress_shop_save_meta_box_data($post_id) {
     if (!isset( $_POST['telephone'])) {
         return;
     }
-    if (!isset( $_POST['star_rating'])) {
-        return;
-    }
-    if (!isset( $_POST['price_rating'])) {
-        return;
-    }
     if (!isset( $_POST['website_url'])) {
         return;
     }
@@ -404,8 +371,6 @@ function tourismpress_shop_save_meta_box_data($post_id) {
     $stateprov = sanitize_text_field($_POST['stateprov']);
     $zip = sanitize_text_field($_POST['zip']);
     $telephone = sanitize_text_field($_POST['telephone']);
-    $star_rating = sanitize_text_field($_POST['star_rating']);
-    $price_rating = sanitize_text_field($_POST['price_rating']);
     $website_url = sanitize_text_field($_POST['website_url']);
     $facebook_url = sanitize_text_field($_POST['facebook_url']);
     $twitter_url = sanitize_text_field($_POST['twitter_url']);
@@ -417,8 +382,6 @@ function tourismpress_shop_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'stateprov', $stateprov);
     update_post_meta($post_id, 'zip', $zip);
     update_post_meta($post_id, 'telephone', $telephone);
-    update_post_meta($post_id, 'star_rating', $star_rating);
-    update_post_meta($post_id, 'price_rating', $price_rating);
     update_post_meta($post_id, 'website_url', normalize_url($website_url));
     update_post_meta($post_id, 'facebook_url', normalize_url($facebook_url));
     update_post_meta($post_id, 'twitter_url', normalize_url($twitter_url));

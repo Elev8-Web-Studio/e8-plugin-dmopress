@@ -140,7 +140,7 @@ function tourismpress_restaurant_add_meta_box() {
         'high'
     );
 }
-add_action( 'add_meta_boxes_restaurants', 'tourismpress_restaurant_add_meta_box' );
+add_action( 'add_meta_boxes', 'tourismpress_restaurant_add_meta_box' );
 
 /**
  * Prints the box content.

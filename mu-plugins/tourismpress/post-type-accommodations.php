@@ -111,7 +111,7 @@ function register_accommodations_post_type() {
 		'show_in_menu'        => true,
 		'show_in_admin_bar'   => true,
 		'menu_position'       => 5,
-		'menu_icon'           => 'dashicons-location',
+		'menu_icon'           => 'dashicons-building',
 		'show_in_nav_menus'   => true,
 		'publicly_queryable'  => true,
 		'exclude_from_search' => false,
@@ -143,7 +143,7 @@ function tourismpress_accommodation_add_meta_box() {
         'high'
     );
 }
-add_action( 'add_meta_boxes_accommodations', 'tourismpress_accommodation_add_meta_box' );
+add_action( 'add_meta_boxes', 'tourismpress_accommodation_add_meta_box' );
 
 /**
  * Prints the box content.
