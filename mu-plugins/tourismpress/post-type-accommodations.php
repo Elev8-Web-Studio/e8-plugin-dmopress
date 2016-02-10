@@ -271,6 +271,24 @@ function tourismpress_accommodation_meta_box_callback($post) {
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    <?php
+
+                    $price_rating_var = get_post_meta( $post->ID, 'price_rating', true );
+
+                    echo '<p><label for="price_rating">';
+                    _e( 'Price Rating (1-5):', 'tourismpress_textdomain' );
+                    echo '</label><br /> ';
+                    echo '<input type="text" style="width: 100%" id="price_rating" name="price_rating" value="' . esc_attr( $price_rating_var ) . '" size="25" /></p>';
+
+                    ?>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                    
+                </div>
+            </div>
+
             <?php 
                 $option = get_option('tourismpress');
                 if($option['google_maps_api_key'] != ''){
@@ -365,6 +383,10 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
         return;
     }
 
+    if (!isset( $_POST['price_rating'])) {
+        return;
+    }
+
     // Sanitize user input.
     $address = sanitize_text_field($_POST['address']);
     $city = sanitize_text_field($_POST['city']);
@@ -374,6 +396,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     $website_url = sanitize_text_field($_POST['website_url']);
     $rooms = sanitize_text_field($_POST['rooms']);
     $star_rating = sanitize_text_field($_POST['star_rating']);
+    $price_rating = sanitize_text_field($_POST['price_rating']);
 
     // Update the meta field in the database.
     update_post_meta($post_id, 'address', $address);
@@ -384,6 +407,7 @@ function tourismpress_accommodation_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'website_url', normalize_url($website_url));
     update_post_meta($post_id, 'rooms', $rooms);
     update_post_meta($post_id, 'star_rating', $star_rating);
+    update_post_meta($post_id, 'price_rating', $price_rating);
 }
 
 add_action('save_post', 'tourismpress_accommodation_save_meta_box_data');
