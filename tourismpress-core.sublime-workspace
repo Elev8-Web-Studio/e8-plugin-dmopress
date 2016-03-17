@@ -1,0 +1,1745 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get_template",
+				"get_template_directory"
+			],
+			[
+				"star",
+				"$star_rating〔variable〕"
+			],
+			[
+				"wp_enqueue_scr",
+				"wp_enqueue_script"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"is_user",
+				"is_user_logged_in"
+			],
+			[
+				"print",
+				"printGoogleAnalyticsCode〔function〕"
+			],
+			[
+				"remove_me",
+				"remove_menu_page"
+			],
+			[
+				"menu",
+				"menu_icon"
+			],
+			[
+				"dashicons-l",
+				"dashicons-location	dashicons-location"
+			],
+			[
+				"register_post",
+				"register_post_type	Register Post Type All Options"
+			],
+			[
+				"sele",
+				"selectedFilter"
+			],
+			[
+				"select",
+				"selectedFeature"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"La",
+				"LayerMenuHeading"
+			],
+			[
+				"Swip",
+				"SwipeableViews"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"background",
+				"background-position"
+			],
+			[
+				"mater",
+				"material-design-lite"
+			],
+			[
+				"2",
+				"2A1"
+			],
+			[
+				"background-",
+				"background-position"
+			],
+			[
+				"shad",
+				"shadingAxis〔variable〕"
+			],
+			[
+				"dyna",
+				"dynamicTickFormat"
+			],
+			[
+				"dynamicT",
+				"dynamicTickFormat"
+			],
+			[
+				"dynamicTick",
+				"dynamicTickFormat〔function〕"
+			],
+			[
+				"screen",
+				"screenWidth〔variable〕"
+			],
+			[
+				"parse",
+				"parseFloat〔function〕"
+			],
+			[
+				"res",
+				"resize	.resize()"
+			],
+			[
+				"hei",
+				"heightOfExistingElements〔variable〕"
+			],
+			[
+				"footer",
+				"footerHeight〔variable〕"
+			],
+			[
+				"wino",
+				"windowHeight〔variable〕"
+			],
+			[
+				"pare",
+				"pareto-orange"
+			],
+			[
+				"btn-group",
+				"div.btn-group"
+			],
+			[
+				"he",
+				"height〔function〕"
+			],
+			[
+				"wid",
+				"widget-border"
+			],
+			[
+				"wib",
+				"widget-background"
+			],
+			[
+				"json",
+				"jsonDocument"
+			],
+			[
+				"slide",
+				"slideToggle〔function〕"
+			],
+			[
+				"existing",
+				"existingNodes"
+			],
+			[
+				"contain",
+				"container"
+			],
+			[
+				"su",
+				"sub_opportunities"
+			],
+			[
+				"elemen",
+				"elementToUpdate"
+			],
+			[
+				"ele",
+				"elementToUpdate"
+			],
+			[
+				"li",
+				"lighten"
+			],
+			[
+				"set",
+				"setTimeout〔function〕"
+			],
+			[
+				"new",
+				"newRadius"
+			],
+			[
+				"mouse",
+				"mouseout	.mouseout()"
+			],
+			[
+				"attr",
+				"attr	.attr() - single"
+			],
+			[
+				"ba",
+				"background-dark"
+			],
+			[
+				"per",
+				"percentOffset"
+			],
+			[
+				"fir",
+				"firstRun"
+			],
+			[
+				"tota",
+				"totalTime〔variable〕"
+			],
+			[
+				"elap",
+				"elapsedTime"
+			],
+			[
+				"css",
+				"css	.css() - single"
+			],
+			[
+				"trans",
+				"transparent"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"overflow-",
+				"overflow-y:   (property)"
+			],
+			[
+				"close",
+				"closeCurrentVideo"
+			],
+			[
+				"dismissAll",
+				"dismissAllButtons"
+			],
+			[
+				"dis",
+				"dismissAllPanels"
+			],
+			[
+				"vimeo",
+				"vimeoPlayers"
+			],
+			[
+				"toggl",
+				"toggleClass  (function)"
+			],
+			[
+				"fad",
+				"fadeOut  (function)"
+			],
+			[
+				"list-",
+				"list-style-type"
+			],
+			[
+				"border-radius-",
+				"-moz-border-radius-bottomright:   (property)"
+			],
+			[
+				"border-bottom-",
+				"border-bottom-right-radius"
+			],
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"cla",
+				"toggleClass  (function)"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"border-r",
+				"border-top-right-radius"
+			],
+			[
+				"remove",
+				"removeAllLayers"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"Mus",
+				"Mushroom"
+			],
+			[
+				"bikeLa",
+				"bikeLanesTiles"
+			],
+			[
+				"parks",
+				"parksTiles"
+			],
+			[
+				"trails",
+				"trailsTiles"
+			],
+			[
+				"roads",
+				"roadsDefaultTiles"
+			],
+			[
+				"active",
+				"activeLayers"
+			],
+			[
+				"acti",
+				"activeControls"
+			],
+			[
+				"remo",
+				"removeAllLayers"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"display",
+				"displayTransitMap"
+			],
+			[
+				"busSt",
+				"busStopsURL"
+			],
+			[
+				"busRou",
+				"busRoutesURL"
+			],
+			[
+				"ready",
+				"ready	$(document).ready"
+			],
+			[
+				"twepi_",
+				"twepi_slider"
+			],
+			[
+				"return",
+				"returnString"
+			],
+			[
+				"left",
+				"leftAdjust"
+			],
+			[
+				"con",
+				"containerWidth"
+			],
+			[
+				"list-style",
+				"list-style-type"
+			],
+			[
+				"toggle",
+				"slideToggle"
+			],
+			[
+				"date",
+				"dateParam"
+			],
+			[
+				"has_post",
+				"has_post_thumbnail"
+			],
+			[
+				"list-st",
+				"list-style-position"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"content",
+				"contents	.contents()"
+			],
+			[
+				"to",
+				"toggleErrorPanel"
+			],
+			[
+				"error",
+				"errorPanel"
+			],
+			[
+				"widget",
+				"widgetGauge1"
+			],
+			[
+				"t",
+				"pointer"
+			],
+			[
+				"netmon",
+				"netmon-vne-detail"
+			],
+			[
+				"test",
+				"testCanvas"
+			],
+			[
+				"dataDisk",
+				"dataDisk2"
+			],
+			[
+				"inputNetwork",
+				"inputNetworkActivityHostFilter"
+			],
+			[
+				"show",
+				"showDetails"
+			],
+			[
+				"html",
+				"html	my-html"
+			],
+			[
+				"customer",
+				"customReportSchedule"
+			],
+			[
+				"custom",
+				"customReportPeriod"
+			],
+			[
+				"iso",
+				"isotope-device-icon"
+			],
+			[
+				"isotope-item",
+				"isotope-item-danger"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"isotop",
+				"isotope-item"
+			],
+			[
+				"pa",
+				"padding-right"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"navbar",
+				"navbar-header"
+			],
+			[
+				"w",
+				"width	.width"
+			],
+			[
+				"gra",
+				"graph02"
+			],
+			[
+				"graph",
+				"graph01"
+			],
+			[
+				"wizard",
+				"wizardNetworkIPType"
+			],
+			[
+				"wiz",
+				"wizardStaticIPGroup"
+			],
+			[
+				"jq",
+				"jquery-1"
+			],
+			[
+				"u",
+				"u"
+			],
+			[
+				"remote",
+				"remote_time_offset_in_hours"
+			],
+			[
+				"ssh_",
+				"ssh_key_file"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 335.0,
+		"last_filter": "pack li",
+		"selected_items":
+		[
+			[
+				"pack li",
+				"Package Control: List Packages"
+			],
+			[
+				"pack remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack re",
+				"Package Control: Remove Channel"
+			],
+			[
+				"list pa",
+				"Package Control: List Packages"
+			],
+			[
+				"row",
+				"Snippet: bs3-row"
+			],
+			[
+				"col5",
+				"Snippet: bs3-col-5"
+			],
+			[
+				"col7",
+				"Snippet: bs3-col-7"
+			],
+			[
+				"span",
+				"Snippet: bs3-panel"
+			],
+			[
+				"col6",
+				"Snippet: bs3-col-6"
+			],
+			[
+				"com",
+				"Toggle Comment"
+			],
+			[
+				"col12",
+				"Snippet: bs3-col-12"
+			],
+			[
+				"conta",
+				"Snippet: bs3-container"
+			],
+			[
+				"syn html",
+				"Set Syntax: HTML"
+			],
+			[
+				"col3",
+				"Snippet: bs3-col-3"
+			],
+			[
+				"jque",
+				"Snippet: jQuery(document).ready"
+			],
+			[
+				"cont",
+				"Snippet: bs3-container"
+			],
+			[
+				"conv ta",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"PACK IN",
+				"Package Control: Install Package"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"pck in",
+				"Package Control: Install Package"
+			],
+			[
+				"syn php",
+				"Set Syntax: PHP"
+			],
+			[
+				"pk in",
+				"Package Control: Install Package"
+			],
+			[
+				"pk rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"pk li",
+				"Package Control: List Packages"
+			],
+			[
+				"syn json",
+				"Set Syntax: JSON"
+			],
+			[
+				"jquer",
+				"Snippet: jQuery(document).ready"
+			],
+			[
+				"comm",
+				"Toggle Comment"
+			],
+			[
+				"read",
+				"Snippet: $(document).ready"
+			],
+			[
+				"COL6",
+				"Snippet: bs3-col-6"
+			],
+			[
+				"ROW",
+				"Snippet: bs3-row"
+			],
+			[
+				"ehad",
+				"BracketHighlighter: Enable Debug Mode"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"button",
+				"Snippet: bs3-button-default"
+			],
+			[
+				"commen",
+				"Toggle Comment"
+			],
+			[
+				"j",
+				"Format: Javascript"
+			],
+			[
+				"col4",
+				"Snippet: bs3-col-4"
+			],
+			[
+				"syn h",
+				"Set Syntax: HTML"
+			],
+			[
+				"syn ht",
+				"Set Syntax: HTML (Tcl)"
+			],
+			[
+				"format",
+				"Format: Javascript"
+			],
+			[
+				"syn java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syn js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"forma",
+				"Format: Javascript"
+			],
+			[
+				"pkg ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remove p",
+				"Package Control: Remove Package"
+			],
+			[
+				"pkg ir",
+				"Package Control: Install Package"
+			],
+			[
+				"pkg re",
+				"Package Control: Remove Channel"
+			],
+			[
+				"pk remo",
+				"Package Control: Remove Channel"
+			],
+			[
+				"for",
+				"Format: Javascript"
+			],
+			[
+				" comm",
+				"Toggle Comment"
+			],
+			[
+				"contain",
+				"Snippet: bs3-container"
+			],
+			[
+				"form js",
+				"Format: Javascript"
+			],
+			[
+				"col9",
+				"Snippet: bs3-col-9"
+			],
+			[
+				"comment",
+				"Toggle Comment"
+			],
+			[
+				"tab",
+				"Snippet: bs3-table-responsive"
+			],
+			[
+				"col1",
+				"Snippet: bs3-col-1"
+			],
+			[
+				"fm js",
+				"Format: Javascript"
+			],
+			[
+				"pr js",
+				"Project: Save As"
+			],
+			[
+				"js",
+				"Format: Javascript"
+			],
+			[
+				"grunt",
+				"Grunt"
+			],
+			[
+				"grun",
+				"Preferences: Grunt - Settings – Default"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"for j",
+				"Format: Javascript"
+			],
+			[
+				"form j",
+				"Format: Javascript"
+			],
+			[
+				"packac",
+				"Package Control: List Packages"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"pk ",
+				"Package Control: Remove Package"
+			],
+			[
+				"pk",
+				"Package Control: Remove Package"
+			],
+			[
+				"jqu",
+				"Snippet: jQuery(document).ready"
+			],
+			[
+				"comme",
+				"Toggle Comment"
+			],
+			[
+				"pack r",
+				"Package Control: Remove Package"
+			],
+			[
+				"wordpr",
+				"WordPress Generate Salt Keys"
+			],
+			[
+				"fetc",
+				"Fetch: Package"
+			],
+			[
+				"pck li",
+				"Package Control: List Packages"
+			],
+			[
+				"pac l",
+				"Package Control: List Packages"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"pck i",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"icon",
+				"Snippet: bs3-icon"
+			],
+			[
+				"butt",
+				"Snippet: bs3-button"
+			],
+			[
+				"label",
+				"Snippet: bs3-label-default"
+			],
+			[
+				"table",
+				"Snippet: bs3-table-condensed"
+			],
+			[
+				"col-12",
+				"Snippet: bs3-col-12"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"comen",
+				"Toggle Comment"
+			],
+			[
+				"checkb",
+				"Snippet: bs3-input-checkbox"
+			],
+			[
+				"label ",
+				"Snippet: bs3-label-info"
+			],
+			[
+				"p in",
+				"Package Control: Install Package"
+			],
+			[
+				"col 3",
+				"Snippet: bs3-col-3"
+			],
+			[
+				"syn jas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"onread",
+				"Snippet: $(document).ready"
+			],
+			[
+				"label suc",
+				"Snippet: bs3-label-success"
+			],
+			[
+				"syn css",
+				"Set Syntax: CSS"
+			],
+			[
+				"script",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"bs tabl",
+				"Snippet: bs3-table-striped"
+			],
+			[
+				"input chec",
+				"Snippet: bs3-input-checkbox"
+			],
+			[
+				"col",
+				"Snippet: bs3-col-6"
+			],
+			[
+				"butto",
+				"Snippet: bs3-button-default"
+			],
+			[
+				"check",
+				"Snippet: bs3-input-checkbox"
+			],
+			[
+				"col 6",
+				"Snippet: bs3-col-6"
+			],
+			[
+				"fetch",
+				"Fetch: Manage"
+			],
+			[
+				"pac li",
+				"Package Control: List Packages"
+			],
+			[
+				"han ",
+				"Set Syntax: Handlebars"
+			],
+			[
+				"syn htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"pac",
+				"Package Control: List Packages"
+			],
+			[
+				"labe",
+				"Snippet: bs3-label-default"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"upp",
+				"Convert Case: Upper Case"
+			],
+			[
+				"pper",
+				"Snippet: bs3-row"
+			],
+			[
+				"sy htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"sy ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"s htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"pack ",
+				"Package Control: Remove Package"
+			],
+			[
+				"p in ",
+				"Package Control: Install Package"
+			],
+			[
+				"p ",
+				"Package Control: Remove Package"
+			],
+			[
+				"pin",
+				"Package Control: Install Package"
+			],
+			[
+				"brows",
+				"File: Open In Browser - Production Server"
+			],
+			[
+				"packa in",
+				"Package Control: Install Package"
+			],
+			[
+				"snippet ",
+				"Snippet: html"
+			],
+			[
+				"synta java",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"snip ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"",
+				"File: New View into File"
+			],
+			[
+				"alert",
+				"Snippet: bs3-alert-danger"
+			],
+			[
+				"addcl",
+				"Snippet: addClass"
+			],
+			[
+				"danger",
+				"Snippet: bs3-label-danger"
+			],
+			[
+				"p",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 579.0
+	},
+	"console":
+	{
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jasonpomerleau/Documents/tourismpress-core",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/mu-plugins",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/mu-plugins/tourismpress"
+	],
+	"file_history":
+	[
+		"/Users/jasonpomerleau/Documents/tourismpress-core/mu-plugins/tourismpress/post-type-restaurants.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/mu-plugins/tourismpress/post-type-accommodations.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/mu-plugins/tourismpress/post-type-itineraries.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/mu-plugins/tourismpress/post-type-attractions.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/mu-plugins/tourismpress/tourismpress.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/mu-plugins/tourismpress/admin-footer.php",
+		"/Users/jasonpomerleau/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jasonpomerleau/Documents/tourismpress-material-theme/src/header.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-material-theme/.ftppass",
+		"/Users/jasonpomerleau/Documents/tourismpress-material-theme/src/archive.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-material-theme/.gitignore"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"src/",
+			"source/*",
+			"<project>",
+			"<current file>",
+			"",
+			"<project>,-.sass*, -.temp, -*dist/*",
+			"<project>,-.sass*, -.temp",
+			"<project>",
+			"<open folders>",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\financialfitnesswindsor.ca\\wp-content\\themes",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\financialfitnesswindsor.ca\\wp-content",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\financialfitnesswindsor.ca\\wp-content\\themes",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\bookfestwindsor.com\\wp-content\\themes",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\bookfestwindsor.com\\wp-content\\themes\\CherryFramework",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\bookfestwindsor.com\\wp-content\\themes",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\bookfestwindsor.com\\wp-content\\themes\\theme48341",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\bookfestwindsor.com\\wp-content\\themes",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\bookfestwindsor.com\\wp-content",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\bookfestwindsor.com\\wp-content\\themes",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\netmon.ca\\wp-content\\themes\\netmon",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\netmon.ca\\wp-content\\themes\\netmon\\assets\\css",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\netmon.ca",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\netmon.ca\\wp-content\\themes\\twentyfourteen",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\netmon.ca\\wp-content\\themes\\netmon",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\netmon.ca\\wp-content\\themes\\twentyfourteen",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\netmon.ca",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\netmon.ca\\wp-content\\themes\\netmon",
+			"D:\\Google Drive\\Parallel 42 Systems\\Applications\\netmon.ca",
+			"",
+			"<button type=\"button\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" href=\"#modalConfirmDelete\">Delete</button> ",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"Restaurant",
+			"Restaurants",
+			" Restaurant",
+			"Add New",
+			"Restaurant ",
+			"star_rating",
+			"news",
+			"News",
+			"_news",
+			"nav",
+			"News",
+			"navbar",
+			"theme",
+			"radius",
+			"affix",
+			"collapse",
+			"navbar",
+			"bootstr",
+			"div",
+			"Facebook",
+			"navbar",
+			"zoom",
+			"star_rating",
+			"twitter",
+			"appjs",
+			"$fontawesome",
+			"$stylesheet",
+			"margin",
+			"20",
+			"nav",
+			"$stylesheet",
+			"breadcrumb",
+			"breadcr",
+			".btn",
+			"$bootstrap_stylesheet",
+			"tourismpress_theme_enqueue_bootstrap_css",
+			"Starter Theme",
+			"ss Starter",
+			"stylesheets-build",
+			"stylesheets-publish",
+			"starter",
+			"stylesheets-app",
+			"'connect'",
+			"$vendor_stylesheet",
+			"vendor_css",
+			"$app_stylesheet",
+			"enqueue_bootstrap",
+			"bootstrap_stylesheet",
+			"map",
+			"username",
+			"username1",
+			"username",
+			"key",
+			"key1",
+			"ftppass",
+			"#contact ",
+			"jason",
+			"Order Confirmation",
+			"http://placehold.it/400x495/FFFFFF/FFFFFF",
+			"<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>\n				<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>\n				<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>\n				<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>",
+			"<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>\n				<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>",
+			"Chart Content",
+			"<div class=\"chart\">\n					Chart Content\n				</div>",
+			"content",
+			"<div class=\"col-xs-3 col-sm-3 col-md-3 col-lg-3\">",
+			"'fast'",
+			"hide()",
+			"show()",
+			"toggle-document-stream",
+			"100",
+			"Sales<br>",
+			"<br>&nbsp;",
+			"add-documents-button",
+			"Purchase Order",
+			"10px",
+			"Add",
+			"Add<br>",
+			"footer",
+			"#cover",
+			"</i> ",
+			"fa-users",
+			"border-top",
+			" 10px solid #999999;\n	}",
+			"f5",
+			"400x495\" ",
+			"666666",
+			"E8117F",
+			"x640",
+			"x800",
+			"x350",
+			"vendor",
+			"bold",
+			"#dddddd",
+			"#333333",
+			"#e5e5e5",
+			"f5",
+			"f1",
+			"	\n",
+			"to generate its results.",
+			"your functions.php file",
+			"attractions",
+			"accommodations",
+			"attractions",
+			"events",
+			"facebook",
+			"Attractions",
+			" up to and including",
+			"functions.php",
+			"functions",
+			"accommodations",
+			"Accommodations",
+			"html_cont",
+			"lexers",
+			"primary_",
+			"php",
+			"colo",
+			"False",
+			"School",
+			"Teacher",
+			"conference",
+			"Starter Theme",
+			"TourismHub",
+			"Designer Resources",
+			"highlight_language",
+			"Restaurant",
+			"tourismhub_register_news_categories",
+			"News Category",
+			"News category"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"Skeleton Theme",
+			"TourismPress",
+			"Choose from most used categories",
+			"'tourismhub_textdomain'",
+			"@import \"/bower_components/bootstrap-sass/assets/stylesheets/bootstrap/",
+			"app-panel",
+			"cbp-spmenu-open",
+			"panel-open",
+			"https://twitter.com/xenmaps",
+			"Gallery ",
+			"http://windsorvotes2014.com",
+			"<button type=\"button\" class=\"btn btn-danger btn-xs\" data-toggle=\"modal\" href=\"#modalConfirmDelete\">Delete</button>",
+			"/",
+			"pan0",
+			"eth1",
+			"eth0"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 132.0
+	},
+	"output.sftp":
+	{
+		"height": 199.0
+	},
+	"pinned_build_system": "",
+	"project": "tourismpress-core.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				".ft",
+				".ftppass"
+			],
+			[
+				"restar",
+				"dist/single-restaurants.php"
+			],
+			[
+				"header",
+				"dist/header.php"
+			],
+			[
+				"footer",
+				"dist/footer.php"
+			],
+			[
+				"custom.css",
+				"build/html/_static/custom.css"
+			],
+			[
+				".ht",
+				".htaccess"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"panel",
+				"src/stylesheets/_panels.scss"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"appscss",
+				"src/stylesheets/application.scss"
+			],
+			[
+				"appjs",
+				"src/javascript/application.js"
+			],
+			[
+				"app.js",
+				"twepi\\wp-content\\themes\\twepi\\js\\app.js"
+			],
+			[
+				"app.css",
+				"twepi\\wp-content\\themes\\twepi\\stylesheets\\app.css"
+			],
+			[
+				"app.scs",
+				"twepi\\wp-content\\themes\\twepi\\scss\\app.scss"
+			],
+			[
+				"custom",
+				"netmon/css/custom.css"
+			],
+			[
+				"setting",
+				"netmon/settings.html"
+			],
+			[
+				"reports",
+				"netmon/reports.html"
+			],
+			[
+				"devices",
+				"netmon/devices.html"
+			],
+			[
+				"network",
+				"netmon/networks.html"
+			],
+			[
+				"sftp",
+				"netmon/sftp-config.json"
+			],
+			[
+				"d3",
+				"netmon/js/d3.v3.min.js"
+			],
+			[
+				"netw",
+				"netmon/networks.html"
+			],
+			[
+				"index",
+				"netmon/index.html"
+			],
+			[
+				"canv",
+				"netmon/js/CanvasText-0.4.1.js"
+			],
+			[
+				"cust",
+				"netmon/css/custom.css"
+			],
+			[
+				"device",
+				"netmon/device.html"
+			],
+			[
+				"devi",
+				"netmon/device.html"
+			],
+			[
+				"sft",
+				"netmon/sftp-config.json"
+			],
+			[
+				"dev",
+				"netmon/device.html"
+			],
+			[
+				"report",
+				"netmon/reports.html"
+			],
+			[
+				"neto",
+				"netmon/networks.html"
+			],
+			[
+				"repo",
+				"netmon/reports.html"
+			],
+			[
+				"devic",
+				"netmon/device.html"
+			],
+			[
+				"cutom",
+				"netmon/assets/css/custom.css"
+			],
+			[
+				"inde",
+				"index_fixed.html"
+			],
+			[
+				".css",
+				"assets/js/docs/styles.css"
+			],
+			[
+				"",
+				"index.html"
+			],
+			[
+				"pinter",
+				"pinterest-33800.html"
+			],
+			[
+				"update",
+				"update.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/Sublime Projects/tourismpress-www.sublime-project"
+			],
+			[
+				"twepi",
+				"~/Documents/Sublime Projects/twepi.sublime-project"
+			],
+			[
+				"twe",
+				"~/Documents/Sublime Projects/twepi.sublime-project"
+			],
+			[
+				"tour",
+				"~/Documents/Sublime Projects/tourismhub-www.sublime-project"
+			],
+			[
+				"ohs",
+				"~/Documents/Sublime Projects/ohsna-nationbuilder2.sublime-project"
+			],
+			[
+				"doc",
+				"~/Documents/Sublime Projects/documistory.com.sublime-project"
+			],
+			[
+				"brand",
+				"~/Documents/Sublime Projects/brand-locator.sublime-project"
+			],
+			[
+				"bra",
+				"~/Documents/Sublime Projects/brand-locator.sublime-project"
+			],
+			[
+				"jason",
+				"~/Documents/Sublime Projects/jasonpomerleau.com.sublime-project"
+			],
+			[
+				"jasonpom",
+				"~/Documents/Sublime Projects/jasonpomerleau.com.sublime-project"
+			],
+			[
+				"heada",
+				"~/Documents/Sublime Projects/headache-tracker.sublime-project"
+			],
+			[
+				"docu",
+				"~/Documents/Sublime Projects/documistory.com.sublime-project"
+			],
+			[
+				"pareto-com",
+				"~/Documents/pareto-components/pareto-components.sublime-project"
+			],
+			[
+				"pare",
+				"~/Documents/Sublime Projects/pareto-one.sublime-project"
+			],
+			[
+				"pareto",
+				"~/Documents/Sublime Projects/pareto-one.sublime-project"
+			],
+			[
+				"haed",
+				"~/Documents/Sublime Projects/headache-app.sublime-project"
+			],
+			[
+				"gr",
+				"~/Documents/Sublime Projects/map.grecorailings.com.sublime-project"
+			],
+			[
+				"sacc",
+				"~/Documents/Sublime Projects/saccwindsor.net.sublime-project"
+			],
+			[
+				"head",
+				"~/Documents/Sublime Projects/headache-app.sublime-project"
+			],
+			[
+				"poly",
+				"~/Documents/canadianlawteachers-556dc38401925b33d5000001/polymer.sublime-project"
+			],
+			[
+				"mig",
+				"~/Documents/Sublime Projects/migraine-tracker.sublime-project"
+			],
+			[
+				"migr",
+				"~/Documents/Sublime Projects/migraine-tracker.sublime-project"
+			],
+			[
+				"migra",
+				"~/Documents/Sublime Projects/migraine-tracker.sublime-project"
+			],
+			[
+				"ohsna",
+				"~/Documents/Sublime Projects/ohsna-nationbuilder2.sublime-project"
+			],
+			[
+				"react",
+				"~/Documents/Sublime Projects/reactjs.sublime-project"
+			],
+			[
+				"greco",
+				"~/Documents/Sublime Projects/map.grecorailings.com.sublime-project"
+			],
+			[
+				"calt",
+				"~/Documents/Sublime Projects/calt.sublime-project"
+			],
+			[
+				"jeff",
+				"~/Documents/Sublime Projects/jeffszusz.sublime-project"
+			],
+			[
+				"choo",
+				"~/Documents/Sublime Projects/choosewindsoressex.com.sublime-project"
+			],
+			[
+				"veld",
+				"~/Documents/Sublime Projects/veldarchitect.sublime-project"
+			],
+			[
+				"fami",
+				"~/Documents/Sublime Projects/fswe.ca.sublime-workspace"
+			],
+			[
+				"xen",
+				"~/Documents/Sublime Projects/xenmaps.com.sublime-project"
+			],
+			[
+				"out",
+				"~/Documents/Sublime Projects/outdoorsmap.ca.sublime-project"
+			],
+			[
+				"windsor",
+				"~/Google Drive/My Documents/Sublime Projects/windsorvotes2014.com.sublime-workspace"
+			],
+			[
+				"explo",
+				"~/Google Drive/My Documents/Sublime Projects/explorewe.com.sublime-workspace"
+			],
+			[
+				"expl",
+				"~/Google Drive/My Documents/Sublime Projects/explorewe.com.sublime-workspace"
+			],
+			[
+				"explore",
+				"~/Google Drive/My Documents/Sublime Projects/explorewe.com.sublime-workspace"
+			],
+			[
+				"ex",
+				"~/Google Drive/My Documents/Sublime Projects/explorewe.com.sublime-project"
+			],
+			[
+				"z",
+				"D:\\Google Drive\\My Documents\\My Projects\\zen-maps.com.sublime-project"
+			],
+			[
+				"frank",
+				"~/Google Drive/My Documents/My Projects/frankschiller.sublime-project"
+			],
+			[
+				"fra",
+				"~/Google Drive/My Documents/My Projects/frankschiller.sublime-project"
+			],
+			[
+				"fr",
+				"~/Google Drive/My Documents/My Projects/frankschiller.sublime-project"
+			],
+			[
+				"kana",
+				"D:\\Google Drive\\My Documents\\My Projects\\kanataliving.com.sublime-project"
+			],
+			[
+				"clin",
+				"D:\\Google Drive\\My Documents\\My Projects\\clinicallaw.p42.ca.sublime-project"
+			],
+			[
+				"k",
+				"D:\\Google Drive\\My Documents\\My Projects\\kanataliving.com.sublime-project"
+			],
+			[
+				"mun",
+				"D:\\Google Drive\\My Documents\\My Projects\\munrostrategu.com.sublime-project"
+			],
+			[
+				"p42",
+				"/D/Google Drive/My Documents/My Projects/p42systems.com.sublime-project"
+			],
+			[
+				"cli",
+				"/D/Google Drive/My Documents/My Projects/clinicallaw.ca.sublime-project"
+			],
+			[
+				"netmon",
+				"/D/Google Drive/My Documents/My Projects/netmonweb.sublime-project"
+			],
+			[
+				"book",
+				"/D/Google Drive/My Documents/My Projects/bookfestwindsor.sublime-project"
+			],
+			[
+				"inf",
+				"/D/Google Drive/My Documents/My Projects/infinit.sublime-project"
+			],
+			[
+				"644",
+				"/D/Google Drive/My Documents/My Projects/644squadron.com.sublime-project"
+			],
+			[
+				"p4",
+				"/D/Google Drive/Parallel 42 Systems/Applications/p42systems.com/p42systems.com.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 278.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
