@@ -1,1 +1,12 @@
+# Folders
+node_modules/
+bower_components/
+dist/
+
+# File Types
+.ftppass
+.DS_Store
+.sublime-workspace
+
+# Specific Files
 sftp-config.json

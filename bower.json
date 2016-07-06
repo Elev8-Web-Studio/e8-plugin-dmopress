@@ -1,0 +1,13 @@
+{
+  "name": "themename",
+  "version": "0.0.0",
+  "authors": [
+    "Jason Pomerleau <jason@jasonpomerleau.com>"
+  ],
+  "license": "CLOSED",
+  "homepage": "",
+  "private": true,
+  "devDependencies": {
+    
+  }
+}

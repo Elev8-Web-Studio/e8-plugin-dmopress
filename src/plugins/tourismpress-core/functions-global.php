@@ -50,3 +50,4 @@ function isValidFloat($testvalue){
 		return false;
 	}
 }
+

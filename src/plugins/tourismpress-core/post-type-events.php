@@ -358,6 +358,7 @@ function tourismpress_event_save_meta_box_data($post_id) {
     $zip = sanitize_text_field($_POST['zip']);
     $start_date = sanitize_text_field($_POST['start_date']);
     $start_time = sanitize_text_field($_POST['start_time']);
+    $start_datetime = new DateTime($start_date." ".$start_time);
     $end_date = sanitize_text_field($_POST['end_date']);
     $end_time = sanitize_text_field($_POST['end_time']);
     $website_url = sanitize_text_field($_POST['website_url']);
@@ -370,6 +371,7 @@ function tourismpress_event_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'zip', $zip);
     update_post_meta($post_id, 'start_date', $start_date);
     update_post_meta($post_id, 'start_time', $start_time);
+    update_post_meta($post_id, 'start_datetime', $start_datetime->getTimestamp());
     update_post_meta($post_id, 'end_date', $end_date);
     update_post_meta($post_id, 'end_time', $end_time);
     update_post_meta($post_id, 'website_url', normalize_url($website_url));

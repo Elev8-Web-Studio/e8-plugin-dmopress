@@ -49,4 +49,3 @@ require_once tourismpress_PLUGIN_DIR . '/admin-footer.php';
 
 // Integration Modules
 require_once tourismpress_PLUGIN_DIR . '/integration-google-analytics.php';
-
