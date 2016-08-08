@@ -3,38 +3,38 @@
 // Event Categories
 function tourismpress_register_event_categories() {
 
-	$labels = array(
-		'name'					=> _x( 'Event Categories', 'Event Categories', 'tourismpress_textdomain' ),
-		'singular_name'			=> _x( 'Event Category', 'Event Category', 'tourismpress_textdomain' ),
-		'search_items'			=> __( 'Search Event Categories', 'tourismpress_textdomain' ),
-		'popular_items'			=> __( 'Popular Event Categories', 'tourismpress_textdomain' ),
-		'all_items'				=> __( 'All Event Categories', 'tourismpress_textdomain' ),
-		'parent_item'			=> __( 'Parent Event Category', 'tourismpress_textdomain' ),
-		'parent_item_colon'		=> __( 'Parent Event Category', 'tourismpress_textdomain' ),
-		'edit_item'				=> __( 'Edit Event Category', 'tourismpress_textdomain' ),
-		'update_item'			=> __( 'Update Event Category', 'tourismpress_textdomain' ),
-		'add_new_item'			=> __( 'Add New Event Category', 'tourismpress_textdomain' ),
-		'new_item_name'			=> __( 'New Event Category Name', 'tourismpress_textdomain' ),
-		'add_or_remove_items'	=> __( 'Add or remove Event Categories', 'tourismpress_textdomain' ),
-		'choose_from_most_used'	=> __( 'Choose from most used categories', 'tourismpress_textdomain' ),
-		'menu_name'				=> __( 'Event Categories', 'tourismpress_textdomain' ),
-	);
+    $labels = array(
+        'name'                  => _x( 'Event Categories', 'Event Categories', 'tourismpress_textdomain' ),
+        'singular_name'         => _x( 'Event Category', 'Event Category', 'tourismpress_textdomain' ),
+        'search_items'          => __( 'Search Event Categories', 'tourismpress_textdomain' ),
+        'popular_items'         => __( 'Popular Event Categories', 'tourismpress_textdomain' ),
+        'all_items'             => __( 'All Event Categories', 'tourismpress_textdomain' ),
+        'parent_item'           => __( 'Parent Event Category', 'tourismpress_textdomain' ),
+        'parent_item_colon'     => __( 'Parent Event Category', 'tourismpress_textdomain' ),
+        'edit_item'             => __( 'Edit Event Category', 'tourismpress_textdomain' ),
+        'update_item'           => __( 'Update Event Category', 'tourismpress_textdomain' ),
+        'add_new_item'          => __( 'Add New Event Category', 'tourismpress_textdomain' ),
+        'new_item_name'         => __( 'New Event Category Name', 'tourismpress_textdomain' ),
+        'add_or_remove_items'   => __( 'Add or remove Event Categories', 'tourismpress_textdomain' ),
+        'choose_from_most_used' => __( 'Choose from most used categories', 'tourismpress_textdomain' ),
+        'menu_name'             => __( 'Event Categories', 'tourismpress_textdomain' ),
+    );
 
-	$args = array(
-		'labels'            => $labels,
-		'public'            => true,
-		'show_in_nav_menus' => true,
-		'show_admin_column' => false,
-		'hierarchical'      => true,
-		'show_tagcloud'     => true,
-		'show_ui'           => true,
-		'query_var'         => true,
-		'rewrite'           => true,
-		'query_var'         => true,
-		'capabilities'      => array(),
-	);
+    $args = array(
+        'labels'            => $labels,
+        'public'            => true,
+        'show_in_nav_menus' => true,
+        'show_admin_column' => false,
+        'hierarchical'      => true,
+        'show_tagcloud'     => true,
+        'show_ui'           => true,
+        'query_var'         => true,
+        'rewrite'           => true,
+        'query_var'         => true,
+        'capabilities'      => array(),
+    );
 
-	register_taxonomy( 'event-categories', 'events', $args );
+    register_taxonomy( 'event-categories', 'events', $args );
     register_taxonomy_for_object_type( 'event-categories', 'events' );
 }
 
@@ -43,44 +43,44 @@ add_action( 'init', 'tourismpress_register_event_categories' );
 // Events Post Type
 function register_events_post_type() {
 
-	$labels = array(
-		'name'                => __( 'Events', 'tourismpress_textdomain' ),
-		'singular_name'       => __( 'Event', 'tourismpress_textdomain' ),
-		'add_new'             => _x( 'Add New Event', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
-		'add_new_item'        => __( 'Add New Event', 'tourismpress_textdomain' ),
-		'edit_item'           => __( 'Edit Event', 'tourismpress_textdomain' ),
-		'new_item'            => __( 'New Event', 'tourismpress_textdomain' ),
-		'view_item'           => __( 'View Event', 'tourismpress_textdomain' ),
-		'search_items'        => __( 'Search Events', 'tourismpress_textdomain' ),
-		'not_found'           => __( 'No Events found', 'tourismpress_textdomain' ),
-		'not_found_in_trash'  => __( 'No Events found in Trash', 'tourismpress_textdomain' ),
-		'parent_item_colon'   => __( 'Parent Event:', 'tourismpress_textdomain' ),
-		'menu_name'           => __( 'Events', 'tourismpress_textdomain' ),
-	);
+    $labels = array(
+        'name'                => __( 'Events', 'tourismpress_textdomain' ),
+        'singular_name'       => __( 'Event', 'tourismpress_textdomain' ),
+        'add_new'             => _x( 'Add New Event', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
+        'add_new_item'        => __( 'Add New Event', 'tourismpress_textdomain' ),
+        'edit_item'           => __( 'Edit Event', 'tourismpress_textdomain' ),
+        'new_item'            => __( 'New Event', 'tourismpress_textdomain' ),
+        'view_item'           => __( 'View Event', 'tourismpress_textdomain' ),
+        'search_items'        => __( 'Search Events', 'tourismpress_textdomain' ),
+        'not_found'           => __( 'No Events found', 'tourismpress_textdomain' ),
+        'not_found_in_trash'  => __( 'No Events found in Trash', 'tourismpress_textdomain' ),
+        'parent_item_colon'   => __( 'Parent Event:', 'tourismpress_textdomain' ),
+        'menu_name'           => __( 'Events', 'tourismpress_textdomain' ),
+    );
 
-	$args = array(
-		'labels'              => $labels,
-		'hierarchical'        => false,
-		'description'         => 'description',
-		'taxonomies'          => array('event-category','post_tag'),
-		'public'              => true,
-		'show_ui'             => true,
-		'show_in_menu'        => true,
-		'show_in_admin_bar'   => true,
-		'menu_position'       => 5,
-		'menu_icon'           => 'dashicons-calendar-alt',
-		'show_in_nav_menus'   => true,
-		'publicly_queryable'  => true,
-		'exclude_from_search' => false,
-		'has_archive'         => true,
-		'query_var'           => true,
-		'can_export'          => true,
-		'rewrite'             => true,
-		'capability_type'     => 'post',
-		'supports'            => array('title', 'editor', 'thumbnail'),
-	);
+    $args = array(
+        'labels'              => $labels,
+        'hierarchical'        => false,
+        'description'         => 'description',
+        'taxonomies'          => array('event-category','post_tag'),
+        'public'              => true,
+        'show_ui'             => true,
+        'show_in_menu'        => true,
+        'show_in_admin_bar'   => true,
+        'menu_position'       => 5,
+        'menu_icon'           => 'dashicons-calendar-alt',
+        'show_in_nav_menus'   => true,
+        'publicly_queryable'  => true,
+        'exclude_from_search' => false,
+        'has_archive'         => true,
+        'query_var'           => true,
+        'can_export'          => true,
+        'rewrite'             => true,
+        'capability_type'     => 'post',
+        'supports'            => array('title', 'editor', 'thumbnail'),
+    );
 
-	register_post_type( 'events', $args );
+    register_post_type( 'events', $args );
 }
 
 add_action( 'init', 'register_events_post_type' );
@@ -120,6 +120,25 @@ function tourismpress_event_meta_box_callback($post) {
 
    <div class="row">
        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+           
+           <?php
+
+           echo '<p><label for="place">';
+           _e( 'Place:', 'tourismpress_textdomain' );
+           echo '</label><br /> ';
+           
+           echo renderPlaceLookupField(get_post_meta($post->ID, 'place', true));
+
+            if(get_post_meta($post->ID, 'place', true) == 'custom') {
+                $address_block_visibility = 'display: block;';
+            } else {
+                $address_block_visibility = 'display: none;';
+            }
+
+           ?>
+
+           <div class="tourismpress-custom-address-block" style="<?php echo $address_block_visibility ?>">
+
            <?php
 
            $address_var = get_post_meta( $post->ID, 'address', true );
@@ -172,6 +191,10 @@ function tourismpress_event_meta_box_callback($post) {
 
                 </div>
             </div>
+
+            </div>
+
+            
             
        </div>
        
@@ -204,27 +227,15 @@ function tourismpress_event_meta_box_callback($post) {
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="col-xs-12">
                     <?php
 
-                    $end_date_var = get_post_meta( $post->ID, 'end_date', true );
+                    $duration_var = get_post_meta( $post->ID, 'duration', true );
 
-                    echo '<p><label for="end_date">';
-                    _e( 'End Date:', 'tourismpress_textdomain' );
+                    echo '<p><label for="duration">';
+                    _e( 'Duration:', 'tourismpress_textdomain' );
                     echo '</label><br /> ';
-                    echo '<input type="text" placeholder="" style="width: 100%" id="end_date" name="end_date" value="' . esc_attr( $end_date_var ) . '" size="25" /></p>';
-
-                    ?>
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <?php
-
-                    $end_time_var = get_post_meta( $post->ID, 'end_time', true );
-
-                    echo '<p><label for="end_time">';
-                    _e( 'End Time:', 'tourismpress_textdomain' );
-                    echo '</label><br /> ';
-                    echo '<input type="text" placeholder="" style="width: 100%" id="end_time" name="end_time" value="' . esc_attr( $end_time_var ) . '" size="25" /></p>';
+                    echo '<input type="text" placeholder="" style="width: 100%" id="duration" name="duration" value="' . esc_attr( $duration_var ) . '" size="25" /></p>';
 
                     ?>
                 </div>
@@ -320,6 +331,9 @@ function tourismpress_event_save_meta_box_data($post_id) {
     /* OK, it's safe for us to save the data now. */
     
     // Make sure that it is set.
+    if (!isset( $_POST['place'])) {
+        return;
+    }
     if (!isset( $_POST['address'])) {
         return;
     }
@@ -338,10 +352,7 @@ function tourismpress_event_save_meta_box_data($post_id) {
     if (!isset( $_POST['start_time'])) {
         return;
     }
-    if (!isset( $_POST['end_date'])) {
-        return;
-    }
-    if (!isset( $_POST['end_time'])) {
+    if (!isset( $_POST['duration'])) {
         return;
     }
     if (!isset( $_POST['website_url'])) {
@@ -352,6 +363,7 @@ function tourismpress_event_save_meta_box_data($post_id) {
     }
 
     // Sanitize user input.
+    $place = sanitize_text_field($_POST['place']);
     $address = sanitize_text_field($_POST['address']);
     $city = sanitize_text_field($_POST['city']);
     $stateprov = sanitize_text_field($_POST['stateprov']);
@@ -359,12 +371,12 @@ function tourismpress_event_save_meta_box_data($post_id) {
     $start_date = sanitize_text_field($_POST['start_date']);
     $start_time = sanitize_text_field($_POST['start_time']);
     $start_datetime = new DateTime($start_date." ".$start_time);
-    $end_date = sanitize_text_field($_POST['end_date']);
-    $end_time = sanitize_text_field($_POST['end_time']);
+    $duration = sanitize_text_field($_POST['duration']);
     $website_url = sanitize_text_field($_POST['website_url']);
     $event_registration_url = sanitize_text_field($_POST['event_registration_url']);
 
     // Update the meta field in the database.
+    update_post_meta($post_id, 'place', $place);
     update_post_meta($post_id, 'address', $address);
     update_post_meta($post_id, 'city', $city);
     update_post_meta($post_id, 'stateprov', $stateprov);
@@ -372,8 +384,7 @@ function tourismpress_event_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'start_date', $start_date);
     update_post_meta($post_id, 'start_time', $start_time);
     update_post_meta($post_id, 'start_datetime', $start_datetime->getTimestamp());
-    update_post_meta($post_id, 'end_date', $end_date);
-    update_post_meta($post_id, 'end_time', $end_time);
+    update_post_meta($post_id, 'duration', $duration);
     update_post_meta($post_id, 'website_url', normalize_url($website_url));
     update_post_meta($post_id, 'event_registration_url', normalize_url($event_registration_url));
 }

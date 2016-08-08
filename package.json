@@ -45,7 +45,10 @@
       
     ],
     "javascript": [
-      
+      "./src/plugins/tourismpress-core/js/picker.js",
+      "./src/plugins/tourismpress-core/js/picker.date.js",
+      "./src/plugins/tourismpress-core/js/picker.time.js",
+      "./src/plugins/tourismpress-core/js/jquery.validate.js"
     ]
   }
 }

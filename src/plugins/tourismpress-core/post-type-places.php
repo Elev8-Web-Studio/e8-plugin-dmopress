@@ -1,23 +1,23 @@
 <?php
 
-// Food & Drink Features
-function restaurant_features() {
+// Place Types
+function tourismpress_register_place_categories_taxonomy() {
 
     $labels = array(
-        'name'                  => _x( 'Food & Drink Features', 'Food & Drink Features', 'tourismpress_textdomain' ),
-        'singular_name'         => _x( 'Food & Drink Feature', 'Food & Drink Feature', 'tourismpress_textdomain' ),
-        'search_items'          => __( 'Search Food & Drink Features', 'tourismpress_textdomain' ),
-        'popular_items'         => __( 'Popular Food & Drink Features', 'tourismpress_textdomain' ),
-        'all_items'             => __( 'All Features', 'tourismpress_textdomain' ),
-        'parent_item'           => __( 'Parent Food & Drink Feature', 'tourismpress_textdomain' ),
-        'parent_item_colon'     => __( 'Parent Food & Drink Feature', 'tourismpress_textdomain' ),
-        'edit_item'             => __( 'Edit Food & Drink Feature', 'tourismpress_textdomain' ),
-        'update_item'           => __( 'Update Food & Drink Feature', 'tourismpress_textdomain' ),
-        'add_new_item'          => __( 'Add New Food & Drink Feature', 'tourismpress_textdomain' ),
-        'new_item_name'         => __( 'New Food & Drink Feature Name', 'tourismpress_textdomain' ),
-        'add_or_remove_items'   => __( 'Add or remove Food & Drink Features', 'tourismpress_textdomain' ),
-        'choose_from_most_used' => __( 'Choose from most used features', 'tourismpress_textdomain' ),
-        'menu_name'             => __( 'Food & Drink Features', 'tourismpress_textdomain' ),
+        'name'                  => _x( 'Place Types', 'Place Types', 'tourismpress_textdomain' ),
+        'singular_name'         => _x( 'Place Type', 'Place Type', 'tourismpress_textdomain' ),
+        'search_items'          => __( 'Search Place Types', 'tourismpress_textdomain' ),
+        'popular_items'         => __( 'Popular Place Types', 'tourismpress_textdomain' ),
+        'all_items'             => __( 'All Categories', 'tourismpress_textdomain' ),
+        'parent_item'           => __( 'Parent Place Type', 'tourismpress_textdomain' ),
+        'parent_item_colon'     => __( 'Parent Place Type', 'tourismpress_textdomain' ),
+        'edit_item'             => __( 'Edit Place Type', 'tourismpress_textdomain' ),
+        'update_item'           => __( 'Update Place Type', 'tourismpress_textdomain' ),
+        'add_new_item'          => __( 'Add New Place Type', 'tourismpress_textdomain' ),
+        'new_item_name'         => __( 'New Place Type Name', 'tourismpress_textdomain' ),
+        'add_or_remove_items'   => __( 'Add or remove Place Types', 'tourismpress_textdomain' ),
+        'choose_from_most_used' => __( 'Choose from most used types', 'tourismpress_textdomain' ),
+        'menu_name'             => __( 'Place Types', 'tourismpress_textdomain' ),
     );
 
     $args = array(
@@ -34,30 +34,30 @@ function restaurant_features() {
         'capabilities'      => array(),
     );
 
-    register_taxonomy( 'restaurant-features', 'restaurants', $args );
-    register_taxonomy_for_object_type( 'restaurant-features', 'restaurants' );
+    register_taxonomy( 'types', 'places', $args );
+    register_taxonomy_for_object_type( 'types', 'places' );
 }
 
-add_action( 'init', 'restaurant_features' );
+add_action( 'init', 'tourismpress_register_place_categories_taxonomy' );
 
-// Food & Drink Categories
-function restaurant_categories() {
+// Place Types
+function tourismpress_register_place_features_taxonomy() {
 
 	$labels = array(
-		'name'					=> _x( 'Food & Drink Categories', 'Food & Drink Categories', 'tourismpress_textdomain' ),
-		'singular_name'			=> _x( 'Food & Drink Category', 'Food & Drink Category', 'tourismpress_textdomain' ),
-		'search_items'			=> __( 'Search Food & Drink Categories', 'tourismpress_textdomain' ),
-		'popular_items'			=> __( 'Popular Food & Drink Categories', 'tourismpress_textdomain' ),
-		'all_items'				=> __( 'All Categories', 'tourismpress_textdomain' ),
-		'parent_item'			=> __( 'Parent Food & Drink Category', 'tourismpress_textdomain' ),
-		'parent_item_colon'		=> __( 'Parent Food & Drink Category', 'tourismpress_textdomain' ),
-		'edit_item'				=> __( 'Edit Food & Drink Category', 'tourismpress_textdomain' ),
-		'update_item'			=> __( 'Update Food & Drink Category', 'tourismpress_textdomain' ),
-		'add_new_item'			=> __( 'Add New Food & Drink Category', 'tourismpress_textdomain' ),
-		'new_item_name'			=> __( 'New Food & Drink Category Name', 'tourismpress_textdomain' ),
-		'add_or_remove_items'	=> __( 'Add or remove Food & Drink Categories', 'tourismpress_textdomain' ),
-		'choose_from_most_used'	=> __( 'Choose from most used categories', 'tourismpress_textdomain' ),
-		'menu_name'				=> __( 'Food & Drink Categories', 'tourismpress_textdomain' ),
+		'name'					=> _x( 'Place Features', 'Place Features', 'tourismpress_textdomain' ),
+		'singular_name'			=> _x( 'Place Feature', 'Place Feature', 'tourismpress_textdomain' ),
+		'search_items'			=> __( 'Search Place Features', 'tourismpress_textdomain' ),
+		'popular_items'			=> __( 'Popular Place Features', 'tourismpress_textdomain' ),
+		'all_items'				=> __( 'All Features', 'tourismpress_textdomain' ),
+		'parent_item'			=> __( 'Parent Place Feature', 'tourismpress_textdomain' ),
+		'parent_item_colon'		=> __( 'Parent Place Feature', 'tourismpress_textdomain' ),
+		'edit_item'				=> __( 'Edit Place Feature', 'tourismpress_textdomain' ),
+		'update_item'			=> __( 'Update Place Feature', 'tourismpress_textdomain' ),
+		'add_new_item'			=> __( 'Add New Place Feature', 'tourismpress_textdomain' ),
+		'new_item_name'			=> __( 'New Place Feature Name', 'tourismpress_textdomain' ),
+		'add_or_remove_items'	=> __( 'Add or remove Place Features', 'tourismpress_textdomain' ),
+		'choose_from_most_used'	=> __( 'Choose from most used features', 'tourismpress_textdomain' ),
+		'menu_name'				=> __( 'Place Features', 'tourismpress_textdomain' ),
 	);
 
 	$args = array(
@@ -74,35 +74,35 @@ function restaurant_categories() {
 		'capabilities'      => array(),
 	);
 
-	register_taxonomy( 'restaurant-categories', 'restaurants', $args );
-    register_taxonomy_for_object_type( 'restaurant-categories', 'restaurants' );
+	register_taxonomy( 'features', 'places', $args );
+    register_taxonomy_for_object_type( 'features', 'places' );
 }
 
-add_action( 'init', 'restaurant_categories' );
+add_action( 'init', 'tourismpress_register_place_features_taxonomy' );
 
-// Food & Drinks Post Type
-function register_restaurants_post_type() {
+// Places Post Type
+function tourismpress_register_places_post_type() {
 
 	$labels = array(
-		'name'                => __( 'Food & Drink', 'tourismpress_textdomain' ),
-		'singular_name'       => __( 'Food & Drink', 'tourismpress_textdomain' ),
-		'add_new'             => _x( 'Add New Food & Drink', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
-		'add_new_item'        => __( 'Add New Food & Drink', 'tourismpress_textdomain' ),
-		'edit_item'           => __( 'Edit Food & Drink', 'tourismpress_textdomain' ),
-		'new_item'            => __( 'New Food & Drink', 'tourismpress_textdomain' ),
-		'view_item'           => __( 'View Food & Drink', 'tourismpress_textdomain' ),
-		'search_items'        => __( 'Search Food & Drinks', 'tourismpress_textdomain' ),
-		'not_found'           => __( 'No Food & Drinks found', 'tourismpress_textdomain' ),
-		'not_found_in_trash'  => __( 'No Food & Drinks found in Trash', 'tourismpress_textdomain' ),
-		'parent_item_colon'   => __( 'Parent Food & Drink:', 'tourismpress_textdomain' ),
-		'menu_name'           => __( 'Food & Drink', 'tourismpress_textdomain' ),
+		'name'                => __( 'Place', 'tourismpress_textdomain' ),
+		'singular_name'       => __( 'Place', 'tourismpress_textdomain' ),
+		'add_new'             => _x( 'Add New Place', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
+		'add_new_item'        => __( 'Add New Place', 'tourismpress_textdomain' ),
+		'edit_item'           => __( 'Edit Place', 'tourismpress_textdomain' ),
+		'new_item'            => __( 'New Place', 'tourismpress_textdomain' ),
+		'view_item'           => __( 'View Place', 'tourismpress_textdomain' ),
+		'search_items'        => __( 'Search Places', 'tourismpress_textdomain' ),
+		'not_found'           => __( 'No Places found', 'tourismpress_textdomain' ),
+		'not_found_in_trash'  => __( 'No Places found in Trash', 'tourismpress_textdomain' ),
+		'parent_item_colon'   => __( 'Parent Place:', 'tourismpress_textdomain' ),
+		'menu_name'           => __( 'Places', 'tourismpress_textdomain' ),
 	);
 
 	$args = array(
 		'labels'              => $labels,
 		'hierarchical'        => false,
 		'description'         => 'description',
-		'taxonomies'          => array('restaurant-category','post_tag'),
+		'taxonomies'          => array('features','types','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
@@ -116,41 +116,41 @@ function register_restaurants_post_type() {
 		'query_var'           => true,
 		'can_export'          => true,
 		'rewrite'             => array(
-			'slug' => 'eat'
+			'slug' => 'places'
 			),
 		'capability_type'     => 'post',
 		'supports'            => array('title', 'editor', 'thumbnail'),
 	);
 
-	register_post_type( 'restaurants', $args );
+	register_post_type( 'places', $args );
 }
 
-add_action( 'init', 'register_restaurants_post_type' );
+add_action( 'init', 'tourismpress_register_places_post_type' );
 
 /**
  * Adds a box to the main column on the Post and Page edit screens.
  */
-function tourismpress_restaurant_add_meta_box() {
+function tourismpress_place_add_meta_box() {
     add_meta_box(
         'restaurant_details_section',
-        __('Food & Drink Details', 'tourismpress_textdomain'),
-        'tourismpress_restaurant_meta_box_callback',
-        'restaurants',
+        __('Place Details', 'tourismpress_textdomain'),
+        'tourismpress_place_meta_box_callback',
+        'places',
         'location',
         'high'
     );
 }
-add_action( 'add_meta_boxes', 'tourismpress_restaurant_add_meta_box' );
+add_action( 'add_meta_boxes', 'tourismpress_place_add_meta_box' );
 
 /**
  * Prints the box content.
  * 
  * @param WP_Post $post The object for the current post/page.
  */
-function tourismpress_restaurant_meta_box_callback($post) {
+function tourismpress_place_meta_box_callback($post) {
 
     // Add a nonce field so we can check for it later.
-    wp_nonce_field( 'tourismpress_restaurant_save_meta_box_data', 'tourismpress_restaurant_meta_box_nonce' );
+    wp_nonce_field( 'tourismpress_place_save_meta_box_data', 'tourismpress_place_meta_box_nonce' );
 
     /*
      * Use get_post_meta() to retrieve an existing value
@@ -223,33 +223,6 @@ function tourismpress_restaurant_meta_box_callback($post) {
                     ?>
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                    <?php
-
-                    $star_rating_var = get_post_meta( $post->ID, 'star_rating', true );
-
-                    echo '<p><label for="star_rating">';
-                    _e( 'Star Rating (1-5):', 'tourismpress_textdomain' );
-                    echo '</label><br /> ';
-                    echo '<input type="text" style="width: 100%" id="star_rating" name="star_rating" value="' . esc_attr( $star_rating_var ) . '" size="25" /></p>';
-
-                    ?>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                    <?php
-
-                    $price_rating_var = get_post_meta( $post->ID, 'price_rating', true );
-
-                    echo '<p><label for="price_rating">';
-                    _e( 'Price Rating (1-5):', 'tourismpress_textdomain' );
-                    echo '</label><br /> ';
-                    echo '<input type="text" style="width: 100%" id="price_rating" name="price_rating" value="' . esc_attr( $price_rating_var ) . '" size="25" /></p>';
-
-                    ?>
-                </div>
-            </div>
             
        </div>
        
@@ -315,6 +288,7 @@ function tourismpress_restaurant_meta_box_callback($post) {
                  src="https://www.google.com/maps/embed/v1/place?key=<?php echo $mapsapikey ?>&q=<?php echo $address_var.','.$city_var.','.$stateprov_var.','.$zip_var ?>" allowfullscreen>
                </iframe>
            </div>
+
        </div>
        
    </div>
@@ -328,7 +302,7 @@ function tourismpress_restaurant_meta_box_callback($post) {
  *
  * @param int $post_id The ID of the post being saved.
  */
-function tourismpress_restaurant_save_meta_box_data($post_id) {
+function tourismpress_place_save_meta_box_data($post_id) {
 
     /*
      * We need to verify this came from our screen and with proper authorization,
@@ -336,12 +310,12 @@ function tourismpress_restaurant_save_meta_box_data($post_id) {
      */
 
     // Check if our nonce is set.
-    if ( ! isset( $_POST['tourismpress_restaurant_meta_box_nonce'] ) ) {
+    if ( ! isset( $_POST['tourismpress_place_meta_box_nonce'] ) ) {
         return;
     }
 
     // Verify that the nonce is valid.
-    if ( ! wp_verify_nonce( $_POST['tourismpress_restaurant_meta_box_nonce'], 'tourismpress_restaurant_save_meta_box_data' ) ) {
+    if ( ! wp_verify_nonce( $_POST['tourismpress_place_meta_box_nonce'], 'tourismpress_place_save_meta_box_data' ) ) {
         return;
     }
 
@@ -379,12 +353,6 @@ function tourismpress_restaurant_save_meta_box_data($post_id) {
     if (!isset( $_POST['telephone'])) {
         return;
     }
-    if (!isset( $_POST['star_rating'])) {
-        return;
-    }
-    if (!isset( $_POST['price_rating'])) {
-        return;
-    }
     if (!isset( $_POST['website_url'])) {
         return;
     }
@@ -404,8 +372,6 @@ function tourismpress_restaurant_save_meta_box_data($post_id) {
     $stateprov = sanitize_text_field($_POST['stateprov']);
     $zip = sanitize_text_field($_POST['zip']);
     $telephone = sanitize_text_field($_POST['telephone']);
-    $star_rating = sanitize_text_field($_POST['star_rating']);
-    $price_rating = sanitize_text_field($_POST['price_rating']);
     $website_url = sanitize_text_field($_POST['website_url']);
     $facebook_url = sanitize_text_field($_POST['facebook_url']);
     $twitter_url = sanitize_text_field($_POST['twitter_url']);
@@ -417,15 +383,13 @@ function tourismpress_restaurant_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'stateprov', $stateprov);
     update_post_meta($post_id, 'zip', $zip);
     update_post_meta($post_id, 'telephone', $telephone);
-    update_post_meta($post_id, 'star_rating', $star_rating);
-    update_post_meta($post_id, 'price_rating', $price_rating);
     update_post_meta($post_id, 'website_url', normalize_url($website_url));
     update_post_meta($post_id, 'facebook_url', normalize_url($facebook_url));
     update_post_meta($post_id, 'twitter_url', normalize_url($twitter_url));
     update_post_meta($post_id, 'instagram_url', normalize_url($instagram_url));
 }
 
-add_action('save_post', 'tourismpress_restaurant_save_meta_box_data');
+add_action('save_post', 'tourismpress_place_save_meta_box_data');
 
 // Move all "location" metabox above the default editor
 add_action('edit_form_after_title', function() {

@@ -20,12 +20,11 @@ get_header();
 
 ?>
 
-
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-8">
 
-			Taxonomy Results for term: <?php ?>
+			<h1><?php echo get_queried_object()->name; ?></h1>
 			
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 

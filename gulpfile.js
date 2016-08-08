@@ -84,10 +84,10 @@ gulp.task('stylesheets-theme', function() {
 
 gulp.task('stylesheets-plugin', function() {
   var filesToProcess = pkg.pluginDependencies.stylesheets;
-  filesToProcess.push('./src/plugins/**/app.scss');
+  filesToProcess.push('./src/plugins/**/' + pluginName + '.scss');
   gulp.src(filesToProcess)
     .pipe(sass({ style: 'compressed' }))
-    .pipe(concat('app.css'))
+    .pipe(concat(pluginName + '.css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())
     .pipe(gulp.dest('./dist/plugins/' + pluginName + '/css'))
@@ -119,10 +119,10 @@ gulp.task('js-theme', function() {
 
 gulp.task('js-plugin', function() {
   var filesToProcess = pkg.pluginDependencies.javascript;
-  filesToProcess.push('./src/plugins/**/*.js');
+  filesToProcess.push('./src/plugins/**/tourismpress-admin.js');
   gulp.src(filesToProcess)
     //.pipe(sourcemaps.init())
-    .pipe(concat('app.js'))
+    .pipe(concat(pluginName + '.js'))
     //.pipe(sourcemaps.write())
     .pipe(rename({ suffix: '.min' }))
     .pipe(uglify())

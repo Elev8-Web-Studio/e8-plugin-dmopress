@@ -32,13 +32,11 @@ require_once tourismpress_PLUGIN_DIR . '/actions-global.php';
 require_once tourismpress_PLUGIN_DIR . '/post-type-blog.php';
 require_once tourismpress_PLUGIN_DIR . '/post-type-news.php';
 require_once tourismpress_PLUGIN_DIR . '/post-type-events.php';
-require_once tourismpress_PLUGIN_DIR . '/post-type-attractions.php';
-require_once tourismpress_PLUGIN_DIR . '/post-type-accommodations.php';
-require_once tourismpress_PLUGIN_DIR . '/post-type-restaurants.php';
-require_once tourismpress_PLUGIN_DIR . '/post-type-packages.php';
-require_once tourismpress_PLUGIN_DIR . '/post-type-shops.php';
+require_once tourismpress_PLUGIN_DIR . '/post-type-places.php';
+//require_once tourismpress_PLUGIN_DIR . '/post-type-packages.php';
 
 // Administration Customizations
+require_once tourismpress_PLUGIN_DIR . '/admin.php';
 require_once tourismpress_PLUGIN_DIR . '/admin-login.php';
 require_once tourismpress_PLUGIN_DIR . '/admin-customizations.php';
 require_once tourismpress_PLUGIN_DIR . '/admin-settings.php';

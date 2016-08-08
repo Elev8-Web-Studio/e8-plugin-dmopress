@@ -35,7 +35,7 @@
 <nav class="navbar navbar-default navbar-static-top">
 	<div class="container">
 	    <div class="navbar-header">
-	    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+	    	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tourismpress-material-theme-navbar-collapse" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -45,15 +45,20 @@
 	        TourismPress Demo
 	      </a>
 	    </div>
-	    <div class="collapse navbar-collapse" id="navbar-header-collapse">
-	        <ul class="nav navbar-nav navbar-right">
-	        	<li><a href="/news">News</a></li>
-	        	<li><a href="/do">Attractions</a></li>
-	        	<li><a href="/stay">Accommodations</a></li>
-	        	<li><a href="/events">Events</a></li>
-	        	<li><a href="/eat">Food &amp; Drink</a></li>
-	        </ul>
-	    </div>
+	    <?php 
+			$args = array(
+            'menu'              => 'main',
+            'theme_location'    => 'main',
+            'depth'             =>  2,
+            'container'         => 'div',
+            'container_class'   => 'collapse navbar-collapse',
+     			'container_id'      => 'tourismpress-material-theme-navbar-collapse',
+            'menu_class'        => 'nav navbar-nav navbar-right',
+            'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+            'walker'            => new wp_bootstrap_navwalker()
+      	);
+			wp_nav_menu($args);
+		?>
 	</div>
 </nav>
 

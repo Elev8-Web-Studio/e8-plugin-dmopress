@@ -1,14 +1,14 @@
 <?php 
 /**
- * Accommodations "Archive" Template
+ * Places "Archive" Template
  *
- * This template queries all Accommodations posts 
+ * This template queries all Attractions posts 
  * and displays them as a list. By default, it only shows
- * a linked Title and the Excerpt, but any Accommodations
+ * a linked Title and the Excerpt, but any Attractions
  * field can be referenced or displayed.
  *
  * Documentation: 
- * {@link http://docs.tourismpress.net/designers/templatereference.html#archive-accommodations-php}
+ * {@link http://docs.tourismpress.net/designers/templatereference.html#archive-attractions-php}
  *
  * @package WordPress
  * @subpackage TourismPress
@@ -23,12 +23,11 @@ get_header();
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-sm-8">
-			<div class="archive-accommodations">
+			<div class="archive-attractions">
 
-			<!-- Start the loop -->
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-				
-				<div class="accommodation-profile">
+
+				<div class="attraction-profile">
 
 					<?php if(has_post_thumbnail()) { ?>
 						<a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><img class="" src="<?php echo the_post_thumbnail_url('thumbnail'); ?>" alt=""></a>
@@ -42,8 +41,9 @@ get_header();
 
 				</div>
 
+
 			<?php endwhile; else : ?>
-				No matching content.
+
 			<?php endif; ?>
 
 			</div>

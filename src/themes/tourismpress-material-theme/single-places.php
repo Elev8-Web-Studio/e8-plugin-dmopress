@@ -1,13 +1,13 @@
 <?php 
 /**
- * Events Detail Template
+ * Places Detail Template
  *
- * This template displays a single Events post.
- * By default, it shows all available Events fields and,
+ * This template displays a single Places post.
+ * By default, it shows all available Places fields and,
  * if a Google Maps API Key is detected, it also displays a Google Map. 
  *
  * Documentation: 
- * {@link http://docs.tourismpress.net/designers/templatereference.html#single-events-php}
+ * {@link http://docs.tourismpress.net/designers/templatereference.html#single-attractions-php}
  *
  * @package WordPress
  * @subpackage TourismPress
@@ -36,12 +36,8 @@ get_header();
 					<div class="col-xs-12 col-sm-6">
 
 						<h2><?php the_title(); ?></h2>
-
-						<p><?php echo get_post_meta($post_id, 'start_date', true); ?> at <?php echo get_post_meta($post_id, 'start_time', true); ?></p>
 						
 						<p><?php the_content(); ?></p>
-					
-						<p>Registration: <a href="<?php echo get_post_meta($post_id, 'event_registration_url', true); ?>" target="_blank"><?php echo get_post_meta($post_id, 'event_registration_url', true); ?></a></p>
 
 						<div class="social-block">
 							<?php if(isValidUrl(get_post_meta($post_id, 'facebook_url', true))) { ?>
@@ -61,14 +57,14 @@ get_header();
 							<?php }; ?>
 						</div>
 
-						Categories:
+						Features:
 						<?php 
 
-						$categories = get_the_terms($post_id, 'event-categories');
-						if (!empty($categories)) {
-							foreach ( $categories as $cat ) {
-								$cat_link = get_tag_link( $cat->term_id );
-								echo "<a href='{$cat_link}' title='{$cat->name}'>{$cat->name}</a>, ";
+						$features = get_the_terms($post_id, 'features');
+						if (!empty($features)) {
+							foreach ( $features as $feature ) {
+								$feature_link = get_tag_link( $feature->term_id );
+								echo "<a href='{$feature_link}' title='{$feature->name}'>{$feature->name}</a>, ";
 							}
 						} else {
 							//echo "None";
@@ -84,12 +80,8 @@ get_header();
 			<?php endif; ?>
 			
 		</div>
-		<div class="col-xs-12 col-sm-4">
-			<?php 
-				// Renders a Google Map based on the PostID
-				// The function can be found in functions.php
-				render_google_map($post_id); 
-			?>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
+			<?php render_google_map($post_id); ?>
 		</div>
 	</div>
 </div>

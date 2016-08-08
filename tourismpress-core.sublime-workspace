@@ -508,10 +508,26 @@
 	"buffers":
 	[
 		{
-			"file": "src/plugins/tourismpress-core/actions-global.php",
+			"file": "src/plugins/tourismpress-core/admin-dashboard.php",
 			"settings":
 			{
-				"buffer_size": 773,
+				"buffer_size": 3256,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/plugins/tourismpress-core/scss/tourismpress-core.scss",
+			"settings":
+			{
+				"buffer_size": 1299,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/plugins/tourismpress-core/admin-footer.php",
+			"settings":
+			{
+				"buffer_size": 218,
 				"line_ending": "Unix"
 			}
 		}
@@ -1062,30 +1078,57 @@
 	"expanded_folders":
 	[
 		"/Users/jasonpomerleau/Documents/tourismpress-core",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/dist",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/dist/plugins/tourismpress-core",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/dist/themes/tourismpress-material-theme",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/mu-plugins",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/scss",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/scss"
 	],
 	"file_history":
 	[
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/functions.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/single-places.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/taxonomy.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/archive.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/single-events.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/scss/_events.scss",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/lib/menus.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/header.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/scss/_variables.scss",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/scss/bootstrap/_dropdowns.scss",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/scss/app.scss",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/js/app.js",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/scss/_bootstrap.scss",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/package.json",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/bower.json",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/js/tourismpress-admin.js",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/archive-places.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/post-type-events.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/dist/plugins/tourismpress-core/post-type-events.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/gulpfile.js",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/dist/plugins/tourismpress-core/js/tourismpress-core.min.js",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/functions-global.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/admin.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/dist/plugins/tourismpress-core/admin.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/tourismpress-core.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/dist/plugins/tourismpress-core/admin-settings.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/post-type-places.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/scss/tourismpress-core.scss",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/admin-settings.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/css/tourismpress-admin.css",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/actions-global.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/scss/app.scss",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/category.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/mu-plugins/tourismpress-core/post-type-attractions.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/mu-plugins/tourismpress-core/admin-login.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/mu-plugins/tourismpress-core/tourismpress-core.php",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/gulpfile.js",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/admin-bar.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/mu-plugins/tourismpress-core/admin-footer.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/mu-plugins/tourismpress-core/filters-global.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/mu-plugins/tourismpress-core/functions-global.php",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/bower.json",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/package.json",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/.ftppass",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/mu-plugins/tourismpress/post-type-events.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/mu-plugins/tourismpress/admin-settings.php",
@@ -1157,6 +1200,79 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"chart",
+			"h3",
+			"ob_start",
+			"tourismpress_wordpress_feed_widget",
+			"h3",
+			"Taxonomy Results",
+			"15%",
+			"navbar",
+			"dropdown",
+			"navbar",
+			"dropdown",
+			"navbar",
+			"dropdown",
+			"$component-active-bg",
+			"dropdow",
+			"#F57C00",
+			"Attractions",
+			"themename-",
+			"$(",
+			"themename_",
+			"ThemeName",
+			"navbar",
+			"places",
+			"Blog",
+			"!function(a){\"function\"==typeof define&&define.amd?define(\"picker\",[\"jquery\"],a)",
+			"jQuery(",
+			"Picker",
+			"picker",
+			"$jsref",
+			"admin",
+			"event",
+			"$(",
+			"jQuery(",
+			"zip",
+			"$query",
+			"the_",
+			"zip",
+			"found",
+			"categories",
+			"place-features",
+			"Place Category",
+			"Place Categories",
+			"placescategory",
+			"places",
+			"eat",
+			"place-categories",
+			"Category",
+			"Categories",
+			"place_categories",
+			"tourismpress_place_features",
+			"feature",
+			"Feature",
+			"Features",
+			"Feature",
+			"Features",
+			"restaurant_categories",
+			"tourismpress_restaurant",
+			"tourismpress_restaurant_add_meta_box",
+			"restaurants",
+			"restaurant-features",
+			"restaurant-category",
+			"tourismpress_register_restaurants_post_type",
+			"register_restaurants_post_type",
+			"Food & Drink",
+			"restaurant_features",
+			"end",
+			"End Date",
+			"end_date",
+			"tourismpress-admin",
+			"_plugin_enqueue_",
+			"appjs",
+			"theme",
+			"theme_enqueue",
 			"mu-plugins",
 			"plugins",
 			"RxZP70u6fWC2km61T9pc",
@@ -1211,80 +1327,7 @@
 			"stylesheets-build",
 			"stylesheets-publish",
 			"starter",
-			"stylesheets-app",
-			"'connect'",
-			"$vendor_stylesheet",
-			"vendor_css",
-			"$app_stylesheet",
-			"enqueue_bootstrap",
-			"bootstrap_stylesheet",
-			"map",
-			"username",
-			"username1",
-			"username",
-			"key",
-			"key1",
-			"ftppass",
-			"#contact ",
-			"jason",
-			"Order Confirmation",
-			"http://placehold.it/400x495/FFFFFF/FFFFFF",
-			"<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>\n				<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>\n				<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>\n				<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>",
-			"<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>\n				<div class=\"chart\">\n					<img src=\"img/chart-sample.png\" alt=\"\">\n				</div>",
-			"Chart Content",
-			"<div class=\"chart\">\n					Chart Content\n				</div>",
-			"content",
-			"<div class=\"col-xs-3 col-sm-3 col-md-3 col-lg-3\">",
-			"'fast'",
-			"hide()",
-			"show()",
-			"toggle-document-stream",
-			"100",
-			"Sales<br>",
-			"<br>&nbsp;",
-			"add-documents-button",
-			"Purchase Order",
-			"10px",
-			"Add",
-			"Add<br>",
-			"footer",
-			"#cover",
-			"</i> ",
-			"fa-users",
-			"border-top",
-			" 10px solid #999999;\n	}",
-			"f5",
-			"400x495\" ",
-			"666666",
-			"E8117F",
-			"x640",
-			"x800",
-			"x350",
-			"vendor",
-			"bold",
-			"#dddddd",
-			"#333333",
-			"#e5e5e5",
-			"f5",
-			"f1",
-			"	\n",
-			"to generate its results.",
-			"your functions.php file",
-			"attractions",
-			"accommodations",
-			"attractions",
-			"events",
-			"facebook",
-			"Attractions",
-			" up to and including",
-			"functions.php",
-			"functions",
-			"accommodations",
-			"Accommodations",
-			"html_cont",
-			"lexers",
-			"primary_",
-			"php"
+			"stylesheets-app"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1323,19 +1366,351 @@
 			[
 				{
 					"buffer": 0,
-					"file": "src/plugins/tourismpress-core/actions-global.php",
-					"semi_transient": true,
+					"file": "src/plugins/tourismpress-core/admin-dashboard.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 773,
+						"buffer_size": 3256,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								1159,
+								1159
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1160,
+										1161
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1150,
+										1151
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 474.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/plugins/tourismpress-core/scss/tourismpress-core.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1299,
+						"regions":
+						{
+							"gutter_color_1153":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/#cccccc.png",
+								"regions":
+								[
+									[
+										1153,
+										1180
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1347":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/#ff3b30.png",
+								"regions":
+								[
+									[
+										1299,
+										1299
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_1351":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/#e14d43.png",
+								"regions":
+								[
+									[
+										1299,
+										1299
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_284":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/#cc0000.png",
+								"regions":
+								[
+									[
+										284,
+										311
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_689":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/#cccccc.png",
+								"regions":
+								[
+									[
+										689,
+										724
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_883":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/#ff3b30.png",
+								"regions":
+								[
+									[
+										883,
+										919
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_937":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/#999999.png",
+								"regions":
+								[
+									[
+										937,
+										954
+									]
+								],
+								"scope": "gutter_color"
+							},
+							"gutter_color_987":
+							{
+								"flags": 144,
+								"icon": "Cache/GutterColor/#ff3b30.png",
+								"regions":
+								[
+									[
+										987,
+										1005
+									]
+								],
+								"scope": "gutter_color"
+							}
+						},
+						"selection":
+						[
+							[
+								1060,
+								1060
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										1130,
+										1131
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										1041,
+										1042
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1071.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/plugins/tourismpress-core/admin-footer.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 218,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								218,
+								218
 							]
 						],
 						"settings":
@@ -1411,17 +1786,17 @@
 								"bh_regex_close",
 								"bh_regex_content"
 							],
+							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1483,6 +1858,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"gulpf",
+				"gulpfile.js"
+			],
 			[
 				".ft",
 				".ftppass"
@@ -1645,16 +2024,20 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "temp",
+		"last_filter": "jasonp",
 		"selected_items":
 		[
 			[
-				"temp",
-				"~/Documents/template-wordpress/template-wordpress.sublime-workspace"
+				"jasonp",
+				"~/Documents/jasonpomerleau.com/jasonpomerleau.com.sublime-project"
 			],
 			[
 				"",
-				"~/Documents/multiliteraciesproject.com/multiliteraciesproject.com.sublime-project"
+				"~/Documents/template-wordpress/template-wordpress.sublime-workspace"
+			],
+			[
+				"temp",
+				"~/Documents/template-wordpress/template-wordpress.sublime-workspace"
 			],
 			[
 				"material",

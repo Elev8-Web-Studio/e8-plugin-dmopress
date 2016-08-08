@@ -20,6 +20,7 @@
  * @since TourismPress 1.0
  */
 
+require_once 'lib/menus.php';
 
 //Load CSS
 function tourismpress_theme_enqueue_css() {
@@ -38,16 +39,14 @@ add_action('wp_enqueue_scripts', 'tourismpress_theme_enqueue_css');
 
 //Load Javascript
 function tourismpress_theme_enqueue_js() {
+
+    wp_enqueue_script('jquery', false);
     
-    if(!is_page('social-wall')){
-        $vendorjs = get_template_directory_uri().'/js/vendor.js'; 
-        wp_enqueue_script('vendor-js', $vendorjs, false);
-    }
+    //$vendorjs = get_template_directory_uri().'/js/vendor.js'; 
+    //wp_enqueue_script('vendor-js', $vendorjs, false);
     
     $appjs = get_template_directory_uri().'/js/app.min.js'; 
-    if(!is_page('social-wall')){
-        wp_enqueue_script('app-js', $appjs, false);
-    }
+    wp_enqueue_script('app-js', $appjs, false);
 }
 
 add_action('wp_enqueue_scripts', 'tourismpress_theme_enqueue_js');
