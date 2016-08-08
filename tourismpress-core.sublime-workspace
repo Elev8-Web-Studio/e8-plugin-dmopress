@@ -507,30 +507,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/plugins/tourismpress-core/admin-dashboard.php",
-			"settings":
-			{
-				"buffer_size": 3256,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/plugins/tourismpress-core/scss/tourismpress-core.scss",
-			"settings":
-			{
-				"buffer_size": 1299,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/plugins/tourismpress-core/admin-footer.php",
-			"settings":
-			{
-				"buffer_size": 218,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -1079,16 +1055,29 @@
 	[
 		"/Users/jasonpomerleau/Documents/tourismpress-core",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/src/mu-plugins",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/scss",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/integration",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/scss"
 	],
 	"file_history":
 	[
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/tourismpress-core.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/functions/global.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/post-types/places.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/post-types/packages.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/post-types/news.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/post-types/events.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/post-types/blog.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/integration/google-analytics.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/integration/integration-google-analytics.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/admin-footer.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/scss/tourismpress-core.scss",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/admin-dashboard.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/functions-global.php",
+		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/post-type-places.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/functions.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/single-places.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/themes/tourismpress-material-theme/taxonomy.php",
@@ -1110,13 +1099,9 @@
 		"/Users/jasonpomerleau/Documents/tourismpress-core/dist/plugins/tourismpress-core/post-type-events.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/gulpfile.js",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/dist/plugins/tourismpress-core/js/tourismpress-core.min.js",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/functions-global.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/admin.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/dist/plugins/tourismpress-core/admin.php",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/tourismpress-core.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/dist/plugins/tourismpress-core/admin-settings.php",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/post-type-places.php",
-		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/scss/tourismpress-core.scss",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/admin-settings.php",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/css/tourismpress-admin.css",
 		"/Users/jasonpomerleau/Documents/tourismpress-core/src/plugins/tourismpress-core/actions-global.php",
@@ -1200,6 +1185,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"-",
+			"Tags",
 			"chart",
 			"h3",
 			"ob_start",
@@ -1325,9 +1312,7 @@
 			"Starter Theme",
 			"ss Starter",
 			"stylesheets-build",
-			"stylesheets-publish",
-			"starter",
-			"stylesheets-app"
+			"stylesheets-publish"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1361,450 +1346,14 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/plugins/tourismpress-core/admin-dashboard.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3256,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1159,
-								1159
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1160,
-										1161
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1150,
-										1151
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 474.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/plugins/tourismpress-core/scss/tourismpress-core.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1299,
-						"regions":
-						{
-							"gutter_color_1153":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#cccccc.png",
-								"regions":
-								[
-									[
-										1153,
-										1180
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_1347":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#ff3b30.png",
-								"regions":
-								[
-									[
-										1299,
-										1299
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_1351":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#e14d43.png",
-								"regions":
-								[
-									[
-										1299,
-										1299
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_284":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#cc0000.png",
-								"regions":
-								[
-									[
-										284,
-										311
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_689":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#cccccc.png",
-								"regions":
-								[
-									[
-										689,
-										724
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_883":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#ff3b30.png",
-								"regions":
-								[
-									[
-										883,
-										919
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_937":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#999999.png",
-								"regions":
-								[
-									[
-										937,
-										954
-									]
-								],
-								"scope": "gutter_color"
-							},
-							"gutter_color_987":
-							{
-								"flags": 144,
-								"icon": "Cache/GutterColor/#ff3b30.png",
-								"regions":
-								[
-									[
-										987,
-										1005
-									]
-								],
-								"scope": "gutter_color"
-							}
-						},
-						"selection":
-						[
-							[
-								1060,
-								1060
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-									"1":
-									[
-										1130,
-										1131
-									]
-								},
-								"open":
-								{
-									"1":
-									[
-										1041,
-										1042
-									]
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1071.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/plugins/tourismpress-core/admin-footer.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 218,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								218,
-								218
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"color_scheme": "Packages/User/Color Highlighter/themes/cobalt2.tmTheme",
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 41.0
 	},
 	"input":
 	{
@@ -2024,19 +1573,19 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "jasonp",
+		"last_filter": "temp",
 		"selected_items":
 		[
+			[
+				"temp",
+				"~/Documents/template-wordpress/template-wordpress.sublime-workspace"
+			],
 			[
 				"jasonp",
 				"~/Documents/jasonpomerleau.com/jasonpomerleau.com.sublime-project"
 			],
 			[
 				"",
-				"~/Documents/template-wordpress/template-wordpress.sublime-workspace"
-			],
-			[
-				"temp",
 				"~/Documents/template-wordpress/template-wordpress.sublime-workspace"
 			],
 			[

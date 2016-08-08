@@ -23,27 +23,26 @@ define('tourismpress_PLUGIN_MODULES_DIR', tourismpress_PLUGIN_DIR . '/modules');
 define('tourismpress_PLUGIN_STYLESHEETS_DIR', tourismpress_PLUGIN_DIR . '/css');
 
 // Functions Library
-require_once tourismpress_PLUGIN_DIR . '/functions-global.php';
+require_once tourismpress_PLUGIN_DIR . '/functions/global.php';
 
 // Actions
 require_once tourismpress_PLUGIN_DIR . '/actions-global.php';
 
 // Custom Post Types
-require_once tourismpress_PLUGIN_DIR . '/post-type-blog.php';
-require_once tourismpress_PLUGIN_DIR . '/post-type-news.php';
-require_once tourismpress_PLUGIN_DIR . '/post-type-events.php';
-require_once tourismpress_PLUGIN_DIR . '/post-type-places.php';
-//require_once tourismpress_PLUGIN_DIR . '/post-type-packages.php';
+require_once tourismpress_PLUGIN_DIR . '/post-types/blog.php';
+require_once tourismpress_PLUGIN_DIR . '/post-types/news.php';
+require_once tourismpress_PLUGIN_DIR . '/post-types/events.php';
+require_once tourismpress_PLUGIN_DIR . '/post-types/places.php';
 
 // Administration Customizations
-require_once tourismpress_PLUGIN_DIR . '/admin.php';
-require_once tourismpress_PLUGIN_DIR . '/admin-login.php';
-require_once tourismpress_PLUGIN_DIR . '/admin-customizations.php';
-require_once tourismpress_PLUGIN_DIR . '/admin-settings.php';
-require_once tourismpress_PLUGIN_DIR . '/admin-dashboard.php';
-require_once tourismpress_PLUGIN_DIR . '/admin-menu.php';
-require_once tourismpress_PLUGIN_DIR . '/admin-bar.php';
-require_once tourismpress_PLUGIN_DIR . '/admin-footer.php';
+require_once tourismpress_PLUGIN_DIR . '/admin/admin.php';
+require_once tourismpress_PLUGIN_DIR . '/admin/login.php';
+require_once tourismpress_PLUGIN_DIR . '/admin/customizations.php';
+require_once tourismpress_PLUGIN_DIR . '/admin/settings.php';
+require_once tourismpress_PLUGIN_DIR . '/admin/dashboard.php';
+require_once tourismpress_PLUGIN_DIR . '/admin/menu.php';
+require_once tourismpress_PLUGIN_DIR . '/admin/bar.php';
+require_once tourismpress_PLUGIN_DIR . '/admin/footer.php';
 
 // Integration Modules
-require_once tourismpress_PLUGIN_DIR . '/integration-google-analytics.php';
+require_once tourismpress_PLUGIN_DIR . '/integration/google-analytics.php';
