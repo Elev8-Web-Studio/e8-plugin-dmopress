@@ -7,6 +7,7 @@ dist/
 .ftppass
 .DS_Store
 .sublime-workspace
+*.sublime-workspace
 
 # Specific Files
 sftp-config.json
