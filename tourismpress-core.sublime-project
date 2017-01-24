@@ -2,13 +2,15 @@
 	"folders":
 	[
 		{
-			"path": "/Users/jasonpomerleau/Documents/tourismpress-core"
-		}
+			"path": "."
+		},
+		
 	],
 	"settings":
 	{
 		"FuzzyFilePath":
 		{
-		}
+		},
+		
 	}
 }

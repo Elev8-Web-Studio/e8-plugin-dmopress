@@ -8,6 +8,7 @@
   "homepage": "",
   "private": true,
   "devDependencies": {
-    "bootstrap-sass": "^3.3.6"
+    "bootstrap-sass": "^3.3.6",
+    "bootstrap-grid-only": "^1.0.0"
   }
 }
