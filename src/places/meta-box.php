@@ -165,13 +165,15 @@ function tourismpress_place_meta_box_callback($post) {
                 echo '<p><label for="twitter_url">';
                 _e( 'Twitter Profile URL:', 'tourismpress_textdomain' );
 
-                $twitter_handle = tourismpress_get_twitter_handle_from_url($twitter_url_var);
-                if($twitter_handle != ''){
-                    echo '<span class="label-info">Handle: ' . $twitter_handle . '<span class="dashicons dashicons-yes success"></span></span>';
+                $twitter_handle_var = tourismpress_get_twitter_handle_from_url($twitter_url_var);
+                if($twitter_handle_var != ''){
+                    echo '<span class="label-info">Handle: ' . $twitter_handle_var . '<span class="dashicons dashicons-yes success"></span></span>';
                 }
 
                 echo '</label><br /> ';
-                echo '<input type="text" placeholder="http://" style="width: 100%" id="twitter_url" name="twitter_url" value="' . esc_attr( $twitter_url_var ) . '" size="25" /></p>';
+                echo '<input type="text" placeholder="http://" style="width: 100%" id="twitter_url" name="twitter_url" value="' . esc_attr( $twitter_url_var ) . '" size="25" />';
+                echo '<input type="hidden" name="twitter_handle" value="'.esc_attr($twitter_handle_var).'">';
+                echo '</p>';
 
                 ?>
                 <?php
@@ -286,6 +288,9 @@ function tourismpress_place_save_meta_box_data($post_id) {
     if (!isset( $_POST['twitter_url'])) {
         return;
     }
+    if (!isset( $_POST['twitter_handle'])) {
+        return;
+    }
     if (!isset( $_POST['instagram_url'])) {
         return;
     }
@@ -312,9 +317,10 @@ function tourismpress_place_save_meta_box_data($post_id) {
     $website_url = sanitize_text_field($_POST['website_url']);
     $facebook_url = sanitize_text_field($_POST['facebook_url']);
     $twitter_url = sanitize_text_field($_POST['twitter_url']);
+    $twitter_handle = sanitize_text_field(tourismpress_get_twitter_handle_from_url($twitter_url));
     $instagram_url = sanitize_text_field($_POST['instagram_url']);
     $tripadvisor_url = sanitize_text_field($_POST['tripadvisor_url']);
-    $tripadvisor_location_id = tourismpress_get_location_id_from_tripadvisor_url($tripadvisor_url);
+    $tripadvisor_location_id = sanitize_text_field(tourismpress_get_location_id_from_tripadvisor_url($tripadvisor_url));
     $latitude = sanitize_text_field($_POST['latitude']);
     $longitude = sanitize_text_field($_POST['longitude']);
 
@@ -327,6 +333,7 @@ function tourismpress_place_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'website_url', normalize_url($website_url));
     update_post_meta($post_id, 'facebook_url', normalize_url($facebook_url));
     update_post_meta($post_id, 'twitter_url', normalize_url($twitter_url));
+    update_post_meta($post_id, 'twitter_handle', normalize_url($twitter_url));
     update_post_meta($post_id, 'instagram_url', normalize_url($instagram_url));
     update_post_meta($post_id, 'tripadvisor_url', normalize_url($tripadvisor_url));
     update_post_meta($post_id, 'tripadvisor_location_id', $tripadvisor_location_id);

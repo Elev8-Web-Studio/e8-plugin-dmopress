@@ -39,6 +39,7 @@ require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-rating-inline/tr
 require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-reviews-button/tripadvisor-reviews-button.php';
 require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-review-snippets/tripadvisor-review-snippets.php';
 require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-review-starter/tripadvisor-review-starter.php';
+require_once tourismpress_PLUGIN_DIR . '/shortcodes/twitter-timeline/twitter-timeline.php';
 
 // Administration Customizations
 require_once tourismpress_PLUGIN_DIR . '/settings.php';
