@@ -65,3 +65,4 @@ function tourismpress_enqueue_admin_css() {
    wp_enqueue_script('app-js', plugins_url() . '/tourismpress/js/app.min.js', false);
   }
 }
+

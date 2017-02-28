@@ -1,4 +1,3 @@
-
 <?php 
 
 //[tourismpress-twitter-timeline handle=""]

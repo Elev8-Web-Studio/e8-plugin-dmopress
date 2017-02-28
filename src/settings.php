@@ -84,7 +84,7 @@ class MySettingsPage {
 
         add_settings_field(
             'google_maps_style', 
-            'Google Maps Style', 
+            'Google Maps Default Style', 
             array( $this, 'google_maps_style_callback' ), 
             'tourismpress-setting-admin', 
             'tourismpress_settings_section_google_maps'
@@ -128,9 +128,28 @@ class MySettingsPage {
     public function google_maps_style_callback($args) {
         extract($args);
 
-        printf(
-            '<input type="text" size="45" id="google-maps-style" name="tourismpress[google_maps_style]" value="%s" placeholder="" />',
-            isset( $this->options['google_maps_style'] ) ? esc_attr( $this->options['google_maps_style']) : ''
+        $available_options = array(
+            'classic' => 'Classic',
+            'gotham' => 'Gotham',
+            'grayscale' => 'Grayscale',
+            'nature' => 'Nature'
+        );
+
+        $output = '<select name="tourismpress[google_maps_style]">';
+        foreach ($available_options as $slug => $label) {
+            if($this->options['google_maps_style'] == $slug){
+                $selected = ' selected';
+            } else {
+                $selected = '';
+            }
+            $output .=  '<option value="'.$slug.'" '.$selected.'>'.$label.'</option>';
+        }
+        
+        $output .= '</select>';
+
+        print(
+            $output
+            //'<input type="text" size="45" id="google-maps-style" name="tourismpress[google_maps_style]" value="%s" placeholder="" />'
         );
     }
 }
