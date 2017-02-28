@@ -16,7 +16,7 @@ var pkg = require('./package.json'),
 // Main Task
 gulp.task('default', function() {
   //Source files
-  gulp.watch(['package.json', 'src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt'], ['source']);
+  gulp.watch(['package.json', 'src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json'], ['source']);
 
   //Stylesheets
   gulp.watch(['package.json', 'src/**/*.scss'], ['stylesheets']);
@@ -27,7 +27,7 @@ gulp.task('default', function() {
 });
 
 gulp.task('source', function () {
-  gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt'])
+  gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json'])
     .pipe(changed('./dist/'))
     .pipe(gulp.dest('./dist/'))
     .pipe(sftp({

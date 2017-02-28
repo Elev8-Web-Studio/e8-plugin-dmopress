@@ -96,7 +96,7 @@ function isValidFloat($testvalue){
 }
 
 function tourismpress_get_location_id_from_tripadvisor_url($tripadvisor_url){
-	$pattern = '/-g\d{5,7}-d\d{5,7}/';
+	$pattern = '/-g\d{5,8}-d\d{5,8}/';
 	preg_match($pattern, $tripadvisor_url, $matches);
 	if($matches){
 		$tripadvisor_id_block = $matches[0];

@@ -68,8 +68,8 @@ class MySettingsPage {
         );
 
         add_settings_section(
-            'tourismpress_settings_section_thirdparty',
-            'Third-Party Services Settings',
+            'tourismpress_settings_section_google_maps',
+            'Google Maps Settings',
             array( $this, 'print_section_info' ),
             'tourismpress-setting-admin'
         );
@@ -79,7 +79,15 @@ class MySettingsPage {
             'Google Maps API Key', 
             array( $this, 'google_maps_callback' ), 
             'tourismpress-setting-admin', 
-            'tourismpress_settings_section_thirdparty'
+            'tourismpress_settings_section_google_maps'
+        );
+
+        add_settings_field(
+            'google_maps_style', 
+            'Google Maps Style', 
+            array( $this, 'google_maps_style_callback' ), 
+            'tourismpress-setting-admin', 
+            'tourismpress_settings_section_google_maps'
         );
     }
 
@@ -93,6 +101,9 @@ class MySettingsPage {
 
         if(isset( $input['google_maps_api_key'])){
             $new_input['google_maps_api_key'] = sanitize_text_field( $input['google_maps_api_key'] );
+        }
+        if(isset( $input['google_maps_style'])){
+            $new_input['google_maps_style'] = sanitize_text_field( $input['google_maps_style'] );
         }
 
         return $new_input;
@@ -111,6 +122,15 @@ class MySettingsPage {
         printf(
             '<input type="text" size="45" id="google-maps-api-key" name="tourismpress[google_maps_api_key]" value="%s" placeholder="" />',
             isset( $this->options['google_maps_api_key'] ) ? esc_attr( $this->options['google_maps_api_key']) : ''
+        );
+    }
+
+    public function google_maps_style_callback($args) {
+        extract($args);
+
+        printf(
+            '<input type="text" size="45" id="google-maps-style" name="tourismpress[google_maps_style]" value="%s" placeholder="" />',
+            isset( $this->options['google_maps_style'] ) ? esc_attr( $this->options['google_maps_style']) : ''
         );
     }
 }

@@ -6,7 +6,7 @@
 /*
 Plugin Name: TourismPress
 Plugin URI: http://tourismpress.net
-Description: The ultimate plugin for Destination Marketing Organizations (DMOs) and tourism offices.
+Description: The ultimate plugin for Destination Marketing Organizations and tourism promoters.
 Author: Jason Pomerleau
 Version: 1.1.0
 Author URI: http://tourismpress.net
@@ -24,11 +24,21 @@ define('tourismpress_PLUGIN_STYLESHEETS_DIR', tourismpress_PLUGIN_DIR . '/css');
 
 // Functions Library
 require_once tourismpress_PLUGIN_DIR . '/functions/general.php';
+require_once tourismpress_PLUGIN_DIR . '/functions/options.php';
 
 // Custom Post Types
 require_once tourismpress_PLUGIN_DIR . '/places/post-type.php';
 require_once tourismpress_PLUGIN_DIR . '/places/taxonomies.php';
 require_once tourismpress_PLUGIN_DIR . '/places/meta-box.php';
+
+// Shortcodes
+require_once tourismpress_PLUGIN_DIR . '/shortcodes/map/map.php';
+require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-featured-button/tripadvisor-featured-button.php';
+require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-rating-badge/tripadvisor-rating-badge.php';
+require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-rating-inline/tripadvisor-rating-inline.php';
+require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-reviews-button/tripadvisor-reviews-button.php';
+require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-review-snippets/tripadvisor-review-snippets.php';
+require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-review-starter/tripadvisor-review-starter.php';
 
 // Administration Customizations
 require_once tourismpress_PLUGIN_DIR . '/settings.php';

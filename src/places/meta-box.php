@@ -194,73 +194,26 @@ function tourismpress_place_meta_box_callback($post) {
                 <?php
 
                 $tripadvisor_url_var = get_post_meta( $post->ID, 'tripadvisor_url', true );
+                $tripadvisor_location_id_var = get_post_meta( $post->ID, 'tripadvisor_location_id', true );
 
                 echo '<p><label for="tripadvisor_url">';
                 _e( 'TripAdvisor URL:', 'tourismpress_textdomain' );
-                $location_id = tourismpress_get_location_id_from_tripadvisor_url($tripadvisor_url_var);
-                if($location_id != ''){
-                    echo '<span class="label-info">Location ID: ' . $location_id . '<span class="dashicons dashicons-yes success"></span></span>';
+                $tripadvisor_location_id_var = tourismpress_get_location_id_from_tripadvisor_url($tripadvisor_url_var);
+                if($tripadvisor_location_id_var != ''){
+                    echo '<span class="label-info">Location ID: ' . $tripadvisor_location_id_var . '<span class="dashicons dashicons-yes success"></span></span>';
                 }
                 echo '</label><br /> ';
-                echo '<input type="text" placeholder="http://" style="width: 100%" id="tripadvisor_url" name="tripadvisor_url" value="' . esc_attr( $tripadvisor_url_var ) . '" size="25" /></p>';
+                echo '<input type="text" placeholder="http://" style="width: 100%" id="tripadvisor_url" name="tripadvisor_url" value="' . esc_attr( $tripadvisor_url_var ) . '" size="25" />';
+                echo '<input type="hidden" name="tripadvisor_location_id" value="'.esc_attr( $tripadvisor_location_id_var ).'">';
+                echo '</p>';
 
-                //echo tourismpress_get_location_id_from_tripadvisor_url($tripadvisor_url_var);
 
                 ?>
 
-                <?php 
-                    $option = get_option('tourismpress');
-                    if($option['google_maps_api_key'] != ''){
-                        $mapsapikey = $option['google_maps_api_key'];
-                    } else {
-                        $mapsapikey = 'EMPTY API KEY';
-                    }
-                ?>
            </div>
             <div class="col-lg-4">
-
-                <?php if($latitude_var != '' && $longitude_var != ''){  ?>
-                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo $mapsapikey ?>"></script>
-                
-                <script type="text/javascript">
-                    // When the window has finished loading create our google map below
-                    google.maps.event.addDomListener(window, 'load', init);
-                
-                    function init() {
-                        // Basic options for a simple Google Map
-                        // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-                        var mapOptions = {
-                            // How zoomed in you want the map to start at (always required)
-                            zoom: 14,
-
-                            // The latitude and longitude to center the map (always required)
-                            center: new google.maps.LatLng(<?php echo esc_attr( $latitude_var ) ?>, <?php echo esc_attr( $longitude_var ) ?>), // New York
-
-                            // How you would like to style the map. 
-                            // This is where you would paste any style found on Snazzy Maps.
-                            styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
-                        };
-
-                        // Get the HTML DOM element that will contain your map 
-                        // We are using a div with id="map" seen below in the <body>
-                        var mapElement = document.getElementById('map');
-
-                        // Create the Google Map using our element and options defined above
-                        var map = new google.maps.Map(mapElement, mapOptions);
-
-                        // Let's also add a marker while we're at it
-                        var marker = new google.maps.Marker({
-                            position: new google.maps.LatLng(<?php echo esc_attr( $latitude_var ) ?>, <?php echo esc_attr( $longitude_var ) ?>),
-                            map: map,
-                            title: 'Snazzy!'
-                        });
-                    }
-                </script>
-                <?php } ?>
-
-                Map:<br>
-                <div id="map" class="tourismpress-map"></div>
-                
+            Map:<br>
+                <?php echo do_shortcode('[tourismpress-map places="'.get_the_ID().'"]'); ?>                
             </div>  
         </div>
     </div>
@@ -336,6 +289,9 @@ function tourismpress_place_save_meta_box_data($post_id) {
     if (!isset( $_POST['instagram_url'])) {
         return;
     }
+    if (!isset( $_POST['tripadvisor_location_id'])) {
+        return;
+    }
     if (!isset( $_POST['tripadvisor_url'])) {
         return;
     }
@@ -358,6 +314,7 @@ function tourismpress_place_save_meta_box_data($post_id) {
     $twitter_url = sanitize_text_field($_POST['twitter_url']);
     $instagram_url = sanitize_text_field($_POST['instagram_url']);
     $tripadvisor_url = sanitize_text_field($_POST['tripadvisor_url']);
+    $tripadvisor_location_id = tourismpress_get_location_id_from_tripadvisor_url($tripadvisor_url);
     $latitude = sanitize_text_field($_POST['latitude']);
     $longitude = sanitize_text_field($_POST['longitude']);
 
@@ -372,6 +329,7 @@ function tourismpress_place_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'twitter_url', normalize_url($twitter_url));
     update_post_meta($post_id, 'instagram_url', normalize_url($instagram_url));
     update_post_meta($post_id, 'tripadvisor_url', normalize_url($tripadvisor_url));
+    update_post_meta($post_id, 'tripadvisor_location_id', $tripadvisor_location_id);
     update_post_meta($post_id, 'latitude', $latitude);
     update_post_meta($post_id, 'longitude', $longitude);
 }
