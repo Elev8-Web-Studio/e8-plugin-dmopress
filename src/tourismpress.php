@@ -26,6 +26,7 @@ define('tourismpress_PLUGIN_STYLESHEETS_DIR', tourismpress_PLUGIN_DIR . '/css');
 require_once tourismpress_PLUGIN_DIR . '/functions/general.php';
 require_once tourismpress_PLUGIN_DIR . '/functions/options.php';
 
+
 // Custom Post Types
 require_once tourismpress_PLUGIN_DIR . '/places/post-type.php';
 require_once tourismpress_PLUGIN_DIR . '/places/taxonomies.php';
@@ -44,6 +45,8 @@ require_once tourismpress_PLUGIN_DIR . '/shortcodes/twitter-timeline/twitter-tim
 // Administration Customizations
 require_once tourismpress_PLUGIN_DIR . '/settings.php';
 
+//3rd Party Integration
+require_once tourismpress_PLUGIN_DIR . '/functions/3rdparty/tribe-events-calendar.php';
 
 // stylesheet used by all similar meta boxes
 add_action('admin_init','tourismpress_enqueue_admin_css');

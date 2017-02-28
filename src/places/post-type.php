@@ -6,6 +6,7 @@ function tourismpress_register_places_post_type() {
 	$labels = array(
 		'name'                => __( 'Places', 'tourismpress_textdomain' ),
 		'singular_name'       => __( 'Place', 'tourismpress_textdomain' ),
+		'singular_name_lowercase' => __( 'place', 'tourismpress_textdomain' ),
 		'add_new'             => _x( 'Add New Place', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
 		'add_new_item'        => __( 'Add New Place', 'tourismpress_textdomain' ),
 		'edit_item'           => __( 'Edit Place', 'tourismpress_textdomain' ),
