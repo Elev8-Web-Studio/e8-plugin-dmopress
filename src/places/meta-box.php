@@ -333,7 +333,7 @@ function tourismpress_place_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'website_url', normalize_url($website_url));
     update_post_meta($post_id, 'facebook_url', normalize_url($facebook_url));
     update_post_meta($post_id, 'twitter_url', normalize_url($twitter_url));
-    update_post_meta($post_id, 'twitter_handle', normalize_url($twitter_url));
+    update_post_meta($post_id, 'twitter_handle', normalize_url($twitter_handle));
     update_post_meta($post_id, 'instagram_url', normalize_url($instagram_url));
     update_post_meta($post_id, 'tripadvisor_url', normalize_url($tripadvisor_url));
     update_post_meta($post_id, 'tripadvisor_location_id', $tripadvisor_location_id);
