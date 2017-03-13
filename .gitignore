@@ -11,3 +11,4 @@ dist/
 
 # Specific Files
 sftp-config.json
+secrets.json

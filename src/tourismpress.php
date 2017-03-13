@@ -1,14 +1,10 @@
 <?php
-/**
- * @package TourismPress
- * @version 1.1.0
- */
 /*
 Plugin Name: TourismPress
 Plugin URI: http://tourismpress.net
 Description: The ultimate plugin for Destination Marketing Organizations and tourism promoters.
 Author: Jason Pomerleau
-Version: 1.1.0
+Version: 1.0.0
 Author URI: http://tourismpress.net
 */
 
@@ -43,7 +39,7 @@ require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-review-starter/t
 require_once tourismpress_PLUGIN_DIR . '/shortcodes/twitter-timeline/twitter-timeline.php';
 
 // Administration Customizations
-require_once tourismpress_PLUGIN_DIR . '/settings.php';
+require_once tourismpress_PLUGIN_DIR . '/customizer.php';
 
 //3rd Party Integration
 require_once tourismpress_PLUGIN_DIR . '/functions/3rdparty/tribe-events-calendar.php';

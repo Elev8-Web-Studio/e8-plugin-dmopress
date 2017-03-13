@@ -1,6 +1,8 @@
 
 <?php 
 
+
+
 //[tourismpress-map address="679 Guiness Way, London, ON, N5X 0C6"]
 function tourismpress_map($atts, $content = null){
 	global $google_maps_api_key;
@@ -63,7 +65,7 @@ function tourismpress_map($atts, $content = null){
 	if(tourismpress_is_valid_style(esc_attr($atts['style']))){
 		$style = esc_attr($atts['style']);
 	} else {
-		$style = tpress_get_google_maps_style();
+		$style = get_theme_mod('google_maps_style');;
 	}
 	$style_json = tourismpress_get_map_style_json(esc_attr($atts['style']));
 
@@ -135,11 +137,11 @@ function tourismpress_map($atts, $content = null){
 
 	ob_start();
 
-	if(tpress_get_google_maps_api_key()){
+	if(get_theme_mod('google_maps_api_key') != ''){
 ?>
 
 	<div id="map" class="tourismpress-map" style="width: 100%; height: 100%; min-height: 400px;"></div>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo tpress_get_google_maps_api_key(); ?>"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_theme_mod('google_maps_api_key'); ?>"></script>
 
 	<script type="text/javascript">
 		google.maps.event.addDomListener(window, 'load', init);
@@ -149,7 +151,8 @@ function tourismpress_map($atts, $content = null){
 			
 			var mapOptions = {
 				zoom: <?php echo esc_attr($atts['zoom']) ?>,
-				styles: <?php echo $style_json; ?>
+				styles: <?php echo $style_json; ?>,
+				mapTypeId: 'terrain'
 			};
 
 			var mapElement = document.getElementById('map');
@@ -265,15 +268,15 @@ function tourismpress_get_map_style_json($style){
 		if(tourismpress_is_valid_style($style)){
 			$style_string = $style;
 		} else {
-			if(tpress_get_google_maps_style() != ''){
-				$style_string = tpress_get_google_maps_style();
+			if(get_theme_mod('google_maps_style') != ''){
+				$style_string = get_theme_mod('google_maps_style');
 			} else {
 				$style_string = 'classic';
 			}
 		}
 	} else {
-		if(tpress_get_google_maps_style() != ''){
-			$style_string = tpress_get_google_maps_style();
+		if(get_theme_mod('google_maps_style') != ''){
+			$style_string = get_theme_mod('google_maps_style');
 		} else {
 			$style_string = 'classic';
 		}
