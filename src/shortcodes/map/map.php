@@ -1,25 +1,19 @@
-
 <?php 
-
-
-
-//[tourismpress-map address="679 Guiness Way, London, ON, N5X 0C6"]
+//[tourismpress-map]
 function tourismpress_map($atts, $content = null){
-	global $google_maps_api_key;
 
 	$atts = shortcode_atts(array(
 		'categories' => '',
 		'class' => '',
 		'features' => '',
+		'height' => '400px',
 		'match' => 'OR',
 		'places' => '',
 		'style' => '',
 		'tags' => '',
+		'width' => '100%',
 		'zoom' => 14,
 	), $atts);
-
-	//Resolve Address
-	//TODO
 
 	//Resolve Categories
 	if(esc_attr($atts['categories']) != ''){
@@ -141,7 +135,7 @@ function tourismpress_map($atts, $content = null){
 	if(get_theme_mod('google_maps_api_key') != ''){
 ?>
 
-	<div id="map" class="tourismpress-map <?php echo esc_attr($atts['class']); ?>" style="width: 100%; height: 100%; min-height: 400px;"></div>
+	<div id="map" class="tourismpress-map <?php echo esc_attr($atts['class']); ?>" style="width: <?php echo esc_attr( $atts['width'] ) ?>; height: <?php echo esc_attr( $atts['height'] ) ?>; min-height: 50px;"></div>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_theme_mod('google_maps_api_key'); ?>"></script>
 
 	<script type="text/javascript">
