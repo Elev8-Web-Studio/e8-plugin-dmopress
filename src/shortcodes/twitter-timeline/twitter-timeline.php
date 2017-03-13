@@ -1,8 +1,7 @@
 <?php 
 
-//[tourismpress-twitter-timeline handle=""]
+//[tourismpress-twitter-timeline handle="" class=""]
 function tourismpress_twitter_feed($atts, $content = null){
-	global $google_maps_api_key;
 
 	$atts = shortcode_atts(array(
 		'place_id' => '',
@@ -10,7 +9,6 @@ function tourismpress_twitter_feed($atts, $content = null){
         'class' => '',
         'color' => '',
 	), $atts);
-
 
 	//Resolve Place ID
 	if(esc_attr($atts['place_id']) != ''){

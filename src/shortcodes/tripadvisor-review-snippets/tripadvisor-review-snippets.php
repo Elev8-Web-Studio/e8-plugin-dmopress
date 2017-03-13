@@ -2,14 +2,13 @@
 
 //[tripadvisor-review-snippets place_id="" is_wide="false"]
 function tourismpress_tripadvisor_review_snippets($atts, $content = null){
-	global $google_maps_api_key;
 
+    //Set up attributes
 	$atts = shortcode_atts(array(
 		'place_id' => '',
         'is_wide' => 'false',
         'class' => '',
 	), $atts);
-
 
 	//Resolve Post ID
 	if(esc_attr($atts['place_id']) != ''){

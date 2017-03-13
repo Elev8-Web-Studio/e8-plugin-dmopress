@@ -1,13 +1,12 @@
 
 <?php 
 
-//[tripadvisor-reviews-button post_id=""]
+//[tripadvisor-reviews-button post_id="" class=""]
 function tourismpress_tripadvisor_review_starter($atts, $content = null){
 	global $google_maps_api_key;
 
 	$atts = shortcode_atts(array(
 		'place_id' => '',
-        'is_wide' => 'false',
         'class' => '',
 	), $atts);
 

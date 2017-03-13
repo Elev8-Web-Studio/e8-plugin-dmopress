@@ -1,15 +1,14 @@
 
 <?php 
 
-//[tripadvisor-rating-badge post_id="" is_wide="false"]
+//[tripadvisor-featured-button post_id="" class=""]
 function tourismpress_tripadvisor_featured_buton($atts, $content = null){
-	global $google_maps_api_key;
-
+	
+    //Set up attributes
 	$atts = shortcode_atts(array(
 		'place_id' => '',
         'class' => '',
 	), $atts);
-
 
 	//Resolve Place ID
 	if(esc_attr($atts['place_id']) != ''){

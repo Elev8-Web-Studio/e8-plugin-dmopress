@@ -1,16 +1,14 @@
 
 <?php 
 
-//[tripadvisor-reviews-button post_id=""]
+//[tripadvisor-reviews-button post_id="" class=""]
 function tourismpress_tripadvisor_reviews_button($atts, $content = null){
-	global $google_maps_api_key;
 
+    //Set up attributes
 	$atts = shortcode_atts(array(
 		'place_id' => '',
-        'is_wide' => 'false',
         'class' => '',
 	), $atts);
-
 
 	//Resolve Place ID
 	if(esc_attr($atts['place_id']) != ''){
@@ -35,7 +33,6 @@ function tourismpress_tripadvisor_reviews_button($atts, $content = null){
     </ul>
 </div>
 <script src="https://www.jscache.com/wejs?wtype=linkingWidgetRedesign&amp;uniq=237&amp;locationId=<?php echo $location_id; ?>&amp;lang=en_US&amp;border=true&amp;display_version=2"></script>
-
 
 <?php
 
