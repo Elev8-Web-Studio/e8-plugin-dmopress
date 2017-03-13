@@ -8,6 +8,7 @@ function tourismpress_tripadvisor_reviews_button($atts, $content = null){
 	$atts = shortcode_atts(array(
 		'place_id' => '',
         'is_wide' => 'false',
+        'class' => '',
 	), $atts);
 
 
@@ -26,7 +27,7 @@ function tourismpress_tripadvisor_reviews_button($atts, $content = null){
 ?>
 
 
-<div id="TA_linkingWidgetRedesign237" class="TA_linkingWidgetRedesign">
+<div id="TA_linkingWidgetRedesign237" class="TA_linkingWidgetRedesign <?php echo esc_attr($atts['class']); ?>">
     <ul id="GTpQWliPz9s" class="TA_links Uda7wuHu">
         <li id="iX1uh9DS0RKB" class="gt1WZM">
             <a target="_blank" href="https://www.tripadvisor.com/"><img src="https://www.tripadvisor.com/img/cdsi/partner/tripadvisor_logo_115x18-15079-2.gif" alt="TripAdvisor"/></a>

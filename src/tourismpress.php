@@ -20,8 +20,6 @@ define('tourismpress_PLUGIN_STYLESHEETS_DIR', tourismpress_PLUGIN_DIR . '/css');
 
 // Functions Library
 require_once tourismpress_PLUGIN_DIR . '/functions/general.php';
-require_once tourismpress_PLUGIN_DIR . '/functions/options.php';
-
 
 // Custom Post Types
 require_once tourismpress_PLUGIN_DIR . '/places/post-type.php';

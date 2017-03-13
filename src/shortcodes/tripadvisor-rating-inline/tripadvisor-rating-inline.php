@@ -7,6 +7,7 @@ function tourismpress_tripadvisor_rating_inline($atts, $content = null){
 
 	$atts = shortcode_atts(array(
 		'place_id' => '',
+        'class' => '',
 	), $atts);
 
 
@@ -24,7 +25,7 @@ function tourismpress_tripadvisor_rating_inline($atts, $content = null){
         ob_start();
 ?>
 
-<div id="TA_socialButtonBubbles874" class="TA_socialButtonBubbles">
+<div id="TA_socialButtonBubbles874" class="TA_socialButtonBubbles <?php echo esc_attr($atts['class']); ?>">
     <ul id="ez8xYi" class="TA_links 57wc9o5">
         <li id="4rhuc21t6" class="v3BeaDwNosu">
             <a target="_blank" href="https://www.tripadvisor.com/Hotel_Review-g1015730-d10781824-Reviews-Limberlost_Lodge-Thessalon_Northeastern_Ontario_Ontario.html"><img src="https://www.tripadvisor.com/img/cdsi/img2/branding/socialWidget/20x28_green-21693-2.png"/></a>

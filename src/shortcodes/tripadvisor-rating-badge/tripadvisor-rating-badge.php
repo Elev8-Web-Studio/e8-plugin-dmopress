@@ -8,6 +8,7 @@ function tourismpress_tripadvisor_rating_badge($atts, $content = null){
 	$atts = shortcode_atts(array(
 		'place_id' => '',
         'is_wide' => 'false',
+        'class' => '',
 	), $atts);
 
 
@@ -38,7 +39,7 @@ function tourismpress_tripadvisor_rating_badge($atts, $content = null){
         ob_start();
 ?>
 
-<div id="TA_<?php echo $size ?>713" class="TA_<?php echo $size ?>">
+<div id="TA_<?php echo $size ?>713" class="TA_<?php echo $size ?> <?php echo esc_attr($atts['class']); ?>">
     <ul>
         <li>
             <a target="_blank" href="https://www.tripadvisor.com/"><img src="https://www.tripadvisor.com/img/cdsi/img2/branding/tripadvisor_logo_transp_340x80-18034-2.png" alt="TripAdvisor"/></a>

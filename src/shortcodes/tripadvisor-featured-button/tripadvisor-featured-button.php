@@ -7,6 +7,7 @@ function tourismpress_tripadvisor_featured_buton($atts, $content = null){
 
 	$atts = shortcode_atts(array(
 		'place_id' => '',
+        'class' => '',
 	), $atts);
 
 
@@ -24,7 +25,7 @@ function tourismpress_tripadvisor_featured_buton($atts, $content = null){
         ob_start();
 ?>
 
-<div id="TA_rated679" class="TA_rated">
+<div id="TA_rated679" class="TA_rated <?php echo esc_attr($atts['class']); ?>">
     <ul id="cZmfO2GZ98" class="TA_links QkHrlDsm">
         <li id="u6rDofwGzJz7" class="4DbsGJnC">
             <a target="_blank" href="https://www.tripadvisor.com/"><img src="https://www.tripadvisor.com/img/cdsi/img2/badges/ollie-11424-2.gif" alt="TripAdvisor"/></a>

@@ -8,6 +8,7 @@ function tourismpress_tripadvisor_review_starter($atts, $content = null){
 	$atts = shortcode_atts(array(
 		'place_id' => '',
         'is_wide' => 'false',
+        'class' => '',
 	), $atts);
 
 
@@ -25,7 +26,7 @@ function tourismpress_tripadvisor_review_starter($atts, $content = null){
         ob_start();
 ?>
 
-<div id="TA_cdswritereviewlg979" class="TA_cdswritereviewlg">
+<div id="TA_cdswritereviewlg979" class="TA_cdswritereviewlg <?php echo esc_attr($atts['class']); ?>">
     <ul id="U3694tnY" class="TA_links sONEpli1a">
         <li id="nRQkId" class="IaVhWu4Pao">
             <a target="_blank" href="https://www.tripadvisor.com/"><img src="https://www.tripadvisor.com/img/cdsi/img2/branding/medium-logo-12097-2.png" alt="TripAdvisor"/></a>

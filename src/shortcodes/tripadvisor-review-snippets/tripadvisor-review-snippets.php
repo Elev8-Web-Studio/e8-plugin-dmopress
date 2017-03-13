@@ -7,6 +7,7 @@ function tourismpress_tripadvisor_review_snippets($atts, $content = null){
 	$atts = shortcode_atts(array(
 		'place_id' => '',
         'is_wide' => 'false',
+        'class' => '',
 	), $atts);
 
 
@@ -31,7 +32,7 @@ function tourismpress_tripadvisor_review_snippets($atts, $content = null){
         ob_start();
 ?>
 
-<div id="TA_selfserveprop427" class="TA_selfserveprop tripadvisor-review-snippets">
+<div id="TA_selfserveprop427" class="TA_selfserveprop tripadvisor-review-snippets <?php echo esc_attr($atts['class']); ?>">
     <ul>
         <li>
             <a target="_blank" href="https://www.tripadvisor.com/"><img src="https://www.tripadvisor.com/img/cdsi/img2/branding/150_logo-11900-2.png" alt="TripAdvisor"/></a>
