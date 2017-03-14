@@ -15,6 +15,9 @@ function tourismpress_map($atts, $content = null){
 		'zoom' => 14,
 	), $atts);
 
+	//Generates a random string for use in map id attribute (which must be unique)
+	$map_id = 'map-'.substr(str_shuffle(md5(time())),0,8);
+
 	//Resolve Categories
 	if(esc_attr($atts['categories']) != ''){
 		$categories = explode(',', esc_attr($atts['categories']));
@@ -139,7 +142,7 @@ function tourismpress_map($atts, $content = null){
 	if(get_theme_mod('google_maps_api_key') != ''){
 ?>
 
-	<div id="map" class="tourismpress-map <?php echo esc_attr($atts['class']); ?>" style="width: <?php echo esc_attr( $atts['width'] ) ?>; height: <?php echo esc_attr( $atts['height'] ) ?>; min-height: 50px;"></div>
+	<div id="<?php echo $map_id; ?>" class="tourismpress-map <?php echo esc_attr($atts['class']); ?>" style="width: <?php echo esc_attr( $atts['width'] ) ?>; height: <?php echo esc_attr( $atts['height'] ) ?>; min-height: 50px;"></div>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_theme_mod('google_maps_api_key'); ?>"></script>
 
 	<script type="text/javascript">
@@ -154,7 +157,7 @@ function tourismpress_map($atts, $content = null){
 				mapTypeId: 'terrain'
 			};
 
-			var mapElement = document.getElementById('map');
+			var mapElement = document.getElementById('<?php echo $map_id; ?>');
 			var map = new google.maps.Map(mapElement, mapOptions);
 
 			var infowindow = new google.maps.InfoWindow();
