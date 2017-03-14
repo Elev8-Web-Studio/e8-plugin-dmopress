@@ -166,48 +166,47 @@ function tourismpress_map($atts, $content = null){
 
 			function CenterControl(controlDiv, map) {
 
-				if(location.protocol == 'https:'){
-					// Set CSS for the control border.
-					var controlUI = document.createElement('div');
-					controlUI.style.backgroundColor = '#fff';
-					controlUI.style.border = '2px solid #fff';
-					controlUI.style.borderRadius = '2px';
-					controlUI.style.boxShadow = 'rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px';
-					controlUI.style.cursor = 'pointer';
-					controlUI.style.marginRight = '10px';
-					controlUI.style.textAlign = 'center';
-					controlUI.title = 'My Location';
-					controlDiv.appendChild(controlUI);
+				
+				// Set CSS for the control border.
+				var controlUI = document.createElement('div');
+				controlUI.style.backgroundColor = '#fff';
+				controlUI.style.border = '2px solid #fff';
+				controlUI.style.borderRadius = '2px';
+				controlUI.style.boxShadow = 'rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px';
+				controlUI.style.cursor = 'pointer';
+				controlUI.style.marginRight = '10px';
+				controlUI.style.textAlign = 'center';
+				controlUI.title = 'My Location';
+				controlDiv.appendChild(controlUI);
 
-					// Set CSS for the control interior.
-					var controlText = document.createElement('div');
-					controlText.style.paddingTop = '6px';
-					controlText.style.paddingRight = '7px';
-					controlText.style.paddingBottom = '6px';
-					controlText.style.paddingLeft = '7px';
-					controlText.innerHTML = '<img src="<?php echo plugins_url(); ?>/tourismpress/shortcodes/map/img/location.png" style="width: 10px; height: 11px;">';
-					controlUI.appendChild(controlText);
+				// Set CSS for the control interior.
+				var controlText = document.createElement('div');
+				controlText.style.paddingTop = '6px';
+				controlText.style.paddingRight = '7px';
+				controlText.style.paddingBottom = '6px';
+				controlText.style.paddingLeft = '7px';
+				controlText.innerHTML = '<img src="<?php echo plugins_url(); ?>/tourismpress/shortcodes/map/img/location.png" style="width: 10px; height: 11px;">';
+				controlUI.appendChild(controlText);
 
-					// Setup the click event listeners: simply set the map to Chicago.
-					controlUI.addEventListener('click', function() {
+				// Setup the click event listeners: simply set the map to Chicago.
+				controlUI.addEventListener('click', function() {
 
-						if (navigator.geolocation) {
-							navigator.geolocation.getCurrentPosition(function(position) {
-								var pos = {
-									lat: position.coords.latitude,
-									lng: position.coords.longitude
-								};
-								map.setCenter(pos);
-							}, function() {
-								handleLocationError(true, map.getCenter());
-							});
-						} else {
-							// Browser doesn't support Geolocation
-							handleLocationError(false, map.getCenter());
-						}
+					if (navigator.geolocation) {
+						navigator.geolocation.getCurrentPosition(function(position) {
+							var pos = {
+								lat: position.coords.latitude,
+								lng: position.coords.longitude
+							};
+							map.setCenter(pos);
+						}, function() {
+							handleLocationError(true, map.getCenter());
+						});
+					} else {
+						// Browser doesn't support Geolocation
+						handleLocationError(false, map.getCenter());
+					}
 
-					});
-				}
+				});
 
 				function handleLocationError(browserHasGeolocation, pos) {
 					if(browserHasGeolocation){
@@ -220,11 +219,12 @@ function tourismpress_map($atts, $content = null){
 
 			// Create the DIV to hold the control and call the CenterControl()
 			// constructor passing in this DIV.
-			var centerControlDiv = document.createElement('div');
-			var centerControl = new CenterControl(centerControlDiv, map);
-
-			centerControlDiv.index = 1;
-			map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
+			if(location.protocol == 'https:'){
+				var centerControlDiv = document.createElement('div');
+				var centerControl = new CenterControl(centerControlDiv, map);
+				centerControlDiv.index = 1;
+				map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
+			}
 
 			for (i = 0; i < locations.length; i++) {  
 				var marker = new google.maps.Marker({
