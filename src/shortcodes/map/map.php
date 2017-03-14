@@ -114,11 +114,15 @@ function tourismpress_map($atts, $content = null){
 			$label = get_the_title();
 			$lat = get_post_meta( get_the_ID(), 'latitude', true );
 			$long = get_post_meta( get_the_ID(), 'longitude', true );
+			$slug = get_permalink( get_the_ID() );
+			$address1 = get_post_meta( get_the_ID(), 'address', true );
 			if($lat != '' && $long != ''){
 				$places_jsarray .= '[';
 				$places_jsarray .= '\''.$label.'\',';
 				$places_jsarray .= $lat.',';
 				$places_jsarray .= $long.',';
+				$places_jsarray .= '\''.$slug.'\',';
+				$places_jsarray .= '\''.$address1.'\',';
 				$places_jsarray .= '],';
 			}
 		}
@@ -162,46 +166,48 @@ function tourismpress_map($atts, $content = null){
 
 			function CenterControl(controlDiv, map) {
 
-				// Set CSS for the control border.
-				var controlUI = document.createElement('div');
-				controlUI.style.backgroundColor = '#fff';
-				controlUI.style.border = '2px solid #fff';
-				controlUI.style.borderRadius = '2px';
-				controlUI.style.boxShadow = 'rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px';
-				controlUI.style.cursor = 'pointer';
-				controlUI.style.marginRight = '10px';
-				controlUI.style.textAlign = 'center';
-				controlUI.title = 'My Location';
-				controlDiv.appendChild(controlUI);
+				if(location.protocol == 'https:'){
+					// Set CSS for the control border.
+					var controlUI = document.createElement('div');
+					controlUI.style.backgroundColor = '#fff';
+					controlUI.style.border = '2px solid #fff';
+					controlUI.style.borderRadius = '2px';
+					controlUI.style.boxShadow = 'rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px';
+					controlUI.style.cursor = 'pointer';
+					controlUI.style.marginRight = '10px';
+					controlUI.style.textAlign = 'center';
+					controlUI.title = 'My Location';
+					controlDiv.appendChild(controlUI);
 
-				// Set CSS for the control interior.
-				var controlText = document.createElement('div');
-				controlText.style.paddingTop = '6px';
-				controlText.style.paddingRight = '7px';
-				controlText.style.paddingBottom = '6px';
-				controlText.style.paddingLeft = '7px';
-				controlText.innerHTML = '<img src="<?php echo plugins_url(); ?>/tourismpress/shortcodes/map/img/location.png" style="width: 10px; height: 11px;">';
-				controlUI.appendChild(controlText);
+					// Set CSS for the control interior.
+					var controlText = document.createElement('div');
+					controlText.style.paddingTop = '6px';
+					controlText.style.paddingRight = '7px';
+					controlText.style.paddingBottom = '6px';
+					controlText.style.paddingLeft = '7px';
+					controlText.innerHTML = '<img src="<?php echo plugins_url(); ?>/tourismpress/shortcodes/map/img/location.png" style="width: 10px; height: 11px;">';
+					controlUI.appendChild(controlText);
 
-				// Setup the click event listeners: simply set the map to Chicago.
-				controlUI.addEventListener('click', function() {
-					
-					if (navigator.geolocation) {
-						navigator.geolocation.getCurrentPosition(function(position) {
-							var pos = {
-								lat: position.coords.latitude,
-								lng: position.coords.longitude
-							};
-							map.setCenter(pos);
-						}, function() {
-							handleLocationError(true, map.getCenter());
-						});
-					} else {
-						// Browser doesn't support Geolocation
-						handleLocationError(false, map.getCenter());
-					}
+					// Setup the click event listeners: simply set the map to Chicago.
+					controlUI.addEventListener('click', function() {
 
-				});
+						if (navigator.geolocation) {
+							navigator.geolocation.getCurrentPosition(function(position) {
+								var pos = {
+									lat: position.coords.latitude,
+									lng: position.coords.longitude
+								};
+								map.setCenter(pos);
+							}, function() {
+								handleLocationError(true, map.getCenter());
+							});
+						} else {
+							// Browser doesn't support Geolocation
+							handleLocationError(false, map.getCenter());
+						}
+
+					});
+				}
 
 				function handleLocationError(browserHasGeolocation, pos) {
 					if(browserHasGeolocation){
@@ -231,7 +237,7 @@ function tourismpress_map($atts, $content = null){
 
 				google.maps.event.addListener(marker, 'click', (function(marker, i) {
 					return function() {
-						infowindow.setContent(locations[i][0]);
+						infowindow.setContent('<a class="map-callout-title" href="' + locations[i][3] + '">' + locations[i][0] + '</a><br>' + locations[i][4]);
 						infowindow.open(map, marker);
 					}
 				})(marker, i));
