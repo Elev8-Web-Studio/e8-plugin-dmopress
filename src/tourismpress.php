@@ -37,7 +37,7 @@ require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-review-starter/t
 require_once tourismpress_PLUGIN_DIR . '/shortcodes/twitter-timeline/twitter-timeline.php';
 
 // Administration Customizations
-require_once tourismpress_PLUGIN_DIR . '/customizer.php';
+require_once tourismpress_PLUGIN_DIR . '/setup/customizer.php';
 
 //3rd Party Integration
 require_once tourismpress_PLUGIN_DIR . '/functions/3rdparty/tribe-events-calendar.php';
