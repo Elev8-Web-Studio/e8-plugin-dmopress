@@ -2,7 +2,7 @@
 /*
 Plugin Name: TourismPress
 Plugin URI: http://tourismpress.net
-Description: The ultimate plugin for Destination Marketing Organizations and tourism promoters.
+Description: A WordPress plugin for people who promote places.
 Author: Jason Pomerleau
 Version: 1.0.0
 Author URI: http://tourismpress.net
@@ -55,8 +55,13 @@ function tourismpress_enqueue_admin_css() {
   // Only show our scripts on the admin pages they are used on to prevent possible conflicts with other scripts.
   if (($pagenow == 'post.php' || $pagenow == 'post-new.php') && $typenow == 'places') {
 	 // WP Alchemy Stylesheet
-	 wp_enqueue_style('custom_meta_css', plugins_url() . '/tourismpress/css/app.min.css');
+	 wp_enqueue_style('custom_meta_css', plugins_url() . '/tourismpress/css/tourismpress-admin.min.css');
    wp_enqueue_script('app-js', plugins_url() . '/tourismpress/js/app.min.js', false);
   }
+}
+
+add_action('init','tourismpress_enqueue_css');
+function tourismpress_enqueue_css() {
+  wp_enqueue_style('tourismpress_css', plugins_url() . '/tourismpress/css/tourismpress.min.css');
 }
 

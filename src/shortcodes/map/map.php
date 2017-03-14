@@ -142,7 +142,7 @@ function tourismpress_map($atts, $content = null){
 	if(get_theme_mod('google_maps_api_key') != ''){
 ?>
 
-	<div id="<?php echo $map_id; ?>" class="tourismpress-map <?php echo esc_attr($atts['class']); ?>" style="width: <?php echo esc_attr( $atts['width'] ) ?>; height: <?php echo esc_attr( $atts['height'] ) ?>; min-height: 50px;"></div>
+	<div id="<?php echo $map_id; ?>" class="tourismpress-map <?php echo $style; ?> <?php echo esc_attr($atts['class']); ?>" style="width: <?php echo esc_attr( $atts['width'] ) ?>; height: <?php echo esc_attr( $atts['height'] ) ?>; min-height: 50px;"></div>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_theme_mod('google_maps_api_key'); ?>"></script>
 
 	<script type="text/javascript">
@@ -240,7 +240,7 @@ function tourismpress_map($atts, $content = null){
 
 				google.maps.event.addListener(marker, 'click', (function(marker, i) {
 					return function() {
-						infowindow.setContent('<a class="map-callout-title" href="' + locations[i][3] + '">' + locations[i][0] + '</a><br>' + locations[i][4]);
+						infowindow.setContent('<strong><a class="map-callout-title" href="' + locations[i][3] + '">' + locations[i][0] + '</a></strong><br>' + locations[i][4]);
 						infowindow.open(map, marker);
 					}
 				})(marker, i));
