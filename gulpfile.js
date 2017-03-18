@@ -35,9 +35,8 @@ gulp.task('default', function() {
 
 gulp.task('source', function() {
     gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json'])
-        .pipe(changed('./dist/'))
-        .pipe(gulp.dest('./dist/'))
-        .pipe(conn.dest(secrets.ftppath));
+        .pipe(changed(secrets.localPath))
+        .pipe(gulp.dest(secrets.localPath));
 });
 
 gulp.task('stylesheets-admin', function() {
@@ -50,8 +49,7 @@ gulp.task('stylesheets-admin', function() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(cleancss({ keepBreaks: false }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./dist/css'))
-        .pipe(conn.dest(secrets.ftppath + '/css'));
+        .pipe(gulp.dest(secrets.localPath + '/css'));
 });
 
 gulp.task('stylesheets-public', function() {
@@ -64,8 +62,7 @@ gulp.task('stylesheets-public', function() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(cleancss({ keepBreaks: false }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./dist/css'))
-        .pipe(conn.dest(secrets.ftppath + '/css'));
+        .pipe(gulp.dest(secrets.localPath + '/css'));
 });
 
 gulp.task('js', function() {
@@ -77,6 +74,5 @@ gulp.task('js', function() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('./dist/js'))
-        .pipe(conn.dest(secrets.ftppath + '/js'));
+        .pipe(gulp.dest(secrets.localPath + '/js'));
 });
