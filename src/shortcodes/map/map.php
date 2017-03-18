@@ -259,7 +259,7 @@ function tourismpress_map($atts, $content = null){
 	</script>
 	
 <?php } else { ?>
-	<p><span style="color: #cc0000;">Map Error:</span> A map could not be created because a valid Google Maps API key was not found. Add your Google Maps API key to the <a href="<?php echo admin_url('options-general.php?page=tourismpress-settings'); ?>">TourismPress Settings</a> page.</p>
+	<p><span style="color: #cc0000;">Map Error:</span> A map could not be created because a valid Google Maps API key was not found. Add your Google Maps API key to the <a href="<?php echo admin_url('customize.php?autofocus[section]=tourismpress'); ?>">WordPress Customizer</a>.</p>
 	
 <?php
 	}
