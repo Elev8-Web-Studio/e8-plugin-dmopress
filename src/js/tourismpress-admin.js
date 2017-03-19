@@ -53,10 +53,14 @@ jQuery(document).ready(function($) {
 		var zip = jQuery('input[name=zip]').val();
 
 		var location = address + ',' + city + ',' + stateprov + ',' + zip;
+		var geocodeRequestURI = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + location;
 
-		jQuery.getJSON('https://maps.googleapis.com/maps/api/geocode/json?address=' + location, function(data, textStatus) {
+		jQuery.getJSON(geocodeRequestURI, function(data, textStatus) {
+				console.log(data);
 				jQuery('input[name=latitude]').val(data.results[0].geometry.location.lat);
 				jQuery('input[name=longitude]').val(data.results[0].geometry.location.lng);
+		}).fail(function() {
+				console.log( "Geocode request error." );
 		});
 			
 	});
