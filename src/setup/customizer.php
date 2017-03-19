@@ -1,4 +1,6 @@
 <?php
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
 
 function tourismpress_customize_register($wp_customize) {
    $wp_customize->add_section('tourismpress', array(

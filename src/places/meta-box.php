@@ -1,4 +1,6 @@
 <?php
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
 
 /**
  * Adds a box to the main column on the Post and Page edit screens.

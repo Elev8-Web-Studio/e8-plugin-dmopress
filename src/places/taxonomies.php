@@ -1,4 +1,6 @@
 <?php
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
 
 // Place Categories
 function tourismpress_register_place_categories_taxonomy() {

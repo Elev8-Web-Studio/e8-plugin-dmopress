@@ -1,4 +1,6 @@
 <?php 
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
 
 //[tripadvisor-review-snippets place_id="" is_wide="false"]
 function tourismpress_tripadvisor_review_snippets($atts, $content = null){

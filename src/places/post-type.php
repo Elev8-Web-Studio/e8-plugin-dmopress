@@ -1,4 +1,6 @@
 <?php
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
 
 // Places Post Type
 function tourismpress_register_places_post_type() {

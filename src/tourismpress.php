@@ -36,32 +36,13 @@ require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-review-snippets/
 require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-review-starter/tripadvisor-review-starter.php';
 require_once tourismpress_PLUGIN_DIR . '/shortcodes/twitter-timeline/twitter-timeline.php';
 
-// Administration Customizations
+// Setup
+require_once tourismpress_PLUGIN_DIR . '/setup/admin.php';
 require_once tourismpress_PLUGIN_DIR . '/setup/customizer.php';
+require_once tourismpress_PLUGIN_DIR . '/setup/hooks.php';
+require_once tourismpress_PLUGIN_DIR . '/setup/public.php';
 
 //3rd Party Integration
 require_once tourismpress_PLUGIN_DIR . '/functions/3rdparty/tribe-events-calendar.php';
-
-// stylesheet used by all similar meta boxes
-add_action('admin_init','tourismpress_enqueue_admin_css');
-function tourismpress_enqueue_admin_css() {
-  // Get the globals that tell us where we are in the admin.
-  global $pagenow, $typenow;
-  // Sometimes $typenow is not available, so let's check and get it if needed.
-  if (empty($typenow) && !empty($_GET['post'])) {
-    $post = get_post($_GET['post']);
-    $typenow = $post->post_type;
-  }
-  // Only show our scripts on the admin pages they are used on to prevent possible conflicts with other scripts.
-  if (($pagenow == 'post.php' || $pagenow == 'post-new.php') && $typenow == 'places') {
-	 // WP Alchemy Stylesheet
-	 wp_enqueue_style('custom_meta_css', plugins_url() . '/tourismpress/css/tourismpress-admin.min.css');
-   wp_enqueue_script('app-js', plugins_url() . '/tourismpress/js/app.min.js', false);
-  }
-}
-
-add_action('init','tourismpress_enqueue_css');
-function tourismpress_enqueue_css() {
-  wp_enqueue_style('tourismpress_css', plugins_url() . '/tourismpress/css/tourismpress.min.css');
-}
+require_once tourismpress_PLUGIN_DIR . '/classes/class-tourismpress-template-loader.php';
 

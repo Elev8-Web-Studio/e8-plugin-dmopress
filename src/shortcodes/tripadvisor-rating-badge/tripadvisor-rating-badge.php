@@ -1,5 +1,6 @@
-
 <?php 
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
 
 //[tripadvisor-rating-badge post_id="" is_wide="false" class=""]
 function tourismpress_tripadvisor_rating_badge($atts, $content = null){

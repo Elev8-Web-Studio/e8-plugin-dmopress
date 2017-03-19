@@ -1,4 +1,6 @@
 <?php 
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
 
 // Link Places to Events
 function tribe_link_places_to_events() {

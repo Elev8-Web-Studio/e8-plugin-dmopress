@@ -1,5 +1,6 @@
-
 <?php 
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
 
 //[tripadvisor-reviews-button post_id="" class=""]
 function tourismpress_tripadvisor_reviews_button($atts, $content = null){

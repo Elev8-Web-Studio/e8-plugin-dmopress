@@ -1,48 +1,6 @@
 <?php 
-
-
-
-//selectedItem is the post_id of the selected post
-function renderPlaceLookupField($selectedItem){
-	$html = '';
-	$selected = '';
-	$custom = '';
-	$none = '';
-
-	$args = array(
-	  'post_type'   => 'places',
-	  'post_status' => 'publish',
-	  'orderby'     => 'title',
-	  'order'		 => 'asc'
-	);
-	 
-	$places = get_posts($args);
-
-	$html .= '<select id="" name="place" class="place-lookup-field">';
-
-	if($selectedItem == 'none'){
-		$none = 'selected';
-	}
-	$html .= '<option value="none" '.$none.'>None</option>';
-
-	if($selectedItem == 'custom'){
-		$custom = 'selected';
-	}
-	$html .= '<option value="custom" '.$custom.'>Custom</option>';
-	foreach ($places as $place) {
-		if($place->ID == $selectedItem){
-			$selected = 'selected';
-		} else {
-			$selected = '';
-		}
-		$html .= '<option value="'.$place->ID.'" '.$selected.'>';
-		$html .= $place->post_title;;
-		$html .= '</option>';
-	}
-	$html .= '</select>';
-
-	return $html;
-}
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
 
 function normalize_url($url){
 	//Apply http:// prefix to URLs that don't already have http:// or https:// in the URL

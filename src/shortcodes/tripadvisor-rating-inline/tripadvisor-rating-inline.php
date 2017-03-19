@@ -1,5 +1,6 @@
-
 <?php 
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
 
 //[tripadvisor-rating-inline post_id="" class=""]
 function tourismpress_tripadvisor_rating_inline($atts, $content = null){

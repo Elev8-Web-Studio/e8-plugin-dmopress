@@ -1,4 +1,7 @@
 <?php 
+// Prevent external script access
+defined('ABSPATH') or die('Script access not permitted.');
+
 //[tourismpress-map]
 function tourismpress_map($atts, $content = null){
 
