@@ -2,8 +2,8 @@
 // Prevent external script access
 defined('ABSPATH') or die('Script access not permitted.');
 
-//[tourismpress-map]
-function tourismpress_map($atts, $content = null){
+//[dmo-map]
+function dmo_map($atts, $content = null){
 
 	$atts = shortcode_atts(array(
 		'categories' => '',
@@ -12,7 +12,7 @@ function tourismpress_map($atts, $content = null){
 		'height' => '400px',
 		'match' => 'OR',
 		'places' => '',
-		'style' => '',
+		'theme' => '',
 		'tags' => '',
 		'width' => '100%',
 		'zoom' => 14,
@@ -62,13 +62,13 @@ function tourismpress_map($atts, $content = null){
 		$tags = '';
 	}
 	
-	//Resolve Style
-	if(tourismpress_is_valid_style(esc_attr($atts['style']))){
-		$style = esc_attr($atts['style']);
+	//Resolve Theme
+	if(dmo_is_valid_theme(esc_attr($atts['theme']))){
+		$theme = esc_attr($atts['theme']);
 	} else {
-		$style = get_theme_mod('google_maps_style');;
+		$theme = get_theme_mod('google_maps_theme');;
 	}
-	$style_json = tourismpress_get_map_style_json(esc_attr($atts['style']));
+	$theme_json = tourismpress_get_map_theme_json(esc_attr($atts['theme']));
 
 	//Resolve zoom
 	if(esc_attr($atts['zoom'])<=20 && esc_attr($atts['zoom'])>=0){
@@ -145,8 +145,8 @@ function tourismpress_map($atts, $content = null){
 	if(get_theme_mod('google_maps_api_key') != ''){
 ?>
 
-	<div id="<?php echo $map_id; ?>" class="tourismpress-map <?php echo $style; ?> <?php echo esc_attr($atts['class']); ?>" style="width: <?php echo esc_attr( $atts['width'] ) ?>; height: <?php echo esc_attr( $atts['height'] ) ?>; min-height: 50px;"></div>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo get_theme_mod('google_maps_api_key'); ?>"></script>
+
+	<div id="<?php echo $map_id; ?>" class="tourismpress-map <?php echo $theme; ?> <?php echo esc_attr($atts['class']); ?>" style="width: <?php echo esc_attr( $atts['width'] ) ?>; height: <?php echo esc_attr( $atts['height'] ) ?>; min-height: 50px;"></div>
 
 	<script type="text/javascript">
 		google.maps.event.addDomListener(window, 'load', init);
@@ -156,7 +156,7 @@ function tourismpress_map($atts, $content = null){
 			
 			var mapOptions = {
 				zoom: <?php echo esc_attr($atts['zoom']) ?>,
-				styles: <?php echo $style_json; ?>,
+				styles: <?php echo $theme_json; ?>,
 				mapTypeId: 'terrain'
 			};
 
@@ -168,10 +168,9 @@ function tourismpress_map($atts, $content = null){
 			var bounds = new google.maps.LatLngBounds();
 
 			var marker, i;
-			var image = new google.maps.MarkerImage('<?php echo plugins_url() ?>/tourismpress/shortcodes/map/styles/<?php echo $style ?>/marker.png', null, null, null, new google.maps.Size(30,40));
+			var image = new google.maps.MarkerImage('<?php echo plugins_url() ?>/tourismpress/shortcodes/map/styles/<?php echo $theme ?>/marker.png', null, null, null, new google.maps.Size(30,40));
 
 			function CenterControl(controlDiv, map) {
-
 				
 				// Set CSS for the control border.
 				var controlUI = document.createElement('div');
@@ -268,33 +267,33 @@ function tourismpress_map($atts, $content = null){
 	}
 	return ob_get_clean();
 }
-add_shortcode( 'tourismpress-map', 'tourismpress_map' );
+add_shortcode( 'dmo-map', 'dmo_map' );
 
-function tourismpress_get_map_style_json($style){
-	if($style != ''){
-		if(tourismpress_is_valid_style($style)){
-			$style_string = $style;
+function tourismpress_get_map_theme_json($theme){
+	if($theme != ''){
+		if(dmo_is_valid_theme($theme)){
+			$theme_string = $theme;
 		} else {
-			if(get_theme_mod('google_maps_style') != ''){
-				$style_string = get_theme_mod('google_maps_style');
+			if(get_theme_mod('google_maps_theme') != ''){
+				$theme_string = get_theme_mod('google_maps_theme');
 			} else {
-				$style_string = 'classic';
+				$theme_string = 'classic';
 			}
 		}
 	} else {
-		if(get_theme_mod('google_maps_style') != ''){
-			$style_string = get_theme_mod('google_maps_style');
+		if(get_theme_mod('google_maps_theme') != ''){
+			$theme_string = get_theme_mod('google_maps_theme');
 		} else {
-			$style_string = 'classic';
+			$theme_string = 'classic';
 		}
 	}
-	$raw_json = file_get_contents(tourismpress_PLUGIN_DIR . '/shortcodes/map/styles/'.$style_string.'/'.$style_string.'.json');
+	$raw_json = file_get_contents(tourismpress_PLUGIN_DIR . '/shortcodes/map/styles/'.$theme_string.'/'.$theme_string.'.json');
 	return $raw_json;
 }
 
-function tourismpress_is_valid_style($style) {
-	$valid_styles = array('gotham','nature','classic','grayscale');
-	if(in_array($style,$valid_styles)){
+function dmo_is_valid_theme($theme) {
+	$valid_themes = array('gotham','nature','classic','grayscale');
+	if(in_array($theme,$valid_themes)){
 		return true;
 	} else {
 		return false;

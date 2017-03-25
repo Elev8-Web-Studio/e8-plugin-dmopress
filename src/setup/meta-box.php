@@ -217,7 +217,7 @@ function tourismpress_place_meta_box_callback($post) {
            </div>
             <div class="col-lg-4">
             Map:<br>
-                <?php echo do_shortcode('[tourismpress-map places="'.get_the_ID().'"]'); ?>                
+                <?php echo do_shortcode('[dmo-map places="'.get_the_ID().'"]'); ?>                
             </div>  
         </div>
     </div>
@@ -332,12 +332,12 @@ function tourismpress_place_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'stateprov', $stateprov);
     update_post_meta($post_id, 'zip', $zip);
     update_post_meta($post_id, 'telephone', $telephone);
-    update_post_meta($post_id, 'website_url', normalize_url($website_url));
-    update_post_meta($post_id, 'facebook_url', normalize_url($facebook_url));
-    update_post_meta($post_id, 'twitter_url', normalize_url($twitter_url));
-    update_post_meta($post_id, 'twitter_handle', normalize_url($twitter_handle));
-    update_post_meta($post_id, 'instagram_url', normalize_url($instagram_url));
-    update_post_meta($post_id, 'tripadvisor_url', normalize_url($tripadvisor_url));
+    update_post_meta($post_id, 'website_url', tourismpress_normalize_url($website_url));
+    update_post_meta($post_id, 'facebook_url', tourismpress_normalize_url($facebook_url));
+    update_post_meta($post_id, 'twitter_url', tourismpress_normalize_url($twitter_url));
+    update_post_meta($post_id, 'twitter_handle', tourismpress_normalize_url($twitter_handle));
+    update_post_meta($post_id, 'instagram_url', tourismpress_normalize_url($instagram_url));
+    update_post_meta($post_id, 'tripadvisor_url', tourismpress_normalize_url($tripadvisor_url));
     update_post_meta($post_id, 'tripadvisor_location_id', $tripadvisor_location_id);
     update_post_meta($post_id, 'latitude', $latitude);
     update_post_meta($post_id, 'longitude', $longitude);

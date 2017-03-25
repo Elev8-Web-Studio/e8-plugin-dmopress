@@ -2,7 +2,7 @@
 // Prevent external script access
 defined('ABSPATH') or die('Script access not permitted.');
 
-function normalize_url($url){
+function tourismpress_normalize_url($url){
 	//Apply http:// prefix to URLs that don't already have http:// or https:// in the URL
 	if($url != ''){
 		if (strpos($url, 'http://') !== false || strpos($url, 'https://') !== false){
@@ -17,11 +17,11 @@ function normalize_url($url){
 }
 
 // Type Validation Functions
-function isValidGoogleAnalyticsID($trackingIdString){
+function tourismpress_isValidGoogleAnalyticsID($trackingIdString){
     return preg_match('/^ua-\d{4,9}-\d{1,4}$/i', strval($trackingIdString)) ? true : false;
 }
 
-function isValidInteger($testvalue){
+function tourismpress_isValidInteger($testvalue){
 	if(filter_var($testvalue, FILTER_VALIDATE_INT) !== false){
 		return true;
 	} else {
@@ -29,7 +29,7 @@ function isValidInteger($testvalue){
 	}
 }
 
-function isValidURL($testvalue){
+function tourismpress_isValidURL($testvalue){
 	if(filter_var($testvalue, FILTER_VALIDATE_URL) !== false){
 		return true;
 	} else {
@@ -37,7 +37,7 @@ function isValidURL($testvalue){
 	}
 }
 
-function isValidEmail($testvalue){
+function tourismpress_isValidEmail($testvalue){
 	if(filter_var($testvalue, FILTER_VALIDATE_EMAIL) !== false){
 		return true;
 	} else {
@@ -45,7 +45,7 @@ function isValidEmail($testvalue){
 	}
 }
 
-function isValidFloat($testvalue){
+function tourismpress_isValidFloat($testvalue){
 	if(filter_var($testvalue, FILTER_VALIDATE_FLOAT) !== false){
 		return true;
 	} else {

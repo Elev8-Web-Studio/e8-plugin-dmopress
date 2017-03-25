@@ -25,4 +25,3 @@ $telephone = get_post_meta(get_the_ID(), 'telephone', true);
     ?>
 </p>
 <p><?php echo the_excerpt(); ?></p>
-

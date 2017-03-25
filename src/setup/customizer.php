@@ -24,18 +24,18 @@ function tourismpress_customize_register($wp_customize) {
        )
    ));
    
-   //Google Maps Style
-   $wp_customize->add_setting('google_maps_style' , array(
+   //Google Maps Theme
+   $wp_customize->add_setting('google_maps_theme' , array(
        'default'     => 'classic'
    ));
 
    $wp_customize->add_control( new WP_Customize_Control( 
        $wp_customize, 
-       'google_maps_style', 
+       'google_maps_theme', 
        array(
-            'label'      => __( 'Google Maps Default Style:', 'tourismpress' ),
+            'label'      => __( 'Google Maps Default Theme:', 'tourismpress' ),
             'section'    => 'tourismpress',
-            'settings'   => 'google_maps_style',
+            'settings'   => 'google_maps_theme',
             'type' => 'select',
             'choices' => array(
                 'classic' => 'Classic',

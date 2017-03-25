@@ -19,12 +19,17 @@ define('tourismpress_PLUGIN_MODULES_DIR', tourismpress_PLUGIN_DIR . '/modules');
 define('tourismpress_PLUGIN_STYLESHEETS_DIR', tourismpress_PLUGIN_DIR . '/css');
 
 // Functions Library
-require_once tourismpress_PLUGIN_DIR . '/functions/general.php';
+require_once tourismpress_PLUGIN_DIR . '/includes/functions.php';
 
-// Custom Post Types
-require_once tourismpress_PLUGIN_DIR . '/places/post-type.php';
-require_once tourismpress_PLUGIN_DIR . '/places/taxonomies.php';
-require_once tourismpress_PLUGIN_DIR . '/places/meta-box.php';
+// Setup
+require_once tourismpress_PLUGIN_DIR . '/setup/admin.php';
+require_once tourismpress_PLUGIN_DIR . '/setup/customizer.php';
+require_once tourismpress_PLUGIN_DIR . '/setup/hooks.php';
+require_once tourismpress_PLUGIN_DIR . '/setup/meta-box.php';
+require_once tourismpress_PLUGIN_DIR . '/setup/post-type.php';
+require_once tourismpress_PLUGIN_DIR . '/setup/public.php';
+require_once tourismpress_PLUGIN_DIR . '/setup/taxonomies.php';
+require_once tourismpress_PLUGIN_DIR . '/includes/classes/class-tourismpress-template-loader.php';
 
 // Shortcodes
 require_once tourismpress_PLUGIN_DIR . '/shortcodes/map/map.php';
@@ -36,13 +41,5 @@ require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-review-snippets/
 require_once tourismpress_PLUGIN_DIR . '/shortcodes/tripadvisor-review-starter/tripadvisor-review-starter.php';
 require_once tourismpress_PLUGIN_DIR . '/shortcodes/twitter-timeline/twitter-timeline.php';
 
-// Setup
-require_once tourismpress_PLUGIN_DIR . '/setup/admin.php';
-require_once tourismpress_PLUGIN_DIR . '/setup/customizer.php';
-require_once tourismpress_PLUGIN_DIR . '/setup/hooks.php';
-require_once tourismpress_PLUGIN_DIR . '/setup/public.php';
-
 //3rd Party Integration
-require_once tourismpress_PLUGIN_DIR . '/functions/3rdparty/tribe-events-calendar.php';
-require_once tourismpress_PLUGIN_DIR . '/classes/class-tourismpress-template-loader.php';
-
+require_once tourismpress_PLUGIN_DIR . '/integration/tribe-events-calendar/tribe-events-calendar.php';

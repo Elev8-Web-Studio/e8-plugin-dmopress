@@ -46,9 +46,14 @@ if(get_post_meta(get_the_ID(), 'tripadvisor_url', true) != ''){
     }
     ?>
 </p>
+
 <p><?php echo the_content(); ?></p>
+
 <p><?php the_terms( get_the_ID(), 'categories', 'Categories: ', ', ' ); ?></p>
 <p><?php the_terms( get_the_ID(), 'features', 'Features: ', ', ' ); ?></p>
-<p>Follow <?php echo the_title(); ?> on: <?php echo implode(' &#8901; ', $social_links); ?></p>
 
-<?php echo do_shortcode('[tourismpress-map]'); ?>
+<?php if(count($social_links) >0){ ?>
+    <p>Follow <?php echo the_title(); ?> on: <?php echo implode(' &#8901; ', $social_links); ?></p>
+<?php } ?>
+
+<?php echo do_shortcode('[dmo-map places="'.get_the_ID().'"]'); ?>

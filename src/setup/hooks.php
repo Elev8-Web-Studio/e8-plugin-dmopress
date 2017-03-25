@@ -32,6 +32,7 @@ function tourismpress_filter_the_content( $content ) {
         remove_filter( 'the_content', 'tourismpress_filter_the_content' );
         $tourismpress_template_loader = new Tourismpress_Template_Loader;
         ob_start();
+        echo 'hi';
         $tourismpress_template_loader->get_template_part('place','feature');
         $output = ob_get_clean();
         return $output;
@@ -48,3 +49,4 @@ function tourismpress_filter_the_content( $content ) {
 
 }
 add_filter( 'the_content', 'tourismpress_filter_the_content' ); 
+
