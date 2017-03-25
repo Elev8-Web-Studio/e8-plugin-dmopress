@@ -62,7 +62,11 @@ function dmopress_get_location_id_from_tripadvisor_url($tripadvisor_url){
 		preg_match($pattern, $tripadvisor_id_block, $matches);
 		if($matches){
 			return($matches[0]);
+		} else {
+			return '';
 		}
+	} else {
+		return '';
 	}
 }
 
@@ -71,6 +75,8 @@ function dmopress_get_twitter_handle_from_url($twitter_url){
 	preg_match($pattern, $twitter_url, $matches);
 	if($matches){
 		return($matches[0]);
+	} else {
+		return '';
 	}
 }
 
@@ -80,5 +86,7 @@ function dmopress_get_instagram_handle_from_url($instagram_url){
 	preg_match($pattern, $instagram_url, $matches);
 	if($matches){
 		return($matches[0]);
+	} else {
+		return '';
 	}
 }

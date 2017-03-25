@@ -56,8 +56,4 @@ if(dmo_get_tripadvisor_url() != ''){
     <p>Follow <?php echo the_title(); ?> on: <?php echo implode(' &#8901; ', $social_links); ?></p>
 <?php } ?>
 
-<?php echo 'Twitter Handle: '.dmo_get_twitter_handle(); ?>
-<?php echo 'Instagram Handle: '.dmo_get_instagram_handle(); ?>
-<?php echo 'TripAdvisor Location ID: '.dmo_get_tripadvisor_location_id(); ?>
-
 <?php echo do_shortcode('[dmo-map places="'.get_the_ID().'"]'); ?>
