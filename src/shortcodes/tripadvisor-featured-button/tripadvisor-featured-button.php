@@ -2,8 +2,8 @@
 // Prevent external script access
 defined('ABSPATH') or die('Script access not permitted.');
 
-//[tripadvisor-featured-button post_id="" class=""]
-function tourismpress_tripadvisor_featured_buton($atts, $content = null){
+//[dmo-tripadvisor-featured-button post_id="" class=""]
+function dmo_tripadvisor_featured_buton($atts, $content = null){
 	
     //Set up attributes
 	$atts = shortcode_atts(array(
@@ -42,4 +42,4 @@ function tourismpress_tripadvisor_featured_buton($atts, $content = null){
         echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
     }
 }
-add_shortcode( 'tripadvisor-featured-button', 'tourismpress_tripadvisor_featured_buton' );
+add_shortcode( 'dmo-tripadvisor-featured-button', 'dmo_tripadvisor_featured_buton' );

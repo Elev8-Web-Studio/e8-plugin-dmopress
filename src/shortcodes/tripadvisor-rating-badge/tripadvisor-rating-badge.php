@@ -3,7 +3,7 @@
 defined('ABSPATH') or die('Script access not permitted.');
 
 //[tripadvisor-rating-badge post_id="" is_wide="false" class=""]
-function tourismpress_tripadvisor_rating_badge($atts, $content = null){
+function dmo_tripadvisor_rating_badge($atts, $content = null){
 
 	//Set up attributes
     $atts = shortcode_atts(array(
@@ -54,4 +54,4 @@ function tourismpress_tripadvisor_rating_badge($atts, $content = null){
         echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
     }
 }
-add_shortcode( 'tripadvisor-rating-badge', 'tourismpress_tripadvisor_rating_badge' );
+add_shortcode( 'dmo-tripadvisor-rating-badge', 'dmo_tripadvisor_rating_badge' );
