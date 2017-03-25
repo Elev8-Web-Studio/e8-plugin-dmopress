@@ -1,20 +1,6 @@
 <?php 
-$address_block = array();
 
-if(dmo_get_address() != ''){
-    array_push($address_block, dmo_get_address());
-};
-if(dmo_get_city() != ''){
-    array_push($address_block, dmo_get_city());
-};
-if(dmo_get_province() != ''){
-    array_push($address_block, dmo_get_province());
-};
-if(dmo_get_postal_code() != ''){
-    array_push($address_block, dmo_get_postal_code());
-};
 
-$telephone = dmo_get_telephone();
 
 $social_links = array();
 
@@ -40,8 +26,10 @@ if(dmo_get_tripadvisor_url() != ''){
 
 ?>
 <p>
-    <?php echo implode(', ', $address_block); ?>
-    <?php if($telephone != '') {
+    <?php echo dmo_get_address_full(); ?>
+    <?php 
+    $telephone = dmo_get_telephone();
+    if($telephone != '') {
         echo ' &#8901; <a href="tel:'. preg_replace('/[^0-9,]/','',$telephone) .'">' . $telephone . '</a>';
     }
     ?>

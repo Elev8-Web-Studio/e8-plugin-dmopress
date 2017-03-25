@@ -2,11 +2,31 @@
 
 //See https://www.dmopress.com/guide/functions/dmo_get_address/
 function dmo_get_address($post_id = false){
-    if(!$post_id)
-    {
+    if(!$post_id){
         $post_id = get_the_ID();
     }
     return get_post_meta($post_id, 'address', true);
+}
+
+function dmo_get_address_full($post_id = false, $separator = ", "){
+    if(!$post_id){
+        $post_id = get_the_ID();
+    }
+    $address_block = array();
+    if(dmo_get_address($post_id) != ''){
+        array_push($address_block, dmo_get_address());
+    };
+    if(dmo_get_city($post_id) != ''){
+        array_push($address_block, dmo_get_city());
+    };
+    if(dmo_get_province($post_id) != ''){
+        array_push($address_block, dmo_get_province());
+    };
+    if(dmo_get_postal_code($post_id) != ''){
+        array_push($address_block, dmo_get_postal_code());
+    };
+
+    return implode($separator, $address_block);
 }
 
 //See https://www.dmopress.com/guide/functions/dmo_get_city/
