@@ -156,6 +156,7 @@ class MySettingsPage {
 
 
 
+
 if(is_admin()){
     $tourismpress_settings_page = new MySettingsPage();
 }
@@ -177,3 +178,5 @@ function dmo_get_google_maps_theme(){
         return '';
     }
 }
+
+

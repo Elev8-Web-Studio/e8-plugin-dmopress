@@ -48,17 +48,17 @@ class Tourismpress_Template_Loader extends TourismPress_Gamajo_Template_Loader {
    *
    * Can either be a defined constant, or a relative reference from where the subclass lives.
    *
-   * In this case, `Tourismpress_PLUGIN_DIR` would be defined in the root plugin file as:
+   * In this case, `DMOPRESS_PLUGIN_DIR` would be defined in the root plugin file as:
    *
    * ~~~
-   * define( 'Tourismpress_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+   * define( 'DMOPRESS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
    * ~~~
    *
    * @since 1.0.0
    *
    * @var string
    */
-  protected $plugin_directory = tourismpress_PLUGIN_DIR;
+  protected $plugin_directory = DMOPRESS_PLUGIN_DIR;
 
   /**
    * Directory name where templates are found in this plugin.

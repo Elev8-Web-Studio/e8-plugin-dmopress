@@ -3,7 +3,7 @@
 defined('ABSPATH') or die('Script access not permitted.');
 
 // stylesheet used by all similar meta boxes
-function tourismpress_enqueue_admin_css() {
+function dmo_enqueue_admin_css() {
   // Get the globals that tell us where we are in the admin.
   global $pagenow, $typenow;
   // Sometimes $typenow is not available, so let's check and get it if needed.
@@ -19,4 +19,4 @@ function tourismpress_enqueue_admin_css() {
    
   }
 }
-add_action('admin_init','tourismpress_enqueue_admin_css');
+add_action('admin_init','dmo_enqueue_admin_css');

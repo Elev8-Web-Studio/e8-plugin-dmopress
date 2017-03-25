@@ -68,7 +68,7 @@ function dmo_map($atts, $content = null){
 	} else {
 		$theme = dmo_get_google_maps_theme();
 	}
-	$theme_json = tourismpress_get_map_theme_json(esc_attr($atts['theme']));
+	$theme_json = dmo_get_map_theme_json(esc_attr($atts['theme']));
 
 	//Resolve zoom
 	if(esc_attr($atts['zoom'])<=20 && esc_attr($atts['zoom'])>=0){
@@ -269,7 +269,7 @@ function dmo_map($atts, $content = null){
 }
 add_shortcode( 'dmo-map', 'dmo_map' );
 
-function tourismpress_get_map_theme_json($theme){
+function dmo_get_map_theme_json($theme){
 	if($theme != ''){
 		if(dmo_is_valid_theme($theme)){
 			$theme_string = $theme;
@@ -287,7 +287,7 @@ function tourismpress_get_map_theme_json($theme){
 			$theme_string = 'classic';
 		}
 	}
-	$raw_json = file_get_contents(tourismpress_PLUGIN_DIR . '/shortcodes/map/styles/'.$theme_string.'/'.$theme_string.'.json');
+	$raw_json = file_get_contents(DMOPRESS_PLUGIN_DIR . '/shortcodes/map/themes/'.$theme_string.'/'.$theme_string.'.json');
 	return $raw_json;
 }
 
