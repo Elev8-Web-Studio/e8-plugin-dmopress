@@ -19,7 +19,7 @@
     "gulp-util": "^3.0.8",
     "vinyl-ftp": "^0.6.0"
   },
-  "themeDependencies": {
+  "pluginDependencies": {
     "stylesheets": [
       "bower_components/bootstrap-grid-only/css/grid12.css"
     ],

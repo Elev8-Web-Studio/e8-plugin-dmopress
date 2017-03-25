@@ -39,9 +39,9 @@ jQuery(document).ready(function($) {
 	jQuery('.place-lookup-field').change(function(e){
 		var selectedItem = jQuery(this).val();
 		if(selectedItem == 'custom'){
-			jQuery('.tourismpress-custom-address-block').slideDown();
+			jQuery('.dmopress-custom-address-block').slideDown();
 		} else {
-			jQuery('.tourismpress-custom-address-block').slideUp();
+			jQuery('.dmopress-custom-address-block').slideUp();
 		}
 	});
 

@@ -3,7 +3,7 @@
 defined('ABSPATH') or die('Script access not permitted.');
 
 //[dmo-map]
-function dmo_map($atts, $content = null){
+function dmopress_map($atts, $content = null){
 
 	$atts = shortcode_atts(array(
 		'categories' => '',
@@ -146,7 +146,7 @@ function dmo_map($atts, $content = null){
 ?>
 
 
-	<div id="<?php echo $map_id; ?>" class="tourismpress-map <?php echo $theme; ?> <?php echo esc_attr($atts['class']); ?>" style="width: <?php echo esc_attr( $atts['width'] ) ?>; height: <?php echo esc_attr( $atts['height'] ) ?>; min-height: 50px;"></div>
+	<div id="<?php echo $map_id; ?>" class="dmopress-map <?php echo $theme; ?> <?php echo esc_attr($atts['class']); ?>" style="width: <?php echo esc_attr( $atts['width'] ) ?>; height: <?php echo esc_attr( $atts['height'] ) ?>; min-height: 50px;"></div>
 
 	<script type="text/javascript">
 		google.maps.event.addDomListener(window, 'load', init);
@@ -168,7 +168,7 @@ function dmo_map($atts, $content = null){
 			var bounds = new google.maps.LatLngBounds();
 
 			var marker, i;
-			var image = new google.maps.MarkerImage('<?php echo plugins_url() ?>/tourismpress/shortcodes/map/styles/<?php echo $theme ?>/marker.png', null, null, null, new google.maps.Size(30,40));
+			var image = new google.maps.MarkerImage('<?php echo plugins_url() ?>/dmopress/shortcodes/map/styles/<?php echo $theme ?>/marker.png', null, null, null, new google.maps.Size(30,40));
 
 			function CenterControl(controlDiv, map) {
 				
@@ -190,7 +190,7 @@ function dmo_map($atts, $content = null){
 				controlText.style.paddingRight = '7px';
 				controlText.style.paddingBottom = '6px';
 				controlText.style.paddingLeft = '7px';
-				controlText.innerHTML = '<img src="<?php echo plugins_url(); ?>/tourismpress/shortcodes/map/img/location.png" style="width: 10px; height: 11px;">';
+				controlText.innerHTML = '<img src="<?php echo plugins_url(); ?>/dmopress/shortcodes/map/img/location.png" style="width: 10px; height: 11px;">';
 				controlUI.appendChild(controlText);
 
 				// Setup the click event listeners: simply set the map to Chicago.
@@ -261,13 +261,13 @@ function dmo_map($atts, $content = null){
 	</script>
 	
 <?php } else { ?>
-	<p><span style="color: #cc0000;">Map Error:</span> A map could not be created because a valid Google Maps API key was not found. Add your Google Maps API key to the <a href="<?php echo admin_url('customize.php?autofocus[section]=tourismpress'); ?>">WordPress Customizer</a>.</p>
+	<p><span style="color: #cc0000;">Map Error:</span> A map could not be created because a valid Google Maps API key was not found. Add your Google Maps API key to the <a href="<?php echo admin_url('customize.php?autofocus[section]=dmopress'); ?>">WordPress Customizer</a>.</p>
 	
 <?php
 	}
 	return ob_get_clean();
 }
-add_shortcode( 'dmo-map', 'dmo_map' );
+add_shortcode( 'dmo-map', 'dmopress_map' );
 
 function dmo_get_map_theme_json($theme){
 	if($theme != ''){

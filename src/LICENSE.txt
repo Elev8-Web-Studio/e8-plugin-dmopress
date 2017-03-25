@@ -1,5 +1,5 @@
-TourismPress - The WordPress plugin that lets you connect people to places.
-Copyright (C) 2017 Jason Pomerleau
+DMOPress - Built specifically for Destination Marketing Organizations, DMOPress helps you show, share and promote your places of interest.
+Copyright (C) 2017 2464420 Ontario Inc.
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License

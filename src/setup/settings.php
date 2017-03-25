@@ -21,10 +21,10 @@ class MySettingsPage {
     public function add_plugin_page() {
         // This page will be under "Settings"
         add_options_page(
-            'TourismPress Settings', 
-            'TourismPress', 
+            'DMOPress Settings', 
+            'DMOPress', 
             'manage_options', 
-            'tourismpress-settings', 
+            'dmopress-settings', 
             array( $this, 'create_admin_page' )
         );
     }
@@ -34,15 +34,15 @@ class MySettingsPage {
      */
     public function create_admin_page() {
         // Set class property
-        $this->options = get_option('tourismpress');
+        $this->options = get_option('dmopress');
         ?>
         <div class="wrap">
-            <h2>TourismPress Settings</h2>           
+            <h2>DMOPress Settings</h2>           
             <form method="post" action="options.php">
             <?php
                 // This prints out all hidden setting fields
-                settings_fields( 'tourismpress_options' );   
-                do_settings_sections( 'tourismpress-setting-admin' );
+                settings_fields( 'dmopress_options' );   
+                do_settings_sections( 'dmopress-setting-admin' );
                 submit_button(); 
             ?>
             </form>
@@ -55,8 +55,8 @@ class MySettingsPage {
      */
     public function page_init() {        
         register_setting(
-            'tourismpress_options', // Option group
-            'tourismpress', // Option name
+            'dmopress_options', // Option group
+            'dmopress', // Option name
             array( $this, 'sanitize' ) // Sanitize
         );
 
@@ -64,30 +64,30 @@ class MySettingsPage {
             'setting_section_id',
             '',
             array( $this, 'print_section_info' ),
-            'tourismpress-setting-admin'
+            'dmopress-setting-admin'
         );
 
         add_settings_section(
-            'tourismpress_settings_section_google_maps',
+            'dmopress_settings_section_google_maps',
             'Google Maps Settings',
             array( $this, 'print_section_info' ),
-            'tourismpress-setting-admin'
+            'dmopress-setting-admin'
         );
 
         add_settings_field(
             'google_maps_api_key', 
             'Google Maps API Key', 
             array( $this, 'google_maps_callback' ), 
-            'tourismpress-setting-admin', 
-            'tourismpress_settings_section_google_maps'
+            'dmopress-setting-admin', 
+            'dmopress_settings_section_google_maps'
         );
 
         add_settings_field(
             'google_maps_style', 
             'Google Maps Default Style', 
             array( $this, 'google_maps_style_callback' ), 
-            'tourismpress-setting-admin', 
-            'tourismpress_settings_section_google_maps'
+            'dmopress-setting-admin', 
+            'dmopress_settings_section_google_maps'
         );
     }
 
@@ -113,14 +113,14 @@ class MySettingsPage {
      * Print the Section text
      */
     public function print_section_info() {
-        //print 'TourismPress integrates with ';
+        //print 'DMOPress integrates with ';
     }
 
     public function google_maps_callback($args) {
         extract($args);
 
         printf(
-            '<input type="text" size="45" id="google-maps-api-key" name="tourismpress[google_maps_api_key]" value="%s" placeholder="" />',
+            '<input type="text" size="45" id="google-maps-api-key" name="dmopress[google_maps_api_key]" value="%s" placeholder="" />',
             isset( $this->options['google_maps_api_key'] ) ? esc_attr( $this->options['google_maps_api_key']) : ''
         );
     }
@@ -135,7 +135,7 @@ class MySettingsPage {
             'nature' => 'Nature'
         );
 
-        $output = '<select name="tourismpress[google_maps_style]">';
+        $output = '<select name="dmopress[google_maps_style]">';
         foreach ($available_options as $slug => $label) {
             if($this->options['google_maps_style'] == $slug){
                 $selected = ' selected';
@@ -149,7 +149,7 @@ class MySettingsPage {
 
         print(
             $output
-            //'<input type="text" size="45" id="google-maps-style" name="tourismpress[google_maps_style]" value="%s" placeholder="" />'
+            //'<input type="text" size="45" id="google-maps-style" name="tdmoress[google_maps_style]" value="%s" placeholder="" />'
         );
     }
 }
@@ -158,11 +158,11 @@ class MySettingsPage {
 
 
 if(is_admin()){
-    $tourismpress_settings_page = new MySettingsPage();
+    $dmopress_settings_page = new MySettingsPage();
 }
 
 function dmo_get_google_maps_api_key(){
-   $option = get_option('tourismpress');
+   $option = get_option('dmopress');
     if($option['google_maps_api_key'] != ''){
         return $option['google_maps_api_key'];
     } else {
@@ -171,7 +171,7 @@ function dmo_get_google_maps_api_key(){
 }
 
 function dmo_get_google_maps_theme(){
-    $option = get_option('tourismpress');
+    $option = get_option('dmopress');
     if($option['google_maps_style'] != ''){
         return $option['google_maps_style'];
     } else {

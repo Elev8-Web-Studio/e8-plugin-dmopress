@@ -1,7 +1,7 @@
 <?php 
 
-//[tourismpress-twitter-timeline handle="" class=""]
-function tourismpress_twitter_feed($atts, $content = null){
+//[dmo-twitter-timeline handle="" class=""]
+function dmopress_twitter_timeline($atts, $content = null){
 
 	$atts = shortcode_atts(array(
 		'place_id' => '',
@@ -54,4 +54,4 @@ function tourismpress_twitter_feed($atts, $content = null){
         echo "Error: Invalid Twitter Handle: ".$twitter_handle;
     }
 }
-add_shortcode( 'tourismpress-twitter-timeline', 'tourismpress_twitter_feed' );
+add_shortcode( 'dmo-twitter-timeline', 'dmopress_twitter_timeline' );

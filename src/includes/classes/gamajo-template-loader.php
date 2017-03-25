@@ -13,7 +13,7 @@ defined('ABSPATH') or die('Script access not permitted.');
  * @version   1.2.0
  */
 
-if ( ! class_exists( 'TourismPress_Gamajo_Template_Loader' ) ) {
+if ( ! class_exists( 'DMOPress_Gamajo_Template_Loader' ) ) {
 
 	/**
 	 * Template loader.
@@ -25,7 +25,7 @@ if ( ! class_exists( 'TourismPress_Gamajo_Template_Loader' ) ) {
 	 * @package Gamajo_Template_Loader
 	 * @author  Gary Jones
 	 */
-	class TourismPress_Gamajo_Template_Loader {
+	class DMOPress_Gamajo_Template_Loader {
 		/**
 		 * Prefix for filter names.
 		 *

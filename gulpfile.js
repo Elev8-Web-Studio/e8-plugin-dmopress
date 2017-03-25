@@ -40,12 +40,12 @@ gulp.task('source', function() {
 });
 
 gulp.task('stylesheets-admin', function() {
-    var filesToProcess = pkg.themeDependencies.stylesheets;
+    var filesToProcess = pkg.pluginDependencies.stylesheets;
     filesToProcess.push('./src/scss/admin.scss');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
-        .pipe(concat('tourismpress-admin.css'))
+        .pipe(concat('dmopress-admin.css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cleancss({ keepBreaks: false }))
         .pipe(sourcemaps.write())
@@ -53,12 +53,12 @@ gulp.task('stylesheets-admin', function() {
 });
 
 gulp.task('stylesheets-public', function() {
-    var filesToProcess = pkg.themeDependencies.stylesheets;
+    var filesToProcess = pkg.pluginDependencies.stylesheets;
     filesToProcess.push('./src/scss/public.scss');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
-        .pipe(concat('tourismpress.css'))
+        .pipe(concat('dmopress.css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cleancss({ keepBreaks: false }))
         .pipe(sourcemaps.write())
@@ -66,7 +66,7 @@ gulp.task('stylesheets-public', function() {
 });
 
 gulp.task('js', function() {
-    var filesToProcess = pkg.themeDependencies.javascript;
+    var filesToProcess = pkg.pluginDependencies.javascript;
     filesToProcess.push('./src/**/*.js');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())

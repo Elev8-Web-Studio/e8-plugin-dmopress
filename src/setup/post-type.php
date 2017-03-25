@@ -3,22 +3,22 @@
 defined('ABSPATH') or die('Script access not permitted.');
 
 // Places Post Type
-function tourismpress_register_places_post_type() {
+function dmopress_register_places_post_type() {
 
 	$labels = array(
-		'name'                => __( 'Places', 'tourismpress_textdomain' ),
-		'singular_name'       => __( 'Place', 'tourismpress_textdomain' ),
-		'singular_name_lowercase' => __( 'place', 'tourismpress_textdomain' ),
-		'add_new'             => _x( 'Add New Place', 'tourismpress_textdomain', 'tourismpress_textdomain' ),
-		'add_new_item'        => __( 'Add New Place', 'tourismpress_textdomain' ),
-		'edit_item'           => __( 'Edit Place', 'tourismpress_textdomain' ),
-		'new_item'            => __( 'New Place', 'tourismpress_textdomain' ),
-		'view_item'           => __( 'View Place', 'tourismpress_textdomain' ),
-		'search_items'        => __( 'Search Places', 'tourismpress_textdomain' ),
-		'not_found'           => __( 'No places found.', 'tourismpress_textdomain' ),
-		'not_found_in_trash'  => __( 'No places found in Trash.', 'tourismpress_textdomain' ),
-		'parent_item_colon'   => __( 'Parent Place:', 'tourismpress_textdomain' ),
-		'menu_name'           => __( 'Places', 'tourismpress_textdomain' ),
+		'name'                => __( 'Places', 'dmopress_textdomain' ),
+		'singular_name'       => __( 'Place', 'dmopress_textdomain' ),
+		'singular_name_lowercase' => __( 'place', 'dmopress_textdomain' ),
+		'add_new'             => _x( 'Add New Place', 'dmopress_textdomain', 'dmopress_textdomain' ),
+		'add_new_item'        => __( 'Add New Place', 'dmopress_textdomain' ),
+		'edit_item'           => __( 'Edit Place', 'dmopress_textdomain' ),
+		'new_item'            => __( 'New Place', 'dmopress_textdomain' ),
+		'view_item'           => __( 'View Place', 'dmopress_textdomain' ),
+		'search_items'        => __( 'Search Places', 'dmopress_textdomain' ),
+		'not_found'           => __( 'No places found.', 'dmopress_textdomain' ),
+		'not_found_in_trash'  => __( 'No places found in Trash.', 'dmopress_textdomain' ),
+		'parent_item_colon'   => __( 'Parent Place:', 'dmopress_textdomain' ),
+		'menu_name'           => __( 'Places', 'dmopress_textdomain' ),
 	);
 
 	$args = array(
@@ -48,4 +48,4 @@ function tourismpress_register_places_post_type() {
 	register_post_type( 'places', $args );
 }
 
-add_action( 'init', 'tourismpress_register_places_post_type' );
+add_action( 'init', 'dmopress_register_places_post_type' );

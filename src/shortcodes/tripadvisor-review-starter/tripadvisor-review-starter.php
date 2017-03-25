@@ -3,8 +3,7 @@
 defined('ABSPATH') or die('Script access not permitted.');
 
 //[tripadvisor-reviews-button post_id="" class=""]
-function dmo_tripadvisor_review_starter($atts, $content = null){
-	global $google_maps_api_key;
+function dmopress_tripadvisor_review_starter($atts, $content = null){
 
 	$atts = shortcode_atts(array(
 		'place_id' => '',
@@ -43,4 +42,4 @@ function dmo_tripadvisor_review_starter($atts, $content = null){
         echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
     }
 }
-add_shortcode( 'dmo-tripadvisor-review-starter', 'dmo_tripadvisor_review_starter' );
+add_shortcode( 'dmo-tripadvisor-review-starter', 'dmopress_tripadvisor_review_starter' );

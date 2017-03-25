@@ -1,41 +1,41 @@
 <?php 
 $address_block = array();
 
-if(get_post_meta(get_the_ID(), 'address', true) != ''){
-    array_push($address_block, get_post_meta(get_the_ID(), 'address', true));
+if(dmo_get_address() != ''){
+    array_push($address_block, dmo_get_address());
 };
-if(get_post_meta(get_the_ID(), 'city', true) != ''){
-    array_push($address_block, get_post_meta(get_the_ID(), 'city', true));
+if(dmo_get_city() != ''){
+    array_push($address_block, dmo_get_city());
 };
-if(get_post_meta(get_the_ID(), 'stateprov', true) != ''){
-    array_push($address_block, get_post_meta(get_the_ID(), 'stateprov', true));
+if(dmo_get_province() != ''){
+    array_push($address_block, dmo_get_province());
 };
-if(get_post_meta(get_the_ID(), 'zip', true) != ''){
-    array_push($address_block, get_post_meta(get_the_ID(), 'zip', true));
+if(dmo_get_postal_code() != ''){
+    array_push($address_block, dmo_get_postal_code());
 };
 
-$telephone = get_post_meta(get_the_ID(), 'telephone', true);
+$telephone = dmo_get_telephone();
 
 $social_links = array();
 
-if(get_post_meta(get_the_ID(), 'website_url', true) != ''){
-    array_push($social_links, '<a href="'.get_post_meta(get_the_ID(), 'website_url', true).'" target="_blank">the Web</a>');
+if(dmo_get_website_url() != ''){
+    array_push($social_links, '<a href="'.dmo_get_website_url().'" target="_blank">the Web</a>');
 };
 
-if(get_post_meta(get_the_ID(), 'facebook_url', true) != ''){
-    array_push($social_links, '<a href="'.get_post_meta(get_the_ID(), 'facebook_url', true).'" target="_blank">Facebook</a>');
+if(dmo_get_facebook_url() != ''){
+    array_push($social_links, '<a href="'.dmo_get_facebook_url().'" target="_blank">Facebook</a>');
 };
 
-if(get_post_meta(get_the_ID(), 'twitter_url', true) != ''){
-    array_push($social_links, '<a href="'.get_post_meta(get_the_ID(), 'twitter_url', true).'" target="_blank">Twitter</a>');
+if(dmo_get_twitter_url() != ''){
+    array_push($social_links, '<a href="'.dmo_get_twitter_url().'" target="_blank">Twitter</a>');
 };
 
-if(get_post_meta(get_the_ID(), 'instagram_url', true) != ''){
-    array_push($social_links, '<a href="'.get_post_meta(get_the_ID(), 'instagram_url', true).'" target="_blank">Instagram</a>');
+if(dmo_get_instagram_url() != ''){
+    array_push($social_links, '<a href="'.dmo_get_instagram_url().'" target="_blank">Instagram</a>');
 };
 
-if(get_post_meta(get_the_ID(), 'tripadvisor_url', true) != ''){
-    array_push($social_links, '<a href="'.get_post_meta(get_the_ID(), 'tripadvisor_url', true).'" target="_blank">TripAdvsior</a>');
+if(dmo_get_tripadvisor_url() != ''){
+    array_push($social_links, '<a href="'.dmo_get_tripadvisor_url().'" target="_blank">TripAdvsior</a>');
 };
 
 ?>
@@ -55,5 +55,9 @@ if(get_post_meta(get_the_ID(), 'tripadvisor_url', true) != ''){
 <?php if(count($social_links) >0){ ?>
     <p>Follow <?php echo the_title(); ?> on: <?php echo implode(' &#8901; ', $social_links); ?></p>
 <?php } ?>
+
+<?php echo 'Twitter Handle: '.dmo_get_twitter_handle(); ?>
+<?php echo 'Instagram Handle: '.dmo_get_instagram_handle(); ?>
+<?php echo 'TripAdvisor Location ID: '.dmo_get_tripadvisor_location_id(); ?>
 
 <?php echo do_shortcode('[dmo-map places="'.get_the_ID().'"]'); ?>

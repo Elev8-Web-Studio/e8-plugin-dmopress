@@ -1,20 +1,20 @@
 <?php 
 $address_block = array();
 
-if(get_post_meta(get_the_ID(), 'address', true) != ''){
-    array_push($address_block, get_post_meta(get_the_ID(), 'address', true));
+if(dmo_get_address() != ''){
+    array_push($address_block, dmo_get_address());
 };
-if(get_post_meta(get_the_ID(), 'city', true) != ''){
-    array_push($address_block, get_post_meta(get_the_ID(), 'city', true));
+if(dmo_get_city() != ''){
+    array_push($address_block, dmo_get_city());
 };
-if(get_post_meta(get_the_ID(), 'stateprov', true) != ''){
-    array_push($address_block, get_post_meta(get_the_ID(), 'stateprov', true));
+if(dmo_get_state() != ''){
+    array_push($address_block, dmo_get_state());
 };
-if(get_post_meta(get_the_ID(), 'zip', true) != ''){
-    array_push($address_block, get_post_meta(get_the_ID(), 'zip', true));
+if(dmo_get_zip() != ''){
+    array_push($address_block, dmo_get_zip());
 };
 
-$telephone = get_post_meta(get_the_ID(), 'telephone', true);
+$telephone = dmo_get_telephone();
 
 ?>
 <p>

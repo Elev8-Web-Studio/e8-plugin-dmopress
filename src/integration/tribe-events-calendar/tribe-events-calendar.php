@@ -3,15 +3,15 @@
 defined('ABSPATH') or die('Script access not permitted.');
 
 // Link Places to Events
-function tribe_link_places_to_events() {
+function dmopress_link_places_to_tribe_events() {
 	if( function_exists( 'tribe_register_linked_post_type' ) ) {
         tribe_register_linked_post_type('places');
     }
 }
-add_action( 'init', 'tribe_link_places_to_events' );
+add_action( 'init', 'dmopress_link_places_to_tribe_events' );
 
 //Remove default Venue selections, since we are replacing it with Places
-function tribe_remove_venues_from_events( $default_types ) {
+function dmopress_remove_venues_from_tribe_events( $default_types ) {
 	
     if ( ! is_array( $default_types ) || empty( $default_types ) ) {
 		return $default_types;
@@ -24,4 +24,4 @@ function tribe_remove_venues_from_events( $default_types ) {
 	return $default_types;
 }
 
-add_filter( 'tribe_events_register_default_linked_post_types', 'tribe_remove_venues_from_events' );
+add_filter( 'tribe_events_register_default_linked_post_types', 'dmopress_remove_venues_from_tribe_events' );

@@ -19,7 +19,8 @@ define('DMOPRESS_PLUGIN_MODULES_DIR', DMOPRESS_PLUGIN_DIR . '/modules');
 define('DMOPRESS_PLUGIN_STYLESHEETS_DIR', DMOPRESS_PLUGIN_DIR . '/css');
 
 // Functions Library
-require_once DMOPRESS_PLUGIN_DIR . '/includes/functions.php';
+require_once DMOPRESS_PLUGIN_DIR . '/functions/private.php';
+require_once DMOPRESS_PLUGIN_DIR . '/functions/public.php';
 
 // Setup
 require_once DMOPRESS_PLUGIN_DIR . '/setup/admin.php';
@@ -29,7 +30,7 @@ require_once DMOPRESS_PLUGIN_DIR . '/setup/meta-box.php';
 require_once DMOPRESS_PLUGIN_DIR . '/setup/post-type.php';
 require_once DMOPRESS_PLUGIN_DIR . '/setup/public.php';
 require_once DMOPRESS_PLUGIN_DIR . '/setup/taxonomies.php';
-require_once DMOPRESS_PLUGIN_DIR . '/includes/classes/class-tourismpress-template-loader.php';
+require_once DMOPRESS_PLUGIN_DIR . '/includes/classes/dmopress-template-loader.php';
 
 // Shortcodes
 require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/map/map.php';
@@ -52,10 +53,10 @@ function dmo_add_settings_link($links, $file) {
     if (!$this_plugin) $this_plugin = plugin_basename(__FILE__);
 
     if ($file == $this_plugin){
-        $guide_link = '<a href="https://www.dmopress.com/guide/" target="_blank">'.__("Documentation", "tourismpress").'</a>';
+        $guide_link = '<a href="https://www.dmopress.com/guide/" target="_blank">'.__("Documentation", "dmopress").'</a>';
         array_unshift($links, $guide_link);
         
-        $settings_link = '<a href="options-general.php?page=tourismpress-settings">'.__("Settings", "tourismpress").'</a>';
+        $settings_link = '<a href="options-general.php?page=dmopress-settings">'.__("Settings", "dmopress").'</a>';
         array_unshift($links, $settings_link);
         
     }

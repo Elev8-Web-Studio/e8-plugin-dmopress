@@ -2,7 +2,7 @@
 // Prevent external script access
 defined('ABSPATH') or die('Script access not permitted.');
 
-function tourismpress_normalize_url($url){
+function dmopress_normalize_url($url){
 	//Apply http:// prefix to URLs that don't already have http:// or https:// in the URL
 	if($url != ''){
 		if (strpos($url, 'http://') !== false || strpos($url, 'https://') !== false){
@@ -17,11 +17,11 @@ function tourismpress_normalize_url($url){
 }
 
 // Type Validation Functions
-function tourismpress_isValidGoogleAnalyticsID($trackingIdString){
+function dmopress_isValidGoogleAnalyticsID($trackingIdString){
     return preg_match('/^ua-\d{4,9}-\d{1,4}$/i', strval($trackingIdString)) ? true : false;
 }
 
-function tourismpress_isValidInteger($testvalue){
+function dmopress_isValidInteger($testvalue){
 	if(filter_var($testvalue, FILTER_VALIDATE_INT) !== false){
 		return true;
 	} else {
@@ -29,7 +29,7 @@ function tourismpress_isValidInteger($testvalue){
 	}
 }
 
-function tourismpress_isValidURL($testvalue){
+function dmopress_isValidURL($testvalue){
 	if(filter_var($testvalue, FILTER_VALIDATE_URL) !== false){
 		return true;
 	} else {
@@ -37,7 +37,7 @@ function tourismpress_isValidURL($testvalue){
 	}
 }
 
-function tourismpress_isValidEmail($testvalue){
+function dmopress_isValidEmail($testvalue){
 	if(filter_var($testvalue, FILTER_VALIDATE_EMAIL) !== false){
 		return true;
 	} else {
@@ -45,7 +45,7 @@ function tourismpress_isValidEmail($testvalue){
 	}
 }
 
-function tourismpress_isValidFloat($testvalue){
+function dmopress_isValidFloat($testvalue){
 	if(filter_var($testvalue, FILTER_VALIDATE_FLOAT) !== false){
 		return true;
 	} else {
@@ -53,7 +53,7 @@ function tourismpress_isValidFloat($testvalue){
 	}
 }
 
-function tourismpress_get_location_id_from_tripadvisor_url($tripadvisor_url){
+function dmopress_get_location_id_from_tripadvisor_url($tripadvisor_url){
 	$pattern = '/-g\d{5,8}-d\d{5,8}/';
 	preg_match($pattern, $tripadvisor_url, $matches);
 	if($matches){
@@ -66,7 +66,7 @@ function tourismpress_get_location_id_from_tripadvisor_url($tripadvisor_url){
 	}
 }
 
-function tourismpress_get_twitter_handle_from_url($twitter_url){
+function dmopress_get_twitter_handle_from_url($twitter_url){
 	$pattern = '/(?<=https:\/\/twitter\.com\/)(.*)/';
 	preg_match($pattern, $twitter_url, $matches);
 	if($matches){
@@ -75,7 +75,7 @@ function tourismpress_get_twitter_handle_from_url($twitter_url){
 }
 
 
-function tourismpress_get_instagram_handle_from_url($instagram_url){
+function dmopress_get_instagram_handle_from_url($instagram_url){
 	$pattern = '/(?<=https:\/\/www\.instagram\.com\/)(.*)/';
 	preg_match($pattern, $instagram_url, $matches);
 	if($matches){

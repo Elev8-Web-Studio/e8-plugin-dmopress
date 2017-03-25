@@ -13,9 +13,9 @@ function dmo_enqueue_admin_css() {
   }
   // Only show our scripts on the admin pages they are used on to prevent possible conflicts with other scripts.
   if (($pagenow == 'post.php' || $pagenow == 'post-new.php') && $typenow == 'places') {
-	 wp_enqueue_style('custom_meta_css', plugins_url() . '/tourismpress/css/tourismpress-admin.min.css');
-   wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key='.get_theme_mod('google_maps_api_key'), false );
-   wp_enqueue_script('app-js', plugins_url() . '/tourismpress/js/app.min.js', false);
+	  wp_enqueue_style('custom_meta_css', plugins_url() . '/dmopress/css/dmopress-admin.min.css');
+    wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key='.dmo_get_google_maps_api_key());
+   wp_enqueue_script('app-js', plugins_url() . '/dmopress/js/dmopress-admin.min.js', false);
    
   }
 }
