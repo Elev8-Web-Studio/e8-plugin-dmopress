@@ -23,7 +23,7 @@ require_once tourismpress_PLUGIN_DIR . '/includes/functions.php';
 
 // Setup
 require_once tourismpress_PLUGIN_DIR . '/setup/admin.php';
-require_once tourismpress_PLUGIN_DIR . '/setup/customizer.php';
+require_once tourismpress_PLUGIN_DIR . '/setup/settings.php';
 require_once tourismpress_PLUGIN_DIR . '/setup/hooks.php';
 require_once tourismpress_PLUGIN_DIR . '/setup/meta-box.php';
 require_once tourismpress_PLUGIN_DIR . '/setup/post-type.php';

@@ -66,7 +66,7 @@ function dmo_map($atts, $content = null){
 	if(dmo_is_valid_theme(esc_attr($atts['theme']))){
 		$theme = esc_attr($atts['theme']);
 	} else {
-		$theme = get_theme_mod('google_maps_theme');;
+		$theme = dmo_get_google_maps_theme();
 	}
 	$theme_json = tourismpress_get_map_theme_json(esc_attr($atts['theme']));
 
@@ -142,7 +142,7 @@ function dmo_map($atts, $content = null){
 
 	ob_start();
 
-	if(get_theme_mod('google_maps_api_key') != ''){
+	if(dmo_get_google_maps_api_key() != ''){
 ?>
 
 
@@ -274,15 +274,15 @@ function tourismpress_get_map_theme_json($theme){
 		if(dmo_is_valid_theme($theme)){
 			$theme_string = $theme;
 		} else {
-			if(get_theme_mod('google_maps_theme') != ''){
-				$theme_string = get_theme_mod('google_maps_theme');
+			if(dmo_get_google_maps_theme() != ''){
+				$theme_string = dmo_get_google_maps_theme();
 			} else {
 				$theme_string = 'classic';
 			}
 		}
 	} else {
-		if(get_theme_mod('google_maps_theme') != ''){
-			$theme_string = get_theme_mod('google_maps_theme');
+		if(dmo_get_google_maps_theme() != ''){
+			$theme_string = dmo_get_google_maps_theme();
 		} else {
 			$theme_string = 'classic';
 		}
