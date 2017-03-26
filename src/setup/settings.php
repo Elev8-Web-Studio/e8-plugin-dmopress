@@ -161,22 +161,37 @@ if(is_admin()){
     $dmopress_settings_page = new MySettingsPage();
 }
 
-function dmo_get_google_maps_api_key(){
-   $option = get_option('dmopress');
-    if($option['google_maps_api_key'] != ''){
-        return $option['google_maps_api_key'];
-    } else {
-        return null;
+/**
+ * Add a Settings link to plugin on Plugins page
+ */
+function dmo_add_settings_link($links, $file) {
+    static $this_plugin;
+    if (!$this_plugin) $this_plugin = plugin_basename(__FILE__);
+
+    if ($file == $this_plugin){
+        $guide_link = '<a href="https://www.dmopress.com/guide/" target="_blank">'.__("Documentation", "dmopress").'</a>';
+        array_unshift($links, $guide_link);
+        
+        $settings_link = '<a href="options-general.php?page=dmopress-settings">'.__("Settings", "dmopress").'</a>';
+        array_unshift($links, $settings_link);
+        
     }
+    return $links;
 }
+add_filter('plugin_action_links', 'dmo_add_settings_link', 10, 2 );
 
-function dmo_get_google_maps_theme(){
-    $option = get_option('dmopress');
-    if($option['google_maps_style'] != ''){
-        return $option['google_maps_style'];
-    } else {
-        return '';
-    }
+
+
+function dmopress_plugin_row_meta( $links, $file ) {
+
+	if ( strpos( $file, 'dmopress.php' ) !== false ) {
+		$new_links = array(
+				'support' => '<a href="https://www.dmopress.com/support/" target="_blank">Support</a>'
+				);
+		
+		$links = array_merge( $links, $new_links );
+	}
+	
+	return $links;
 }
-
-
+add_filter( 'plugin_row_meta', 'dmopress_plugin_row_meta', 10, 2 );

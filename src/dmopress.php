@@ -4,7 +4,7 @@ Plugin Name: DMOPress
 Plugin URI: https://www.dmopress.com/products/dmopress/
 Description: Built specifically for Destination Marketing Organizations, DMOPress helps you show, share and promote your places of interest.
 Author: 2464420 Ontario Inc.
-Version: 1.0.0
+Version: 2.0.0
 Author URI: https://www.dmopress.com
 */
 
@@ -45,37 +45,3 @@ require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/twitter-timeline/twitter-timelin
 //3rd Party Integration
 require_once DMOPRESS_PLUGIN_DIR . '/integration/tribe-events-calendar/tribe-events-calendar.php';
 
-/**
- * Add a Settings link to plugin on Plugins page
- */
-function dmo_add_settings_link($links, $file) {
-    static $this_plugin;
-    if (!$this_plugin) $this_plugin = plugin_basename(__FILE__);
-
-    if ($file == $this_plugin){
-        $guide_link = '<a href="https://www.dmopress.com/guide/" target="_blank">'.__("Documentation", "dmopress").'</a>';
-        array_unshift($links, $guide_link);
-        
-        $settings_link = '<a href="options-general.php?page=dmopress-settings">'.__("Settings", "dmopress").'</a>';
-        array_unshift($links, $settings_link);
-        
-    }
-    return $links;
-}
-add_filter('plugin_action_links', 'dmo_add_settings_link', 10, 2 );
-
-
-
-function dmopress_plugin_row_meta( $links, $file ) {
-
-	if ( strpos( $file, 'dmopress.php' ) !== false ) {
-		$new_links = array(
-				'support' => '<a href="https://www.dmopress.com/support/" target="_blank">Support</a>'
-				);
-		
-		$links = array_merge( $links, $new_links );
-	}
-	
-	return $links;
-}
-add_filter( 'plugin_row_meta', 'dmopress_plugin_row_meta', 10, 2 );

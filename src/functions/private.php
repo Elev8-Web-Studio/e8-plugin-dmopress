@@ -90,3 +90,21 @@ function dmopress_get_instagram_handle_from_url($instagram_url){
 		return '';
 	}
 }
+
+function dmo_get_google_maps_api_key(){
+   $option = get_option('dmopress');
+    if($option['google_maps_api_key'] != ''){
+        return $option['google_maps_api_key'];
+    } else {
+        return null;
+    }
+}
+
+function dmo_get_google_maps_theme(){
+    $option = get_option('dmopress');
+    if($option['google_maps_style'] != ''){
+        return $option['google_maps_style'];
+    } else {
+        return '';
+    }
+}
