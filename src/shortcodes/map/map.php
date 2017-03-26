@@ -168,7 +168,7 @@ function dmopress_map($atts, $content = null){
 			var bounds = new google.maps.LatLngBounds();
 
 			var marker, i;
-			var image = new google.maps.MarkerImage('<?php echo plugins_url() ?>/dmopress/shortcodes/map/styles/<?php echo $theme ?>/marker.png', null, null, null, new google.maps.Size(30,40));
+			var image = new google.maps.MarkerImage('<?php echo plugins_url() ?>/dmopress/shortcodes/map/themes/<?php echo $theme ?>/marker.png', null, null, null, new google.maps.Size(30,40));
 
 			function CenterControl(controlDiv, map) {
 				
