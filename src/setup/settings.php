@@ -21,8 +21,8 @@ class MySettingsPage {
     public function add_plugin_page() {
         // This page will be under "Settings"
         add_options_page(
-            'DMOPress Settings', 
-            'DMOPress', 
+            __('DMOPress Settings', 'dmopress_textdomain'), 
+            __('DMOPress', 'dmopress_textdomain'), 
             'manage_options', 
             'dmopress-settings', 
             array( $this, 'create_admin_page' )
@@ -37,7 +37,7 @@ class MySettingsPage {
         $this->options = get_option('dmopress');
         ?>
         <div class="wrap">
-            <h2>DMOPress Settings</h2>           
+            <h2><?php _e('DMOPress Settings', 'dmopress_textdomain') ?></h2>           
             <form method="post" action="options.php">
             <?php
                 // This prints out all hidden setting fields
@@ -69,14 +69,14 @@ class MySettingsPage {
 
         add_settings_section(
             'dmopress_settings_section_google_maps',
-            'Google Maps Settings',
+            __('Google Maps Settings', 'dmopress_textdomain'),
             array( $this, 'print_section_info' ),
             'dmopress-setting-admin'
         );
 
         add_settings_field(
             'google_maps_api_key', 
-            'Google Maps API Key', 
+            __('Google Maps API Key','dmopress_textdomain'), 
             array( $this, 'google_maps_callback' ), 
             'dmopress-setting-admin', 
             'dmopress_settings_section_google_maps'
@@ -84,7 +84,7 @@ class MySettingsPage {
 
         add_settings_field(
             'google_maps_style', 
-            'Google Maps Default Style', 
+            __('Google Maps Default Style','dmopress_textdomain'), 
             array( $this, 'google_maps_style_callback' ), 
             'dmopress-setting-admin', 
             'dmopress_settings_section_google_maps'
@@ -149,7 +149,6 @@ class MySettingsPage {
 
         print(
             $output
-            //'<input type="text" size="45" id="google-maps-style" name="tdmoress[google_maps_style]" value="%s" placeholder="" />'
         );
     }
 }
@@ -165,14 +164,12 @@ if(is_admin()){
  * Add a Settings link to plugin on Plugins page
  */
 function dmo_add_settings_link($links, $file) {
-    static $this_plugin;
-    if (!$this_plugin) $this_plugin = plugin_basename(__FILE__);
 
-    if ($file == $this_plugin){
-        $guide_link = '<a href="https://www.dmopress.com/guide/" target="_blank">'.__("Documentation", "dmopress").'</a>';
+    if ($file == 'dmopress/dmopress.php'){
+        $guide_link = '<a href="https://www.dmopress.com/guide/" target="_blank">'.__('Documentation', "dmopress_textdomain").'</a>';
         array_unshift($links, $guide_link);
         
-        $settings_link = '<a href="options-general.php?page=dmopress-settings">'.__("Settings", "dmopress").'</a>';
+        $settings_link = '<a href="options-general.php?page=dmopress-settings">'.__('Settings', "dmopress_textdomain").'</a>';
         array_unshift($links, $settings_link);
         
     }
@@ -186,7 +183,7 @@ function dmopress_plugin_row_meta( $links, $file ) {
 
 	if ( strpos( $file, 'dmopress.php' ) !== false ) {
 		$new_links = array(
-				'support' => '<a href="https://www.dmopress.com/support/" target="_blank">Support</a>'
+				'support' => '<a href="https://www.dmopress.com/support/" target="_blank">'.__('Support','dmopress_textdomain').'</a>'
 				);
 		
 		$links = array_merge( $links, $new_links );

@@ -9,7 +9,7 @@ function dmopress_register_places_post_type() {
 		'name'                => __( 'Places', 'dmopress_textdomain' ),
 		'singular_name'       => __( 'Place', 'dmopress_textdomain' ),
 		'singular_name_lowercase' => __( 'place', 'dmopress_textdomain' ),
-		'add_new'             => _x( 'Add New Place', 'dmopress_textdomain', 'dmopress_textdomain' ),
+		'add_new'             => _x( 'Add New Place', 'noun', 'dmopress_textdomain' ),
 		'add_new_item'        => __( 'Add New Place', 'dmopress_textdomain' ),
 		'edit_item'           => __( 'Edit Place', 'dmopress_textdomain' ),
 		'new_item'            => __( 'New Place', 'dmopress_textdomain' ),
@@ -24,7 +24,6 @@ function dmopress_register_places_post_type() {
 	$args = array(
 		'labels'              => $labels,
 		'hierarchical'        => false,
-		'description'         => 'description',
 		'taxonomies'          => array('features','types','post_tag'),
 		'public'              => true,
 		'show_ui'             => true,
@@ -39,8 +38,8 @@ function dmopress_register_places_post_type() {
 		'query_var'           => true,
 		'can_export'          => true,
 		'rewrite'             => array(
-			'slug' => 'places'
-			),
+								'slug' => 'places'
+							  ),
 		'capability_type'     => 'post',
 		'supports'            => array('title', 'editor', 'thumbnail'),
 	);
