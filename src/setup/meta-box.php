@@ -142,7 +142,9 @@ function dmopress_place_meta_box_callback($post) {
                 <p>
                 <?php _e( 'Automatically fill latitude / longitude', 'dmopress_textdomain' ); ?>:
                 <br>
-                <button id="geocode" class="button"><span class="dashicons dashicons-location" style="line-height: 26px"></span> <?php _e( 'Geocode Address', 'dmopress_textdomain' ); ?></button></p>
+                <button id="geocode" class="button"><span class="dashicons dashicons-location" style="line-height: 26px"></span> <?php _e( 'Geocode Address', 'dmopress_textdomain' ); ?></button><span id="geocode-error" class="error"><br>▲ <?php _e( 'Google could not locate this address.', 'dmopress_textdomain' ); ?></span>
+                </p>
+                
                 
            </div>
            

@@ -46,6 +46,7 @@ jQuery(document).ready(function($) {
 	});
 
 	jQuery('#geocode').on('click', function(e){
+		
 		e.preventDefault();
 		var address = jQuery('input[name=address]').val();
 		var city = jQuery('input[name=city]').val();
@@ -56,9 +57,20 @@ jQuery(document).ready(function($) {
 		var geocodeRequestURI = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + location;
 
 		jQuery.getJSON(geocodeRequestURI, function(data, textStatus) {
-				console.log(data);
-				jQuery('input[name=latitude]').val(data.results[0].geometry.location.lat);
-				jQuery('input[name=longitude]').val(data.results[0].geometry.location.lng);
+				
+				if(data.status == "OK"){
+					jQuery('#geocode-error').hide();
+					var lat = data.results[0].geometry.location.lat;
+					var long = data.results[0].geometry.location.lng;
+					jQuery('input[name=latitude]').val(lat);
+					jQuery('input[name=longitude]').val(long);
+				} else {
+					//console.log('Data: ' + data.status);
+					jQuery('#geocode-error').show();
+					jQuery('input[name=latitude]').val('');
+					jQuery('input[name=longitude]').val('');
+				}
+				
 		}).fail(function() {
 				console.log( "Geocode request error." );
 		});
