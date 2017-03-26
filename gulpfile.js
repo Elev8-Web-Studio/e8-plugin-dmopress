@@ -53,7 +53,7 @@ gulp.task('stylesheets-admin', function() {
 });
 
 gulp.task('stylesheets-public', function() {
-    var filesToProcess = pkg.pluginDependencies.stylesheets;
+    var filesToProcess = '[]';
     filesToProcess.push('./src/scss/public.scss');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
@@ -75,4 +75,39 @@ gulp.task('js', function() {
         .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(secrets.localPath + '/js'));
+});
+
+gulp.task('build', function() {
+
+    gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/LICENSE'])
+    .pipe(gulp.dest('build/dmopress'));
+
+    var adminStylesheets = pkg.pluginDependencies.stylesheets;
+    adminStylesheets.push('./src/scss/admin.scss');
+    gulp.src(adminStylesheets)
+        .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
+        .pipe(concat('dmopress-admin.css'))
+        .pipe(gulp.dest('build/dmopress/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cleancss({ keepBreaks: false }))
+        .pipe(gulp.dest('build/dmopress/css'));
+    
+    var publicStylesheets = [];
+    publicStylesheets.push('./src/scss/public.scss');
+    gulp.src(publicStylesheets)
+        .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
+        .pipe(concat('dmopress.css'))
+        .pipe(gulp.dest('build/dmopress/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cleancss({ keepBreaks: false }))
+        .pipe(gulp.dest('build/dmopress/css'));
+    
+    var js = pkg.pluginDependencies.javascript;
+    js.push('./src/**/*.js');
+    gulp.src(js)
+        .pipe(concat('dmopress-admin.js'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(gulp.dest('build/dmopress/js'));
+
 });
