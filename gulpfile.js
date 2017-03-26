@@ -70,7 +70,7 @@ gulp.task('js', function() {
     filesToProcess.push('./src/**/*.js');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
-        .pipe(concat('app.js'))
+        .pipe(concat('dmopress-admin.js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
         .pipe(sourcemaps.write())
