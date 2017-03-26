@@ -261,7 +261,8 @@ function dmopress_map($atts, $content = null){
 	</script>
 	
 <?php } else { ?>
-	<p><span style="color: #cc0000;">Map Error:</span> A map could not be created because a valid Google Maps API key was not found. Add your Google Maps API key to the <a href="<?php echo admin_url('customize.php?autofocus[section]=dmopress'); ?>">WordPress Customizer</a>.</p>
+	<p><span style="color: #cc0000;"><?php _e('Error:', 'dmopress_textdomain');  ?></span>
+	<?php _e('A map could not be created because a valid Google Maps API key was not found. Add your Google Maps API key in','dmopress_textdomain') ?> <a href="<?php echo admin_url('options-general.php?page=dmopress-settings'); ?>">DMOPress Settings</a>.</p>
 	
 <?php
 	}
