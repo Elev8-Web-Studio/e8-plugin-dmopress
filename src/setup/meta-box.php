@@ -44,7 +44,7 @@ function dmopress_place_meta_box_callback($post) {
 
                 echo '<p><label for="address">';
                 _e( 'Address', 'dmopress_textdomain' );
-                echo ':';
+                echo ': ';
                 echo '</label><br />';
                 echo '<input type="text" style="width: 100%" id="address" name="address" value="' . esc_attr( $address_var ) . '" size="25" /></p>';
 
@@ -57,7 +57,7 @@ function dmopress_place_meta_box_callback($post) {
 
                             echo '<p><label for="city">';
                             _e( 'City', 'dmopress_textdomain' );
-                            echo ':';
+                            echo ': ';
                             echo '</label><br /> ';
                             echo '<input type="text" style="width: 100%" id="city" name="city" value="' . esc_attr( $city_var ) . '" size="25" /></p>';
                             ?>
@@ -69,7 +69,7 @@ function dmopress_place_meta_box_callback($post) {
 
                             echo '<p><label for="stateprov">';
                             _e( 'Province / State', 'dmopress_textdomain' );
-                            echo ':';
+                            echo ': ';
                             echo '</label><br /> ';
                             echo '<input type="text" style="width: 100%" id="stateprov" name="stateprov" value="' . esc_attr( $stateprov_var ) . '" size="25" /></p>';
 
@@ -86,7 +86,7 @@ function dmopress_place_meta_box_callback($post) {
 
                             echo '<p><label for="zip">';
                             _e( 'Postal Code / ZIP', 'dmopress_textdomain' );
-                            echo ':';
+                            echo ': ';
                             echo '</label><br /> ';
                             echo '<input type="text" style="width: 100%" id="zip" name="zip" value="' . esc_attr( $zip_var ) . '" size="25" /></p>';
 
@@ -99,7 +99,7 @@ function dmopress_place_meta_box_callback($post) {
 
                             echo '<p><label for="telephone">';
                             _e( 'Telephone', 'dmopress_textdomain' );
-                            echo ':';
+                            echo ': ';
                             echo '</label><br /> ';
                             echo '<input type="text" style="width: 100%" id="telephone" name="telephone" value="' . esc_attr( $telephone_var ) . '" size="25" /></p>';
 
@@ -114,7 +114,7 @@ function dmopress_place_meta_box_callback($post) {
 
                                     echo '<p><label for="latitude">';
                                     _e( 'Latitude', 'dmopress_textdomain' );
-                                    echo ':';
+                                    echo ': ';
                                     echo '</label><br /> ';
                                     echo '<input class="input-faded" type="text" placeholder="" style="width: 100%" id="latitude" name="latitude" value="' . esc_attr( $latitude_var ) . '" size="15" /></p>';
 
@@ -127,7 +127,7 @@ function dmopress_place_meta_box_callback($post) {
 
                                     echo '<p><label for="longitude">';
                                     _e( 'Longitude', 'dmopress_textdomain' );
-                                    echo ':';
+                                    echo ': ';
                                     echo '</label><br /> ';
                                     echo '<input class="input-faded" type="text" placeholder="" style="width: 100%" id="longitude" name="longitude" value="' . esc_attr( $longitude_var ) . '" size="15" /></p>';
 
@@ -155,7 +155,7 @@ function dmopress_place_meta_box_callback($post) {
 
                 echo '<p><label for="website_url">';
                 _e( 'Website URL', 'dmopress_textdomain' );
-                echo ':';
+                echo ': ';
                 echo '</label><br /> ';
                 echo '<input type="text" placeholder="http://" style="width: 100%" id="website_url" name="website_url" value="' . esc_attr( $website_url_var ) . '" size="25" /></p>';
 
@@ -166,7 +166,7 @@ function dmopress_place_meta_box_callback($post) {
 
                 echo '<p><label for="facebook_url">';
                 _e( 'Facebook Page URL', 'dmopress_textdomain' );
-                echo ':';
+                echo ': ';
                 echo '</label><br /> ';
                 echo '<input type="text" placeholder="http://" style="width: 100%" id="facebook_url" name="facebook_url" value="' . esc_attr( $facebook_url_var ) . '" size="25" /></p>';
 
@@ -178,11 +178,11 @@ function dmopress_place_meta_box_callback($post) {
 
                 echo '<p><label for="twitter_url">';
                 _e( 'Twitter Profile URL', 'dmopress_textdomain' );
-                echo ':';
+                echo ': ';
 
                 $twitter_handle_var = dmopress_get_twitter_handle_from_url($twitter_url_var);
                 if($twitter_handle_var != ''){
-                    echo '<span class="label-info">'.__('Handle','dmopress_textdomain').':' . $twitter_handle_var . '<span class="dashicons dashicons-yes success"></span></span>';
+                    echo '<span class="label-info">'.__('Handle','dmopress_textdomain').': ' . $twitter_handle_var . '<span class="dashicons dashicons-yes success"></span></span>';
                 }
 
                 echo '</label><br /> ';
@@ -197,12 +197,12 @@ function dmopress_place_meta_box_callback($post) {
 
                 echo '<p><label for="instagram_url">';
                 _e( 'Instagram URL', 'dmopress_textdomain' );
-                echo ':';
+                echo ': ';
 
                 $instagram_handle = dmopress_get_instagram_handle_from_url($instagram_url_var);
                 if($instagram_handle != ''){
                     
-                    echo '<span class="label-info">'.__('Handle','dmopress_textdomain').':' . $instagram_handle . '<span class="dashicons dashicons-yes success"></span></span>';
+                    echo '<span class="label-info">'.__('Handle','dmopress_textdomain').': ' . $instagram_handle . '<span class="dashicons dashicons-yes success"></span></span>';
                 }
 
                 echo '</label><br /> ';
@@ -217,10 +217,10 @@ function dmopress_place_meta_box_callback($post) {
 
                 echo '<p><label for="tripadvisor_url">';
                 _e( 'TripAdvisor URL', 'dmopress_textdomain' );
-                echo ':';
+                echo ': ';
                 $tripadvisor_location_id_var = dmopress_get_location_id_from_tripadvisor_url($tripadvisor_url_var);
                 if($tripadvisor_location_id_var != ''){
-                    echo '<span class="label-info">'.__('Location ID','dmopress_textdomain').':' . $tripadvisor_location_id_var . '<span class="dashicons dashicons-yes success"></span></span>';
+                    echo '<span class="label-info">'.__('Location ID','dmopress_textdomain').': ' . $tripadvisor_location_id_var . '<span class="dashicons dashicons-yes success"></span></span>';
                 }
                 echo '</label><br /> ';
                 echo '<input type="text" placeholder="http://" style="width: 100%" id="tripadvisor_url" name="tripadvisor_url" value="' . esc_attr( $tripadvisor_url_var ) . '" size="25" />';
