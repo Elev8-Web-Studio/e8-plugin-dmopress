@@ -71,10 +71,11 @@ function dmopress_get_location_id_from_tripadvisor_url($tripadvisor_url){
 }
 
 function dmopress_get_twitter_handle_from_url($twitter_url){
-	$pattern = '/(?<=https:\/\/twitter\.com\/)(.*)/';
+	$pattern = '/(?<=twitter\.com\/)(.*)/';
 	preg_match($pattern, $twitter_url, $matches);
 	if($matches){
-		return($matches[0]);
+		$chars = preg_split('/\//', $matches[0]);
+		return $chars[0];
 	} else {
 		return '';
 	}
@@ -82,10 +83,11 @@ function dmopress_get_twitter_handle_from_url($twitter_url){
 
 
 function dmopress_get_instagram_handle_from_url($instagram_url){
-	$pattern = '/(?<=https:\/\/www\.instagram\.com\/)(.*)/';
+	$pattern = '/(?<=instagram\.com\/)(.*)/';
 	preg_match($pattern, $instagram_url, $matches);
 	if($matches){
-		return($matches[0]);
+		$chars = preg_split('/\//', $matches[0]);
+		return $chars[0];
 	} else {
 		return '';
 	}
