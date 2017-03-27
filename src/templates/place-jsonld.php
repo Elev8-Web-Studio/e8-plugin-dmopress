@@ -4,7 +4,7 @@
     "@context": "http://schema.org",
     "@type": "Place",
     "name": "<?php echo the_title(); ?>",
-    "description": "<?php echo the_excerpt(); ?>",
+    "description": "<?php echo get_the_excerpt(); ?>",
     "address": {
         "@type": "PostalAddress",
         "addressLocality": "<?php echo dmo_get_city(); ?>",
