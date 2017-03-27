@@ -19,4 +19,4 @@ function dmo_enqueue_admin_css() {
    
   }
 }
-add_action('admin_init','dmo_enqueue_admin_css');
+add_action('admin_enqueue_scripts','dmo_enqueue_admin_css');
