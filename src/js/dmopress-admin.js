@@ -2,13 +2,13 @@ jQuery(document).ready(function($) {
 
 	jQuery.validator.addMethod("friendlyURL", function(value, element, params) {
 		return this.optional(element) || /(http(s)?:\\)?([\w-]+\.)+[\w-]+[.com|.net|.org|.io|.biz|.travel|.ca]+(\[\?%&=]*)?/.test(value);
-	}, '&#9650; Invalid URL');
+	}, '&#9650; ' + translated.invalid_url);
 
 	jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
 		phone_number = phone_number.replace(/\s+/g, "");
 		return this.optional(element) || phone_number.length > 9 &&
 			phone_number.match(/^(\+?1-?)?(\([2-9]([02-9]\d|1[02-9])\)|[2-9]([02-9]\d|1[02-9]))-?[2-9]([02-9]\d|1[02-9])-?\d{4}$/);
-	}, "&#9650; Invalid phone number");
+	}, '&#9650; ' + translated.invalid_phone);
 
 	jQuery('#post').validate({
 		rules: {

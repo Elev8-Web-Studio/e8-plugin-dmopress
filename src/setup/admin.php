@@ -15,7 +15,15 @@ function dmo_enqueue_admin_css() {
   if (($pagenow == 'post.php' || $pagenow == 'post-new.php') && $typenow == 'places') {
 	  wp_enqueue_style('custom_meta_css', plugins_url() . '/dmopress/css/dmopress-admin.min.css');
     wp_enqueue_script( 'google-maps', 'https://maps.googleapis.com/maps/api/js?key='.dmo_get_google_maps_api_key());
-   wp_enqueue_script('app-js', plugins_url() . '/dmopress/js/dmopress-admin.min.js', false);
+    
+    wp_register_script( 'app-js', plugins_url() . '/dmopress/js/dmopress-admin.min.js', false);
+    // Localize the script with new data
+    $translation_array = array(
+      'invalid_url' => __( 'Invalid URL', 'dmopress-textdomain' ),
+      'invalid_phone' => __('Invalid phone', 'dmopress-textdomain')
+    );
+    wp_localize_script( 'app-js', 'translated', $translation_array );
+    wp_enqueue_script('app-js');
    
   }
 }
