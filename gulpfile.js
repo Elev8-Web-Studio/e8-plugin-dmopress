@@ -53,7 +53,7 @@ gulp.task('stylesheets-admin', function() {
 });
 
 gulp.task('stylesheets-public', function() {
-    var filesToProcess = '[]';
+    var filesToProcess = [];
     filesToProcess.push('./src/scss/public.scss');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
