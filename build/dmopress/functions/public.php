@@ -37,12 +37,102 @@ function dmo_get_city($post_id = false){
      return get_post_meta($post_id, 'city', true);
 }
 
+//See https://www.dmopress.com/guide/functions/function-dmo_get_facebook_link/
+function dmo_get_facebook_link($post_id = false, $label = false, $class = false, $target = false){
+     if(!$post_id) {
+         $post_id = get_the_ID();
+     }
+     $facebook_url = get_post_meta($post_id, 'facebook_url', true);
+     if($facebook_url != ''){
+        
+        if($class){
+            $classes = esc_html($class);
+        } else {
+            $classes = '';
+        }
+        $target_val = '_blank';
+        if($target){
+            switch ($target) {
+               case '_blank':
+                   $target_val = '_blank';
+                   break;
+               case '_parent':
+                   $target_val = '_parent';
+                   break;
+               case '_self':
+                   $target_val = '_self';
+                   break;
+               case '_top':
+                   $target_val = '_top';
+                   break;
+               default:
+                   $target_val = '_blank';
+            }
+        }
+
+        if($label != ''){
+            $label = $label;
+        } else {
+            $label = 'Facebook';
+        }
+        $link = '<a href="'.$facebook_url.'" class=" '.$classes.'" target="'.$target_val.'">'.$label.'</a>';
+        return $link;
+     } else {
+         return '';
+     }
+}
+
 //See https://www.dmopress.com/guide/functions/function-dmo_get_facebook_url/
 function dmo_get_facebook_url($post_id = false){
      if(!$post_id) {
          $post_id = get_the_ID();
      }
      return get_post_meta($post_id, 'facebook_url', true);
+}
+
+//See https://www.dmopress.com/guide/functions/function-dmo_get_instagram_link/
+function dmo_get_instagram_link($post_id = false, $label = false, $class = false, $target = false){
+     if(!$post_id) {
+         $post_id = get_the_ID();
+     }
+     $instagram_url = get_post_meta($post_id, 'instagram_url', true);
+     if($instagram_url != ''){
+        
+        if($class){
+            $classes = esc_html($class);
+        } else {
+            $classes = '';
+        }
+        $target_val = '_blank';
+        if($target){
+            switch ($target) {
+               case '_blank':
+                   $target_val = '_blank';
+                   break;
+               case '_parent':
+                   $target_val = '_parent';
+                   break;
+               case '_self':
+                   $target_val = '_self';
+                   break;
+               case '_top':
+                   $target_val = '_top';
+                   break;
+               default:
+                   $target_val = '_blank';
+            }
+        }
+
+        if($label != ''){
+            $label = $label;
+        } else {
+            $label = 'Instagram';
+        }
+        $link = '<a href="'.$instagram_url.'" class=" '.$classes.'" target="'.$target_val.'">'.$label.'</a>';
+        return $link;
+     } else {
+         return '';
+     }
 }
 
 //See https://www.dmopress.com/guide/functions/dmo_get_instagram_url/
@@ -139,12 +229,102 @@ function dmo_get_twitter_handle($post_id = false){
     return $twitter_handle;
 }
 
+//See https://www.dmopress.com/guide/functions/function-dmo_get_twitter_link/
+function dmo_get_twitter_link($post_id = false, $label = false, $class = false, $target = false){
+     if(!$post_id) {
+         $post_id = get_the_ID();
+     }
+     $twitter_url = get_post_meta($post_id, 'twitter_url', true);
+     if($twitter_url != ''){
+        
+        if($class){
+            $classes = esc_html($class);
+        } else {
+            $classes = '';
+        }
+        $target_val = '_blank';
+        if($target){
+            switch ($target) {
+               case '_blank':
+                   $target_val = '_blank';
+                   break;
+               case '_parent':
+                   $target_val = '_parent';
+                   break;
+               case '_self':
+                   $target_val = '_self';
+                   break;
+               case '_top':
+                   $target_val = '_top';
+                   break;
+               default:
+                   $target_val = '_blank';
+            }
+        }
+
+        if($label != ''){
+            $label = $label;
+        } else {
+            $label = 'Twitter';
+        }
+        $link = '<a href="'.$twitter_url.'" class=" '.$classes.'" target="'.$target_val.'">'.$label.'</a>';
+        return $link;
+     } else {
+         return '';
+     }
+}
+
 //See https://www.dmopress.com/guide/functions/dmo_get_twitter_url/
 function dmo_get_twitter_url($post_id = false){
     if(!$post_id) {
         $post_id = get_the_ID();
     }
     return get_post_meta($post_id, 'twitter_url', true);
+}
+
+//See https://www.dmopress.com/guide/functions/function-dmo_get_website_link/
+function dmo_get_website_link($post_id = false, $label = false, $class = false, $target = false){
+     if(!$post_id) {
+         $post_id = get_the_ID();
+     }
+     $website_url = get_post_meta($post_id, 'website_url', true);
+     if($website_url != ''){
+        
+        if($class){
+            $classes = esc_html($class);
+        } else {
+            $classes = '';
+        }
+        $target_val = '_blank';
+        if($target){
+            switch ($target) {
+               case '_blank':
+                   $target_val = '_blank';
+                   break;
+               case '_parent':
+                   $target_val = '_parent';
+                   break;
+               case '_self':
+                   $target_val = '_self';
+                   break;
+               case '_top':
+                   $target_val = '_top';
+                   break;
+               default:
+                   $target_val = '_blank';
+            }
+        }
+
+        if($label != ''){
+            $label = $label;
+        } else {
+            $label = 'Website';
+        }
+        $link = '<a href="'.$website_url.'" class=" '.$classes.'" target="'.$target_val.'">'.$label.'</a>';
+        return $link;
+     } else {
+         return '';
+     }
 }
 
 //See https://www.dmopress.com/guide/functions/dmo_get_website_url/

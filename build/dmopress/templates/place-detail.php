@@ -1,7 +1,5 @@
 <?php 
 
-
-
 $social_links = array();
 
 if(dmo_get_website_url() != ''){
@@ -45,3 +43,8 @@ if(dmo_get_tripadvisor_url() != ''){
 <?php } ?>
 
 <?php echo do_shortcode('[dmo-map places="'.get_the_ID().'"]'); ?>
+
+<?php
+    $dmopress_template_loader = new DMOPress_Template_Loader;
+    $dmopress_template_loader->get_template_part('place','jsonld');
+?>
