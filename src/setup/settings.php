@@ -132,7 +132,9 @@ class MySettingsPage {
             'classic' => 'Classic',
             'gotham' => 'Gotham',
             'grayscale' => 'Grayscale',
-            'nature' => 'Nature'
+            'nature' => 'Nature',
+            'pear' => 'Pear',
+            'safari' => 'Safari'
         );
 
         $output = '<select name="dmopress[google_maps_style]">';
