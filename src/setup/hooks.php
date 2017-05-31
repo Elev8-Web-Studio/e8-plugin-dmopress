@@ -50,11 +50,12 @@ function dmopress_filter_the_content( $content ) {
         add_filter( 'the_content', 'dmopress_filter_the_content' );
         return $output;
   }
-
+  
+  return $content;
 }
 add_filter( 'the_content', 'dmopress_filter_the_content' ); 
 
-function tourismpress_add_custom_types( $query ) {
+function dmopress_add_custom_types( $query ) {
   if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
     $query->set( 'post_type', array(
      'post', 'places'
@@ -62,6 +63,6 @@ function tourismpress_add_custom_types( $query ) {
       return $query;
     }
 }
-add_filter( 'pre_get_posts', 'tourismpress_add_custom_types' );
+add_filter( 'pre_get_posts', 'dmopress_add_custom_types' );
 
 
