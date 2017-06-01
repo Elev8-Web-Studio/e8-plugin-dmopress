@@ -48,3 +48,4 @@ require_once DMOPRESS_PLUGIN_DIR . '/widgets/weather-current-inline/weather-curr
 
 //3rd Party Integration
 require_once DMOPRESS_PLUGIN_DIR . '/integration/tribe-events-calendar/tribe-events-calendar.php';
+require_once DMOPRESS_PLUGIN_DIR . '/integration/visual-composer/visual-composer.php';
