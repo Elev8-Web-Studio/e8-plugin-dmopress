@@ -27,7 +27,7 @@ function dmopress_inline_weather($atts, $content = null){
             $unit = 'f';
             break;
         default:
-            $unit = dmo_get_default_openweathermap_unit();
+            $unit = dmo_get_openweathermap_default_unit();
     }
 
     ob_start();
