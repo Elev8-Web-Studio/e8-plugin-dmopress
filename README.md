@@ -1,5 +1,5 @@
 # DMOPress
-DMOPress is a FREE and open source WordPress plugin that helps you manage Places, and share them with your audience with ease. It’s made specifically for Destination Marketing Organizations (DMOs), including:
+DMOPress is a WordPress plugin that helps you manage Places and share them with your audience with ease. It’s made specifically for Destination Marketing Organizations (DMOs), including:
 
 * Tourism Offices and Tourism Bureaus
 * Business Improvement Associations

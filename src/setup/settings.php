@@ -61,13 +61,6 @@ class MySettingsPage {
         );
 
         add_settings_section(
-            'setting_section_id',
-            '',
-            array( $this, 'print_section_info' ),
-            'dmopress-setting-admin'
-        );
-
-        add_settings_section(
             'dmopress_settings_section_google_maps',
             __('Google Maps Settings', 'dmopress_textdomain'),
             array( $this, 'print_section_info' ),
@@ -89,6 +82,29 @@ class MySettingsPage {
             'dmopress-setting-admin', 
             'dmopress_settings_section_google_maps'
         );
+
+        add_settings_section(
+            'dmopress_settings_section_openweathermap',
+            __('OpenWeatherMap Settings', 'dmopress_textdomain'),
+            array( $this, 'print_section_info' ),
+            'dmopress-setting-admin'
+        );
+
+        add_settings_field(
+            'openweathermap_api_key', 
+            __('OpenWeatherMap API Key','dmopress_textdomain'), 
+            array( $this, 'openweathermap_api_key_callback' ), 
+            'dmopress-setting-admin', 
+            'dmopress_settings_section_openweathermap'
+        );
+
+        add_settings_field(
+            'openweathermap_default_unit', 
+            __('OpenWeatherMap Default Unit Display','dmopress_textdomain'), 
+            array( $this, 'openweathermap_default_unit_callback' ), 
+            'dmopress-setting-admin', 
+            'dmopress_settings_section_openweathermap'
+        );
     }
 
     /**
@@ -104,6 +120,12 @@ class MySettingsPage {
         }
         if(isset( $input['google_maps_style'])){
             $new_input['google_maps_style'] = sanitize_text_field( $input['google_maps_style'] );
+        }
+        if(isset( $input['openweathermap_api_key'])){
+            $new_input['openweathermap_api_key'] = sanitize_text_field( $input['openweathermap_api_key'] );
+        }
+        if(isset( $input['openweathermap_default_unit'])){
+            $new_input['openweathermap_default_unit'] = sanitize_text_field( $input['openweathermap_default_unit'] );
         }
 
         return $new_input;
@@ -122,6 +144,42 @@ class MySettingsPage {
         printf(
             '<input type="text" size="45" id="google-maps-api-key" name="dmopress[google_maps_api_key]" value="%s" placeholder="" />',
             isset( $this->options['google_maps_api_key'] ) ? esc_attr( $this->options['google_maps_api_key']) : ''
+        );
+    }
+
+    public function openweathermap_api_key_callback($args) {
+        extract($args);
+
+        printf(
+            '<input type="text" size="45" id="openweathermap-api-key" name="dmopress[openweathermap_api_key]" value="%s" placeholder="" />',
+            isset( $this->options['openweathermap_api_key'] ) ? esc_attr( $this->options['openweathermap_api_key']) : ''
+        );
+    }
+
+    public function openweathermap_default_unit_callback($args) {
+        extract($args);
+
+        $available_options = array(
+            'c' => 'Celsius',
+            'f' => 'Farenheit',
+            'cf' => 'Celsius / Farenheit',
+            'fc' => 'Farenheit / Celsius'
+        );
+
+        $output = '<select name="dmopress[openweathermap_default_unit]">';
+        foreach ($available_options as $slug => $label) {
+            if($this->options['openweathermap_default_unit'] == $slug){
+                $selected = ' selected';
+            } else {
+                $selected = '';
+            }
+            $output .=  '<option value="'.$slug.'" '.$selected.'>'.$label.'</option>';
+        }
+        
+        $output .= '</select>';
+
+        print(
+            $output
         );
     }
 
@@ -146,7 +204,7 @@ class MySettingsPage {
             }
             $output .=  '<option value="'.$slug.'" '.$selected.'>'.$label.'</option>';
         }
-        
+
         $output .= '</select>';
 
         print(
@@ -154,9 +212,6 @@ class MySettingsPage {
         );
     }
 }
-
-
-
 
 if(is_admin()){
     $dmopress_settings_page = new MySettingsPage();
@@ -194,3 +249,99 @@ function dmopress_plugin_row_meta( $links, $file ) {
 	return $links;
 }
 add_filter( 'plugin_row_meta', 'dmopress_plugin_row_meta', 10, 2 );
+
+
+add_action('customize_register','dmopress_customizer');
+function dmopress_customizer( $wp_customize ) {
+
+	$wp_customize->add_section( 'dmopress_settings', array(
+		'title' => __( 'DMOPress Settings', 'dmopress' ),
+		'priority' => 500
+	) );
+
+	$wp_customize->add_setting( 'dmopress[google_maps_api_key]', array(
+		'type' => 'option',
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh', 
+		'sanitize_callback' => '',
+		'sanitize_js_callback' => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'dmopress[google_maps_api_key]', array(
+		'label'   => __( 'Google Maps API Key', 'dmopress' ),
+		'description' => __( 'Need help getting a key? Check out the <a href="https://www.dmopress.com/guide/start/" target="_blank">10 Minute Quick Start Guide</a>.', 'dmopress' ),
+        'type' => 'text',
+		'section' => 'dmopress_settings',
+		'settings'   => 'dmopress[google_maps_api_key]',
+		'active_callback' => '',
+	) ) );
+
+    $wp_customize->add_setting( 'dmopress[google_maps_style]', array(
+        'type' => 'option',
+        'default' => '',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh', 
+        'sanitize_callback' => '',
+        'sanitize_js_callback' => '',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'dmopress[google_maps_style]', array(
+        'label'   => __( 'Google Maps Default Style', 'dmopress' ),
+        'description' => __('Visit the <a href="https://www.dmopress.com/guide/maps/map-themes/" target="_blank">map theme gallery</a> to see a preview of each style.', 'dmopresss'),
+        'type' => 'select',
+        'choices'  => array(
+			'classic'  => 'Classic',
+			'gotham' => 'Gotham',
+            'grayscale' => 'Grayscale',
+            'nature' => 'Nature',
+            'pear' => 'Pear',
+            'safari' => 'Safari',
+		),
+        'section' => 'dmopress_settings',
+        'settings'   => 'dmopress[google_maps_style]',
+        'active_callback' => '',
+    ) ) );
+
+    $wp_customize->add_setting( 'dmopress[openweathermap_api_key]', array(
+        'type' => 'option',
+        'default' => '',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh', 
+        'sanitize_callback' => '',
+        'sanitize_js_callback' => '',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'dmopress[openweathermap_api_key]', array(
+        'label'   => __( 'OpenWeatherMap API Key', 'dmopress' ),
+        'description' => __( 'This API key is required if you want to use the built-in weather widgets. <a href="https://www.openweathermap.org/appid" target="_blank">Click here</a> to get a key.', 'dmopress' ),
+        'type' => 'text',
+        'section' => 'dmopress_settings',
+        'settings'   => 'dmopress[openweathermap_api_key]',
+        'active_callback' => '',
+    ) ) );
+
+    $wp_customize->add_setting( 'dmopress[openweathermap_default_unit]', array(
+        'type' => 'option',
+        'default' => '',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh', 
+        'sanitize_callback' => '',
+        'sanitize_js_callback' => '',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'dmopress[openweathermap_default_unit]', array(
+        'label'   => __( 'OpenWeatherMap Default Display Unit', 'dmopress' ),
+        'type' => 'select',
+        'choices'  => array(
+            'c'  => 'Celsius',
+            'f' => 'Farenheit',
+            'cf' => 'Celsius / Farenheit',
+            'fc' => 'Farenheit / Celsius'
+        ),
+        'section' => 'dmopress_settings',
+        'settings'   => 'dmopress[openweathermap_default_unit]',
+        'active_callback' => '',
+    ) ) );
+
+}

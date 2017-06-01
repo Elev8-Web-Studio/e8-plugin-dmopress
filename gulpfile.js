@@ -29,12 +29,13 @@ gulp.task('default', function() {
     gulp.watch(['package.json', 'src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json'], ['source']);
     gulp.watch(['package.json', 'src/scss/admin.scss'], ['stylesheets-admin']);
     gulp.watch(['package.json', 'src/scss/public.scss', 'src/shortcodes/**/*.scss'], ['stylesheets-public']);
-    gulp.watch(['package.json', 'src/**/*.js'], ['js']);
+    gulp.watch(['package.json', 'src/js/admin.js'], ['js-admin']);
+    gulp.watch(['package.json', 'src/js/public.js'], ['js-public']);
 });
 
 
 gulp.task('source', function() {
-    gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json'])
+    gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/fonts/**'])
         .pipe(changed(secrets.localPath))
         .pipe(gulp.dest(secrets.localPath));
 });
@@ -65,9 +66,9 @@ gulp.task('stylesheets-public', function() {
         .pipe(gulp.dest(secrets.localPath + '/css'));
 });
 
-gulp.task('js', function() {
+gulp.task('js-admin', function() {
     var filesToProcess = pkg.pluginDependencies.javascript;
-    filesToProcess.push('./src/**/*.js');
+    filesToProcess.push('./src/js/admin.js');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
         .pipe(concat('dmopress-admin.js'))
@@ -77,10 +78,20 @@ gulp.task('js', function() {
         .pipe(gulp.dest(secrets.localPath + '/js'));
 });
 
+gulp.task('js-public', function() {
+    gulp.src(['./src/js/public.js'])
+        .pipe(sourcemaps.init())
+        .pipe(concat('dmopress-public.js'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(secrets.localPath + '/js'));
+});
+
 gulp.task('build', function() {
 
     gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/LICENSE'])
-    .pipe(gulp.dest('build/dmopress'));
+        .pipe(gulp.dest('build/dmopress'));
 
     var adminStylesheets = pkg.pluginDependencies.stylesheets;
     adminStylesheets.push('./src/scss/admin.scss');
@@ -91,7 +102,7 @@ gulp.task('build', function() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(cleancss({ keepBreaks: false }))
         .pipe(gulp.dest('build/dmopress/css'));
-    
+
     var publicStylesheets = [];
     publicStylesheets.push('./src/scss/public.scss');
     gulp.src(publicStylesheets)
@@ -101,7 +112,7 @@ gulp.task('build', function() {
         .pipe(rename({ suffix: '.min' }))
         .pipe(cleancss({ keepBreaks: false }))
         .pipe(gulp.dest('build/dmopress/css'));
-    
+
     var js = pkg.pluginDependencies.javascript;
     js.push('./src/**/*.js');
     gulp.src(js)
