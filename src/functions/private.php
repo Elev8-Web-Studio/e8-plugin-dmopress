@@ -131,3 +131,12 @@ function dmo_get_openweathermap_default_unit(){
     }
 	
 }
+
+//Flush rewrite rules
+function dmopress_flush_rewrite_rules() {
+	if ( get_option( 'myplugin_flush_rewrite_rules_flag' ) ) {
+		flush_rewrite_rules();
+		delete_option( 'myplugin_flush_rewrite_rules_flag' );
+	}
+}
+

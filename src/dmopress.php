@@ -49,3 +49,17 @@ require_once DMOPRESS_PLUGIN_DIR . '/widgets/weather-current-inline/weather-curr
 //3rd Party Integration
 require_once DMOPRESS_PLUGIN_DIR . '/integration/tribe-events-calendar/tribe-events-calendar.php';
 require_once DMOPRESS_PLUGIN_DIR . '/integration/visual-composer/visual-composer.php';
+
+//Plugin Activation Tasks
+function dmopress_activate() {
+    if ( ! get_option( 'myplugin_flush_rewrite_rules_flag' ) ) {
+        add_option( 'myplugin_flush_rewrite_rules_flag', true );
+    }
+}
+register_activation_hook( __FILE__, 'dmopress_activate' );
+
+//Plugin Deactivation Tasks
+function dmopress_deactivate() {
+    dmopress_flush_rewrite_rules();
+}
+register_deactivation_hook( __FILE__, 'dmopress_deactivate' );
