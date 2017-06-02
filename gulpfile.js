@@ -91,8 +91,11 @@ gulp.task('js-public', function() {
 
 gulp.task('build', function() {
 
-    gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/LICENSE', 'src/fonts/**'])
+    gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/LICENSE'])
         .pipe(gulp.dest('build/dmopress'));
+
+    gulp.src(['src/fonts/**'])
+        .pipe(gulp.dest('build/dmopress/fonts'));
 
     var adminStylesheets = pkg.pluginDependencies.stylesheets;
     adminStylesheets.push('./src/scss/admin.scss');
