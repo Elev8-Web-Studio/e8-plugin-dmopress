@@ -95,11 +95,12 @@ function dmopress_get_instagram_handle_from_url($instagram_url){
 
 function dmo_get_google_maps_api_key(){
    $option = get_option('dmopress');
-    if($option['google_maps_api_key'] != ''){
+	if($option['google_maps_api_key'] != ''){
         return $option['google_maps_api_key'];
     } else {
         return null;
     }
+	
 }
 
 function dmo_get_google_maps_theme(){
@@ -110,3 +111,42 @@ function dmo_get_google_maps_theme(){
         return '';
     }
 }
+
+function dmo_get_openweathermap_api_key(){
+   $option = get_option('dmopress');
+	if($option['openweathermap_api_key'] != ''){
+        return $option['openweathermap_api_key'];
+    } else {
+        return null;
+    }
+	
+}
+
+function dmo_get_openweathermap_default_unit(){
+   $option = get_option('dmopress');
+	if($option['openweathermap_default_unit'] != ''){
+        return $option['openweathermap_default_unit'];
+    } else {
+        return 'cf';
+    }
+	
+}
+
+function dmo_get_openweathermap_city_id(){
+   $option = get_option('dmopress');
+	if($option['openweathermap_city_id'] != ''){
+        return $option['openweathermap_city_id'];
+    } else {
+        return '5368361';
+    }
+	
+}
+
+//Flush rewrite rules
+function dmopress_flush_rewrite_rules() {
+	if ( get_option( 'myplugin_flush_rewrite_rules_flag' ) ) {
+		flush_rewrite_rules();
+		delete_option( 'myplugin_flush_rewrite_rules_flag' );
+	}
+}
+

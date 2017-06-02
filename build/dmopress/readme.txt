@@ -1,30 +1,29 @@
 === DMOPress ===
 Contributors: jasonpomerleau
-Tags: travel, tourism, places, map, maps, Google Maps, directory, POI, geo
+Tags: directory, tourism, maps, places, dmo
 Requires at least: 4.7
-Tested up to: 4.7.3
-Stable tag: 2.0.0
+Tested up to: 4.7.5
+Stable tag: 2.1.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Show, share & promote your places of interest. Built for tourism bureaus, Business Improvement Associations & Destination Marketing Organizations.
-
-* Tourism Offices and Tourism Bureaus
-* Business Improvement Associations
-* Multi-Location Tour Operators
-* Any organization that promotes places
-
 == Description ==
+
+Build amazing websites powered by Places. Built for tourism offices, tour operators and other Destination Marketing Organizations.
+
+== Features ==
 
 * Works with any WordPress theme, including your current WordPress website!
 * Adds a robust [Places post type](https://www.dmopress.com/guide/introducing-places/) to WordPress
 * Unlimited [categories, features and tags](https://www.dmopress.com/guide/place-categories-place-features-and-tags/) to show your Places from a variety of different perspectives
 * Easily create [interactive Google Maps](https://www.dmopress.com/guide/maps/) using any one of [6 beautiful built-in map themes](https://www.dmopress.com/guide/map-themes/), or create dynamic maps of many Places based on Categories, Features or Tags.
 * Show popular ratings and reviews with 6 built-in [TripAdvisor Widget shortcodes](https://www.dmopress.com/guide/tripadvisor-widgets/).
+* Show current weather conditions and temperature at your destination with a new [inline weather shortcode and widget](https://www.dmopress.com/guide/shortcodes/dmo-inline-weather/).
+* Embedded JSON-LD Schema.org metadata for richer search engine indexing and enhanced discoverability.
 * WPML translation ready – fully internationalizable!
 * Designer Friendly: Override all plugin HTML and CSS with your own templates.
 * Works with parent and child themes.
-* See our [Theming Guide](https://www.dmopress.com/guide/theming/) and [API documentation](https://www.dmopress.com/guide/) for complete documentation and template samples.
+* See the [Theming Guide](https://www.dmopress.com/guide/theming/) and [API documentation](https://www.dmopress.com/guide/) for complete documentation and template samples.
 * Developer Friendly: [Well-documented API](https://www.dmopress.com/guide/) and easy to extend.
 
 == Installation ==
@@ -39,8 +38,14 @@ For installation instructions, check out our [10 Minute Quick Start Guide](https
 
 == Changelog ==
 
+= 2.1.0 =
+* A new [inline weather widget and shortcode](https://www.dmopress.com/guide/shortcodes/dmo-inline-weather/) that integrates with the OpenWeatherMaps API service. Display current weather conditions for your destination just about anywhere, including Revolution Slider panels.
+* All shortcodes are now integrated with [Visual Composer](https://www.dmopress.com/visual-composer/), a popular WordPress layout manager.
+* Settings for DMOPress can now be managed on the 'classic' settings page (Settings > DMOPress) as well as in the WordPress Customizer.
+* Improved installation experience via automatic refresh of permalinks upon activation.
+
 = 2.0.0 =
-* The DMOPress WordPress Plugin is now FREE and open source. [Follow us on Github](https://twitter.com/dmopress).
+* The DMOPress WordPress Plugin is now FREE and open source. [Follow us on Github](https://github.com/dmopress).
 * DMOPress now works with all WordPress themes!
 * Create beautifully styled maps with [6 gorgeous new map themes](https://www.dmopress.com/guide/map-themes/).
 * All Places now have embedded JSON-LD Schema.org metadata for richer search engine indexing and enhanced discoverability.

@@ -293,7 +293,7 @@ function dmo_get_map_theme_json($theme){
 }
 
 function dmo_is_valid_theme($theme) {
-	$valid_themes = array('gotham','nature','classic','grayscale');
+	$valid_themes = array('gotham','nature','classic','grayscale','pear','safari');
 	if(in_array($theme,$valid_themes)){
 		return true;
 	} else {

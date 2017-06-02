@@ -4,7 +4,7 @@ Plugin Name: DMOPress
 Plugin URI: https://www.dmopress.com/products/dmopress/
 Description: Built specifically for Destination Marketing Organizations, DMOPress helps you show, share and promote your places of interest.
 Author: 2464420 Ontario Inc.
-Version: 2.0.0
+Version: 2.1.0
 Author URI: https://www.dmopress.com
 */
 
@@ -41,7 +41,25 @@ require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/tripadvisor-reviews-button/tripa
 require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/tripadvisor-review-snippets/tripadvisor-review-snippets.php';
 require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/tripadvisor-review-starter/tripadvisor-review-starter.php';
 require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/twitter-timeline/twitter-timeline.php';
+require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/weather-current-inline/weather-current-inline.php';
+
+// Widgets
+require_once DMOPRESS_PLUGIN_DIR . '/widgets/weather-current-inline/weather-current-inline.php';
 
 //3rd Party Integration
 require_once DMOPRESS_PLUGIN_DIR . '/integration/tribe-events-calendar/tribe-events-calendar.php';
+require_once DMOPRESS_PLUGIN_DIR . '/integration/visual-composer/visual-composer.php';
 
+//Plugin Activation Tasks
+function dmopress_activate() {
+    if ( ! get_option( 'myplugin_flush_rewrite_rules_flag' ) ) {
+        add_option( 'myplugin_flush_rewrite_rules_flag', true );
+    }
+}
+register_activation_hook( __FILE__, 'dmopress_activate' );
+
+//Plugin Deactivation Tasks
+function dmopress_deactivate() {
+    dmopress_flush_rewrite_rules();
+}
+register_deactivation_hook( __FILE__, 'dmopress_deactivate' );

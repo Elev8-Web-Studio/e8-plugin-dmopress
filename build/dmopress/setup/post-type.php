@@ -45,6 +45,8 @@ function dmopress_register_places_post_type() {
 	);
 
 	register_post_type( 'places', $args );
+	dmopress_flush_rewrite_rules();
 }
 
-add_action( 'init', 'dmopress_register_places_post_type' );
+add_action( 'init', 'dmopress_register_places_post_type', 10 );
+add_action( 'init', 'dmopress_flush_rewrite_rules', 20 );
