@@ -69,6 +69,7 @@ gulp.task('stylesheets-public', function() {
 gulp.task('js-admin', function() {
     var filesToProcess = pkg.pluginDependencies.javascript;
     filesToProcess.push('./src/js/admin.js');
+    filesToProcess.push('./src/js/jquery.validate.js');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
         .pipe(concat('dmopress-admin.js'))
@@ -90,7 +91,7 @@ gulp.task('js-public', function() {
 
 gulp.task('build', function() {
 
-    gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/LICENSE'])
+    gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/LICENSE', 'src/fonts/**'])
         .pipe(gulp.dest('build/dmopress'));
 
     var adminStylesheets = pkg.pluginDependencies.stylesheets;
@@ -113,10 +114,17 @@ gulp.task('build', function() {
         .pipe(cleancss({ keepBreaks: false }))
         .pipe(gulp.dest('build/dmopress/css'));
 
-    var js = pkg.pluginDependencies.javascript;
-    js.push('./src/**/*.js');
-    gulp.src(js)
+    var jsAdminFiles = pkg.pluginDependencies.javascript;
+    jsAdminFiles.push('./src/js/admin.js');
+    jsAdminFiles.push('./src/js/jquery.validate.js');
+    gulp.src(jsAdminFiles)
         .pipe(concat('dmopress-admin.js'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(gulp.dest('build/dmopress/js'));
+
+    gulp.src(['./src/js/public.js'])
+        .pipe(concat('dmopress-public.js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
         .pipe(gulp.dest('build/dmopress/js'));
