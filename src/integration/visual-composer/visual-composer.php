@@ -64,7 +64,7 @@ function dmopress_register_visual_composer_shortcodes() {
             "class" => "",
             "heading" => __( "Categories", "dmopress_textdomain" ),
             "param_name" => "categories",
-            "description" => __( "One or more comma-separated strings representing slugs for Place Categories.", "dmopress_textdomain" )
+            "description" => __( 'One or more comma-separated strings representing slugs for <a href="https://www.dmopress.com/guide/place-categories-place-features-and-tags/" target="_blank">Place Categories</a>.', 'dmopress_textdomain' )
          ),
          array(
             "type" => "textfield",
@@ -72,7 +72,7 @@ function dmopress_register_visual_composer_shortcodes() {
             "class" => "",
             "heading" => __( "Features", "dmopress_textdomain" ),
             "param_name" => "Features",
-            "description" => __( "One or more comma-separated strings representing slugs for Place Features.", "dmopress_textdomain" )
+            "description" => __( 'One or more comma-separated strings representing slugs for <a href="https://www.dmopress.com/guide/place-categories-place-features-and-tags/" target="_blank">Place Features</a>.', 'dmopress_textdomain' )
          ),
          array(
             "type" => "textfield",
@@ -80,7 +80,7 @@ function dmopress_register_visual_composer_shortcodes() {
             "class" => "",
             "heading" => __( "Tags", "dmopress_textdomain" ),
             "param_name" => "Tags",
-            "description" => __( "One or more comma-separated strings representing slugs for WordPress Tags.", "dmopress_textdomain" )
+            "description" => __( 'One or more comma-separated strings representing slugs for <a href="https://www.dmopress.com/guide/place-categories-place-features-and-tags/" target="_blank">WordPress Tags</a>.', 'dmopress_textdomain' )
          ),
          array(
             "type" => "textfield",
@@ -96,7 +96,7 @@ function dmopress_register_visual_composer_shortcodes() {
             "class" => "",
             "heading" => __( "Map Theme", "dmopress_textdomain" ),
             "param_name" => "theme",
-            "description" => __( "Sets the style and color scheme of the map. It’s only necessary to set this parameter if you want to override the default map theme you’ve chosen in Settings > DMOPress > Google Maps.", "dmopress_textdomain" ),
+            "description" => __( 'Sets the <a href="https://www.dmopress.com/guide/maps/map-themes/" target="_blank">style and color scheme</a> of the map. It’s only necessary to set this parameter if you want to override the default map theme you’ve chosen in Settings > DMOPress > Google Maps.', "dmopress_textdomain" ),
             "value" => array(
                 __( "Default", "dmopress_textdomain" ) => 'default',
                 __( "Classic", "dmopress_textdomain" ) => 'classic',
