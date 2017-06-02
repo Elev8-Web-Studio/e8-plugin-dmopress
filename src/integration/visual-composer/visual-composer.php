@@ -18,9 +18,9 @@ function dmopress_register_visual_composer_shortcodes() {
             "param_name" => "unit",
             "value" => array(
                 __( "Celsius", "dmopress_textdomain" ) => 'c',
-                __( "Farenheit", "dmopress_textdomain" ) => 'f',
-                __( "Celsius / Farenheit", "dmopress_textdomain" ) => 'cf',
-                __( "Farenheit / Celsius", "dmopress_textdomain" ) => 'fc'
+                __( "Fahrenheit", "dmopress_textdomain" ) => 'f',
+                __( "Celsius / Fahrenheit", "dmopress_textdomain" ) => 'cf',
+                __( "Fahrenheit / Celsius", "dmopress_textdomain" ) => 'fc'
             )
          ),
          array(

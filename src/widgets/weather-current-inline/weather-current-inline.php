@@ -52,9 +52,9 @@ class DMOPress_Weather_Inline extends WP_Widget {
 		<label for="<?php echo esc_attr( $this->get_field_id( 'unit' ) ); ?>"><?php _e( esc_attr( 'Display Unit:' ) ); ?></label> 
 			<select id="<?php echo esc_attr( $this->get_field_id( 'unit' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'unit' ) ); ?>">
 				<option value="c" <?php if(esc_attr( $unit ) == 'c'){ echo ' selected';} ?>>Celsius</option>
-				<option value="f" <?php if(esc_attr( $unit ) == 'f'){ echo ' selected';} ?>>Farenheit</option>
-				<option value="cf" <?php if(esc_attr( $unit ) == 'cf'){ echo ' selected';} ?>>Celsius / Farenheit</option>
-				<option value="fc" <?php if(esc_attr( $unit ) == 'fc'){ echo ' selected';} ?>>Farenheit / Celsius</option>
+				<option value="f" <?php if(esc_attr( $unit ) == 'f'){ echo ' selected';} ?>>Fahrenheit</option>
+				<option value="cf" <?php if(esc_attr( $unit ) == 'cf'){ echo ' selected';} ?>>Celsius / Fahrenheit</option>
+				<option value="fc" <?php if(esc_attr( $unit ) == 'fc'){ echo ' selected';} ?>>Fahrenheit / Celsius</option>
 			</select>
 		</p>
 		<?php 

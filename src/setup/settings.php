@@ -175,9 +175,9 @@ class MySettingsPage {
 
         $available_options = array(
             'c' => 'Celsius',
-            'f' => 'Farenheit',
-            'cf' => 'Celsius / Farenheit',
-            'fc' => 'Farenheit / Celsius'
+            'f' => 'Fahrenheit',
+            'cf' => 'Celsius / Fahrenheit',
+            'fc' => 'Fahrenheit / Celsius'
         );
 
         $output = '<select name="dmopress[openweathermap_default_unit]">';
@@ -355,9 +355,9 @@ function dmopress_customizer( $wp_customize ) {
         'type' => 'select',
         'choices'  => array(
             'c'  => 'Celsius',
-            'f' => 'Farenheit',
-            'cf' => 'Celsius / Farenheit',
-            'fc' => 'Farenheit / Celsius'
+            'f' => 'Fahrenheit',
+            'cf' => 'Celsius / Fahrenheit',
+            'fc' => 'Fahrenheit / Celsius'
         ),
         'section' => 'dmopress_settings',
         'settings'   => 'dmopress[openweathermap_default_unit]',
