@@ -62,7 +62,7 @@ class MySettingsPage {
 
         add_settings_section(
             'dmopress_settings_section_google_maps',
-            __('Google Maps Settings', 'dmopress_textdomain'),
+            __('<hr>Google Maps Settings', 'dmopress_textdomain'),
             array( $this, 'print_section_info' ),
             'dmopress-setting-admin'
         );
@@ -85,7 +85,7 @@ class MySettingsPage {
 
         add_settings_section(
             'dmopress_settings_section_openweathermap',
-            __('OpenWeatherMap Settings', 'dmopress_textdomain'),
+            __('<hr>OpenWeatherMap Settings', 'dmopress_textdomain'),
             array( $this, 'print_section_info' ),
             'dmopress-setting-admin'
         );
@@ -102,6 +102,14 @@ class MySettingsPage {
             'openweathermap_default_unit', 
             __('OpenWeatherMap Default Unit Display','dmopress_textdomain'), 
             array( $this, 'openweathermap_default_unit_callback' ), 
+            'dmopress-setting-admin', 
+            'dmopress_settings_section_openweathermap'
+        );
+
+        add_settings_field(
+            'openweathermap_city_id', 
+            __('OpenWeatherMap City ID','dmopress_textdomain'), 
+            array( $this, 'openweathermap_city_id_callback' ), 
             'dmopress-setting-admin', 
             'dmopress_settings_section_openweathermap'
         );
@@ -127,6 +135,9 @@ class MySettingsPage {
         if(isset( $input['openweathermap_default_unit'])){
             $new_input['openweathermap_default_unit'] = sanitize_text_field( $input['openweathermap_default_unit'] );
         }
+        if(isset( $input['openweathermap_city_id'])){
+            $new_input['openweathermap_city_id'] = sanitize_text_field( $input['openweathermap_city_id'] );
+        }
 
         return $new_input;
     }
@@ -145,6 +156,7 @@ class MySettingsPage {
             '<input type="text" size="45" id="google-maps-api-key" name="dmopress[google_maps_api_key]" value="%s" placeholder="" />',
             isset( $this->options['google_maps_api_key'] ) ? esc_attr( $this->options['google_maps_api_key']) : ''
         );
+        echo '<p class="description">A Google Maps API Key is required to use map-related shortcodes and widgets. The <a href="https://www.dmopress.com/guide/start/" target="_blank">10 Minute Quick Start Guide</a> has information on how to obtain a key.</p>';
     }
 
     public function openweathermap_api_key_callback($args) {
@@ -154,6 +166,8 @@ class MySettingsPage {
             '<input type="text" size="45" id="openweathermap-api-key" name="dmopress[openweathermap_api_key]" value="%s" placeholder="" />',
             isset( $this->options['openweathermap_api_key'] ) ? esc_attr( $this->options['openweathermap_api_key']) : ''
         );
+        echo '<p class="description">An <a href="https://www.dmopress.com/openweathermap-howto/" target="_blank">OpenWeatherMaps API Key for Current Weather Data</a> is required.</p>';
+
     }
 
     public function openweathermap_default_unit_callback($args) {
@@ -178,9 +192,17 @@ class MySettingsPage {
         
         $output .= '</select>';
 
-        print(
-            $output
+        print($output);
+    }
+
+    public function openweathermap_city_id_callback($args) {
+        extract($args);
+
+        printf(
+            '<input type="text" size="45" id="openweathermap-city-id" name="dmopress[openweathermap_city_id]" value="%s" placeholder="" />',
+            isset( $this->options['openweathermap_city_id'] ) ? esc_attr( $this->options['openweathermap_city_id']) : ''
         );
+        echo '<p class="description">An <a href="https://www.dmopress.com/openweathermap-howto/" target="_blank">OpenWeatherMaps City ID</a> is required.</p>';
     }
 
     public function google_maps_style_callback($args) {
@@ -207,9 +229,8 @@ class MySettingsPage {
 
         $output .= '</select>';
 
-        print(
-            $output
-        );
+        print($output);
+        echo '<p class="description">To preview these options, check out the <a href="https://www.dmopress.com/guide/maps/map-themes/" target="_blank">Map Theme Gallery</a></p>';
     }
 }
 
@@ -233,7 +254,6 @@ function dmo_add_settings_link($links, $file) {
     return $links;
 }
 add_filter('plugin_action_links', 'dmo_add_settings_link', 10, 2 );
-
 
 
 function dmopress_plugin_row_meta( $links, $file ) {
@@ -270,7 +290,7 @@ function dmopress_customizer( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'dmopress[google_maps_api_key]', array(
 		'label'   => __( 'Google Maps API Key', 'dmopress' ),
-		'description' => __( 'Need help getting a key? Check out the <a href="https://www.dmopress.com/guide/start/" target="_blank">10 Minute Quick Start Guide</a>.', 'dmopress' ),
+		'description' => __( 'A Google Maps API Key is required to use map-related shortcodes and widgets. The <a href="https://www.dmopress.com/guide/start/" target="_blank">10 Minute Quick Start Guide</a> has information on how to obtain a key.', 'dmopress' ),
         'type' => 'text',
 		'section' => 'dmopress_settings',
 		'settings'   => 'dmopress[google_maps_api_key]',
@@ -314,7 +334,7 @@ function dmopress_customizer( $wp_customize ) {
 
     $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'dmopress[openweathermap_api_key]', array(
         'label'   => __( 'OpenWeatherMap API Key', 'dmopress' ),
-        'description' => __( 'This API key is required if you want to use the built-in weather widgets. <a href="https://www.openweathermap.org/appid" target="_blank">Click here</a> to get a key.', 'dmopress' ),
+        'description' => __('An <a href="https://www.dmopress.com/openweathermap-howto/" target="_blank">OpenWeatherMaps API Key</a> is required.', 'dmopress_textdomain'),
         'type' => 'text',
         'section' => 'dmopress_settings',
         'settings'   => 'dmopress[openweathermap_api_key]',
@@ -341,6 +361,24 @@ function dmopress_customizer( $wp_customize ) {
         ),
         'section' => 'dmopress_settings',
         'settings'   => 'dmopress[openweathermap_default_unit]',
+        'active_callback' => '',
+    ) ) );
+
+    $wp_customize->add_setting( 'dmopress[openweathermap_city_id]', array(
+        'type' => 'option',
+        'default' => '5368361',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh', 
+        'sanitize_callback' => '',
+        'sanitize_js_callback' => '',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'dmopress[openweathermap_city_id]', array(
+        'label'   => __( 'OpenWeatherMap City ID', 'dmopress_textdomain' ),
+        'description' => __('An <a href="https://www.dmopress.com/openweathermap-howto/" target="_blank">OpenWeatherMaps City ID</a> is required.', 'dmopress_textdomain'),
+        'type' => 'text',
+        'section' => 'dmopress_settings',
+        'settings'   => 'dmopress[openweathermap_city_id]',
         'active_callback' => '',
     ) ) );
 

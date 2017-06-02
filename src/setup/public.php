@@ -16,7 +16,8 @@ function dmopress_enqueue_public_script() {
     // Inject dynamic client-side data 
     $injected_content = array(
       'openWeatherMapAPIKey' => dmo_get_openweathermap_api_key(),
-      'openWeatherMapDefaultUnit' => dmo_get_openweathermap_default_unit()
+      'openWeatherMapDefaultUnit' => dmo_get_openweathermap_default_unit(),
+      'openWeatherMapCityId' => dmo_get_openweathermap_city_id()
     );
     wp_localize_script( 'js-public', 'injectedContent', $injected_content );
     wp_enqueue_script('js-public');

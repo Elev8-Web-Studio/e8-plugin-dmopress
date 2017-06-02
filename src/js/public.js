@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
 
 function fetchCurrentWeather() {
     jQuery.ajax({
-        url: 'http://api.openweathermap.org/data/2.5/weather?id=6058560&units=metric&APPID=' + injectedContent.openWeatherMapAPIKey,
+        url: 'http://api.openweathermap.org/data/2.5/weather?id=' + injectedContent.openWeatherMapCityId + '&units=metric&APPID=' + injectedContent.openWeatherMapAPIKey,
         type: 'GET',
         dataType: 'jsonp',
         contentType: "application/json; charset=utf-8",

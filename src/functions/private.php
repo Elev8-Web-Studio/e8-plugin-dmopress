@@ -132,6 +132,16 @@ function dmo_get_openweathermap_default_unit(){
 	
 }
 
+function dmo_get_openweathermap_city_id(){
+   $option = get_option('dmopress');
+	if($option['openweathermap_city_id'] != ''){
+        return $option['openweathermap_city_id'];
+    } else {
+        return '5368361';
+    }
+	
+}
+
 //Flush rewrite rules
 function dmopress_flush_rewrite_rules() {
 	if ( get_option( 'myplugin_flush_rewrite_rules_flag' ) ) {
