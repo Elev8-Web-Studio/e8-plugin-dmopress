@@ -68,8 +68,8 @@ gulp.task('stylesheets-public', function() {
 
 gulp.task('js-admin', function() {
     var filesToProcess = pkg.pluginDependencies.javascript;
-    filesToProcess.push('./src/js/admin.js');
     filesToProcess.push('./src/js/jquery.validate.js');
+    filesToProcess.push('./src/js/admin.js');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
         .pipe(concat('dmopress-admin.js'))
@@ -118,8 +118,8 @@ gulp.task('build', function() {
         .pipe(gulp.dest('build/dmopress/css'));
 
     var jsAdminFiles = pkg.pluginDependencies.javascript;
-    jsAdminFiles.push('./src/js/admin.js');
     jsAdminFiles.push('./src/js/jquery.validate.js');
+    jsAdminFiles.push('./src/js/admin.js');
     gulp.src(jsAdminFiles)
         .pipe(concat('dmopress-admin.js'))
         .pipe(rename({ suffix: '.min' }))
