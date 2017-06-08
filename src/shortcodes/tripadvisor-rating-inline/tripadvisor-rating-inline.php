@@ -38,7 +38,7 @@ function dmopress_tripadvisor_rating_inline($atts, $content = null){
 
         return ob_get_clean();
     } else {
-        echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
+        //echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
     }
 }
 add_shortcode( 'dmo-tripadvisor-rating-inline', 'dmopress_tripadvisor_rating_inline' );

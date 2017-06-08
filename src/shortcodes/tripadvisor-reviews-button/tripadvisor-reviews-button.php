@@ -25,7 +25,6 @@ function dmopress_tripadvisor_reviews_button($atts, $content = null){
         ob_start();
 ?>
 
-
 <div id="TA_linkingWidgetRedesign237" class="TA_linkingWidgetRedesign <?php echo esc_attr($atts['class']); ?>">
     <ul id="GTpQWliPz9s" class="TA_links Uda7wuHu">
         <li id="iX1uh9DS0RKB" class="gt1WZM">
@@ -39,7 +38,7 @@ function dmopress_tripadvisor_reviews_button($atts, $content = null){
 
         return ob_get_clean();
     } else {
-        echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
+        //echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
     }
 }
 add_shortcode( 'dmo-tripadvisor-reviews-button', 'dmopress_tripadvisor_reviews_button' );

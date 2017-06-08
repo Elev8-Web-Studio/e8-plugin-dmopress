@@ -39,7 +39,7 @@ function dmopress_tripadvisor_featured_button($atts, $content = null){
 
         return ob_get_clean();
     } else {
-        echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
+        //echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
     }
 }
 add_shortcode( 'dmo-tripadvisor-featured-button', 'dmopress_tripadvisor_featured_button' );
