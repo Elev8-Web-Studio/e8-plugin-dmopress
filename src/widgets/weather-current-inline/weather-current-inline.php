@@ -11,7 +11,7 @@ class DMOPress_Weather_Inline extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array( 
-			'classname' => 'widget_text',
+			'classname' => 'widget_weather_inline widget_text',
 			'description' => 'Displays an inline weather widget.',
 		);
 		parent::__construct( 'weather_inline', 'Inline Weather', $widget_ops );
