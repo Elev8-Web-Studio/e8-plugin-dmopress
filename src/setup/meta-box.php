@@ -119,7 +119,7 @@ function dmopress_place_meta_box_callback($post) {
                                     <option value="none" <?php if($symbol_var == 'none'){ echo 'selected';} ?>><?php _e('None','citylights'); ?></option>
                                     <option value="map-icon-art-gallery" <?php if($symbol_var == 'map-icon-art-gallery'){ echo 'selected';} ?>><?php _e('Art Gallery','citylights'); ?></option>
                                     <?php 
-                                    $symbols = dmopress_get_symbols_array();
+                                    $symbols = dmo_get_symbols_array();
                                     foreach ($symbols as $class => $label) {
                                         echo '<option value="'.$class.'"';
                                         if($symbol_var == $class) {

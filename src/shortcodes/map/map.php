@@ -22,6 +22,7 @@ function dmopress_map($atts, $content = null){
 		'marker-stroke-opacity' => '1',
 		'marker-fill-color' => '',
 		'marker-fill-opacity' => '1',
+		'marker-label-color' => '',
 		'marker-scale' => '1',
 		'marker-svg-path' => '',
 	), $atts);
@@ -102,7 +103,11 @@ function dmopress_map($atts, $content = null){
 
 	$marker_stroke_color = esc_attr($atts['marker-stroke-color']);
 	if($marker_stroke_color == ''){
-		$marker_stroke_color = $theme_defaults[$theme]['marker-stroke-color'];
+		if(get_theme_mod('dmopress_color_map_marker_stroke') != ''){
+			$marker_stroke_color = get_theme_mod('dmopress_color_map_marker_stroke');
+		} else {
+			$marker_stroke_color = $theme_defaults[$theme]['marker-stroke-color'];
+		}
 	}
 
 	$marker_stroke_opacity = esc_attr($atts['marker-stroke-opacity']);
@@ -112,12 +117,25 @@ function dmopress_map($atts, $content = null){
 
 	$marker_fill_color = esc_attr($atts['marker-fill-color']);
 	if($marker_fill_color == ''){
-		$marker_fill_color = $theme_defaults[$theme]['marker-fill-color'];
+		if(get_theme_mod('dmopress_color_map_marker_fill') != ''){
+			$marker_fill_color = get_theme_mod('dmopress_color_map_marker_fill');
+		} else {
+			$marker_fill_color = $theme_defaults[$theme]['marker-fill-color'];
+		}
 	}
 
 	$marker_fill_opacity = esc_attr($atts['marker-fill-opacity']);
 	if($marker_fill_opacity == ''){
 		$marker_fill_opacity = $theme_defaults[$theme]['marker-fill-opacity'];
+	}
+
+	$marker_label_color = esc_attr($atts['marker-label-color']);
+	if($marker_label_color == ''){
+		if(get_theme_mod('dmopress_color_map_marker_label') != ''){
+			$marker_label_color = get_theme_mod('dmopress_color_map_marker_label');
+		} else {
+			$marker_label_color = $theme_defaults[$theme]['marker-label-color'];
+		}
 	}
 
 	$marker_scale = esc_attr($atts['marker-scale']);
@@ -310,7 +328,7 @@ function dmopress_map($atts, $content = null){
 					var labelContent = String.fromCodePoint(parseInt(mapchars[locations[i][5]], 16))
 					console.log(labelContent);
 					label = {
-						color: '#ffffff',
+						color: '<?php echo $marker_label_color; ?>',
 						fontFamily: 'map-icons',
 						fontSize: '17px',
 						fontWeight: 'bold',
