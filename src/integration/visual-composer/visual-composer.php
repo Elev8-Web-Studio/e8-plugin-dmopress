@@ -40,7 +40,7 @@ function dmopress_register_visual_composer_shortcodes() {
       "base" => "dmo-map",
       "class" => "",
       "category" => __( "Content", "dmopress_textdomain"),
-      "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-tripadvisor.png",
+      "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-map.png",
       "params" => array(
          array(
             "type" => "textfield",
@@ -102,6 +102,7 @@ function dmopress_register_visual_composer_shortcodes() {
                 __( "Classic", "dmopress_textdomain" ) => 'classic',
                 __( "Grayscale", "dmopress_textdomain" ) => 'grayscale',
                 __( "Gotham", "dmopress_textdomain" ) => 'gotham',
+                __( "Midnight", "dmopress_textdomain" ) => 'midnight',
                 __( "Nature", "dmopress_textdomain" ) => 'nature',
                 __( "Pear", "dmopress_textdomain" ) => 'pear',
                 __( "Safari", "dmopress_textdomain" ) => 'safari'

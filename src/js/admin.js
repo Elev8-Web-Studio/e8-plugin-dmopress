@@ -64,6 +64,7 @@ jQuery(document).ready(function($) {
                 var long = data.results[0].geometry.location.lng;
                 jQuery('input[name=latitude]').val(lat);
                 jQuery('input[name=longitude]').val(long);
+                //google.maps.event.trigger(map, 'resize');
             } else {
                 //console.log('Data: ' + data.status);
                 jQuery('#geocode-error').show();
@@ -77,5 +78,18 @@ jQuery(document).ready(function($) {
 
     });
 
+    jQuery('select.select2').select2({
+        templateResult: formatState,
+        templateSelection: formatState
+    });
 
 });
+
+
+function formatState(state) {
+    if (!state.id) { return state.text; }
+    var $state = jQuery(
+        '<span><i class="map-icon ' + state.element.value.toLowerCase() + '"></i>&nbsp; ' + state.text + '</span>'
+    );
+    return $state;
+};

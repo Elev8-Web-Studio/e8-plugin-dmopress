@@ -100,11 +100,39 @@ function dmopress_place_meta_box_callback($post) {
                             echo '<p><label for="telephone">';
                             _e( 'Telephone', 'dmopress_textdomain' );
                             echo ': ';
-                            echo '</label><br /> ';
+                            echo '</label><br> ';
                             echo '<input type="text" style="width: 100%" id="telephone" name="telephone" value="' . esc_attr( $telephone_var ) . '" size="25" /></p>';
 
                             ?>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <?php 
+
+                            $symbol_var = get_post_meta( $post->ID, 'symbol', true );
+
+                            ?>
+                            <p><label for="symbol">
+                                <?php _e('Symbol', 'citylights'); ?>:<br>
+                                <select id="symbol" name="symbol" class="icon-select select2" style="width: 100%">
+                                    <option value="none" <?php if($symbol_var == 'none'){ echo 'selected';} ?>><?php _e('None','citylights'); ?></option>
+                                    <option value="map-icon-art-gallery" <?php if($symbol_var == 'map-icon-art-gallery'){ echo 'selected';} ?>><?php _e('Art Gallery','citylights'); ?></option>
+                                    <?php 
+                                    $symbols = dmopress_get_symbols_array();
+                                    foreach ($symbols as $class => $label) {
+                                        echo '<option value="'.$class.'"';
+                                        if($symbol_var == $class) {
+                                            echo ' selected';
+                                        }
+                                        echo '>'.$label.'</option>';
+                                    }
+                                    ?>
+                                </select>
+                            </label></p>
+                            
+                        </div>
+                        <div class="col-md-6"></div>
                     </div>
                             <div class="row">
                                 <div class="col-md-6">
@@ -297,6 +325,9 @@ function dmopress_place_save_meta_box_data($post_id) {
     if (!isset( $_POST['telephone'])) {
         return;
     }
+    if (!isset( $_POST['symbol'])) {
+        return;
+    }
     if (!isset( $_POST['website_url'])) {
         return;
     }
@@ -331,6 +362,7 @@ function dmopress_place_save_meta_box_data($post_id) {
     $city = sanitize_text_field($_POST['city']);
     $stateprov = sanitize_text_field($_POST['stateprov']);
     $zip = sanitize_text_field($_POST['zip']);
+    $symbol = sanitize_text_field($_POST['symbol']);
     $telephone = sanitize_text_field($_POST['telephone']);
     $website_url = sanitize_text_field($_POST['website_url']);
     $facebook_url = sanitize_text_field($_POST['facebook_url']);
@@ -347,6 +379,7 @@ function dmopress_place_save_meta_box_data($post_id) {
     update_post_meta($post_id, 'city', $city);
     update_post_meta($post_id, 'stateprov', $stateprov);
     update_post_meta($post_id, 'zip', $zip);
+    update_post_meta($post_id, 'symbol', $symbol);
     update_post_meta($post_id, 'telephone', $telephone);
     update_post_meta($post_id, 'website_url', dmopress_normalize_url($website_url));
     update_post_meta($post_id, 'facebook_url', dmopress_normalize_url($facebook_url));

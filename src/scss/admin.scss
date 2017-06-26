@@ -1,4 +1,5 @@
-
+@import 'map-icons.scss';
+@import 'select2.scss';
 .dmopress-admin-badge-good {
     display: inline;
     font-size: 13px;
@@ -29,6 +30,18 @@
     background-repeat: no-repeat;
     height: 273px;
     margin-top: 3px;
+}
+
+.icon-select {
+    width: 100%;
+    border-radius: 0;
+    font-family: 'map-icons';
+    option[value='map-icon-circle']:before {
+        background-color: Red;
+        font-family: 'arial';
+        content: "77";
+        font-size: 16px;
+    }
 }
 
 #place-details-section {

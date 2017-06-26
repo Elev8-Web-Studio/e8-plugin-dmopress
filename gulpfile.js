@@ -68,6 +68,7 @@ gulp.task('stylesheets-public', function() {
 
 gulp.task('js-admin', function() {
     var filesToProcess = pkg.pluginDependencies.javascript;
+    filesToProcess.push('./src/js/jquery.select2.js');
     filesToProcess.push('./src/js/jquery.validate.js');
     filesToProcess.push('./src/js/admin.js');
     gulp.src(filesToProcess)
@@ -118,6 +119,7 @@ gulp.task('build', function() {
         .pipe(gulp.dest('build/dmopress/css'));
 
     var jsAdminFiles = pkg.pluginDependencies.javascript;
+    jsAdminFiles.push('./src/js/jquery.select2.js');
     jsAdminFiles.push('./src/js/jquery.validate.js');
     jsAdminFiles.push('./src/js/admin.js');
     gulp.src(jsAdminFiles)
