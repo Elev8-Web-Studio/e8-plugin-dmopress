@@ -107,7 +107,7 @@ function dmopress_place_meta_box_callback($post) {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-xs-12">
                             <?php 
 
                             $symbol_var = get_post_meta( $post->ID, 'symbol', true );
@@ -132,7 +132,6 @@ function dmopress_place_meta_box_callback($post) {
                             </label></p>
                             
                         </div>
-                        <div class="col-md-6"></div>
                     </div>
                             <div class="row">
                                 <div class="col-md-6">
