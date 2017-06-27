@@ -17,7 +17,7 @@ function dmopress_map($atts, $content = null){
 		'width' => '100%',
 		'zoom' => 14,
 		'scrollwheel' => 'true',
-		'marker-stroke-weight' => '1',
+		'marker-stroke-weight' => '',
 		'marker-stroke-color' => '',
 		'marker-stroke-opacity' => '1',
 		'marker-fill-color' => '',
@@ -153,6 +153,7 @@ function dmopress_map($atts, $content = null){
 	$query_args = array(
 		'post_type' => 'places',
 		'post_status' => 'publish',
+		'posts_per_page'=> -1,
 		'post__in' => $places,
 		'tag_slug__in' => $tags,
 	);
@@ -235,7 +236,7 @@ function dmopress_map($atts, $content = null){
 				zoom: <?php echo $zoom; ?>,
 				scrollwheel: <?php echo $scrollwheel; ?>,
 				styles: <?php echo $theme_json; ?>,
-				mapTypeId: 'terrain'
+				mapTypeId: 'roadmap'
 			};
 
 			var mapElement = document.getElementById('<?php echo $map_id; ?>');
@@ -252,13 +253,10 @@ function dmopress_map($atts, $content = null){
 				strokeWeight: <?php echo $marker_stroke_weight; ?>,
 				strokeColor: '<?php echo $marker_stroke_color; ?>',
 				strokeOpacity: <?php echo $marker_stroke_opacity; ?>,
-				anchor: new google.maps.Point(30,40),
+				anchor: new google.maps.Point(36,48),
 				scale: <?php echo $marker_scale; ?>,
-				labelOrigin: new google.maps.Point(34, 26)
+				labelOrigin: new google.maps.Point(37, 28)
 			}
-
-			//var marker, i;
-			//var image = new google.maps.MarkerImage('<?php echo plugins_url() ?>/dmopress/shortcodes/map/themes/<?php echo $theme ?>/marker.png', null, null, null, new google.maps.Size(30,40));
 
 			function CenterControl(controlDiv, map) {
 				
@@ -330,8 +328,8 @@ function dmopress_map($atts, $content = null){
 					label = {
 						color: '<?php echo $marker_label_color; ?>',
 						fontFamily: 'map-icons',
-						fontSize: '17px',
-						fontWeight: 'bold',
+						fontSize: '19px',
+						fontWeight: 'normal',
 						text: labelContent
 					};
 				} else {
