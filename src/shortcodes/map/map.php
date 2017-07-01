@@ -324,7 +324,6 @@ function dmopress_map($atts, $content = null){
 				if(locations[i][5] != 'none' && locations[i][5] != ''){
 					//var labelContent = '\u';
 					var labelContent = String.fromCodePoint(parseInt(mapchars[locations[i][5]], 16))
-					console.log(labelContent);
 					label = {
 						color: '<?php echo $marker_label_color; ?>',
 						fontFamily: 'map-icons',
