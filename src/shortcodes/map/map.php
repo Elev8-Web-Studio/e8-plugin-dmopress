@@ -236,7 +236,8 @@ function dmopress_map($atts, $content = null){
 				zoom: <?php echo $zoom; ?>,
 				scrollwheel: <?php echo $scrollwheel; ?>,
 				styles: <?php echo $theme_json; ?>,
-				mapTypeId: 'roadmap'
+				mapTypeId: 'roadmap',
+				clickableIcons: false
 			};
 
 			var mapElement = document.getElementById('<?php echo $map_id; ?>');
