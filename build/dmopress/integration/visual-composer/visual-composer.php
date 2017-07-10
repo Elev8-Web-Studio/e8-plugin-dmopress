@@ -7,7 +7,7 @@ function dmopress_register_visual_composer_shortcodes() {
       "name" => __( "DMOPress Inline Weather", "dmopress_textdomain" ),
       "base" => "dmo-inline-weather",
       "class" => "",
-      "category" => __( "Content", "dmopress_textdomain"),
+      "category" => __( "DMOPress", "dmopress_textdomain"),
       "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-weather-inline.png",
       "params" => array(
          array(
@@ -39,8 +39,8 @@ function dmopress_register_visual_composer_shortcodes() {
       "name" => __( "DMOPress Map", "dmopress_textdomain" ),
       "base" => "dmo-map",
       "class" => "",
-      "category" => __( "Content", "dmopress_textdomain"),
-      "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-tripadvisor.png",
+      "category" => __( "DMOPress", "dmopress_textdomain"),
+      "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-map.png",
       "params" => array(
          array(
             "type" => "textfield",
@@ -102,6 +102,7 @@ function dmopress_register_visual_composer_shortcodes() {
                 __( "Classic", "dmopress_textdomain" ) => 'classic',
                 __( "Grayscale", "dmopress_textdomain" ) => 'grayscale',
                 __( "Gotham", "dmopress_textdomain" ) => 'gotham',
+                __( "Midnight", "dmopress_textdomain" ) => 'midnight',
                 __( "Nature", "dmopress_textdomain" ) => 'nature',
                 __( "Pear", "dmopress_textdomain" ) => 'pear',
                 __( "Safari", "dmopress_textdomain" ) => 'safari'
@@ -174,7 +175,7 @@ function dmopress_register_visual_composer_shortcodes() {
       "name" => __( "TripAdvisor Featured Button", "dmopress_textdomain" ),
       "base" => "dmo-tripadvisor-featured-button",
       "class" => "",
-      "category" => __( "Content", "dmopress_textdomain"),
+      "category" => __( "DMOPress", "dmopress_textdomain"),
       "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-tripadvisor.png",
       "params" => array(
          array(
@@ -201,7 +202,7 @@ function dmopress_register_visual_composer_shortcodes() {
       "name" => __( "TripAdvisor Rating Badge", "dmopress_textdomain" ),
       "base" => "dmo-tripadvisor-rating-badge",
       "class" => "",
-      "category" => __( "Content", "dmopress_textdomain"),
+      "category" => __( "DMOPress", "dmopress_textdomain"),
       "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-tripadvisor.png",
       "params" => array(
          array(
@@ -240,7 +241,7 @@ function dmopress_register_visual_composer_shortcodes() {
       "name" => __( "TripAdvisor Rating Inline", "dmopress_textdomain" ),
       "base" => "dmo-tripadvisor-rating-inline",
       "class" => "",
-      "category" => __( "Content", "dmopress_textdomain"),
+      "category" => __( "DMOPress", "dmopress_textdomain"),
       "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-tripadvisor.png",
       "params" => array(
          array(
@@ -267,7 +268,7 @@ function dmopress_register_visual_composer_shortcodes() {
       "name" => __( "TripAdvisor Review Snippets", "dmopress_textdomain" ),
       "base" => "dmo-tripadvisor-review-snippets",
       "class" => "",
-      "category" => __( "Content", "dmopress_textdomain"),
+      "category" => __( "DMOPress", "dmopress_textdomain"),
       "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-tripadvisor.png",
       "params" => array(
          array(
@@ -306,7 +307,7 @@ function dmopress_register_visual_composer_shortcodes() {
       "name" => __( "TripAdvisor Review Starter", "dmopress_textdomain" ),
       "base" => "dmo-tripadvisor-review-starter",
       "class" => "",
-      "category" => __( "Content", "dmopress_textdomain"),
+      "category" => __( "DMOPress", "dmopress_textdomain"),
       "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-tripadvisor.png",
       "params" => array(
          array(
@@ -333,7 +334,7 @@ function dmopress_register_visual_composer_shortcodes() {
       "name" => __( "TripAdvisor Reviews Button", "dmopress_textdomain" ),
       "base" => "dmo-tripadvisor-reviews-button",
       "class" => "",
-      "category" => __( "Content", "dmopress_textdomain"),
+      "category" => __( "DMOPress", "dmopress_textdomain"),
       "icon" => plugins_url() . "/dmopress/integration/visual-composer/icon-tripadvisor.png",
       "params" => array(
          array(

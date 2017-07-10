@@ -66,3 +66,17 @@ function dmopress_add_custom_types( $query ) {
 add_filter( 'pre_get_posts', 'dmopress_add_custom_types' );
 
 
+function dmopress_remove_excerpt_filter($content) {
+    if (has_filter( 'the_content', 'dmopress_filter_the_content' )){
+        remove_filter( 'the_content', 'dmopress_filter_the_content' );
+    }
+    return $content;
+}
+add_filter('get_the_excerpt', 'dmopress_remove_excerpt_filter', 9);
+
+// add it back so that it can be called by the actual content
+function dmopress_replace_the_content_filter($content){
+    add_filter( 'the_content', 'dmopress_filter_the_content' );
+    return $content;
+}
+add_filter('get_the_excerpt', 'dmopress_replace_the_content_filter', 11);

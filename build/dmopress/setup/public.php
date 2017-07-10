@@ -12,7 +12,7 @@ add_action( 'wp_enqueue_scripts', 'dmopress_enqueue_public_css' );
 //Enqueue JS
 function dmopress_enqueue_public_script() {
 	
-    wp_register_script( 'js-public', plugins_url() . '/dmopress/js/dmopress-public.min.js', false);
+    wp_register_script( 'js-public', plugins_url() . '/dmopress/js/dmopress-public.min.js', false, null, true);
     // Inject dynamic client-side data 
     $injected_content = array(
       'openWeatherMapAPIKey' => dmo_get_openweathermap_api_key(),

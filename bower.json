@@ -1,14 +1,14 @@
 {
-  "name": "dmopress",
-  "version": "2.0.0",
-  "authors": [
-    "Jason Pomerleau <jason@jasonpomerleau.com>"
-  ],
-  "license": "GPLv2",
-  "homepage": "https://www.dmopress.com",
-  "private": false,
-  "devDependencies": {
-    "bootstrap-sass": "^3.3.6",
-    "bootstrap-grid-only": "^1.0.0"
-  }
+    "name": "dmopress",
+    "version": "2.2.0",
+    "authors": [
+        "Jason Pomerleau <jason@jasonpomerleau.com>"
+    ],
+    "license": "GPLv2",
+    "homepage": "https://www.dmopress.com",
+    "private": false,
+    "devDependencies": {
+        "bootstrap-sass": "^3.3.6",
+        "bootstrap-grid-only": "^1.0.0"
+    }
 }

@@ -1,31 +1,30 @@
 {
-  "name": "",
-  "version": "0.1.0",
-  "projectType": "static",
-  "deploymentMode": "staging",
-  "devDependencies": {
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-cache": "^0.4.6",
-    "gulp-changed": "^2.0.0",
-    "gulp-clean-css": "^3.0.3",
-    "gulp-concat": "^2.6.1",
-    "gulp-notify": "^3.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^2.4.1",
-    "gulp-uglify": "^2.0.1",
-    "gulp-util": "^3.0.8",
-    "vinyl-ftp": "^0.6.0"
-  },
-  "pluginDependencies": {
-    "stylesheets": [
-      "bower_components/bootstrap-grid-only/css/grid12.css"
-    ],
-    "javascript": [
-      
-    ]
-  }
-}
+    "name": "",
+    "version": "2.2.0",
+    "projectType": "static",
+    "deploymentMode": "staging",
+    "devDependencies": {
+        "del": "^2.2.2",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^3.1.1",
+        "gulp-cache": "^0.4.6",
+        "gulp-changed": "^2.0.0",
+        "gulp-clean-css": "^3.0.3",
+        "gulp-concat": "^2.6.1",
+        "gulp-notify": "^3.0.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^2.3.2",
+        "gulp-sourcemaps": "^2.4.1",
+        "gulp-uglify": "^2.0.1",
+        "gulp-util": "^3.0.8",
+        "vinyl-ftp": "^0.6.0"
+    },
+    "pluginDependencies": {
+        "stylesheets": [
+            "bower_components/bootstrap-grid-only/css/grid12.css"
+        ],
+        "javascript": [
 
+        ]
+    }
+}

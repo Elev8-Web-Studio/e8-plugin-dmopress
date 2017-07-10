@@ -1,27 +1,21 @@
-[
-    {
+[{
         "featureType": "administrative",
         "elementType": "all",
-        "stylers": [
-            {
-                "saturation": "-100"
-            }
-        ]
+        "stylers": [{
+            "saturation": "-100"
+        }]
     },
     {
         "featureType": "administrative.province",
         "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+        "stylers": [{
+            "visibility": "off"
+        }]
     },
     {
         "featureType": "landscape",
         "elementType": "all",
-        "stylers": [
-            {
+        "stylers": [{
                 "saturation": -100
             },
             {
@@ -35,8 +29,7 @@
     {
         "featureType": "poi",
         "elementType": "all",
-        "stylers": [
-            {
+        "stylers": [{
                 "saturation": -100
             },
             {
@@ -50,44 +43,35 @@
     {
         "featureType": "road",
         "elementType": "all",
-        "stylers": [
-            {
-                "saturation": "-100"
-            }
-        ]
+        "stylers": [{
+            "saturation": "-100"
+        }]
     },
     {
         "featureType": "road.highway",
         "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
+        "stylers": [{
+            "visibility": "simplified"
+        }]
     },
     {
         "featureType": "road.arterial",
         "elementType": "all",
-        "stylers": [
-            {
-                "lightness": "30"
-            }
-        ]
+        "stylers": [{
+            "lightness": "30"
+        }]
     },
     {
         "featureType": "road.local",
         "elementType": "all",
-        "stylers": [
-            {
-                "lightness": "40"
-            }
-        ]
+        "stylers": [{
+            "lightness": "40"
+        }]
     },
     {
         "featureType": "transit",
         "elementType": "all",
-        "stylers": [
-            {
+        "stylers": [{
                 "saturation": -100
             },
             {
@@ -98,8 +82,7 @@
     {
         "featureType": "water",
         "elementType": "geometry",
-        "stylers": [
-            {
+        "stylers": [{
                 "hue": "#ffff00"
             },
             {
@@ -113,8 +96,7 @@
     {
         "featureType": "water",
         "elementType": "labels",
-        "stylers": [
-            {
+        "stylers": [{
                 "lightness": -25
             },
             {

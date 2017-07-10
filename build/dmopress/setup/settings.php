@@ -212,6 +212,7 @@ class MySettingsPage {
             'classic' => 'Classic',
             'gotham' => 'Gotham',
             'grayscale' => 'Grayscale',
+            'midnight' => 'Midnight',
             'nature' => 'Nature',
             'pear' => 'Pear',
             'safari' => 'Safari'
@@ -314,6 +315,7 @@ function dmopress_customizer( $wp_customize ) {
 			'classic'  => 'Classic',
 			'gotham' => 'Gotham',
             'grayscale' => 'Grayscale',
+            'midnight' => 'Midnight',
             'nature' => 'Nature',
             'pear' => 'Pear',
             'safari' => 'Safari',

@@ -51,7 +51,7 @@ function dmopress_tripadvisor_rating_badge($atts, $content = null){
 
         return ob_get_clean();
     } else {
-        echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
+        //echo "Error: Invalid TripAdvisor Location ID: ".$location_id;
     }
 }
 add_shortcode( 'dmo-tripadvisor-rating-badge', 'dmopress_tripadvisor_rating_badge' );

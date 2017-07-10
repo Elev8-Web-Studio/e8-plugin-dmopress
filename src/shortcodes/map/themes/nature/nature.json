@@ -1,16 +1,12 @@
-[
-    {
+[{
         "featureType": "landscape.natural",
-        "stylers": [
-            {
-                "color": "#D4E5D5"
-            }
-        ]
+        "stylers": [{
+            "color": "#D4E5D5"
+        }]
     },
     {
         "featureType": "road.highway",
-        "stylers": [
-            {
+        "stylers": [{
                 "hue": "#53FF00"
             },
             {
@@ -26,8 +22,7 @@
     },
     {
         "featureType": "road.arterial",
-        "stylers": [
-            {
+        "stylers": [{
                 "hue": "#FBFF00"
             },
             {
@@ -43,8 +38,7 @@
     },
     {
         "featureType": "road.local",
-        "stylers": [
-            {
+        "stylers": [{
                 "hue": "#00FFFD"
             },
             {
@@ -60,58 +54,44 @@
     },
     {
         "featureType": "water",
-        "stylers": [
-            {
-                "color": "#428AC9"
-            }
-        ]
+        "stylers": [{
+            "color": "#428AC9"
+        }]
     },
     {
         "featureType": "poi.park",
-        "stylers": [
-            {
-                "color": "#B8CAB9"
-            }
-        ]
+        "stylers": [{
+            "color": "#B8CAB9"
+        }]
     },
     {
         "featureType": "poi.business",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+        "stylers": [{
+            "visibility": "off"
+        }]
     },
     {
         "featureType": "poi.government",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+        "stylers": [{
+            "visibility": "off"
+        }]
     },
     {
         "featureType": "poi.medical",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+        "stylers": [{
+            "visibility": "off"
+        }]
     },
     {
         "featureType": "poi.place_of_worship",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+        "stylers": [{
+            "visibility": "off"
+        }]
     },
     {
         "featureType": "poi.school",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
+        "stylers": [{
+            "visibility": "off"
+        }]
     }
 ]

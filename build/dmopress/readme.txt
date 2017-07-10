@@ -2,8 +2,8 @@
 Contributors: jasonpomerleau
 Tags: directory, tourism, maps, places, dmo
 Requires at least: 4.7
-Tested up to: 4.7.5
-Stable tag: 2.1.0
+Tested up to: 4.8.0
+Stable tag: 2.2.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,6 +37,13 @@ For installation instructions, check out our [10 Minute Quick Start Guide](https
 3. New Places post type.banner-772x250
 
 == Changelog ==
+
+= 2.2.0 =
+* Places can now have an icon/symbol association. This symbol can be used on map markers or in other theme locations. Choose from 175 location-oriented map icons.
+* New SVG-based map markers with more styling/theming options.
+* New dark map theme: Midnight
+* New [dmo-map] shortcode parameters: marker-stroke-weight, marker-stroke-color, marker-stroke-opacity, marker-fill-color, marker-fill-opacity, marker-label-color, marker-scale and marker-svg-path.
+* Several minor improvements and bug fixes.
 
 = 2.1.0 =
 * A new [inline weather widget and shortcode](https://www.dmopress.com/guide/shortcodes/dmo-inline-weather/) that integrates with the OpenWeatherMaps API service. Display current weather conditions for your destination just about anywhere, including Revolution Slider panels.
