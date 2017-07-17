@@ -32,6 +32,7 @@ function dmopress_register_places_post_type() {
 		'menu_position'       => 6,
 		'menu_icon'           => 'dashicons-location',
 		'show_in_nav_menus'   => true,
+		'show_in_rest'        => true,
 		'publicly_queryable'  => true,
 		'exclude_from_search' => false,
 		'has_archive'         => true,
@@ -41,7 +42,7 @@ function dmopress_register_places_post_type() {
 								'slug' => 'places'
 							  ),
 		'capability_type'     => 'post',
-		'supports'            => array('title', 'editor', 'author', 'thumbnail', 'comments', 'revisions', 'excerpt'),
+		'supports'            => array('title', 'editor', 'author', 'thumbnail', 'comments', 'revisions', 'excerpt', 'custom-fields'),
 	);
 
 	register_post_type( 'places', $args );
