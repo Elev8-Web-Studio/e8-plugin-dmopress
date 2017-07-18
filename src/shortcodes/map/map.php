@@ -172,9 +172,15 @@ function dmopress_map($atts, $content = null){
 		$marker_svg_path = $theme_defaults[$theme]['marker-svg-path'];
 	}
 
-	//User Location InfoWindow
-	$user_location_label = __('Your Location', 'dmopress');
-	$user_location_fetching = __('Getting your location...', 'dmopress');
+	//Translation Strings
+	$label_user_location = __('Your Location', 'dmopress');
+	$label_location_fetching = __('Getting your location...', 'dmopress');
+	$label_directions_unavailable = __('Directions unavailable from your location.', 'dmopress');
+	$label_directions_failed = __('Directions service failed. Status Code:', 'dmopress');
+	$label_geolocation_failed = __('Geolocation service failed.', 'dmopress');
+	$label_geolocation_unsupported = __('Your browser does not support geolocation services.', 'dmopress');
+	$label_get_directions = __('Directions', 'dmopress');
+	$label_google_maps = __('Open in Google Maps', 'dmopress');
 
 	//Build query
 	$query_args = array(
@@ -254,7 +260,7 @@ function dmopress_map($atts, $content = null){
 		</div>
 		<div class="dmopress-map-overlay">
 			<div class="map-overlay-inner">
-				<div class="dmopress-map-overlay-spinner"><i class="map-icon map-icon-walking"></i> <?php echo $user_location_fetching; ?></div>
+				<div class="dmopress-map-overlay-spinner"><i class="map-icon map-icon-walking"></i> <?php echo $label_location_fetching; ?></div>
 			</div>
 		</div>
 	</div>
@@ -306,7 +312,7 @@ function dmopress_map($atts, $content = null){
 				fontWeight: 'normal',
 				text: String.fromCharCode(parseInt('e8a5', 16))
 			},
-			markerUserCalloutText: '<?php echo $user_location_label; ?>'
+			markerUserCalloutText: '<?php echo $label_user_location; ?>'
 		}
 
 		var calloutOptions = {
@@ -317,8 +323,19 @@ function dmopress_map($atts, $content = null){
 
 		var locations = <?php echo $places_jsarray ?>;
 
+		var translationStrings = {
+			labelUserLocation: '<?php echo $label_user_location; ?>',
+			labelLocationFetching: '<?php echo $label_location_fetching; ?>',
+			labelDirectionsUnavailable: '<?php echo $label_directions_unavailable; ?>',
+			labelDirectionsFailed: '<?php echo $label_directions_failed; ?>',
+			labelGeolocationFailed: '<?php echo $label_geolocation_failed; ?>',
+			labelGeolocationUnsupported: '<?php echo $label_geolocation_unsupported; ?>',
+			labelGetDirections: '<?php echo $label_get_directions; ?>',
+			labelGoogleMaps: '<?php echo $label_google_maps; ?>'
+		}
+
 		jQuery(document).ready(function($) {
-			initMap(mapID, locations, mapOptions, markerOptions, calloutOptions);
+			initMap(mapID, locations, mapOptions, markerOptions, calloutOptions, translationStrings);
 		});
 		
 	</script>
