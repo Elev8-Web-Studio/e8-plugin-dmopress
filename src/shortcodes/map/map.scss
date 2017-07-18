@@ -14,16 +14,102 @@
     background-repeat: no-repeat;
     height: 273px;
     margin-top: 3px;
-    .map-callout-title {
+}
+
+.dmopress-map-container {
+    position: relative;
+}
+
+.dmopress-map-control-container {
+    padding: 6px 7px;
+    cursor: pointer;
+    text-align: center;
+    color: #666666;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+    &:hover {
+        color: #333333;
+    }
+}
+
+.dmopress-map-overlay {
+    display: none;
+    position: absolute;
+    z-index: 25;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    .dmopress-map-overlay-spinner {
         display: inline-block;
-        margin-bottom: 1px;
-        text-decoration: none;
-        box-shadow: none;
-        -webkit-box-shadow: none;
-        &:hover {
-            text-decoration: underline;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px;
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: bold;
+        text-align: center;
+        border: 1px solid #fff;
+        color: #fff;
+        margin-top: calc(25% - 20px);
+    }
+}
+
+.dmopress-map-callout {
+    display: flex;
+    &:hover {
+        .map-callout-thumbnail-link {
+            .map-callout-thumbnail-image {
+                transform: scale(1.2);
+            }
+        }
+    }
+    .map-callout-thumbnail-container {
+        padding-top: 5px;
+        padding-right: 13px;
+        .map-callout-thumbnail-link {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+        }
+        .map-callout-thumbnail-image {
+            width: 72px;
+            height: 72px;
+            background-size: cover;
+            background-position: center center;
+            transition: transform 0.3s ease-in-out;
+        }
+    }
+    .map-callout-content {
+        padding-top: 3px;
+        .map-callout-title {
+            display: inline-block;
+            margin: 0 0 0 0;
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: bold;
+            text-decoration: none;
             box-shadow: none;
             -webkit-box-shadow: none;
+            &:hover {
+                text-decoration: underline;
+                box-shadow: none;
+                -webkit-box-shadow: none;
+            }
+        }
+        p {
+            margin: 4px 0 4px 0;
+            &.address {
+                color: #666666;
+            }
+        }
+        hr {
+            margin: 7px 0;
         }
     }
 }
