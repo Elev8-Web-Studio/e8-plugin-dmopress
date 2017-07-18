@@ -253,7 +253,9 @@ function dmopress_map($atts, $content = null){
 		<div id="<?php echo $map_id; ?>" class="dmopress-map <?php echo $theme; ?> <?php echo esc_attr($atts['class']); ?>" style="width: <?php echo esc_attr( $atts['width'] ) ?>; height: <?php echo esc_attr( $atts['height'] ) ?>; min-height: 50px;">
 		</div>
 		<div class="dmopress-map-overlay">
-			<div class="dmopress-map-overlay-spinner"><i class="map-icon map-icon-walking"></i> <?php echo $user_location_fetching; ?></div>
+			<div class="map-overlay-inner">
+				<div class="dmopress-map-overlay-spinner"><i class="map-icon map-icon-walking"></i> <?php echo $user_location_fetching; ?></div>
+			</div>
 		</div>
 	</div>
 

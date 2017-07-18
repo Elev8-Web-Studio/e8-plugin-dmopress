@@ -35,6 +35,22 @@
 }
 
 .dmopress-map-overlay {
+    .map-overlay-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        .dmopress-map-overlay-spinner {
+            display: inline-block;
+            padding: 15px;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: bold;
+            text-align: center;
+            border: 1px solid #fff;
+            color: #fff;
+        }
+    }
     display: none;
     position: absolute;
     z-index: 25;
@@ -43,20 +59,10 @@
     bottom: 0px;
     left: 0px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.75);
-    .dmopress-map-overlay-spinner {
-        display: inline-block;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 15px;
-        font-size: 16px;
-        line-height: 16px;
-        font-weight: bold;
-        text-align: center;
-        border: 1px solid #fff;
-        color: #fff;
-        margin-top: calc(25% - 20px);
-    }
+    background-color: rgba(0,
+    0,
+    0,
+    0.75);
 }
 
 .dmopress-map-callout {

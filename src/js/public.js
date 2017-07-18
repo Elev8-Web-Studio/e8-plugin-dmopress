@@ -20,6 +20,7 @@ function initMap(mapID, locations, mapOptions, markerOptions, calloutOptions) {
 
     // If browser supports geolocation and site is HTTPS, show the User Location button
     if (location.protocol == 'https:' && navigator.geolocation) {
+
         var userLocationControl = document.createElement('div');
         userLocationControl.className = 'dmopress-map-control-container';
         userLocationControl.style.marginRight = '10px';
@@ -29,36 +30,8 @@ function initMap(mapID, locations, mapOptions, markerOptions, calloutOptions) {
         map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(userLocationControl);
 
         userLocationControl.addEventListener('click', function() {
-            jQuery('#' + mapID).next('.dmopress-map-overlay').fadeIn('fast');
-
-            navigator.geolocation.getCurrentPosition(function(position) {
-                jQuery('#' + mapID).next('.dmopress-map-overlay').fadeOut('fast');
-                var pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-                label = markerOptions.markerUserLabel;
-
-                userLocationMarker.setMap(null);
-                userLocationMarker = new google.maps.Marker({
-                    position: new google.maps.LatLng(pos.lat, pos.lng),
-                    map: map,
-                    draggable: false,
-                    icon: markerOptions.markerUserIcon,
-                    label: label
-                });
-                google.maps.event.addListener(userLocationMarker, 'click', (function(userLocationMarker, i) {
-                    return function() {
-                        infowindow.setContent(markerOptions.markerUserCalloutText);
-                        infowindow.open(map, userLocationMarker);
-                    }
-                })(userLocationMarker, i));
-                bounds.extend(userLocationMarker.position);
-                map.setCenter(pos);
-
-            }, function() {
-                jQuery('#' + mapID).next('.dmopress-map-overlay').fadeOut('fast');
-                handleLocationError(true, map.getCenter());
+            getUserPositionAndAddMarker(mapID, map, function(userLocationMarker) {
+                map.setCenter(userLocationMarker.position);
             });
         });
     }
@@ -85,18 +58,19 @@ function initMap(mapID, locations, mapOptions, markerOptions, calloutOptions) {
             return function() {
                 var thumbnailMarkup = '';
 
-                if (locations[i][6] != '') {
+                if (locations[i][6] != '' && calloutOptions.showPostThumbnail == 'true') {
                     thumbnailMarkup = '<div class="map-callout-thumbnail-container"><a class="map-callout-thumbnail-link" href="' + locations[i][3] + '"><div class="map-callout-thumbnail-image" style="background-image: url(\'' + locations[i][6] + '\');"></div></a></div>';
+
                 }
 
                 var directionMarkup = '';
-                if (calloutOptions.showDirections == 'true') {
-                    directionMarkup = '<a href="#" class="action-link" data-address="' + +locations[i][4] + '" onclick="displayDirectionsToPlace()">Directions</a>';
+                if (location.protocol == 'https:' && calloutOptions.showDirections == 'true') {
+                    directionMarkup = '<a href="#" class="get-directions" data-address="' + locations[i][4] + '">Directions</a>';
                 }
 
                 var googleLinkMarkup = '';
                 if (calloutOptions.showGoogleLink == 'true') {
-                    googleLinkMarkup = '<a href="https://www.google.ca/maps/search/' + locations[i][4] + '" class="action-link" target="_blank" data-address="' + locations[i][4] + '">Open in Google Maps</a>';
+                    googleLinkMarkup = '<a href="https://www.google.ca/maps/search/' + locations[i][4] + '" class="action-link" target="_blank">Open in Google Maps</a>';
                 }
 
                 var actionBlockMarkup = '';
@@ -119,9 +93,17 @@ function initMap(mapID, locations, mapOptions, markerOptions, calloutOptions) {
 
                 }
 
-
                 infowindow.setContent('<div class="dmopress-map-callout">' + thumbnailMarkup + '<div class="map-callout-content"><h5 class="map-callout-title"><a href="' + locations[i][3] + '">' + locations[i][0] + '</a></h5><p class="address">' + locations[i][4] + '</p>' + actionBlockMarkup + '</div></div>');
+
                 infowindow.open(map, marker);
+
+                jQuery('.get-directions').on('click', function(e) {
+                    e.preventDefault();
+                    var destination = jQuery(this).data('address');
+                    var origin = '';
+                    displayDirectionsToPlace(mapID, map, origin, destination);
+                });
+
             }
         })(marker, i));
     }
@@ -134,33 +116,84 @@ function initMap(mapID, locations, mapOptions, markerOptions, calloutOptions) {
         google.maps.event.removeListener(listener);
     });
 
-    function displayDirectionsToPlace(map) {
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        directionsDisplay.setOptions({
-            markerOptions: {
-                icon: markerOptions.markerIconBase,
-                label: markerOptions.markerLabelBase,
-                visible: false
-            }
+    function getUserPositionAndAddMarker(mapID, map, callback) {
+        jQuery('#' + mapID).next('.dmopress-map-overlay').fadeIn('fast');
+        navigator.geolocation.getCurrentPosition(function(position) {
+            jQuery('#' + mapID).next('.dmopress-map-overlay').fadeOut('fast');
+            console.log('got here');
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+            label = markerOptions.markerUserLabel;
+
+            userLocationMarker.setMap(null);
+            userLocationMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(pos.lat, pos.lng),
+                map: map,
+                draggable: false,
+                icon: markerOptions.markerUserIcon,
+                label: label,
+                lat: pos.lat,
+                long: pos.lng
+            });
+            console.log(userLocationMarker.position.lat);
+            google.maps.event.addListener(userLocationMarker, 'click', (function(userLocationMarker, i) {
+                return function() {
+                    infowindow.setContent(markerOptions.markerUserCalloutText);
+                    infowindow.open(map, userLocationMarker);
+                }
+            })(userLocationMarker, i));
+            bounds.extend(userLocationMarker.position);
+            callback(userLocationMarker);
+
+        }, function() {
+            jQuery('#' + mapID).next('.dmopress-map-overlay').fadeOut('fast');
+            handleLocationError(true, map.getCenter());
+            callback(null);
         });
-        directionsDisplay.setMap(map);
-        calculateAndDisplayRoute(directionsService, directionsDisplay);
     }
 
-}
+    function displayDirectionsToPlace(mapID, map, origin, destination) {
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
 
+        getUserPositionAndAddMarker(mapID, map, function(userLocationMarker) {
+            directionsDisplay.setOptions({
+                markerOptions: {
+                    icon: markerOptions.markerIconBase,
+                    label: markerOptions.markerLabelBase,
+                    visible: false
+                },
+                polylineOptions: {
+                    strokeWeight: 7,
+                    strokeColor: markerOptions.markerIconBase.fillColor,
+                    strokeOpacity: 0.5
+                },
+                origin: userLocationMarker.lat + ',' + userLocationMarker.long,
+                destination: destination,
+            });
+
+            directionsDisplay.setMap(map);
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
+        });
+    }
+}
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsService.route({
-        origin: '679 Guiness Way, London, ON',
-        destination: '2997 Meadowbrook Lane, Windsor, ON',
+        origin: directionsDisplay.origin,
+        destination: directionsDisplay.destination,
         travelMode: 'DRIVING'
     }, function(response, status) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
         } else {
-            window.alert('Directions request failed due to ' + status);
+            if (status == 'ZERO_RESULTS') {
+                window.alert('Could not retrieve directions from your location.');
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
         }
     });
 }
