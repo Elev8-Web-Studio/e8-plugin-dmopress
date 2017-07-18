@@ -33,11 +33,22 @@ gulp.task('default', function() {
     gulp.watch(['package.json', 'src/js/public.js'], ['js-public']);
 });
 
+gulp.task('remote', function() {
+    gulp.watch(['package.json', 'src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/LICENSE'], ['source-remote']);
+    gulp.watch(['package.json', 'src/**/*.scss'], ['stylesheets-remote']);
+    gulp.watch(['package.json', 'src/**/*.js'], ['js-remote']);
+});
 
 gulp.task('source', function() {
     gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/fonts/**'])
         .pipe(changed(secrets.localPath))
         .pipe(gulp.dest(secrets.localPath));
+});
+
+gulp.task('source-remote', function() {
+    gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/fonts/**'])
+        .pipe(changed(secrets.localPath))
+        .pipe(conn.dest(secrets.ftppath));
 });
 
 gulp.task('stylesheets-admin', function() {
@@ -66,6 +77,31 @@ gulp.task('stylesheets-public', function() {
         .pipe(gulp.dest(secrets.localPath + '/css'));
 });
 
+gulp.task('stylesheets-remote', function() {
+    var filesToProcess = pkg.pluginDependencies.stylesheets;
+    filesToProcess.push('./src/scss/admin.scss');
+    gulp.src(filesToProcess)
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
+        .pipe(concat('dmopress-admin.css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cleancss({ keepBreaks: false }))
+        .pipe(sourcemaps.write())
+        .pipe(conn.dest(secrets.ftppath + '/css'));
+
+    var filesToProcess = [];
+    filesToProcess.push('./src/scss/public.scss');
+    gulp.src(filesToProcess)
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
+        .pipe(concat('dmopress.css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cleancss({ keepBreaks: false }))
+        .pipe(sourcemaps.write())
+        .pipe(conn.dest(secrets.ftppath + '/css'));
+});
+
+
 gulp.task('js-admin', function() {
     var filesToProcess = pkg.pluginDependencies.javascript;
     filesToProcess.push('./src/js/jquery.select2.js');
@@ -88,6 +124,28 @@ gulp.task('js-public', function() {
         .pipe(uglify())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(secrets.localPath + '/js'));
+});
+
+gulp.task('js-remote', function() {
+    var filesToProcess = pkg.pluginDependencies.javascript;
+    filesToProcess.push('./src/js/jquery.select2.js');
+    filesToProcess.push('./src/js/jquery.validate.js');
+    filesToProcess.push('./src/js/admin.js');
+    gulp.src(filesToProcess)
+        .pipe(sourcemaps.init())
+        .pipe(concat('dmopress-admin.js'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(conn.dest(secrets.ftppath + '/js'));
+
+    gulp.src(['./src/js/public.js'])
+        .pipe(sourcemaps.init())
+        .pipe(concat('dmopress-public.js'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(conn.dest(secrets.ftppath + '/js'));
 });
 
 gulp.task('build', function() {
