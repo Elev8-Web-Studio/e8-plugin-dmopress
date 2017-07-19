@@ -3,7 +3,7 @@ Contributors: jasonpomerleau
 Tags: directory, tourism, maps, places, dmo
 Requires at least: 4.7
 Tested up to: 4.8.0
-Stable tag: 2.2.0
+Stable tag: 2.3.0
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,11 +38,19 @@ For installation instructions, check out our [10 Minute Quick Start Guide](https
 
 == Changelog ==
 
+= 2.3.0 =
+* Redesigned map marker callout windows contain a richer display of information, including a bolder heading and a Featured Image, if one is present.
+* You can now request driving directions to any Place (walking directions coming soon) from the new marker callout windows. Requires [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/) to be enabled in your Google Developers Console. Subject to [Google Maps Directions API](https://developers.google.com/maps/documentation/directions/) rate limits. This feature is off by default but can be activated with the new [[dmo-map](https://www.dmopress.com/guide/shortcodes/dmo-map/)] shortcode parameter show-directions.
+* Improved geolocation services: map now dims while location or directions are being retrieved and displays a status message.
+* All map outputs (i.e. status messages, error messages) now have corresponding translation string coverage.
+* Added 3 new dmo-map shortcode options: [show-directions](https://www.dmopress.com/guide/shortcodes/dmo-map/#show-directions), [show-google-link](https://www.dmopress.com/guide/shortcodes/dmo-map/#show-google-link) and [show-post-thumbnail](https://www.dmopress.com/guide/shortcodes/dmo-map/#show-post-thumbnail) to support new map features.
+* Added WordPress REST API support to Places post type, Place Categories taxonomy and Place Features taxonomy.
+
 = 2.2.0 =
 * Places can now have an icon/symbol association. This symbol can be used on map markers or in other theme locations. Choose from 175 location-oriented map icons.
 * New SVG-based map markers with more styling/theming options.
 * New dark map theme: Midnight
-* New [dmo-map] shortcode parameters: marker-stroke-weight, marker-stroke-color, marker-stroke-opacity, marker-fill-color, marker-fill-opacity, marker-label-color, marker-scale and marker-svg-path.
+* New [dmo-map] shortcode parameters: [marker-stroke-weight](https://www.dmopress.com/guide/shortcodes/dmo-map/#marker-stroke-weight), [marker-stroke-color](https://www.dmopress.com/guide/shortcodes/dmo-map/#marker-stroke-color), [marker-stroke-opacity](https://www.dmopress.com/guide/shortcodes/dmo-map/#marker-stroke-opacity), [marker-fill-color](https://www.dmopress.com/guide/shortcodes/dmo-map/#marker-fill-color), [marker-fill-opacity](https://www.dmopress.com/guide/shortcodes/dmo-map/#marker-fill-opacity), [marker-label-color](https://www.dmopress.com/guide/shortcodes/dmo-map/#marker-label-color), and [marker-svg-path](https://www.dmopress.com/guide/shortcodes/dmo-map/#marker-svg-path).
 * Several minor improvements and bug fixes.
 
 = 2.1.0 =

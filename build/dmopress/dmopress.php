@@ -4,7 +4,7 @@ Plugin Name: DMOPress
 Plugin URI: https://www.dmopress.com/products/dmopress/
 Description: Built specifically for Destination Marketing Organizations, DMOPress helps you show, share and promote your places of interest.
 Author: 2464420 Ontario Inc.
-Version: 2.2.0
+Version: 2.3.0
 Author URI: https://www.dmopress.com
 */
 
