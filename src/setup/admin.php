@@ -30,8 +30,8 @@ function dmo_enqueue_admin_css() {
     wp_register_script( 'app-js', plugins_url() . '/dmopress/js/dmopress-admin.min.js', false);
     // Localize the script with new data
     $translation_array = array(
-      'invalid_url' => __( 'Invalid URL', 'dmopress-textdomain' ),
-      'invalid_phone' => __('Invalid phone', 'dmopress-textdomain')
+      'invalid_url' => __( 'Invalid URL', 'dmopress' ),
+      'invalid_phone' => __('Invalid phone', 'dmopress')
     );
     wp_localize_script( 'app-js', 'translated', $translation_array );
     wp_enqueue_script('app-js');
