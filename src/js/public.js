@@ -93,7 +93,7 @@ function initMap(mapID, locations, mapOptions, markerOptions, calloutOptions, tr
 
                 }
 
-                infowindow.setContent('<div class="dmopress-map-callout">' + thumbnailMarkup + '<div class="map-callout-content"><h5 class="map-callout-title"><a href="' + locations[i][3] + '">' + locations[i][0] + '</a></h5><p class="address">' + locations[i][4] + '</p>' + actionBlockMarkup + '</div></div>');
+                infowindow.setContent('<div class="dmopress-map-callout">' + thumbnailMarkup + '<div class="map-callout-content"><h5 class="map-callout-title"><a href="' + locations[i][3] + '">' + locations[i][0] + '</a></h5><p class="map-callout-address">' + locations[i][4] + '</p>' + actionBlockMarkup + '</div></div>');
 
                 infowindow.open(map, marker);
 
