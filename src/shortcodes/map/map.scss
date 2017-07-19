@@ -110,7 +110,8 @@
         }
         p {
             margin: 4px 0 4px 0;
-            &.address {
+            &.map-callout-address {
+                background-color: transparent;
                 color: #666666;
             }
         }
