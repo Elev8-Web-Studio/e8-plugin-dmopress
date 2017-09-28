@@ -19,7 +19,7 @@ function initMap(mapID, locations, mapOptions, markerOptions, calloutOptions, tr
     var userLocationMarker = new google.maps.Marker();
 
     // If browser supports geolocation and site is HTTPS, show the User Location button
-    if (location.protocol == 'https:' && navigator.geolocation) {
+    if (geolocationSupported()) {
 
         var userLocationControl = document.createElement('div');
         userLocationControl.className = 'dmopress-map-control-container';
@@ -193,6 +193,26 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, translat
                 window.alert(translationStrings.labelDirectionsFailed + status);
             }
         }
+    });
+}
+
+function geolocationSupported() {
+    if (location.protocol == 'https:' && navigator.geolocation) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function getDevicePosition(callback) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+        };
+        callback(pos);
+    }, function() {
+        callback(null);
     });
 }
 
