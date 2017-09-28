@@ -17,9 +17,9 @@ function dmopress_map($atts, $content = null){
 		'width' => '100%',
 		'zoom' => 14,
 		'scrollwheel' => 'true',
-		'show_directions' => 'false',
-		'show_google_link' => 'true',
-		'show_post_thumbnail' => 'true',
+		'show-directions' => 'false',
+		'show-google-link' => 'true',
+		'show-post-thumbnail' => 'true',
 		'marker-stroke-weight' => '',
 		'marker-stroke-color' => '',
 		'marker-stroke-opacity' => '1',
@@ -96,22 +96,22 @@ function dmopress_map($atts, $content = null){
 		$scrollwheel = 'false';
 	}
 
-	//Resolve show_directions
-	if(esc_attr($atts['show_directions']) == 'true'){
+	//Resolve show-directions
+	if(esc_attr($atts['show-directions']) == 'true'){
 		$show_directions = 'true';
 	} else {
 		$show_directions = 'false';
 	}
 
-	//Resolve show_google_link
-	if(esc_attr($atts['show_google_link']) == 'false'){
+	//Resolve show-google-link
+	if(esc_attr($atts['show-google-link']) == 'false'){
 		$show_google_link = 'false';
 	} else {
 		$show_google_link = 'true';
 	}
 
-	//Resolve show_post_thumbnail
-	if(esc_attr($atts['show_post_thumbnail']) == 'false'){
+	//Resolve show-post-thumbnail
+	if(esc_attr($atts['show-post-thumbnail']) == 'false'){
 		$show_post_thumbnail = 'false';
 	} else {
 		$show_post_thumbnail = 'true';
