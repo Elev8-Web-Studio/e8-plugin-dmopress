@@ -407,3 +407,12 @@ function dmo_get_symbols_array(){
 		'map-icon-zoom-out-alt' => __('Zoom Out Alt', 'citylights')
 	);
 }
+
+function dmopress_get_option($option){
+	if($option){
+		$optionRef = get_option('dmopress');
+		return $optionRef[$option];
+	} else {
+		return '';
+	}
+}
