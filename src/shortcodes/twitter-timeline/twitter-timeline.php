@@ -39,7 +39,7 @@ function dmopress_twitter_timeline($atts, $content = null){
     }
 
     //Resolve Twitter Handle
-    $twitter_handle = get_post_meta( $post_id, 'twitter_handle', true );
+    $twitter_handle = dmopress_get_twitter_handle_from_url(get_post_meta( $post_id, 'twitter_url', true ));
     if($twitter_handle != ''){
 
     ob_start();
