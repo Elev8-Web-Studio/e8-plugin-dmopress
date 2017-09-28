@@ -258,9 +258,9 @@ function dmopress_place_meta_box_callback($post) {
 
            </div>
             <div class="col-lg-4">
-            <?php _e('Map','dmopress_textdomain') ?>:<br>
+                <?php _e('Map','dmopress_textdomain') ?>:<br>
                 <?php echo do_shortcode('[dmo-map places="'.get_the_ID().'"]'); ?>                
-            </div>  
+            </div>
         </div>
     </div>
 

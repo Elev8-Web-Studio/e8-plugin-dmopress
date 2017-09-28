@@ -61,6 +61,21 @@ class MySettingsPage {
         );
 
         add_settings_section(
+            'dmopress_settings_section_general',
+            __('<hr>Place Settings', 'dmopress_textdomain'),
+            array( $this, 'print_section_info' ),
+            'dmopress-setting-admin'
+        );
+
+        add_settings_field(
+            'hours_of_operation', 
+            __('Hours of Operation','dmopress_textdomain'), 
+            array( $this, 'hours_of_operation_callback' ), 
+            'dmopress-setting-admin', 
+            'dmopress_settings_section_general'
+        );
+
+        add_settings_section(
             'dmopress_settings_section_google_maps',
             __('<hr>Google Maps Settings', 'dmopress_textdomain'),
             array( $this, 'print_section_info' ),
@@ -113,6 +128,7 @@ class MySettingsPage {
             'dmopress-setting-admin', 
             'dmopress_settings_section_openweathermap'
         );
+        
     }
 
     /**
@@ -138,6 +154,9 @@ class MySettingsPage {
         if(isset( $input['openweathermap_city_id'])){
             $new_input['openweathermap_city_id'] = sanitize_text_field( $input['openweathermap_city_id'] );
         }
+        if(isset( $input['hours_of_operation'])){
+            $new_input['hours_of_operation'] = sanitize_text_field( $input['hours_of_operation'] );
+        }
 
         return $new_input;
     }
@@ -147,6 +166,30 @@ class MySettingsPage {
      */
     public function print_section_info() {
         //print 'DMOPress integrates with ';
+    }
+
+    public function hours_of_operation_callback($args) {
+        extract($args);
+        
+                $available_options = array(
+                    'disabled' => 'Disabled',
+                    'enabled' => 'Enabled'
+                );
+        
+                $output = '<select name="dmopress[hours_of_operation]">';
+                foreach ($available_options as $slug => $label) {
+                    if($this->options['hours_of_operation'] == $slug){
+                        $selected = ' selected';
+                    } else {
+                        $selected = '';
+                    }
+                    $output .=  '<option value="'.$slug.'" '.$selected.'>'.$label.'</option>';
+                }
+        
+                $output .= '</select>';
+        
+                print($output);
+                echo '<p class="description">Track and display the hours of operation for your Places.</p>';
     }
 
     public function google_maps_callback($args) {

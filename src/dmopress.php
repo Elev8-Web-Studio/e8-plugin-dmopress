@@ -27,6 +27,7 @@ require_once DMOPRESS_PLUGIN_DIR . '/setup/admin.php';
 require_once DMOPRESS_PLUGIN_DIR . '/setup/settings.php';
 require_once DMOPRESS_PLUGIN_DIR . '/setup/hooks.php';
 require_once DMOPRESS_PLUGIN_DIR . '/setup/meta-box.php';
+require_once DMOPRESS_PLUGIN_DIR . '/setup/meta-box-hours-of-operation.php';
 require_once DMOPRESS_PLUGIN_DIR . '/setup/post-type.php';
 require_once DMOPRESS_PLUGIN_DIR . '/setup/public.php';
 require_once DMOPRESS_PLUGIN_DIR . '/setup/taxonomies.php';
