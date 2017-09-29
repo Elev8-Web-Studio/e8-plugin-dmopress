@@ -42,10 +42,6 @@ require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/tripadvisor-reviews-button/tripa
 require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/tripadvisor-review-snippets/tripadvisor-review-snippets.php';
 require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/tripadvisor-review-starter/tripadvisor-review-starter.php';
 require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/twitter-timeline/twitter-timeline.php';
-require_once DMOPRESS_PLUGIN_DIR . '/shortcodes/weather-current-inline/weather-current-inline.php';
-
-// Widgets
-require_once DMOPRESS_PLUGIN_DIR . '/widgets/weather-current-inline/weather-current-inline.php';
 
 //3rd Party Integration
 require_once DMOPRESS_PLUGIN_DIR . '/integration/tribe-events-calendar/tribe-events-calendar.php';

@@ -97,37 +97,6 @@ class MySettingsPage {
             'dmopress-setting-admin', 
             'dmopress_settings_section_google_maps'
         );
-
-        add_settings_section(
-            'dmopress_settings_section_openweathermap',
-            __('<hr>OpenWeatherMap Settings', 'dmopress_textdomain'),
-            array( $this, 'print_section_info' ),
-            'dmopress-setting-admin'
-        );
-
-        add_settings_field(
-            'openweathermap_api_key', 
-            __('OpenWeatherMap API Key','dmopress_textdomain'), 
-            array( $this, 'openweathermap_api_key_callback' ), 
-            'dmopress-setting-admin', 
-            'dmopress_settings_section_openweathermap'
-        );
-
-        add_settings_field(
-            'openweathermap_default_unit', 
-            __('OpenWeatherMap Default Unit Display','dmopress_textdomain'), 
-            array( $this, 'openweathermap_default_unit_callback' ), 
-            'dmopress-setting-admin', 
-            'dmopress_settings_section_openweathermap'
-        );
-
-        add_settings_field(
-            'openweathermap_city_id', 
-            __('OpenWeatherMap City ID','dmopress_textdomain'), 
-            array( $this, 'openweathermap_city_id_callback' ), 
-            'dmopress-setting-admin', 
-            'dmopress_settings_section_openweathermap'
-        );
         
     }
 
