@@ -1,0 +1,290 @@
+<?php 
+
+// Main Settings Page
+class DMOPressSettingsPage {
+    /**
+     * Holds the values to be used in the fields callbacks
+     */
+    private $options;
+
+    /**
+     * Start up
+     */
+    public function __construct() {
+        add_action( 'admin_menu', array( $this, 'add_plugin_page' ) );
+        add_action( 'admin_init', array( $this, 'page_init' ) );
+    }
+
+    /**
+     * Add options page
+     */
+    public function add_plugin_page() {
+        // This page will be under "Settings"
+        add_options_page(
+            __('DMOPress Settings', 'dmopress_textdomain'), 
+            __('DMOPress', 'dmopress_textdomain'), 
+            'manage_options', 
+            'dmopress-settings', 
+            array( $this, 'create_admin_page' )
+        );
+    }
+
+    /**
+     * Options page callback
+     */
+    public function create_admin_page() {
+        // Set class property
+        $this->options = get_option('dmopress');
+        ?>
+        <div class="wrap">
+            <h2><?php _e('DMOPress Settings', 'dmopress_textdomain') ?></h2>           
+            <form method="post" action="options.php">
+            <?php
+                // This prints out all hidden setting fields
+                settings_fields( 'dmopress_options' );   
+                do_settings_sections( 'dmopress-setting-admin' );
+                submit_button(); 
+            ?>
+            </form>
+        </div>
+        <?php
+    }
+
+    /**
+     * Register and add settings
+     */
+    public function page_init() {        
+        register_setting(
+            'dmopress_options', // Option group
+            'dmopress', // Option name
+            array( $this, 'sanitize' ) // Sanitize
+        );
+
+        add_settings_section(
+            'dmopress_settings_section_general',
+            __('<hr>Enabled Modules', 'dmopress_textdomain'),
+            array( $this, 'print_section_info' ),
+            'dmopress-setting-admin'
+        );
+
+        foreach (dmopress_available_modules() as $available_module) {
+            add_settings_field(
+                $available_module['slug'], 
+                $available_module['label'], 
+                array( $this, 'available_module_callback' ), 
+                'dmopress-setting-admin', 
+                'dmopress_settings_section_general',
+                $available_module
+            );
+        }
+
+        add_settings_section(
+            'dmopress_settings_section_google_maps',
+            __('<hr>Google Maps Settings', 'dmopress_textdomain'),
+            array( $this, 'print_section_info' ),
+            'dmopress-setting-admin'
+        );
+
+        add_settings_field(
+            'google_maps_api_key', 
+            __('Google Maps API Key','dmopress_textdomain'), 
+            array( $this, 'google_maps_callback' ), 
+            'dmopress-setting-admin', 
+            'dmopress_settings_section_google_maps'
+        );
+
+        add_settings_field(
+            'google_maps_style', 
+            __('Google Maps Default Style','dmopress_textdomain'), 
+            array( $this, 'google_maps_style_callback' ), 
+            'dmopress-setting-admin', 
+            'dmopress_settings_section_google_maps'
+        );
+        
+    }
+
+    /**
+     * Sanitize each setting field as needed
+     *
+     * @param array $input Contains all settings fields as array keys
+     */
+    public function sanitize( $input ) {
+        $new_input = array();
+
+        foreach (dmopress_available_modules() as $module) {
+            if(isset( $input[$module['slug']])){
+                $new_input[$module['slug']] = sanitize_text_field( $input[$module['slug']] );
+            }
+        }
+        if(isset( $input['google_maps_api_key'])){
+            $new_input['google_maps_api_key'] = sanitize_text_field( $input['google_maps_api_key'] );
+        }
+        if(isset( $input['google_maps_style'])){
+            $new_input['google_maps_style'] = sanitize_text_field( $input['google_maps_style'] );
+        }
+        
+        return $new_input;
+    }
+
+    /** 
+     * Print the Section text
+     */
+    public function print_section_info() {
+        //print 'DMOPress integrates with ';
+    }
+
+    public function available_module_callback($module) {
+        extract($module);
+        
+        $available_options = array(
+            'disabled' => 'Disabled',
+            'enabled' => 'Enabled'
+        );
+
+        $output = '<select name="dmopress['.$module['slug'].']">';
+        foreach ($available_options as $slug => $label) {
+            if($this->options[$module['slug']] == $slug){
+                $selected = ' selected';
+            } else {
+                $selected = '';
+            }
+            $output .=  '<option value="'.$slug.'" '.$selected.'>'.$label.'</option>';
+        }
+
+        $output .= '</select>';
+
+        print($output);
+        echo '<p class="description">'.$module['description'].'</p>';
+    }
+
+    public function google_maps_callback($args) {
+        extract($args);
+
+        printf(
+            '<input type="text" size="45" id="google-maps-api-key" name="dmopress[google_maps_api_key]" value="%s" placeholder="" />',
+            isset( $this->options['google_maps_api_key'] ) ? esc_attr( $this->options['google_maps_api_key']) : ''
+        );
+        echo '<p class="description">A Google Maps API Key is required to use map-related shortcodes and widgets. The <a href="https://www.dmopress.com/guide/start/" target="_blank">10 Minute Quick Start Guide</a> has information on how to obtain a key.</p>';
+    }
+
+    public function google_maps_style_callback($args) {
+        extract($args);
+
+        $available_options = array(
+            'classic' => 'Classic',
+            'gotham' => 'Gotham',
+            'grayscale' => 'Grayscale',
+            'midnight' => 'Midnight',
+            'nature' => 'Nature',
+            'pear' => 'Pear',
+            'safari' => 'Safari'
+        );
+
+        $output = '<select name="dmopress[google_maps_style]">';
+        foreach ($available_options as $slug => $label) {
+            if($this->options['google_maps_style'] == $slug){
+                $selected = ' selected';
+            } else {
+                $selected = '';
+            }
+            $output .=  '<option value="'.$slug.'" '.$selected.'>'.$label.'</option>';
+        }
+
+        $output .= '</select>';
+
+        print($output);
+        echo '<p class="description">To preview these options, check out the <a href="https://www.dmopress.com/guide/maps/map-themes/" target="_blank">Map Theme Gallery</a></p>';
+    }
+}
+
+if(is_admin()){
+    $dmopress_settings_page = new DMOPressSettingsPage();
+}
+
+/**
+ * Add a Settings link to plugin on Plugins page
+ */
+function dmo_add_settings_link($links, $file) {
+
+    if ($file == 'dmopress/dmopress.php'){
+        $guide_link = '<a href="https://www.dmopress.com/guide/" target="_blank">'.__('Documentation', "dmopress_textdomain").'</a>';
+        array_unshift($links, $guide_link);
+        
+        $settings_link = '<a href="options-general.php?page=dmopress-settings">'.__('Settings', "dmopress_textdomain").'</a>';
+        array_unshift($links, $settings_link);
+        
+    }
+    return $links;
+}
+add_filter('plugin_action_links', 'dmo_add_settings_link', 10, 2 );
+
+
+function dmopress_plugin_row_meta( $links, $file ) {
+
+	if ( strpos( $file, 'dmopress.php' ) !== false ) {
+		$new_links = array(
+				'support' => '<a href="https://www.dmopress.com/support/" target="_blank">'.__('Support','dmopress_textdomain').'</a>'
+				);
+		
+		$links = array_merge( $links, $new_links );
+	}
+	
+	return $links;
+}
+add_filter( 'plugin_row_meta', 'dmopress_plugin_row_meta', 10, 2 );
+
+
+add_action('customize_register','dmopress_customizer');
+function dmopress_customizer( $wp_customize ) {
+
+	$wp_customize->add_section( 'dmopress_settings', array(
+		'title' => __( 'DMOPress Settings', 'dmopress' ),
+		'priority' => 500
+	) );
+
+	$wp_customize->add_setting( 'dmopress[google_maps_api_key]', array(
+		'type' => 'option',
+		'default' => '',
+		'capability' => 'edit_theme_options',
+		'transport' => 'refresh', 
+		'sanitize_callback' => '',
+		'sanitize_js_callback' => '',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'dmopress[google_maps_api_key]', array(
+		'label'   => __( 'Google Maps API Key', 'dmopress' ),
+		'description' => __( 'A Google Maps API Key is required to use map-related shortcodes and widgets. The <a href="https://www.dmopress.com/guide/start/" target="_blank">10 Minute Quick Start Guide</a> has information on how to obtain a key.', 'dmopress' ),
+        'type' => 'text',
+		'section' => 'dmopress_settings',
+		'settings'   => 'dmopress[google_maps_api_key]',
+		'active_callback' => '',
+	) ) );
+
+    $wp_customize->add_setting( 'dmopress[google_maps_style]', array(
+        'type' => 'option',
+        'default' => '',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh', 
+        'sanitize_callback' => '',
+        'sanitize_js_callback' => '',
+    ) );
+
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'dmopress[google_maps_style]', array(
+        'label'   => __( 'Google Maps Default Style', 'dmopress' ),
+        'description' => __('Visit the <a href="https://www.dmopress.com/guide/maps/map-themes/" target="_blank">map theme gallery</a> to see a preview of each style.', 'dmopresss'),
+        'type' => 'select',
+        'choices'  => array(
+			'classic'  => 'Classic',
+			'gotham' => 'Gotham',
+            'grayscale' => 'Grayscale',
+            'midnight' => 'Midnight',
+            'nature' => 'Nature',
+            'pear' => 'Pear',
+            'safari' => 'Safari',
+		),
+        'section' => 'dmopress_settings',
+        'settings'   => 'dmopress[google_maps_style]',
+        'active_callback' => '',
+    ) ) );
+
+}
