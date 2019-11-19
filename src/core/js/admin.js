@@ -54,7 +54,7 @@ jQuery(document).ready(function($) {
         var zip = jQuery('input[name=zip]').val();
 
         var location = address + ',' + city + ',' + stateprov + ',' + zip;
-        var geocodeRequestURI = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + location;
+        var geocodeRequestURI = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + location + '&key=' + translated.google_maps_api_key;
 
         jQuery.getJSON(geocodeRequestURI, function(data, textStatus) {
 
@@ -78,10 +78,12 @@ jQuery(document).ready(function($) {
 
     });
 
+
     jQuery('select.select2').select2({
         templateResult: formatState,
         templateSelection: formatState
     });
+    console.log('got here');
 
 });
 

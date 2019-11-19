@@ -23,8 +23,6 @@
         "stylesheets": [
             "bower_components/bootstrap-grid-only/css/grid12.css"
         ],
-        "javascript": [
-
-        ]
+        "javascript": []
     }
 }

@@ -8,4 +8,3 @@
     ?>
 </p>
 <p><?php echo the_excerpt(); ?></p>
-

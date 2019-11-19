@@ -216,3 +216,4 @@ function handleLocationError(browserHasGeolocation, pos, translationStrings) {
         alert(translationStrings.labelGeolocationUnsupported);
     }
 }
+

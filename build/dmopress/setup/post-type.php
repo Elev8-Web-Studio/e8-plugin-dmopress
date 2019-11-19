@@ -42,7 +42,7 @@ function dmopress_register_places_post_type() {
 								'slug' => 'places'
 							  ),
 		'capability_type'     => 'post',
-		'supports'            => array('title', 'editor', 'author', 'thumbnail', 'comments', 'revisions', 'excerpt', 'custom-fields'),
+		'supports'            => array('title', 'custom-fields', 'editor', 'author', 'thumbnail', 'comments', 'revisions'),
 	);
 
 	register_post_type( 'places', $args );

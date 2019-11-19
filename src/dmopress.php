@@ -11,6 +11,7 @@ Author URI: https://www.dmopress.com
 // Prevent external script access
 defined('ABSPATH') or die('Script access not permitted.');
 
+// Define constants
 define("DMOPRESS_PLUGIN", __FILE__);
 define('DMOPRESS_PLUGIN_BASENAME', plugin_basename(DMOPRESS_PLUGIN));
 define('DMOPRESS_PLUGIN_NAME', trim(dirname(DMOPRESS_PLUGIN_BASENAME), '/' ));
@@ -34,5 +35,5 @@ require_once DMOPRESS_PLUGIN_CORE_DIR . '/template-loader.php';
 
 //Load Modules
 foreach (dmopress_enabled_modules() as $enabled_module) {
-    require_once DMOPRESS_PLUGIN_MODULES_DIR.'/'.$enabled_module.'/'.$enabled_module.'.php';
+	require_once DMOPRESS_PLUGIN_MODULES_DIR.'/'.$enabled_module.'/'.$enabled_module.'.php';
 }

@@ -37,6 +37,7 @@ gulp.task('remote', function() {
     gulp.watch(['package.json', 'src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/LICENSE'], ['source-remote']);
     gulp.watch(['package.json', 'src/**/*.scss'], ['stylesheets-remote']);
     gulp.watch(['package.json', 'src/**/*.js'], ['js-remote']);
+    //gulp.watch(['package.json', 'src/js/admin.js', 'src/js/public.js'], ['js-remote']);
 });
 
 gulp.task('source', function() {
@@ -53,7 +54,7 @@ gulp.task('source-remote', function() {
 
 gulp.task('stylesheets-admin', function() {
     var filesToProcess = pkg.pluginDependencies.stylesheets;
-    filesToProcess.push('./src/scss/admin.scss');
+    filesToProcess.push('./src/core/scss/admin.scss');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
@@ -66,7 +67,7 @@ gulp.task('stylesheets-admin', function() {
 
 gulp.task('stylesheets-public', function() {
     var filesToProcess = [];
-    filesToProcess.push('./src/scss/public.scss');
+    filesToProcess.push('./src/core/scss/public.scss');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
@@ -79,7 +80,7 @@ gulp.task('stylesheets-public', function() {
 
 gulp.task('stylesheets-remote', function() {
     var filesToProcess = pkg.pluginDependencies.stylesheets;
-    filesToProcess.push('./src/scss/admin.scss');
+    filesToProcess.push('./src/core/scss/admin.scss');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
@@ -90,7 +91,7 @@ gulp.task('stylesheets-remote', function() {
         .pipe(conn.dest(secrets.ftppath + '/css'));
 
     var filesToProcess = [];
-    filesToProcess.push('./src/scss/public.scss');
+    filesToProcess.push('./src/core/scss/public.scss');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
@@ -104,9 +105,9 @@ gulp.task('stylesheets-remote', function() {
 
 gulp.task('js-admin', function() {
     var filesToProcess = pkg.pluginDependencies.javascript;
-    filesToProcess.push('./src/js/jquery.select2.js');
-    filesToProcess.push('./src/js/jquery.validate.js');
-    filesToProcess.push('./src/js/admin.js');
+    filesToProcess.push('./src/core/js/jquery.select2.admin.js');
+    filesToProcess.push('./src/core/js/jquery.validate.admin.js');
+    filesToProcess.push('./src/core/scss/admin.js');
     gulp.src(filesToProcess)
         .pipe(sourcemaps.init())
         .pipe(concat('dmopress-admin.js'))
@@ -117,7 +118,7 @@ gulp.task('js-admin', function() {
 });
 
 gulp.task('js-public', function() {
-    gulp.src(['./src/js/public.js'])
+    gulp.src(['./src/core/public.js'])
         .pipe(sourcemaps.init())
         .pipe(concat('dmopress-public.js'))
         .pipe(rename({ suffix: '.min' }))
@@ -128,23 +129,23 @@ gulp.task('js-public', function() {
 
 gulp.task('js-remote', function() {
     var filesToProcess = pkg.pluginDependencies.javascript;
-    filesToProcess.push('./src/js/jquery.select2.js');
-    filesToProcess.push('./src/js/jquery.validate.js');
-    filesToProcess.push('./src/js/admin.js');
+    filesToProcess.push('./src/core/js/jquery.select2.admin.js');
+    filesToProcess.push('./src/core/js/jquery.validate.admin.js');
+    filesToProcess.push('./src/core/js/admin.js');
     gulp.src(filesToProcess)
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(concat('dmopress-admin.js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(conn.dest(secrets.ftppath + '/js'));
 
-    gulp.src(['./src/js/public.js'])
-        .pipe(sourcemaps.init())
+    gulp.src(['./src/core/js/public.js'])
+        //.pipe(sourcemaps.init())
         .pipe(concat('dmopress-public.js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(conn.dest(secrets.ftppath + '/js'));
 });
 
@@ -157,7 +158,7 @@ gulp.task('build', function() {
         .pipe(gulp.dest('build/dmopress/fonts'));
 
     var adminStylesheets = pkg.pluginDependencies.stylesheets;
-    adminStylesheets.push('./src/scss/admin.scss');
+    adminStylesheets.push('./src/core/scss/admin.scss');
     gulp.src(adminStylesheets)
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
         .pipe(concat('dmopress-admin.css'))
@@ -167,7 +168,7 @@ gulp.task('build', function() {
         .pipe(gulp.dest('build/dmopress/css'));
 
     var publicStylesheets = [];
-    publicStylesheets.push('./src/scss/public.scss');
+    publicStylesheets.push('./src/core/scss/public.scss');
     gulp.src(publicStylesheets)
         .pipe(sass({ style: 'compressed' }).on('error', sass.logError))
         .pipe(concat('dmopress.css'))
@@ -177,16 +178,16 @@ gulp.task('build', function() {
         .pipe(gulp.dest('build/dmopress/css'));
 
     var jsAdminFiles = pkg.pluginDependencies.javascript;
-    jsAdminFiles.push('./src/js/jquery.select2.js');
-    jsAdminFiles.push('./src/js/jquery.validate.js');
-    jsAdminFiles.push('./src/js/admin.js');
+    jsAdminFiles.push('./src/core/js/jquery.select2.admin.js');
+    jsAdminFiles.push('./src/core/js/jquery.validate.admin.js');
+    jsAdminFiles.push('./src/core/js/admin.js');
     gulp.src(jsAdminFiles)
         .pipe(concat('dmopress-admin.js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
         .pipe(gulp.dest('build/dmopress/js'));
 
-    gulp.src(['./src/js/public.js'])
+    gulp.src(['./src/core/public.js'])
         .pipe(concat('dmopress-public.js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())

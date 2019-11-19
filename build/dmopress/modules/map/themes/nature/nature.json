@@ -1,0 +1,97 @@
+[{
+        "featureType": "landscape.natural",
+        "stylers": [{
+            "color": "#D4E5D5"
+        }]
+    },
+    {
+        "featureType": "road.highway",
+        "stylers": [{
+                "hue": "#53FF00"
+            },
+            {
+                "saturation": -73
+            },
+            {
+                "lightness": 40
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "stylers": [{
+                "hue": "#FBFF00"
+            },
+            {
+                "saturation": 0
+            },
+            {
+                "lightness": 0
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "stylers": [{
+                "hue": "#00FFFD"
+            },
+            {
+                "saturation": 0
+            },
+            {
+                "lightness": 30
+            },
+            {
+                "gamma": 1
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "stylers": [{
+            "color": "#428AC9"
+        }]
+    },
+    {
+        "featureType": "poi.park",
+        "stylers": [{
+            "color": "#B8CAB9"
+        }]
+    },
+    {
+        "featureType": "poi.business",
+        "stylers": [{
+            "visibility": "off"
+        }]
+    },
+    {
+        "featureType": "poi.government",
+        "stylers": [{
+            "visibility": "off"
+        }]
+    },
+    {
+        "featureType": "poi.medical",
+        "stylers": [{
+            "visibility": "off"
+        }]
+    },
+    {
+        "featureType": "poi.place_of_worship",
+        "stylers": [{
+            "visibility": "off"
+        }]
+    },
+    {
+        "featureType": "poi.school",
+        "stylers": [{
+            "visibility": "off"
+        }]
+    }
+]
