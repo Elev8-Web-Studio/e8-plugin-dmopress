@@ -22,11 +22,14 @@ function dmo_enqueue_admin_css() {
     
 	wp_register_script( 'admin-js', plugins_url() . '/dmopress/js/dmopress-admin.min.js', false);
 	
+
+
     // Localize the script with new data
     $translation_array = array(
       'invalid_url' => __( 'Invalid URL', 'dmopress' ),
 	  'invalid_phone' => __('Invalid phone', 'dmopress'),
-	  'google_maps_api_key' => dmo_get_google_maps_api_key()
+	  'google_maps_api_key' => dmo_get_google_maps_api_key(),
+	  'google_geocoding_api_key' => dmo_get_google_geocoding_api_key()
     );
     wp_localize_script( 'admin-js', 'translated', $translation_array );
     if(is_admin()){

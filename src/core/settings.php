@@ -91,7 +91,15 @@ class DMOPressSettingsPage {
             array( $this, 'google_maps_callback' ), 
             'dmopress-setting-admin', 
             'dmopress_settings_section_google_maps'
-        );
+		);
+		
+		add_settings_field(
+			'google_geocoding_api_key', 
+			__('Google Geocoding API Key','dmopress_textdomain'), 
+			array( $this, 'google_geocoding_callback' ), 
+			'dmopress-setting-admin', 
+			'dmopress_settings_section_google_maps'
+		);
 
         add_settings_field(
             'google_maps_style', 
@@ -118,7 +126,11 @@ class DMOPressSettingsPage {
         }
         if(isset( $input['google_maps_api_key'])){
             $new_input['google_maps_api_key'] = sanitize_text_field( $input['google_maps_api_key'] );
-        }
+		}
+		
+		if(isset( $input['google_geocoding_api_key'])){
+			$new_input['google_geocoding_api_key'] = sanitize_text_field( $input['google_geocoding_api_key'] );
+		}
         if(isset( $input['google_maps_style'])){
             $new_input['google_maps_style'] = sanitize_text_field( $input['google_maps_style'] );
         }
@@ -165,7 +177,17 @@ class DMOPressSettingsPage {
             isset( $this->options['google_maps_api_key'] ) ? esc_attr( $this->options['google_maps_api_key']) : ''
         );
         echo '<p class="description">A Google Maps API Key is required to use map-related shortcodes and widgets. The <a href="https://www.dmopress.com/guide/start/" target="_blank">10 Minute Quick Start Guide</a> has information on how to obtain a key.</p>';
-    }
+	}
+	
+	public function google_geocoding_callback($args) {
+	extract($args);
+
+	printf(
+		'<input type="text" size="45" id="google-geocoding-api-key" name="dmopress[google_geocoding_api_key]" value="%s" placeholder="" />',
+		isset( $this->options['google_geocoding_api_key'] ) ? esc_attr( $this->options['google_geocoding_api_key']) : ''
+	);
+	echo '<p class="description">A Google Geocoding API Key is required for geocoding services.</p>';
+	}
 
     public function google_maps_style_callback($args) {
         extract($args);

@@ -2,14 +2,11 @@
 var pkg = require('./package.json'),
     secrets = require('./secrets.json'),
     gulp = require('gulp'),
-    cache = require('gulp-cache'),
     changed = require('gulp-changed'),
     cleancss = require('gulp-clean-css'),
     concat = require('gulp-concat'),
-    del = require('del'),
     ftp = require('vinyl-ftp'),
     gutil = require('gulp-util'),
-    notify = require('gulp-notify'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -42,13 +39,13 @@ gulp.task('remote', function() {
 
 gulp.task('source', function() {
     gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/fonts/**'])
-        .pipe(changed(secrets.localPath))
+        //.pipe(changed(secrets.localPath))
         .pipe(gulp.dest(secrets.localPath));
 });
 
 gulp.task('source-remote', function() {
     gulp.src(['src/**/*.html', 'src/**/*.php', 'src/**/style.css', 'src/**/*.png', 'src/**/*.md', 'src/**/*.txt', 'src/**/*.json', 'src/fonts/**'])
-        .pipe(changed(secrets.localPath))
+        //.pipe(changed(secrets.localPath))
         .pipe(conn.dest(secrets.ftppath));
 });
 

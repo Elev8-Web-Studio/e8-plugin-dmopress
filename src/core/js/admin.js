@@ -54,7 +54,8 @@ jQuery(document).ready(function($) {
         var zip = jQuery('input[name=zip]').val();
 
         var location = address + ',' + city + ',' + stateprov + ',' + zip;
-        var geocodeRequestURI = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + location + '&key=' + translated.google_maps_api_key;
+		var geocodeRequestURI = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + location + '&key=' + translated.google_geocoding_api_key;
+	
 
         jQuery.getJSON(geocodeRequestURI, function(data, textStatus) {
 
@@ -66,7 +67,7 @@ jQuery(document).ready(function($) {
                 jQuery('input[name=longitude]').val(long);
                 //google.maps.event.trigger(map, 'resize');
             } else {
-                //console.log('Data: ' + data.status);
+                console.log('Data: ' + data.status);
                 jQuery('#geocode-error').show();
                 jQuery('input[name=latitude]').val('');
                 jQuery('input[name=longitude]').val('');

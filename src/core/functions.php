@@ -103,6 +103,16 @@ function dmo_get_google_maps_api_key(){
 	
 }
 
+function dmo_get_google_geocoding_api_key(){
+   $option = get_option('dmopress');
+	if($option['google_geocoding_api_key'] != ''){
+        return $option['google_geocoding_api_key'];
+    } else {
+        return null;
+    }
+	
+}
+
 function dmo_get_google_maps_theme(){
     $option = get_option('dmopress');
     if($option['google_maps_style'] != ''){
