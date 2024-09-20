@@ -1,6 +1,7 @@
 {
-    "name": "",
+    "name": "dmopress",
     "version": "2.3.0",
+    "node_version": "10.14.1",
     "projectType": "static",
     "deploymentMode": "staging",
     "devDependencies": {
